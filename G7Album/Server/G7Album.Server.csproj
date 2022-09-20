@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BaseDatos\G7Album.BaseDatos.csproj" />
-    <ProjectReference Include="..\Client\G7Album.Client.csproj" />
     <ProjectReference Include="..\Shared\G7Album.Shared.csproj" />
   </ItemGroup>
 

@@ -15,7 +15,9 @@ builder.Services.AddRazorPages();
 
 
 /* Problemas con los Cors */
+
 builder.Services.AddCors();
+
 /* Problemas con los Cors */
 
 var conn = builder.Configuration.GetConnectionString("con");

@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "G7Album.Shared", "G7Album\S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "G7Album.BaseDatos", "G7Album\BaseDatos\G7Album.BaseDatos.csproj", "{63D184B4-B280-4B98-B3C1-BBC481C64189}"
 EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "G7Album.ClientReact", "G7Album\g7album.clientreact\G7Album.ClientReact.esproj", "{BC64E348-996A-40B9-AEB6-8B785285A5B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,12 @@ Global
 		{63D184B4-B280-4B98-B3C1-BBC481C64189}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63D184B4-B280-4B98-B3C1-BBC481C64189}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63D184B4-B280-4B98-B3C1-BBC481C64189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC64E348-996A-40B9-AEB6-8B785285A5B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC64E348-996A-40B9-AEB6-8B785285A5B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC64E348-996A-40B9-AEB6-8B785285A5B4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BC64E348-996A-40B9-AEB6-8B785285A5B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC64E348-996A-40B9-AEB6-8B785285A5B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC64E348-996A-40B9-AEB6-8B785285A5B4}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
