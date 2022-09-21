@@ -18,15 +18,7 @@ export const FormLogin: React.FC<Props> = (props) => {
 
   const store: any = undefined;
 
-  /// VARIABLES CSS
-  const css_formulario_login = loginActive
-    ? FormLoginCSS.formulario__login_show
-    : FormLoginCSS.formulario__login_hide;
 
-  const styleFormLogin = ` 
-    ${FormLoginCSS.form_LoginAndRegister} 
-    ${css_formulario_login}
-  `;
 
   return (
 
@@ -39,7 +31,7 @@ export const FormLogin: React.FC<Props> = (props) => {
 
       <h2>Iniciar Sesion</h2>
 
-      <form className={styleFormLogin} onSubmit={iniciarSesion}>
+      <form onSubmit={iniciarSesion}>
 
         {InputsLogin.map((inputProps: any, index: any) => (
           <Input

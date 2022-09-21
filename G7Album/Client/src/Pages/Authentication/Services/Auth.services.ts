@@ -4,7 +4,7 @@ import { IDataRegisterForm } from "../../../Interface/DTO Front/Auth/IDataRegist
 import { axiosMethod } from "../../../Utils/axiosMethod";
 
 
-const Auth = {
+const AuthService = {
     Login: async (DataLoginForm: IDataLoginForm): Promise<object> => {
 
         let dataLogin = null;
@@ -40,4 +40,4 @@ const Auth = {
 
 }
 
-export default Auth; 
+export default AuthService; 

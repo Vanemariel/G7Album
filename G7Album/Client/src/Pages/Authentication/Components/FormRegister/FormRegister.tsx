@@ -16,28 +16,18 @@ export const FormRegister: React.FC<Props> = (props) => {
 
   const store: any = undefined;
 
-  /// VARIABLES CSS
-  const css_formulario_registro = registerActive
-    ? FormRegisterCSS.formulario__registro_show
-    : FormRegisterCSS.formulario__registro_hide;
-
-  const styleFormRegister = `
-    ${FormRegisterCSS.form_LoginAndRegister} 
-    ${css_formulario_registro}
-  `;
-
   return (
 
     <div className={`
-      ${FormRegisterCSS.containerFormLogin}} 
-      ${store.IsLoginActive() 
-        ? FormRegisterCSS.containerFormLogin___Show 
-        : FormRegisterCSS.containerFormLogin___Hide}
+      ${FormRegisterCSS.containerFormRegister}} 
+      ${store.IsRegisterActive() 
+        ? FormRegisterCSS.containerFormRegister___Show 
+        : FormRegisterCSS.containerFormRegister___Hide}
     `}>
 
       <h2>Registrarse</h2>
 
-      <form className={styleFormRegister}>
+      <form onSubmit={registrar}>
 
         {InputsRegister.map((inputProps: any, index: any) => (
           <Input
@@ -50,7 +40,7 @@ export const FormRegister: React.FC<Props> = (props) => {
           />
         ))}
 
-        <button onClick={registrar}>Registrarse</button>
+        <button type="submit">Registrarse</button>
       </form>
 
     </div>
