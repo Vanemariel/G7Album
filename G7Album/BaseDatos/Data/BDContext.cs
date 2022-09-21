@@ -6,7 +6,6 @@ namespace G7Album.BaseDatos.Data
 {
     public class BDContext: DbContext
     {
-
         public BDContext(DbContextOptions<BDContext> options) : base(options)
         {
         }
@@ -148,8 +147,6 @@ namespace G7Album.BaseDatos.Data
                 }
             );
 
-
-
             modelBuilder.Entity<AlbumUsuarioImagenes>().HasData(
                new AlbumUsuarioImagenes
                {
@@ -176,8 +173,6 @@ namespace G7Album.BaseDatos.Data
 
                }
             );
-
-
         }
 
         public DbSet<Album> TablaAlbumes  { get; set; }
@@ -186,7 +181,5 @@ namespace G7Album.BaseDatos.Data
         public DbSet<AlbumUsuarioImagenes> TablaUsuarioImagenes { get; set; }
         public DbSet<AlbumUsuario> TablaAlbumesUsuarios { get; set; }
         public DbSet<Usuario> TablaUsuarios { get; set; }
-
-
     }
 }
