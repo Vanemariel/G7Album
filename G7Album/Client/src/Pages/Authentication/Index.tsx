@@ -3,6 +3,7 @@ import { FormLogin } from "./Components/FormLogin/FormLogin";
 import { FormRegister } from "./Components/FormRegister/FormRegister";
 import { MessageLogin } from "./Components/MessageLogin/MessageLogin";
 import { MessageRegister } from "./Components/MessageRegister/MessageRegister";
+import { AuthProvider } from "./Context/AuthProvider";
 import AuthCSS from "./Index.module.css"
 
 
@@ -26,28 +27,33 @@ export const Authentication : React.FC = () => {
     }, [])
 
     return (
-        <main className={AuthCSS.mainAuthentication}>
 
-            <div className={AuthCSS.containerPage}>
+        <AuthProvider>
 
-                <section className={AuthCSS.containerPage__Background}>                
+            <main className={AuthCSS.mainAuthentication}>
 
-                    <MessageLogin/>
+                <div className={AuthCSS.containerPage}>
 
-                    <MessageRegister/>
+                    <section className={AuthCSS.containerPage__Background}>                
 
-                </section>
+                        <MessageLogin/>
 
-                <section className={`${AuthCSS.containerPage__LoginAndRegister} ${store.GetClassCssFormModifed()}`}>
+                        <MessageRegister/>
 
-                    <FormLogin />
-                    
-                    <FormRegister />
+                    </section>
 
-                </section>                                                                                                                           
+                    <section className={`${AuthCSS.containerPage__LoginAndRegister} ${store.GetClassCssFormModifed()}`}>
 
-            </div>
+                        <FormLogin />
+                        
+                        <FormRegister />
 
-        </main>
+                    </section>                                                                                                                           
+
+                </div>
+
+            </main>
+
+        </AuthProvider>    
     )
 }

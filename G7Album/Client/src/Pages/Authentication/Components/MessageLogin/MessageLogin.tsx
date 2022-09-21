@@ -1,17 +1,19 @@
 import React from "react";
+import { useAuth } from "../../Context/useAuth";
 import MessageLoginCSS from "./MessageLogin.module.css";
 
 
 
 export const MessageLogin: React.FC = () => {
 
-  const store : any = undefined;
+  const storeAuth = useAuth()
+
 
 
   const goToLogin = (): void => {
-    store.SetLoginActive(true);
-    store.SetRegisterActive(false);
-    store.ResetFormRegister();
+    storeAuth.SetLoginActive(true);
+    storeAuth.SetRegisterActive(false);
+    // storeAuth.ResetFormRegister();
   }
 
 
@@ -19,9 +21,9 @@ export const MessageLogin: React.FC = () => {
 
       <article className={`
           ${MessageLoginCSS.containerBackgroundLogin} 
-          ${store.IsLoginActive() ? MessageLoginCSS.noneElement : ""}
+          ${storeAuth.IsLoginActive() ? MessageLoginCSS.noneElement : ""}
         `}
-        // style={{store.IsRegisterActive() ? "opacity: 1" : "opacity: 0"}}
+        style={storeAuth.IsRegisterActive() ? {"opacity": 1} : {"opacity": 0}}
       >
 
         <h3> ¿Ya tienes una cuenta?</h3>

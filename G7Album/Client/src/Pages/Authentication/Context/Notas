@@ -1,0 +1,5 @@
+1ro AuthContext
+2do AuthReducer
+3ro AuthProvider
+4to useAuth
+5to Poner AuthProvider en Index.tsx
