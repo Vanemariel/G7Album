@@ -1,1 +1,12 @@
 ⏰ Generar Ruteo en App.js
+
+⏰ Modificar el titulo de la pagina dependiendo de la navegacion. 
+⏰ Cambiar el tipo de dato de "DataLoginForm" por el de usuario del form.
+⏰ Hacer que los serives retornen dato en especifico.
+
+
+
+Adapters OK
+Models   OK
+
+Service incompleto.

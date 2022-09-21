@@ -1,10 +1,8 @@
 // import { EndPointDataLogin } from "../DTO/EndPointUser.models";
-import { DataLogin } from "../Models/User.models";
+import { UserModels } from "../Models/User.models";
 
-export const createAddaptedUser = (
-  // DataLogin: EndPointDataLogin<string>
-  DataLogin: any
-) => {
+export const createAddaptedUser = (DataUser: any): UserModels => {
+  
   const formattedUser: any = {
   // const formattedUser: DataLogin<string> = {
     // User: {

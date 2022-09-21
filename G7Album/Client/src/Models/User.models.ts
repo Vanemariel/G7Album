@@ -1,17 +1,8 @@
-/*
- No es necesario hacer una interface con
-  parametros pero sirve de practica
-*/
-
-export interface DataLogin<TypeIdUser> {
-  User: UserModels<TypeIdUser>;
-  Token: string;
-}
-
-interface UserModels<TypeIdUser> {
-  Id: TypeIdUser;
+export interface UserModels {
+  Id: string;
   UserName: string;
   Name: string;
   Lastname: string;
   Email: string;
+  Token: string;
 }

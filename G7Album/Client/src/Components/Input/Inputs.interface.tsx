@@ -1,4 +1,4 @@
-export interface IFormInputs {
+export interface IInputs {
   placeholder: string;
   type: any;
   name: string;

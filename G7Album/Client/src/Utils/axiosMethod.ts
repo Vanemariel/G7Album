@@ -1,15 +1,15 @@
 import axios, { Method } from "axios";
 
-interface IDataPetition {
+interface IDataParams {
   url: string;
   method: Method | undefined;
   dataSend?: any;
 }
 
-export const axiosMethod = async (dataPetition: IDataPetition) => {
-  const { method, url, dataSend } = dataPetition;
-  const URL_API =
-    process.env.REACT_APP_URL_API || process.env.VITE_URL_API;
+export const axiosMethod = async (Params: IDataParams) => {
+  
+  const { method, url, dataSend } = Params;
+  const URL_API = process.env.REACT_APP_URL_API;
 
   let messageError = null;
   let data = null;
@@ -27,6 +27,9 @@ export const axiosMethod = async (dataPetition: IDataPetition) => {
     console.log("Error e",error.response )
     messageError = error?.response?.statusText || "Ocurrio un error";
   }
+
+  // TODO: VER SI COLOCAMOS EL TEMA DEL MODAL DE ERROR ACA. Ejecutandose con el Store.
+
 
   return {
     data,

@@ -1,0 +1,45 @@
+/*Metodologia BEM de CSS: https://animaticss.com/articulo/que-es-bem-css/ */
+
+.containerBackgroundLogin {
+    margin: 5rem 0rem;
+    color: #fff;
+    transition: all 0.5s;
+}
+
+.containerBackgroundLogin h3 {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.containerBackgroundLogin p {
+    margin-top: 2rem;
+}
+
+.containerBackgroundLogin button {
+    margin-top: 2rem;
+    padding: 0.5rem 2rem;
+    border: 2px solid #fff;
+    background: transparent;
+    font-size: 0.9rem;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.containerBackgroundLogin button:hover {
+    background: #fff;
+    color: #46a2fd;
+}
+
+@media screen and (max-width: 450px) {
+    .containerBackgroundLogin {
+        margin: 0;
+        position: absolute;
+    } 
+    
+    .noneElement {
+         display: none;
+     }
+}

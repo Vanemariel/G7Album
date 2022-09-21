@@ -1,46 +1,36 @@
 import React from "react";
-import LoginAndRegisterCSS from "../../LoginAndRegister.module.css";
+import MessageLoginCSS from "./MessageLogin.module.css";
 
-interface Props {
-  loginActive: boolean;
-  registerActive: boolean;
-  setLoginActive: any;
-  setRegisterActive: any;
-  resetRegister: any;
-}
 
-export const MessageLogin: React.FC<Props> = (props) => {
-  const {
-    loginActive,
-    registerActive,
-    resetRegister,
-    setLoginActive,
-    setRegisterActive,
-  } = props;
 
-  /// VARIABLES cSS
+export const MessageLogin: React.FC = () => {
 
-  const styleMessageLogin = `
-    ${LoginAndRegisterCSS.containerBackground__login} 
-    ${loginActive ? LoginAndRegisterCSS.noneElement : undefined}
-  `;
+  const store : any = undefined;
+
+
+  const goToLogin = (): void => {
+    store.SetLoginActive(true);
+    store.SetRegisterActive(false);
+    store.ResetFormRegister();
+  }
+
 
   return (
-    <article
-      className={styleMessageLogin}
-      style={registerActive ? { opacity: "1" } : { opacity: "0" }}
-    >
-      <h3>¿Ya tienes una cuenta?</h3>
-      <p>Inicia sesion para entrar a la pagina</p>
-      <button
-        onClick={() => {
-          setLoginActive(true);
-          setRegisterActive(false);
-          resetRegister();
-        }}
+
+      <article className={`
+          ${MessageLoginCSS.containerBackgroundLogin} 
+          ${store.IsLoginActive() ? MessageLoginCSS.noneElement : ""}
+        `}
+        // style={{store.IsRegisterActive() ? "opacity: 1" : "opacity: 0"}}
       >
-        Iniciar Sesion
-      </button>
-    </article>
+
+        <h3> ¿Ya tienes una cuenta?</h3>
+        <p> Inicia sesion para entrar a la pagina</p>
+        
+        <button onClick={goToLogin}>
+            Iniciar sesion
+        </button>
+
+      </article>
   );
 };
