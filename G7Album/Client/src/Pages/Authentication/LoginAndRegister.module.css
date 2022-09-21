@@ -1,0 +1,176 @@
+/* Contenedor general */
+.containerPage {
+  width: 100%;
+  max-width: 50rem;
+  margin: auto;
+  position: relative;
+}
+
+/* Contenedor fondo azul text */
+.containerBackground {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2.25rem 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(0.75rem);
+  background: rgba(0, 128, 255, 0.5);
+}
+
+.containerBackground__login,
+.containerBackground__register {
+  margin: 5rem 0rem;
+  color: #fff;
+  transition: all 0.5s;
+}
+
+.containerBackground__login h3,
+.containerBackground__register h3 {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.containerBackground__login p,
+.containerBackground__register p {
+  margin-top: 2rem;
+}
+.containerBackground__login button,
+.containerBackground__register button {
+  margin-top: 2rem;
+  padding: 0.5rem 2rem;
+  border: 2px solid #fff;
+  background: transparent;
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s;
+}
+.containerBackground__login button:hover,
+.containerBackground__register button:hover {
+  background: #fff;
+  color: #46a2fd;
+}
+
+.containerLoginAndRegister {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 23rem;
+  position: relative;
+  top: -12rem;
+  transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.container__loginActive {
+  left: 1.5rem;
+}
+.container__registerActive {
+  left: 25.65rem;
+}
+
+.form_LoginAndRegister {
+  width: 100%;
+  padding: 4rem 1.25rem;
+  background: #fff;
+  position: absolute;
+  border-radius: 1.25rem;
+  text-align: center;
+}
+.form_LoginAndRegister h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  color: #46a2fd;
+}
+.form_LoginAndRegister input {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: none;
+  background: #f2f2f2;
+  font-size: 1rem;
+  outline: none;
+}
+.form_LoginAndRegister button {
+  padding: 0.5rem 2rem;
+  margin-top: 1rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  background: #46a2fd;
+  color: #fff;
+  outline: none;
+}
+
+.formulario__login_show {
+  opacity: 1;
+  padding: 8.5rem 1.25rem;
+}
+.formulario__login_hide {
+  display: none;
+  opacity: 0;
+}
+.formulario__registro_show {
+  opacity: 1;
+}
+.formulario__registro_hide {
+  display: none;
+  opacity: 0;
+}
+
+
+.errorLogin {
+  padding: 1rem;
+  width: 25rem;
+  text-align: center;
+  background-color: #fff;
+  margin: auto;
+}
+.errorLogin i {
+  color: #dc143c;
+  margin-top: 2rem;
+  font-size: 4rem;
+}
+
+
+
+@media screen and (max-width: 450px) {
+  .containerBackground {
+    max-width: 22rem;
+    height: 18.75rem;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+  .containerBackground__login,
+  .containerBackground__register {
+    margin: 0;
+    position: absolute;
+  }
+
+  .containerLoginAndRegister {
+    top: -5rem;
+    left: 0rem;
+    margin: auto;
+  }
+
+  .form_LoginAndRegister {
+    position: relative;
+  }
+
+  .formulario__login_show {
+    display: block;
+    opacity: 1;
+    padding: 4rem 1.25rem;
+  }
+
+  .noneElement {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 570px) {
+  body {
+    margin-top: -5.5rem;
+  }
+}

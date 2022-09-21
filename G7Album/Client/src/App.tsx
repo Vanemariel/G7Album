@@ -1,38 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import { Authentication } from './Pages/Authentication/Index';
+import { Home } from './Pages/Home/Index';
 
 function App() {
-
-  const probandoConexion = async () => {
-
-    const res = await fetch("https://localhost:7040/Api/Album/GetAll")
-
-    const data = await res.json();
-    console.log("🚀 ~ file: App.tsx ~ line 16 ~ probandoConexion ~ data", data)
-  }
-
-  useEffect(()=>{
-    probandoConexion()
-  }, [])
-
-  
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Authentication />} />
+        <Route path="/auth" element={<Authentication />} />
+
+        {/* <Route path="/notFound" element={<NotFound />} />
+        <Route path="*" element={<Navigate to={"/notFound"} />} /> */}
+      </Routes>
   );
 }
+// https://bobbyhadz.com/blog/react-useroutes-may-be-used-only-in-context-of-router
+const AppWrapper = () => {
+  return (
+    // Englobamos Redux al proyecto
+    // <Provider store={store}>
+      <App />
+    /* </Provider> */
+  );
+};
 
-export default App;
+
+export default AppWrapper;

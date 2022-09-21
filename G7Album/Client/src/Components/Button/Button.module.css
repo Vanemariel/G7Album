@@ -1,0 +1,13 @@
+.button {
+  cursor: pointer;
+  width: 6.25rem;
+  height: 2rem;
+  border-radius: 1rem;
+  border: none;
+
+  color: #fff;
+  background-color: #dc143c;
+}
+.button * {
+  cursor: pointer;
+}

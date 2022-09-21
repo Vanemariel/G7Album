@@ -19,7 +19,7 @@ namespace G7Album.BaseDatos.Data
             {
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
             }
-
+            
 
             modelBuilder.Entity<Usuario>().HasData(
                 new Usuario
