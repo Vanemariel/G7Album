@@ -1,4 +1,9 @@
-﻿
+﻿using G7Album.Shared.Models;
+using G7Album.Shared.Models.ModelsDTO;
+using G7Album.Shared.Repositorio;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
 namespace G7Album.Server.Controllers
 {
     [ApiController]
@@ -11,6 +16,25 @@ namespace G7Album.Server.Controllers
         {
             this.context = context;
         }
+        
+        /*[HttpGet]
+
+        public async Task<Response<PagedData<List<AlbumImagenes>>>> Get(int Page = 1)
+        {
+            var query = new QueryProperty<AlbumImagenes>(Page, 10);
+            var paged = new PagedData<List<AlbumImagenes>>(
+                await context.TablaImagenes.ToListAsync(), await CountElements(), Page, 10, "AlbumImagenes");
+            var response = new Response<PagedData<List<AlbumImagenes>>>(paged);
+
+            if (response.Data == null)
+            {
+                response.Succeeded = false;
+                response.Message = ResponseMessage.NotFound;
+                response.Errors = new string[] { "404" };
+            }
+
+            return response;
+        }*/
 
         [HttpGet("GetAll")]
         //metodo que me muestra la lista completa  
@@ -19,7 +43,7 @@ namespace G7Album.Server.Controllers
             return await context.TablaImagenes.Include(x => x.Album).ToListAsync();
         }
 
-        [HttpGet("Get/one{id:int}")]
+        [HttpGet("Get/one/{id:int}")]
         public async Task<ActionResult<AlbumImagenes>> GetById(int id)
         {
             AlbumImagenes usua = await context.TablaImagenes.Where(x => x.Id == id).FirstOrDefaultAsync();
@@ -100,7 +124,9 @@ namespace G7Album.Server.Controllers
             catch (Exception) //se captura la excepcion del try
             {
                 return new StatusCodeResult(StatusCodes.Status500InternalServerError);
-            }
+            }       
         }
+        public async Task<int> CountElements() => await context.SaveChangesAsync(); 
+        //public async Task<int> CountElements() => await _unitOfWork.CategoriesRepository.CountElements();
     }
 }
