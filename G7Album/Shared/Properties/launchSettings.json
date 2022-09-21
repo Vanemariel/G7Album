@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "G7Album.Shared": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:64568;http://localhost:64569"
+    }
+  }
+}
