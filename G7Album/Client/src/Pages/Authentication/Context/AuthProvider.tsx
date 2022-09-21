@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useReducer } from "react";
 import { AuthContext } from "./AuthContext";
 import { AuthReducer, INITIAL_STATE } from "./AuthReducer";
 
@@ -9,28 +9,28 @@ interface Props {
 
 export const AuthProvider: React.FC<Props> = (props) => {
 
-
   const [AuthState, dispatch] = useReducer(AuthReducer, INITIAL_STATE);
 
-
-  const IsLoginActive = () => AuthState.LoginActive;
-  const SetLoginActive = (newState: boolean) => {
+  const IsLoginActive = (): boolean => AuthState.LoginActive;
+  const SetLoginActive = (value: boolean): void => {
     dispatch({
       type: "SetLoginActive",
-      payload: { newState }
+      payload: { newState: value }
     });
+    ChangeClassCssForm()
   };
 
-  const IsRegisterActive = () => AuthState.RegisterActive;
-  const SetRegisterActive = (newState: boolean) => {
+  const IsRegisterActive = () : boolean => AuthState.RegisterActive;
+  const SetRegisterActive = (value: boolean): void => {
     dispatch({
       type: "SetRegisterActive",
-      payload: { newState }
+      payload: { newState: value }
     });
+    ChangeClassCssForm()
   };
 
-  const GetClassCssFormModifed = () => AuthState.ClassCSSForm;
-  const ChangeClassCssForm = () => {
+  const GetClassCssFormModifed = (): string => AuthState.ClassCSSForm;
+  const ChangeClassCssForm = (): void => {
     dispatch({
       type: "ChangeClassCssForm"
     });
@@ -42,7 +42,7 @@ export const AuthProvider: React.FC<Props> = (props) => {
         IsLoginActive,
         IsRegisterActive,
         GetClassCssFormModifed,
-        
+
         SetLoginActive,
         SetRegisterActive,
         ChangeClassCssForm

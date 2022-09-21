@@ -1,23 +1,26 @@
+import { useAuth } from "../../Context/useAuth";
 import MessageRegisterCSS from "./MessageRegister.module.css";
 
 
 
 export const MessageRegister: React.FC= () => {
 
-  const store : any = undefined;
+  /// HOOKS
+  const storeAuth = useAuth()
+
 
   const goToRegister = (): void => {
-    store.SetLoginActive(false);
-    store.SetRegisterActive(true);
-    store.ResetFormLogin();
+    storeAuth.SetLoginActive(false);
+    storeAuth.SetRegisterActive(true);
+    // store.ResetFormLogin();
   }
 
   return (
     <article className={`
         ${MessageRegisterCSS.containerBackgroundLogin} 
-        ${store.IsLoginActive() ? MessageRegisterCSS.noneElement : ""}
+        ${storeAuth.IsRegisterActive() ? MessageRegisterCSS.noneElement : ""}
       `}
-      // style={{store.IsRegisterActive() ? "opacity: 1" : "opacity: 0"}}
+      style={storeAuth.IsLoginActive() ? {"opacity": 1} : {"opacity": 0}}
     >
       <h3>¿Aun no tienes una cuenta?</h3>
       <p>Registrate para que puedas iniciar sesion</p>

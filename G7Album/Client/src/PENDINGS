@@ -3,6 +3,10 @@
 ⏰ Modificar el titulo de la pagina dependiendo de la navegacion. 
 ⏰ Cambiar el tipo de dato de "DataLoginForm" por el de usuario del form.
 ⏰ Hacer que los serives retornen dato en especifico.
+⏰ Escribir los metodos respectivos de FormLogin y Register.
+⏰ Simular un Context a nivel global para los modales pero luego
+    reemplazarlo con Redux
+⏰ Realizar escrito de como funciona Context 
 
 
 

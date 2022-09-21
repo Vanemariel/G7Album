@@ -6,10 +6,11 @@ import MessageLoginCSS from "./MessageLogin.module.css";
 
 export const MessageLogin: React.FC = () => {
 
+
+  /// HOOKS
   const storeAuth = useAuth()
 
-
-
+  /// METOODS
   const goToLogin = (): void => {
     storeAuth.SetLoginActive(true);
     storeAuth.SetRegisterActive(false);

@@ -4,14 +4,18 @@ import { FormRegister } from "./Components/FormRegister/FormRegister";
 import { MessageLogin } from "./Components/MessageLogin/MessageLogin";
 import { MessageRegister } from "./Components/MessageRegister/MessageRegister";
 import { AuthProvider } from "./Context/AuthProvider";
+import { useAuth } from "./Context/useAuth";
 import AuthCSS from "./Index.module.css"
 
 
 export const Authentication : React.FC = () => {
 
 
-    const store: any = undefined;
+    /// HOOKS
+    const storeAuth = useAuth()
 
+
+    /// METODOS
     const probandoConexion = async () => {
 
         const res = await fetch("https://localhost:7040/Api/Album/GetAll")
@@ -21,9 +25,9 @@ export const Authentication : React.FC = () => {
     }
 
     useEffect(()=>{
-        probandoConexion()
-
-        // store.ChangeClassCssForm();
+        probandoConexion();
+        storeAuth.ChangeClassCssForm();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
@@ -42,7 +46,7 @@ export const Authentication : React.FC = () => {
 
                     </section>
 
-                    <section className={`${AuthCSS.containerPage__LoginAndRegister} ${store.GetClassCssFormModifed()}`}>
+                    <section className={`${AuthCSS.containerPage__LoginAndRegister} ${storeAuth.GetClassCssFormModifed()}`}>
 
                         <FormLogin />
                         
