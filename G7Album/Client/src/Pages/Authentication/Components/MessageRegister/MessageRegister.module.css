@@ -1,0 +1,44 @@
+/*Metodologia BEM de CSS: https://animaticss.com/articulo/que-es-bem-css/ */
+
+.containerBackgroundRegister {
+    margin: 5rem 0rem;
+    color: #fff;
+    transition: all 0.5s;
+}
+
+.containerBackgroundRegister h3 {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.containerBackgroundRegister p {
+    margin-top: 2rem;
+}
+
+.containerBackgroundRegister button {
+    margin-top: 2rem;
+    padding: 0.5rem 2rem;
+    border: 2px solid #fff;
+    background: transparent;
+    font-size: 0.9rem;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.containerBackgroundRegister button:hover {
+    background: #fff;
+    color: #46a2fd;
+}
+
+@media screen and (max-width: 450px) {
+    .containerBackgroundRegister {
+        margin: 0;
+        position: absolute;
+    } 
+    .noneElement {
+        display: none;
+    }
+}

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "../Button/Button";
 import InputCSS from "./Input.module.css";
-import { IFormInputs } from "./Inputs.interface";
+import { IInputs } from "./Inputs.interface";
 
 interface Props {
   handleChange: any;
-  inputProps: IFormInputs;
+  inputProps: IInputs;
   value: string | any;
   errorMessage: string;
   pattern: RegExp;

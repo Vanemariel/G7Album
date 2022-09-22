@@ -31,33 +31,22 @@ export const Authentication : React.FC = () => {
     }, [])
 
     return (
+        <main className={AuthCSS.mainAuthentication}>
+            <div className={AuthCSS.containerPage}>
+                <section className={AuthCSS["containerPage__Background"]}>                
+                    <MessageLogin/>
 
-        <AuthProvider>
+                    <MessageRegister/>
+                </section>
 
-            <main className={AuthCSS.mainAuthentication}>
-
-                <div className={AuthCSS.containerPage}>
-
-                    <section className={AuthCSS.containerPage__Background}>                
-
-                        <MessageLogin/>
-
-                        <MessageRegister/>
-
-                    </section>
-
-                    <section className={`${AuthCSS.containerPage__LoginAndRegister} ${storeAuth.GetClassCssFormModifed()}`}>
-
-                        <FormLogin />
-                        
-                        <FormRegister />
-
-                    </section>                                                                                                                           
-
-                </div>
-
-            </main>
-
-        </AuthProvider>    
+               <section className={`
+                    ${AuthCSS["containerPage__Auth"]} ${AuthCSS[storeAuth.GetClassCssFormModifed()]}
+                `}>
+                    <FormLogin />
+                    
+                    <FormRegister />
+                </section>                                                                                                                           
+            </div>
+        </main>   
     )
 }

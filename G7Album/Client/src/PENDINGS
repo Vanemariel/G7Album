@@ -1,9 +1,9 @@
 👍 Hacer que los serives retornen dato en especifico.
 👍 Escribir los metodos respectivos de FormLogin y Register.
+👍 Generar Ruteo en App.js
 
 
 
-⏰ Generar Ruteo en App.js
 ⏰ Modificar el titulo de la pagina dependiendo de la navegacion. 
 ⏰ Cambiar el tipo de dato de "DataLoginForm" por el de usuario del form.
 ⏰ Simular un Context a nivel global para los modales pero luego

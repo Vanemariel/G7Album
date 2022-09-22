@@ -1,17 +1,20 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import { AuthProvider } from './Pages/Authentication/Context/AuthProvider';
 import { Authentication } from './Pages/Authentication/Index';
 import { Home } from './Pages/Home/Index';
 
 function App() {
+
   return (
       <Routes>
+        <Route path="/" element={ // --  /auth
+          <AuthProvider>
+            <Authentication />
+          </AuthProvider>
+        } />
         <Route path="/home" element={<Home />} />
-        <Route path="/" element={<Authentication />} />
-        <Route path="/auth" element={<Authentication />} />
 
-        {/* <Route path="/notFound" element={<NotFound />} />
-        <Route path="*" element={<Navigate to={"/notFound"} />} /> */}
       </Routes>
   );
 }

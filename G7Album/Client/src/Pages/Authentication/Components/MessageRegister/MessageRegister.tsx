@@ -17,7 +17,7 @@ export const MessageRegister: React.FC= () => {
 
   return (
     <article className={`
-        ${MessageRegisterCSS.containerBackgroundLogin} 
+        ${MessageRegisterCSS.containerBackgroundRegister} 
         ${storeAuth.IsRegisterActive() ? MessageRegisterCSS.noneElement : ""}
       `}
       style={storeAuth.IsLoginActive() ? {"opacity": 1} : {"opacity": 0}}

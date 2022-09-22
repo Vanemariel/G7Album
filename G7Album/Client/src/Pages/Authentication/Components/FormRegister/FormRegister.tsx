@@ -63,8 +63,8 @@ export const FormRegister: React.FC = () => {
     <div className={`
       ${FormRegisterCSS.containerFormRegister}} 
       ${storeAuth.IsRegisterActive() 
-        ? FormRegisterCSS.containerFormRegister___Show 
-        : FormRegisterCSS.containerFormRegister___Hide}
+        ? FormRegisterCSS["containerFormRegister-show"] 
+        : FormRegisterCSS["containerFormRegister--hide"]}
     `}>
 
       <h2>Registrarse</h2>

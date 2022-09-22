@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 import { Input } from "../../../../Components/Input/Input";
 import { useFormCustom } from "../../../../Hooks/useFormCustom";
 import { IDataLoginForm } from "../../../../Interface/DTO Front/Auth/IDataLoginForm";
 import { useAuth } from "../../Context/useAuth";
-import FormLoginCSS from "../../FormLoginCSS.module.css";
+import FormLoginCSS from "./FormLogin.module.css";
 
 import { InputsLogin } from "../../Mocks/InputsLogin";
 import AuthService from "../../Services/Auth.services";
@@ -21,6 +21,7 @@ export const FormLogin: React.FC = () => {
   });
   const { formulario, handleChange, resetForm } = formularioLogin;
 
+  
 
   const login = async (event: any) => {
 
@@ -62,8 +63,8 @@ export const FormLogin: React.FC = () => {
     <div className={`
       ${FormLoginCSS.containerFormLogin}} 
       ${storeAuth.IsLoginActive() 
-        ? FormLoginCSS.containerFormLogin___Show 
-        : FormLoginCSS.containerFormLogin___Hide}
+        ? FormLoginCSS["containerFormLogin--show"] 
+        : FormLoginCSS["containerFormLogin--hide"]}
     `}>
 
       <h2>Iniciar Sesion</h2>

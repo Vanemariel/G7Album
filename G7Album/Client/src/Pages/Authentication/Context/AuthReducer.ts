@@ -42,8 +42,8 @@ export const AuthReducer = ( state: IAuthState, action: TAuthActions): IAuthStat
         
         let valueCSS: string; 
         (state.LoginActive && !state.RegisterActive) 
-           ? valueCSS = "containerPage__LoginAndRegister___LoginActive"
-           : valueCSS = "containerPage__LoginAndRegister___RegisterActive"            
+           ? valueCSS = "containerPage__Auth--loginActive"
+           : valueCSS = "containerPage__Auth--registerActive"            
         
         return {
             ...state,

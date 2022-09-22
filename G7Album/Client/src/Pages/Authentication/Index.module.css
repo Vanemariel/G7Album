@@ -28,7 +28,7 @@
     background: #78ef458a;
 }
 
-.containerPage__LoginAndRegister {
+.containerPage__Auth {
     display: flex;
     align-items: center;
     width: 100%;
@@ -38,10 +38,10 @@
     transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.containerPage__LoginAndRegister--loginActive {
+.containerPage__Auth--loginActive {
     left: 1.5rem;
 }
-.containerPage__LoginAndRegister--registerActive {
+.containerPage__Auth--registerActive {
     left: 25.65rem;
 }
 
@@ -59,7 +59,7 @@
         margin: auto;
     }
 
-    .containerPage__LoginAndRegister {
+    .containerPage__Auth {
         top: -5rem;
         left: 0rem;
         margin: auto;
