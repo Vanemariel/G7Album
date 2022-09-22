@@ -1,18 +1,16 @@
 // import { EndPointDataLogin } from "../DTO/EndPointUser.models";
+import { IAuthDTO } from "../Interface/DTO Back/IAuthDTO";
 import { UserModels } from "../Models/User.models";
 
-export const createAddaptedUser = (DataUser: any): UserModels => {
+export const createAddaptedUser = (AuthData: IAuthDTO): UserModels => {
   
-  const formattedUser: any = {
-  // const formattedUser: DataLogin<string> = {
-    // User: {
-    //   Id: DataLogin.user._id,
-    //   Name: DataLogin.user.name_completed,
-    //   Email: DataLogin.user.email,
-    //   Lastname: DataLogin.user.last_name,
-    //   UserName: DataLogin.user.user_name,
-    // },
-    // Token: DataLogin.token,
+  const formattedUser: UserModels = {
+    Id: AuthData.User.Id,
+    Name: AuthData.User.Name,
+    Email: AuthData.User.Email,
+    Lastname: AuthData.User.Lastname,
+    UserName: AuthData.User.UserName,
+    Token: AuthData.Token,
   };
 
   return formattedUser;

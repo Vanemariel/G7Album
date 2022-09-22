@@ -6,34 +6,37 @@ interface IDataParams {
   dataSend?: any;
 }
 
-export const axiosMethod = async (Params: IDataParams) => {
+export const axiosMethod = async <TypeResponse>(Params: IDataParams) => {
   
   const { method, url, dataSend } = Params;
   const URL_API = process.env.REACT_APP_URL_API;
 
-  let messageError = null;
-  let data = null;
+  let MessageError = null;
+  let Data = {} as TypeResponse; 
 
   try {
-    let response = await axios(`${URL_API}${url}`, {
+    let Response = await axios(`${URL_API}${url}`, {
       method: method,
       data: dataSend ?? {},
     });
 
-    data = await response.data;
+    Data = await Response.data;
 
-  } catch (error: any) {
+  } catch (Error: any) {
+
     // Manipulacion del error
-    console.log("Error e",error.response )
-    messageError = error?.response?.statusText || "Ocurrio un error";
+    console.log("Error e",Error.response )
+
+    MessageError = Error?.response?.statusText || "Ocurrio un error";
+
   }
 
   // TODO: VER SI COLOCAMOS EL TEMA DEL MODAL DE ERROR ACA. Ejecutandose con el Store.
 
 
   return {
-    data,
-    messageError,
+    Data,
+    MessageError,
   };
 };
 
