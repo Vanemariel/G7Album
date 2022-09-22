@@ -1,10 +1,7 @@
-﻿
-
-
-namespace G7Album.Server.Controllers
+﻿namespace G7Album.Server.Controllers
 {
     [ApiController]
-    [Route("Api/[controller]")]
+    [Route("Api/Album")]
     public class AlbumController : ControllerBase
     {
         private readonly BDContext context;
@@ -15,124 +12,98 @@ namespace G7Album.Server.Controllers
         }
 
 
-        [HttpGet("GetAll")]
-        public async Task<ActionResult<List<Album>>> GetAll()//obtener todo All
+        [HttpGet]
+        public async Task<ActionResult<List<Album>>> Get()
         {
-            try
-            {
-                List<Album> Albumes = await context.TablaAlbumes.ToListAsync();
-                return Ok(Albumes); 
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"Ha ocurrido un error, {ex.Message}");
-            }
+            return await context.TablaAlbumes.ToListAsync();
         }
 
 
-        [HttpGet("GetOne/{id:int}")]
-        public async Task<ActionResult<Album>> GetById(int id)
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<Album>> Get(int id)
         {
+            var album = await context.TablaAlbumes.Where(x => x.Id == id).FirstOrDefaultAsync();
 
-            try
+            if (album == null)
             {
-                Album Album = await context.TablaAlbumes
-                    .Where(Album => Album.Id == id)
-                    .FirstOrDefaultAsync();
-
-                if (Album == null)
-                {
-                    throw new Exception($"no existe el Album con id igual a {id}.");
-                }
-
-                return Ok(Album);
+                return NotFound($"No existe el Album con Id = {id}");
             }
-            catch (Exception ex)
-            {
-                return BadRequest($"Ha ocurrido un error, {ex.Message}");
-            }
+            return album;
+
         }
 
 
         [HttpPost]
-        public async Task<ActionResult<string>> CreateAlbum(Album Album)
+        public async Task<ActionResult<Album>> Post (Album album)
         {
             try
             {
-                context.TablaAlbumes.Add(Album);
+                context.TablaAlbumes.Add(album);
                 await context.SaveChangesAsync();
-                return Ok("Se ha creado correctamente");
+                return album;
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return BadRequest($"Ha ocurrido un error, {ex.Message}");
+                return BadRequest(e.Message);
             }
         }
 
 
-        [HttpPut]
-        public async Task<ActionResult<string>> UpdateAlbum(int id, [FromBody] Album NewAlbum)
+        [HttpPut("{id:int}")]
+        public ActionResult Put (int id, [FromBody] Album alb)
         {
+            if (id != alb.Id)
+            {
+                return BadRequest("Datos incorrectos");
+            }
+
+            var album = context.TablaAlbumes.Where(x => x.Id == id).FirstOrDefault();
+
+            if (album == null)
+            {
+                return NotFound("No existe el Album a modificar");
+            }
+
+            album.CantidadImagen = alb.CantidadImagen;
+            album.CantidadImpreso = alb.CantidadImpreso;
+            album.CodigoAlbum = alb.CodigoAlbum;
+            album.Descripcion = alb.Descripcion;
+            album.Desde = alb.Desde;
+            album.Hasta = alb.Hasta;
+            album.Titulo = alb.Titulo;
+
             try
             {
-                Album FindAlbum = await context.TablaAlbumes
-                    .Where(Album => Album.Id == id)
-                    .FirstOrDefaultAsync();
-
-                if (FindAlbum == null)
-                {
-                    throw new Exception("No existe el Album a modificar.");
-                }
-
-                FindAlbum.Id = FindAlbum.Id;
-                FindAlbum.CodigoAlbum = NewAlbum.CodigoAlbum;
-                FindAlbum.Titulo = NewAlbum.Titulo;
-                FindAlbum.Descripcion = NewAlbum.Descripcion;
-                FindAlbum.CantidadImagen = NewAlbum.CantidadImagen;
-                FindAlbum.CantidadImpreso = NewAlbum.CantidadImpreso;
-                FindAlbum.Desde = NewAlbum.Desde;
-                FindAlbum.Hasta = NewAlbum.Hasta;
-
-                context.TablaAlbumes.Update(FindAlbum);
-
-                await context.SaveChangesAsync();
-
-                return Ok("Los datos han sido actualizados correctamente.");
+                context.TablaAlbumes.Update(album);
+                context.SaveChanges();
+                return Ok();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return BadRequest($"Ha ocurrido un error, {ex.Message}");
+                return BadRequest("Los datos no han sido actualizados");
             }
         }
 
 
         [HttpDelete("{id:int}")]
-        public async Task<ActionResult<string>> Delete(int id)
+        public ActionResult Delete(int id)
         {
+            var album = context.TablaAlbumes.Where(x => x.Id == id).FirstOrDefault();
+
+            if (album == null)
+            {
+                return NotFound($"El Album {id} no fue encontrado");
+            }
+
             try
             {
-                if (id <= 0)
-                {
-                    throw new Exception("El Id ingresado no es valido.");
-                }
-
-                Album FindAlbum = await context.TablaAlbumes
-                    .Where(x => x.Id == id)
-                    .FirstOrDefaultAsync();
-
-                if (FindAlbum == null)
-                {
-                    throw new Exception($"No existe el Album con id igual a {id}.");
-                }
-
-                context.TablaAlbumes.Remove(FindAlbum);
-                await context.SaveChangesAsync();
-
-                return Ok($"El Album {FindAlbum.Titulo} ha sido borrado.");
+                context.TablaAlbumes.Remove(album);
+                context.SaveChanges();
+                return Ok();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return BadRequest($"Ha ocurrido un error, {ex.Message}");
+                return BadRequest($"Los datos no se pudieron eliminarse por :{e.Message}");
             }
         }
 

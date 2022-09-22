@@ -2,7 +2,7 @@
 namespace G7Album.Server.Controllers
 {
     [ApiController]
-    [Route("Api/Usuario")]
+    [Route("Api/[controller]")]
     public class UsuarioController : ControllerBase
     {
         private readonly BDContext context;
@@ -12,96 +12,124 @@ namespace G7Album.Server.Controllers
             this.context = context;
         }
 
-        [HttpGet]
 
-        public async Task<ActionResult<List<Usuario>>> Get()
+        [HttpGet("GetAll")]
+        public async Task<ActionResult<List<Album>>> GetAll()//obtener todo All
         {
-            return await context.TablaUsuarios.ToListAsync();
-        }
-
-        [HttpGet("{id:int}")]
-
-        public async Task<ActionResult<Usuario>> Get(int id)
-        {
-            var usu = await context.TablaUsuarios.Where(x => x.Id == id).FirstOrDefaultAsync();
-
-            if (usu == null)
+            try
             {
-                return NotFound($"No existe el Usuario con Id = {id}");
+                List<Usuario> Usuarios = await context.TablaUsuarios.ToListAsync();
+                return Ok(Usuarios); 
             }
-            return usu;
+            catch (Exception ex)
+            {
+                return BadRequest($"Ha ocurrido un error, {ex.Message}");
+            }
         }
+
+
+        [HttpGet("GetOne/{id:int}")]
+        public async Task<ActionResult<Album>> GetById(int id)
+        {
+
+            try
+            {
+                Usuario Usuario = await context.TablaUsuarios
+                    .Where(Usuario => Usuario.Id == id)
+                    .FirstOrDefaultAsync();
+ 
+                if (Usuario == null)
+                {
+                    throw new Exception($"no existe el Album con id igual a {id}.");
+                }
+
+                return Ok(Usuario);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Ha ocurrido un error, {ex.Message}");
+            }
+        }
+
 
         [HttpPost]
-
-        public async Task<ActionResult<Usuario>> Post(Usuario usuario)
+        public async Task<ActionResult<string>> CreateAlbum(Usuario Usuario)
         {
             try
             {
-                context.TablaUsuarios.Add(usuario);
+                context.TablaUsuarios.Add(Usuario);
                 await context.SaveChangesAsync();
-                return usuario;
+                return Ok("Se ha creado correctamente");
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                return BadRequest(e.Message);
+                return BadRequest($"Ha ocurrido un error, {ex.Message}");
             }
         }
 
-        [HttpPut("{id:int}")]
 
-        public ActionResult Put(int id, [FromBody] Usuario usu)
+        [HttpPut]
+        public async Task<ActionResult<string>> UpdateAlbum(int id, [FromBody] Usuario NewUsuario)
         {
-            if (id != usu.Id)
-            {
-                return BadRequest("Datos incorrectos");
-            }
-
-            var usuario = context.TablaUsuarios.Where(x => x.Id == id).FirstOrDefault();
-
-            if (usuario == null)
-            {
-                return NotFound("No existe el usuario a modificar");
-            }
-
-            usuario.Email = usu.Email;
-            usuario.Password = usu.Password;
-            usuario.Nombre = usu.Nombre;
-            usuario.Apellido = usu.Apellido;
-
             try
             {
-                context.TablaUsuarios.Update(usuario);
-                context.SaveChanges();
-                return Ok();
+                Usuario FindUsuario = await context.TablaUsuarios
+                    .Where(Usuario => Usuario.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (FindUsuario == null)
+                {
+                    throw new Exception("No existe el Usuario a modificar.");
+                }
+
+                FindUsuario.Nombre = NewUsuario.Nombre;
+                FindUsuario.Apellido = NewUsuario.Apellido ;
+                FindUsuario.Email = NewUsuario.Email ;
+                FindUsuario.Password = NewUsuario.Password ;
+               
+                context.TablaUsuarios.Update(FindUsuario);
+
+                await context.SaveChangesAsync();
+
+                return Ok("Los datos han sido actualizados correctamente.");
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                return BadRequest("Los datos no han sido actualizados");
+                return BadRequest($"Ha ocurrido un error, {ex.Message}");
             }
         }
+
 
         [HttpDelete("{id:int}")]
-
-        public ActionResult Delete(int id)
+        public async Task<ActionResult<string>> Delete(int id)
         {
-            var usuario = context.TablaUsuarios.Where(x => x.Id == id).FirstOrDefault();
-
-            if (usuario == null)
-            {
-                return NotFound($"El usuario {id} no fue encontrado");
-            }
-
             try
             {
-                context.TablaUsuarios.Remove(usuario);
-                context.SaveChanges();
-                return Ok();
+                if (id <= 0)
+                {
+                    throw new Exception("El Id ingresado no es valido.");
+                }
+
+                Usuario FindUsuario = await context.TablaUsuarios
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (FindUsuario == null)
+                {
+                    throw new Exception($"No existe el Usuario con id igual a {id}.");
+                }
+
+                context.TablaUsuarios.Remove(FindUsuario);
+                await context.SaveChangesAsync();
+
+                return Ok($"El Usuario {FindUsuario.Nombre} ha sido borrado.");
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                return BadRequest($"Los datos no se pudieron eliminarse por :{e.Message}");
+                return BadRequest($"Ha ocurrido un error, {ex.Message}");
             }
         }
+
     }
+
 }
