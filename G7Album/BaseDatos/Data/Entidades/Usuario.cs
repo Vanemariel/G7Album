@@ -18,7 +18,8 @@ namespace G7Album.BaseDatos.Entidades
 
         [Required(ErrorMessage = "Este campo es obligatorio")]
         [MaxLength(100, ErrorMessage = "El Codigo del album no puede superar {1} caracteres")]
-        public string Password { get; set; }
+        public byte[] Password { get; set; }
+        public byte[] PasswordSalt { get; set; } 
 
         [Required(ErrorMessage = "Este campo es obligatorio")]
         [MaxLength(100, ErrorMessage = "El Codigo del album no puede superar {1} caracteres")]
@@ -27,6 +28,7 @@ namespace G7Album.BaseDatos.Entidades
         [Required(ErrorMessage = "Este campo es obligatorio")]
         [MaxLength(100, ErrorMessage = "El Codigo del album no puede superar {1} caracteres")]
         public string Apellido { get; set; }
+
 
     }
 }
