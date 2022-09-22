@@ -15,9 +15,9 @@ namespace G7Album.Server.Controllers
         public AlbumImagenesController(BDContext context)
         {
             this.context = context;
-        }
+        } 
         
-        /*[HttpGet]
+        [HttpGet]
 
         public async Task<Response<PagedData<List<AlbumImagenes>>>> Get(int Page = 1)
         {
@@ -25,6 +25,7 @@ namespace G7Album.Server.Controllers
             var paged = new PagedData<List<AlbumImagenes>>(
                 await context.TablaImagenes.ToListAsync(), await CountElements(), Page, 10, "AlbumImagenes");
             var response = new Response<PagedData<List<AlbumImagenes>>>(paged);
+            //count element es un metodo
 
             if (response.Data == null)
             {
@@ -34,7 +35,7 @@ namespace G7Album.Server.Controllers
             }
 
             return response;
-        }*/
+        }
 
         [HttpGet("GetAll")]
         //metodo que me muestra la lista completa  
@@ -126,7 +127,9 @@ namespace G7Album.Server.Controllers
                 return new StatusCodeResult(StatusCodes.Status500InternalServerError);
             }       
         }
-        public async Task<int> CountElements() => await context.SaveChangesAsync(); 
-        //public async Task<int> CountElements() => await _unitOfWork.CategoriesRepository.CountElements();
+        //public async Task<int> CountElements() => await context.TablaImagenes(); 
+        public async Task<int> CountElements() => await context.Set<AlbumImagenes>().CountAsync();
+        //count async devuelve de manera asin crona el n de elementos de una tabla,
+       //osea la cantidad de registro.
     }
 }
