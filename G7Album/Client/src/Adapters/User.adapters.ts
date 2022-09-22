@@ -1,8 +1,8 @@
 // import { EndPointDataLogin } from "../DTO/EndPointUser.models";
-import { IAuthDTO } from "../Interface/DTO Back/IAuthDTO";
+import { AuthData } from "../Interface/DTO Back/Auth/AuthData";
 import { UserModels } from "../Models/User.models";
 
-export const createAddaptedUser = (AuthData: IAuthDTO): UserModels => {
+export const createAddaptedUser = (AuthData: AuthData): UserModels => {
   
   const formattedUser: UserModels = {
     Id: AuthData.User.Id,
