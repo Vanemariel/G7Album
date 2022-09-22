@@ -1,4 +1,4 @@
-export interface IAuthDTO {
+export interface AuthData {
     User: {
         Id: string; 
         Name: string; 
