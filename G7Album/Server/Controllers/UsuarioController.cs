@@ -1,107 +1,306 @@
-﻿
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using Microsoft.IdentityModel.Tokens;
+
+using G7Album.Shared.DTO_Back;
+using G7Album.Shared.DTO_Front;
+
 namespace G7Album.Server.Controllers
 {
     [ApiController]
-    [Route("Api/Usuario")]
+    [Route("Api/[controller]")]
     public class UsuarioController : ControllerBase
     {
         private readonly BDContext context;
+        private readonly IConfiguration _configuration;
 
-        public UsuarioController(BDContext context)
+
+        public UsuarioController(BDContext context, IConfiguration configuration)
         {
             this.context = context;
+            this._configuration = configuration;
         }
 
-        [HttpGet]
 
-        public async Task<ActionResult<List<Usuario>>> Get()
-        {
-            return await context.TablaUsuarios.ToListAsync();
-        }
-
-        [HttpGet("{id:int}")]
-
-        public async Task<ActionResult<Usuario>> Get(int id)
-        {
-            var usu = await context.TablaUsuarios.Where(x => x.Id == id).FirstOrDefaultAsync();
-
-            if (usu == null)
-            {
-                return NotFound($"No existe el Usuario con Id = {id}");
-            }
-            return usu;
-        }
-
-        [HttpPost]
-
-        public async Task<ActionResult<Usuario>> Post(Usuario usuario)
+        [HttpGet("GetAll")]
+        public async Task<ActionResult<List<Usuario>>> GetAll()//obtener todo All
         {
             try
             {
-                context.TablaUsuarios.Add(usuario);
+                List<Usuario> Usuarios = await context.TablaUsuarios.ToListAsync();
+
+                return Ok(Usuarios); 
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Ha ocurrido un error, {ex.Message}");
+            }
+        }
+
+
+        [HttpGet("GetOne/{id:int}")]
+        public async Task<ActionResult<User>> GetById(int id)
+        {
+
+            try
+            {
+                Usuario? Usuario = await context.TablaUsuarios
+                    .Where(Usuario => Usuario.Id == id)
+                    .FirstOrDefaultAsync();
+ 
+                if (Usuario == null)
+                {
+                    throw new Exception($"no existe el Usuario con id igual a {id}.");
+                }
+
+                User UserMapper = new User {
+                    Email = Usuario.Email,
+                    Id = Usuario.Id,
+                    NombreCompleto = Usuario.NombreCompleto
+                };
+
+                return Ok(UserMapper);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Ha ocurrido un error, {ex.Message}");
+            }
+        }
+
+
+        [HttpPost("Create")]
+        public async Task<ActionResult<string>> Register(DataRegisterForm newUsuario)
+        {
+            ResponseDto<string> ResponseDto = new ResponseDto<string>();
+             
+            try
+            {
+                if (newUsuario.Email == null || newUsuario.Email == string.Empty)
+                {
+                    throw new Exception("Email requerido");
+                }
+
+                if (newUsuario.NombreCompleto == null || newUsuario.NombreCompleto == string.Empty)
+                {
+                    throw new Exception("Nombre de usuario requerido");
+                }
+
+                if (newUsuario.Password == null || newUsuario.Password == string.Empty)
+                {
+                    throw new Exception("Contraseña requerida");
+                }
+
+                if (newUsuario.Password != newUsuario.ConfirmPassowrd)
+                {
+                    throw new Exception("La contraseñas deben coincidir.");
+                }
+                    
+                Usuario? UserBD = await this.context.TablaUsuarios.FirstOrDefaultAsync(
+                    Usuario => Usuario.Email == newUsuario.Email
+                );
+
+                if (UserBD != null)
+                {
+                    throw new Exception("Ya existe un usuario con este email. Intentelo nuevamente.");
+                }
+
+                var (passwordHash, passwordSalt) = CreatePasswordHash(newUsuario.Password);
+
+                this.context.TablaUsuarios.Add(new Usuario
+                {
+                    Email = newUsuario.Email,
+                    NombreCompleto = newUsuario.NombreCompleto,
+                    Password = passwordHash,
+                    PasswordSalt = passwordSalt
+                });
+
                 await context.SaveChangesAsync();
-                return usuario;
+
+                ResponseDto.Data = "!Se ha registrado correctamente! Ahora inicie sesión!.";
+
+                return Ok(ResponseDto);
+
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                return BadRequest(e.Message);
+                ResponseDto.MessageError = ex.Message;
+                return BadRequest(ResponseDto);
             }
         }
 
-        [HttpPut("{id:int}")]
-
-        public ActionResult Put(int id, [FromBody] Usuario usu)
+        [HttpPost("Login")]
+        public async Task<ActionResult<ResponseDto<AuthData>>> Login(DataLoginForm Usuario)
         {
-            if (id != usu.Id)
-            {
-                return BadRequest("Datos incorrectos");
-            }
-
-            var usuario = context.TablaUsuarios.Where(x => x.Id == id).FirstOrDefault();
-
-            if (usuario == null)
-            {
-                return NotFound("No existe el usuario a modificar");
-            }
-
-            usuario.Email = usu.Email;
-            usuario.Password = usu.Password;
-            usuario.Nombre = usu.Nombre;
-            usuario.Apellido = usu.Apellido;
+            ResponseDto<AuthData> ResponseDto = new ResponseDto<AuthData>();
 
             try
             {
-                context.TablaUsuarios.Update(usuario);
-                context.SaveChanges();
-                return Ok();
+                if (Usuario.Email == null || Usuario.Email == string.Empty)
+                {
+                    throw new Exception("Email incorrecto");
+                }
+
+                if (Usuario.Password == null || Usuario.Password == string.Empty)
+                {
+                    throw new Exception("Contraseña incorrecta");
+                }
+
+                Usuario? UserBD = await this.context.TablaUsuarios.FirstOrDefaultAsync(Usuario => Usuario.Email == Usuario.Email);
+
+                if (UserBD == null)
+                {
+                    throw new Exception("Email ingresado es incorrecto");
+                }
+                
+                if (!this.VerifyPasswordHash(Usuario.Password, UserBD.Password ,UserBD.PasswordSalt))
+                {
+                    throw new Exception("Contraseña incorrecta");
+                }
+
+                ResponseDto.Data = new AuthData
+                {
+                    Token = CreateToken(UserBD), //Creamos un nuevo metodo y obtiene usuario
+                    User = new User
+                    {
+                        Email = UserBD.Email,
+                        Id = UserBD.Id,
+                        NombreCompleto = UserBD.NombreCompleto
+                    },
+                };
+              
+                return Ok(ResponseDto);
+
             }
-            catch (Exception e)
-            {
-                return BadRequest("Los datos no han sido actualizados");
-            }
+            catch (Exception ex)
+            { 
+                ResponseDto.MessageError = ex.Message; 
+                return BadRequest(ResponseDto);
+            }      
         }
 
-        [HttpDelete("{id:int}")]
 
-        public ActionResult Delete(int id)
+        [HttpPut("Edit/{id:int}")]
+        public async Task<ActionResult<string>> UpdateAlbum(int id, [FromBody] Usuario NewUsuario)
         {
-            var usuario = context.TablaUsuarios.Where(x => x.Id == id).FirstOrDefault();
-
-            if (usuario == null)
-            {
-                return NotFound($"El usuario {id} no fue encontrado");
-            }
-
             try
             {
-                context.TablaUsuarios.Remove(usuario);
-                context.SaveChanges();
-                return Ok();
+                Usuario? FindUsuario = await context.TablaUsuarios
+                    .Where(Usuario => Usuario.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (FindUsuario == null)
+                {
+                    throw new Exception("No existe el Usuario a modificar.");
+                }
+
+                FindUsuario.NombreCompleto = NewUsuario.NombreCompleto;
+                FindUsuario.Email = NewUsuario.Email ;
+                FindUsuario.Password = NewUsuario.Password ;
+               
+                context.TablaUsuarios.Update(FindUsuario);
+
+                await context.SaveChangesAsync();
+
+                return Ok("Los datos han sido actualizados correctamente.");
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                return BadRequest($"Los datos no se pudieron eliminarse por :{e.Message}");
+                return BadRequest($"Ha ocurrido un error, {ex.Message}");
             }
         }
+
+
+        [HttpDelete("Delete/{id:int}")]
+        public async Task<ActionResult<string>> Delete(int id)
+        {
+            try
+            {
+                if (id <= 0)
+                {
+                    throw new Exception("El Id ingresado no es valido.");
+                }
+
+                Usuario? FindUsuario = await context.TablaUsuarios
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (FindUsuario == null)
+                {
+                    throw new Exception($"No existe el Usuario con id igual a {id}.");
+                }
+
+                context.TablaUsuarios.Remove(FindUsuario);
+                await context.SaveChangesAsync();
+
+                return Ok($"El Usuario {FindUsuario.NombreCompleto} ha sido borrado.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Ha ocurrido un error, {ex.Message}");
+            }
+        }
+
+
+
+        #region Metodos complementarios
+
+        private (byte[], byte[]) CreatePasswordHash(string password)
+        {
+            byte[] passwordHash; 
+            byte[] passwordSalt; 
+
+            using (var hmac = new HMACSHA512()) //Algoritmo de firma 
+            {
+                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+                passwordSalt = hmac.Key;
+            }
+
+            return (passwordHash, passwordSalt);
+        }
+
+        private string CreateToken(Usuario user)
+        {
+            //Permisos para describir la informacion del usuario
+            List<Claim> claims = new List<Claim> 
+            {
+               new Claim(ClaimTypes.Email, user.Email), //Permiso de seguridad
+            };
+            
+            //Clave simetrica
+            var key = new SymmetricSecurityKey(
+                System.Text.Encoding.UTF8.GetBytes(
+                 _configuration.GetSection("AppSettings:Token").Value
+                )
+            ); 
+                                   
+            //Definimos la configuracion del token 
+            var Credencial = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);//Credenciales de firma 
+
+            //Defino la carga del token 
+            JwtSecurityToken token = new JwtSecurityToken(
+               claims: claims,
+               expires: DateTime.Now.AddHours(2),
+               signingCredentials: Credencial
+            ); 
+
+            //Defino la cadena de token que quiero que retorne 
+            var jwt = new JwtSecurityTokenHandler().WriteToken(token); 
+
+            return jwt;
+        }
+
+        private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
+        {
+            using (var hmac = new HMACSHA512(passwordSalt))
+            {
+                var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+                return computedHash.SequenceEqual(passwordHash);
+            }
+        }
+
+        #endregion
+
     }
+
 }
