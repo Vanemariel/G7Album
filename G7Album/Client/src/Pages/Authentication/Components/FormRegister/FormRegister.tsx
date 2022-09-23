@@ -14,11 +14,11 @@ export const FormRegister: React.FC = () => {
   const storeAuth = useAuth()
   const navigate = useNavigate();
 
-  const formularioLogin = useFormCustom<IDataRegisterForm>({
-    Email: '',  Password: '', ConfirmPassword: '', UserName: ''
+  const formularioRegister = useFormCustom<IDataRegisterForm>({
+    Email: '',  Password: '', ConfirmPassword: '', NombreCompleto: ''
   });
 
-  const { formulario, handleChange, resetForm } = formularioLogin;
+  const { formulario, handleChange, resetForm } = formularioRegister;
 
 
   const register = async (event: any) => {
@@ -29,9 +29,9 @@ export const FormRegister: React.FC = () => {
   
       /// Loader true
   
-      const { Data, MessageError } = await AuthService.Register(formulario)
+      const { Result, MessageError } = await AuthService.Register(formulario)
   
-      if (Data == null || MessageError != null)
+      if (Result == null || MessageError != null)
       {
           throw new Error(MessageError);
       }

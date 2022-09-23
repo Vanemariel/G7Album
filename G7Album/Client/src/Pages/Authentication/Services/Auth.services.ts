@@ -6,50 +6,40 @@ import { IDataRegisterForm } from "../../../Interface/DTO Front/Auth/IDataRegist
 import { UserModels } from "../../../Models/User.models";
 import { axiosMethod } from "../../../Utils/axiosMethod";
 
-interface IResponseLogin {
-    UserAdapted: UserModels;
-    MessageError: string;
-}
-
-interface IResponseRegister {
-    Data : string;
-    MessageError : string;
-}
 
 const AuthService = {
-    
-    Login: async (DataLoginForm: IDataLoginForm): Promise<IResponseLogin> => {
+
+    Login: async (DataLoginForm: IDataLoginForm): Promise<IResponseDTO<UserModels>> => {
         
-        /// VER TEMA DE CONEXION BACK con el tema de las respuestas en caso de error y no error
         const Response = await axiosMethod<AuthData>({
             method: "POST",
-            url: "/Auth/Login",
+            url: "/Usuario/Login",
             dataSend: DataLoginForm,
         });
-        
+
         let UserAdapted = {} as UserModels;
         
-        if (Response != null && Response.Data != null && Response.MessageError == null) {
-            UserAdapted = createAddaptedUser(Response.Data);
+        if (Response != null && Response.Result != null && Response.MessageError == null) {
+            UserAdapted = createAddaptedUser(Response.Result);
         }
 
         return {
-            UserAdapted,
-            ...Response.MessageError
+            Result: UserAdapted,
+            MessageError: Response.MessageError
         };
     },
 
-    Register: async (DataRegisterForm: IDataRegisterForm): Promise<IResponseRegister> => {
+    Register: async (DataRegisterForm: IDataRegisterForm): Promise<IResponseDTO<string>> => {
 
-        const { Data, MessageError } = await axiosMethod<string>({
+        const { Result, MessageError } = await axiosMethod<string>({
             method: "POST",
-            url: "/Auth/Register",
+            url: "/Usuario/Create",
             dataSend: DataRegisterForm,
         });
 
         return {
-            Data,
-            MessageError,
+            Result: Result,
+            MessageError: MessageError,
         };
     }
 

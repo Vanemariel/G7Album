@@ -1,4 +1,4 @@
 export interface IResponseDTO<TypeData> {
-   Data: TypeData;
+   Result: TypeData;
    MessageError: string;
 }

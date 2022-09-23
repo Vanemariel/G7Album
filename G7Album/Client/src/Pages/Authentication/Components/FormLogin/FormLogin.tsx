@@ -31,16 +31,16 @@ export const FormLogin: React.FC = () => {
   
       /// Loader true
   
-      const { UserAdapted, MessageError } = await AuthService.Login(formulario)
+      const { Result: UserAdapted, MessageError } = await AuthService.Login(formulario)
   
-      if (UserAdapted == null || MessageError != null)
-      {
-          throw new Error(MessageError);
-      }
+       if (UserAdapted == null || MessageError != null)
+       {
+           throw new Error(MessageError);
+       }
 
       /// Guardar datos del Usuario en el Store de Redux
       
-      navigate("/home");
+      // navigate("/home");
 
     } catch (error: any) {
       
