@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace G7Album.BaseDatos.Migrations
 {
-    public partial class inicio : Migration
+    public partial class Inicio : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -35,9 +35,9 @@ namespace G7Album.BaseDatos.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Nombre = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Apellido = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                    Password = table.Column<byte[]>(type: "varbinary(100)", maxLength: 100, nullable: false),
+                    PasswordSalt = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    NombreCompleto = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -147,16 +147,16 @@ namespace G7Album.BaseDatos.Migrations
             migrationBuilder.InsertData(
                 table: "TablaAlbumes",
                 columns: new[] { "Id", "CantidadImagen", "CantidadImpreso", "CodigoAlbum", "Descripcion", "Desde", "Hasta", "Titulo" },
-                values: new object[] { 1, 1000, 1000, 10, "figus", new DateTime(2022, 9, 20, 17, 12, 40, 530, DateTimeKind.Local).AddTicks(4067), new DateTime(2022, 9, 30, 17, 12, 40, 530, DateTimeKind.Local).AddTicks(4084), "album" });
+                values: new object[] { 1, 1000, 1000, 10, "figus", new DateTime(2022, 9, 23, 9, 45, 19, 736, DateTimeKind.Local).AddTicks(6898), new DateTime(2022, 10, 3, 9, 45, 19, 736, DateTimeKind.Local).AddTicks(6909), "album" });
 
             migrationBuilder.InsertData(
                 table: "TablaUsuarios",
-                columns: new[] { "Id", "Apellido", "Email", "Nombre", "Password" },
+                columns: new[] { "Id", "Email", "NombreCompleto", "Password", "PasswordSalt" },
                 values: new object[,]
                 {
-                    { 1, "Herrera", "vanesa@gmail.com", "Vanesa", "vanesa" },
-                    { 2, "ledesma", "juanledesma@gmail.com", "juan", "juan" },
-                    { 3, "arrieta", "aili@gmail.com", "oriana", "ailin" }
+                    { 1, "vanesa@gmail.com", "Vanesa Herrera", new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, null },
+                    { 2, "juanledesma@gmail.com", "juan ledesma", new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, null },
+                    { 3, "aili@gmail.com", "oriana LALALA", new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, null }
                 });
 
             migrationBuilder.InsertData(

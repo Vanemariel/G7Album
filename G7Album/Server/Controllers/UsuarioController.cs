@@ -24,8 +24,10 @@ namespace G7Album.Server.Controllers
 
 
         [HttpGet("GetAll")]
-        public async Task<ActionResult<List<User>>> GetAll()//obtener todo All
+        public async Task<ActionResult<ResponseDto<List<User>>>> GetAll()
         {
+            ResponseDto<List<User>> ResponseDto = new ResponseDto<List<User>>();
+
             try
             {
                 List<Usuario> Usuarios = await context.TablaUsuarios.ToListAsync();
@@ -40,18 +42,22 @@ namespace G7Album.Server.Controllers
                     });
                 });
 
-                return Ok(ListUserMapper); 
+                ResponseDto.Data = ListUserMapper;
+
+                return Ok(ResponseDto); 
             }
             catch (Exception ex)
             {
-                return BadRequest($"Ha ocurrido un error, {ex.Message}");
+                ResponseDto.MessageError = $"Ha ocurrido un error, {ex.Message}";
+                return BadRequest(ResponseDto);
             }
         }
 
 
         [HttpGet("GetOne/{id:int}")]
-        public async Task<ActionResult<User>> GetById(int id)
+        public async Task<ActionResult<ResponseDto<User>>> GetById(int id)
         {
+            ResponseDto<User> ResponseDto = new ResponseDto<User>();
 
             try
             {
@@ -70,17 +76,20 @@ namespace G7Album.Server.Controllers
                     NombreCompleto = Usuario.NombreCompleto
                 };
 
-                return Ok(UserMapper);
+                ResponseDto.Data = UserMapper;
+
+                return Ok(ResponseDto);
             }
             catch (Exception ex)
             {
-                return BadRequest($"Ha ocurrido un error, {ex.Message}");
+                ResponseDto.MessageError = $"Ha ocurrido un error, {ex.Message}";
+                return BadRequest(ResponseDto);
             }
         }
 
 
         [HttpPost("Create")]
-        public async Task<ActionResult<string>> Register(DataRegisterForm newUsuario)
+        public async Task<ActionResult<ResponseDto<string>>> Register(DataRegisterForm newUsuario)
         {
             ResponseDto<string> ResponseDto = new ResponseDto<string>();
              
@@ -140,30 +149,30 @@ namespace G7Album.Server.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<ActionResult<ResponseDto<AuthData>>> Login(DataLoginForm Usuario)
+        public async Task<ActionResult<ResponseDto<AuthData>>> Login(DataLoginForm UsuarioData)
         {
             ResponseDto<AuthData> ResponseDto = new ResponseDto<AuthData>();
 
             try
             {
-                if (Usuario.Email == null || Usuario.Email == string.Empty)
+                if (UsuarioData.Email == null || UsuarioData.Email == string.Empty)
                 {
                     throw new Exception("Email incorrecto");
                 }
 
-                if (Usuario.Password == null || Usuario.Password == string.Empty)
+                if (UsuarioData.Password == null || UsuarioData.Password == string.Empty)
                 {
                     throw new Exception("Contraseña incorrecta");
                 }
 
-                Usuario? UserBD = await this.context.TablaUsuarios.FirstOrDefaultAsync(Usuario => Usuario.Email == Usuario.Email);
+                Usuario? UserBD = await this.context.TablaUsuarios.FirstOrDefaultAsync(Usuario => Usuario.Email == UsuarioData.Email);
 
                 if (UserBD == null)
                 {
                     throw new Exception("Email ingresado es incorrecto");
                 }
                 
-                if (!this.VerifyPasswordHash(Usuario.Password, UserBD.Password ,UserBD.PasswordSalt))
+                if (!this.VerifyPasswordHash(UsuarioData.Password, UserBD.Password ,UserBD.PasswordSalt))
                 {
                     throw new Exception("Contraseña incorrecta");
                 }
@@ -191,8 +200,9 @@ namespace G7Album.Server.Controllers
 
 
         [HttpPut("Edit/{id:int}")]
-        public async Task<ActionResult<string>> UpdateAlbum(int id, [FromBody] Usuario NewUsuario)
+        public async Task<ActionResult<ResponseDto<string>>> UpdateAlbum(int id, [FromBody] Usuario NewUsuario)
         {
+            ResponseDto<string> ResponseDto = new ResponseDto<string>();
             try
             {
                 Usuario? FindUsuario = await context.TablaUsuarios
@@ -212,18 +222,23 @@ namespace G7Album.Server.Controllers
 
                 await context.SaveChangesAsync();
 
-                return Ok("Los datos han sido actualizados correctamente.");
+
+                ResponseDto.Data = "Los datos han sido actualizados correctamente.";
+                return Ok(ResponseDto);
             }
             catch (Exception ex)
             {
-                return BadRequest($"Ha ocurrido un error, {ex.Message}");
+                ResponseDto.MessageError = $"Ha ocurrido un error, {ex.Message}";
+                return BadRequest(ResponseDto);
             }
         }
 
 
         [HttpDelete("Delete/{id:int}")]
-        public async Task<ActionResult<string>> Delete(int id)
+        public async Task<ActionResult<ResponseDto<string>>> Delete(int id)
         {
+            ResponseDto<string> ResponseDto = new ResponseDto<string>();
+
             try
             {
                 if (id <= 0)
@@ -243,11 +258,13 @@ namespace G7Album.Server.Controllers
                 context.TablaUsuarios.Remove(FindUsuario);
                 await context.SaveChangesAsync();
 
-                return Ok($"El Usuario {FindUsuario.NombreCompleto} ha sido borrado.");
+                ResponseDto.Data = $"El Usuario {FindUsuario.NombreCompleto} ha sido borrado.";
+                return Ok(ResponseDto);
             }
             catch (Exception ex)
             {
-                return BadRequest($"Ha ocurrido un error, {ex.Message}");
+                ResponseDto.MessageError = $"Ha ocurrido un error, {ex.Message}";
+                return BadRequest(ResponseDto);
             }
         }
 
@@ -269,20 +286,21 @@ namespace G7Album.Server.Controllers
             return (passwordHash, passwordSalt);
         }
 
-        private string CreateToken(Usuario user)
+        private string CreateToken(Usuario user) 
         {
             //Permisos para describir la informacion del usuario
             List<Claim> claims = new List<Claim> 
             {
-               new Claim(ClaimTypes.Email, user.Email), //Permiso de seguridad
+               new Claim(ClaimTypes.Email, user.Email) //Permiso de seguridad
             };
             
             //Clave simetrica
             var key = new SymmetricSecurityKey(
                 System.Text.Encoding.UTF8.GetBytes(
-                 _configuration.GetSection("AppSettings:Token").Value
+                 this._configuration.GetSection("AppSettings:Token").Value // Obtenemos dato de appSettings para crear Token
                 )
             ); 
+
                                    
             //Definimos la configuracion del token 
             var Credencial = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);//Credenciales de firma 

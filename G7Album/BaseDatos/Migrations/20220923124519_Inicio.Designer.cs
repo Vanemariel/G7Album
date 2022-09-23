@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace G7Album.BaseDatos.Migrations
 {
     [DbContext(typeof(BDContext))]
-    [Migration("20220920201240_inicio")]
-    partial class inicio
+    [Migration("20220923124519_Inicio")]
+    partial class Inicio
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -72,8 +72,8 @@ namespace G7Album.BaseDatos.Migrations
                             CantidadImpreso = 1000,
                             CodigoAlbum = 10,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 9, 20, 17, 12, 40, 530, DateTimeKind.Local).AddTicks(4067),
-                            Hasta = new DateTime(2022, 9, 30, 17, 12, 40, 530, DateTimeKind.Local).AddTicks(4084),
+                            Desde = new DateTime(2022, 9, 23, 9, 45, 19, 736, DateTimeKind.Local).AddTicks(6898),
+                            Hasta = new DateTime(2022, 10, 3, 9, 45, 19, 736, DateTimeKind.Local).AddTicks(6909),
                             Titulo = "album"
                         });
                 });
@@ -326,25 +326,23 @@ namespace G7Album.BaseDatos.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Apellido")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Nombre")
+                    b.Property<string>("NombreCompleto")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Password")
+                    b.Property<byte[]>("Password")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("varbinary(100)");
+
+                    b.Property<byte[]>("PasswordSalt")
+                        .HasColumnType("varbinary(max)");
 
                     b.HasKey("Id");
 
@@ -358,26 +356,23 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 1,
-                            Apellido = "Herrera",
                             Email = "vanesa@gmail.com",
-                            Nombre = "Vanesa",
-                            Password = "vanesa"
+                            NombreCompleto = "Vanesa Herrera",
+                            Password = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
                         },
                         new
                         {
                             Id = 2,
-                            Apellido = "ledesma",
                             Email = "juanledesma@gmail.com",
-                            Nombre = "juan",
-                            Password = "juan"
+                            NombreCompleto = "juan ledesma",
+                            Password = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
                         },
                         new
                         {
                             Id = 3,
-                            Apellido = "arrieta",
                             Email = "aili@gmail.com",
-                            Nombre = "oriana",
-                            Password = "ailin"
+                            NombreCompleto = "oriana LALALA",
+                            Password = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
                         });
                 });
 

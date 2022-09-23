@@ -26,28 +26,23 @@ namespace G7Album.BaseDatos.Data
                 {
                     Id = 1,
                     Email = "vanesa@gmail.com",
-                    Password = "vanesa",
-                    Nombre = "Vanesa",
-                    Apellido = "Herrera",
-
+                    Password = new Byte[10],
+                    NombreCompleto = "Vanesa Herrera"
                 },
                 new Usuario
                 {
                     Id = 2,
                     Email = "juanledesma@gmail.com",
-                    Password = "juan",
-                    Nombre = "juan",
-                    Apellido = "ledesma",
+                    Password = new Byte[10],
+                    NombreCompleto = "juan ledesma"
 
                 },
                 new Usuario
                 {
                     Id = 3,
                     Email = "aili@gmail.com",
-                    Password = "ailin",
-                    Nombre = "oriana",
-                    Apellido = "arrieta",
-
+                    Password = new Byte[10],
+                    NombreCompleto = "oriana LALALA",
                 }
             );
 
