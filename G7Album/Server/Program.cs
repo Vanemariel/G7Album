@@ -1,7 +1,11 @@
+#region Using globales
+
 global using Microsoft.EntityFrameworkCore;
 global using G7Album.BaseDatos.Data;
 global using G7Album.BaseDatos.Entidades;
 global using Microsoft.AspNetCore.Mvc;
+
+#endregion
 
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
@@ -14,22 +18,38 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
 
-/* Problemas con los Cors */
+#region Permitimos el uso de los Cors
 
 builder.Services.AddCors();
 
-/* Problemas con los Cors */
+#endregion 
+
+#region Desactivamos la validacion automatica del modelState para poder manipularlo manualmente
+
+builder.Services.Configure<Microsoft.AspNetCore.Mvc.ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+});
+
+#endregion
+
+#region Conexion con la BD
 
 var conn = builder.Configuration.GetConnectionString("con");
 builder.Services.AddDbContext<BDContext>(opciones =>
     opciones.UseSqlServer(conn)
 );
 
+#endregion
+
+#region Conexion al Swagger
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Album", Version = "v1" });
 });
 
+#endregion
 
 #region Evite que se genere un posible ciclo de objetos a la hora de realizar consutlas a la BD
 
@@ -44,8 +64,7 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 
 var app = builder.Build();
 
-
-/* Problemas con los Cors */
+#region Problemas con los Cors 
 
 app.UseCors(options =>
 {
@@ -54,12 +73,15 @@ app.UseCors(options =>
     options.AllowAnyHeader();
 });
 
-/* Problemas con los Cors */
+#endregion Problemas con los Cors
 
+#region Conexion al Swagger
 
 app.UseSwagger();
 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json",
     "Album v1"));
+
+#endregion
 
 
 // Configure the HTTP request pipeline.
