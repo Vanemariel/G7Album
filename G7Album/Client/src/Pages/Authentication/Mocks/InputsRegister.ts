@@ -16,14 +16,6 @@ export const InputsRegister: IInputs[] = [
       expReg: /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]{2,40}$/i,
       errorMessage: "Solo puede contener letras. Minimo 2 caracteres",
     },
-    // {
-    //   placeholder: "Usuario: ",
-    //   type: "text",
-    //   name: "userName",
-    //   expReg: /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü0-9_.+-\s]{2,20}$/i,
-    //   errorMessage:
-    //     "Puede contener letras, numeros, puntos, guiones y guion bajo. Minimo 2 caracteres. Maximo 20 caracteres",
-    // },
     {
       placeholder: "Contraseña: ",
       type: "password",

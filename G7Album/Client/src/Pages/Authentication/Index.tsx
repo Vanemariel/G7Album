@@ -3,9 +3,9 @@ import { FormLogin } from "./Components/FormLogin/FormLogin";
 import { FormRegister } from "./Components/FormRegister/FormRegister";
 import { MessageLogin } from "./Components/MessageLogin/MessageLogin";
 import { MessageRegister } from "./Components/MessageRegister/MessageRegister";
-import { AuthProvider } from "./Context/AuthProvider";
 import { useAuth } from "./Context/useAuth";
 import AuthCSS from "./Index.module.css"
+import AuthService from "./Services/Auth.services";
 
 
 export const Authentication : React.FC = () => {
@@ -18,10 +18,13 @@ export const Authentication : React.FC = () => {
     /// METODOS
     const probandoConexion = async () => {
 
-        const res = await fetch("https://localhost:7040/Api/Album/GetAll")
-
-        const data = await res.json();
-        console.log("🚀 ~ file: App.tsx ~ line 16 ~ probandoConexion ~ data", data)
+        const asd = await AuthService.Register({
+            Email: "OKAOKA@gmail.com",
+            NombreCompleto: "Esteban Quito",
+            Password: "holahola123",
+            ConfirmPassword: "holahola123"
+        })
+        console.log("🚀 ~ file: Index.tsx ~ line 27 ~ probandoConexion ~ asd", asd)
     }
 
     useEffect(()=>{

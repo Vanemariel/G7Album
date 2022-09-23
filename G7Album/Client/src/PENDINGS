@@ -1,18 +1,17 @@
 👍 Hacer que los serives retornen dato en especifico.
 👍 Escribir los metodos respectivos de FormLogin y Register.
 👍 Generar Ruteo en App.js
+👍 Probar en swagger los controllers        
+👍  AxiosMethod:  /// VER TEMA DE CONEXION BACK con el tema de las respuestas en caso de error y no error
 
 
 
 ⏰ Modificar el titulo de la pagina dependiendo de la navegacion. 
-⏰ Cambiar el tipo de dato de "DataLoginForm" por el de usuario del form.
-⏰ Simular un Context a nivel global para los modales pero luego
-    reemplazarlo con Redux
+⏰ Simular un Context a nivel global para los modales pero luego reemplazarlo con Redux
 ⏰ Realizar escrito de como funciona Context 
 
        
-⏰ Probar en swagger los controllers        
-⏰  AxiosMethod:  /// VER TEMA DE CONEXION BACK con el tema de las respuestas en caso de error y no error
+⏰ Adaptar los name de los formularios para que este acorde a como los recibe el Back.
 ⏰ Estuve modificando la Entidad de Usuario, ver si esta acorde al DER.
 
 ⏰ Ver video de Patrick God sobre JWT 

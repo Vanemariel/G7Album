@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace G7Album.Shared.DTO_Front {
 
     public class DataRegisterForm 

@@ -25,8 +25,6 @@ export const axiosMethod = async<TypeResult>(Params: IDataParams): Promise<IResp
 
     } catch (Error: any) {
 
-        console.log("ERROR", Error)
-
         ResponseDTO.MessageError = Error.response.data.messageError ||
             `Ha ocurrido un error al enviar la solicitud. Intentelo nuevamente!. Status: ${Error.response.status}`;
     }
