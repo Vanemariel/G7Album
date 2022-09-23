@@ -24,13 +24,23 @@ namespace G7Album.Server.Controllers
 
 
         [HttpGet("GetAll")]
-        public async Task<ActionResult<List<Usuario>>> GetAll()//obtener todo All
+        public async Task<ActionResult<List<User>>> GetAll()//obtener todo All
         {
             try
             {
                 List<Usuario> Usuarios = await context.TablaUsuarios.ToListAsync();
 
-                return Ok(Usuarios); 
+                List<User> ListUserMapper = new List<User> {};
+
+                Usuarios.ForEach(Usuario => {
+                    ListUserMapper.Add( new User {
+                        Email = Usuario.Email,
+                        Id = Usuario.Id,
+                        NombreCompleto = Usuario.NombreCompleto
+                    });
+                });
+
+                return Ok(ListUserMapper); 
             }
             catch (Exception ex)
             {
