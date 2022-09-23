@@ -1,10 +1,8 @@
 export interface AuthData {
     User: {
         Id: string; 
-        Name: string; 
+        NombreCompleto: string; 
         Email: string;
-        Lastname: string;
-        UserName: string;
     }
     Token: string;
 }
