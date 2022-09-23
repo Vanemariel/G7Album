@@ -1,4 +1,4 @@
-import axios, { Method } from "axios";
+﻿import axios, { Method } from "axios";
 import { IResponseDTO } from "../Interface/DTO Back/IResponseDTO";
 
 interface IDataParams {
@@ -7,38 +7,31 @@ interface IDataParams {
   dataSend?: any;
 }
 
-export const axiosMethod = async <TypeResponse>(Params: IDataParams) => {
+export const axiosMethod = async<TypeResult>(Params: IDataParams): Promise<IResponseDTO<TypeResult>> => {
   
-  const { method, url, dataSend } = Params;
-  const URL_API = process.env.REACT_APP_URL_API;
+    const { method, url, dataSend } = Params;
+    const URL_API = process.env.REACT_APP_URL_API;
 
-  let MessageError = null;
-  let Data = {} as TypeResponse; 
+    let ResponseDTO = {} as IResponseDTO<TypeResult>
 
-  try {
-    let Result = await axios(`${URL_API}${url}`, {
-      method: method,
-      data: dataSend ?? {},
-    });
+    try {
 
-    Data = await Result.data;
+        let Response = await axios(`${URL_API}${url}`, {
+            method: method,
+            data: dataSend ?? {},
+        });
 
-  } catch (Error: any) {
+        ResponseDTO.Result = await Response.data.result;
 
-    // Manipulacion del error
-    console.log("Error e",Error.response )
+    } catch (Error: any) {
 
-    MessageError = Error?.response?.statusText || "Ocurrio un error";
+        console.log("ERROR", Error)
 
-  }
+        ResponseDTO.MessageError = Error.response.data.messageError ||
+            `Ha ocurrido un error al enviar la solicitud. Intentelo nuevamente!. Status: ${Error.response.status}`;
+    }
 
-  // TODO: VER SI COLOCAMOS EL TEMA DEL MODAL DE ERROR ACA. Ejecutandose con el Store.
-
-
-  return {
-    Data,
-    MessageError,
-  };
+    return ResponseDTO;
 };
 
 /* 
@@ -51,7 +44,7 @@ export const axiosMethod = async <TypeResponse>(Params: IDataParams) => {
     Por ejem.: REACT_APP_URL_API=https://formsubmit.co/ajax
 
   3) Para utilizar el metodo, sera lo siguiente:
-  const { data, message } = await axiosMethod({
+  const { result, messageError } = await axiosMethod({
       method: "POST",
       url: "/5e0986ed3ab6208281bd2ec47b0252c1",
       dataSend: dataForm,
