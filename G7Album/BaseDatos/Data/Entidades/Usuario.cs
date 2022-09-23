@@ -23,12 +23,7 @@ namespace G7Album.BaseDatos.Entidades
 
         [Required(ErrorMessage = "Este campo es obligatorio")]
         [MaxLength(100, ErrorMessage = "El Codigo del album no puede superar {1} caracteres")]
-        public string Nombre { get; set; }
-
-        [Required(ErrorMessage = "Este campo es obligatorio")]
-        [MaxLength(100, ErrorMessage = "El Codigo del album no puede superar {1} caracteres")]
-        public string Apellido { get; set; }
-
+        public string NombreCompleto { get; set; }
 
     }
 }
