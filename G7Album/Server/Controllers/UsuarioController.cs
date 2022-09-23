@@ -42,7 +42,7 @@ namespace G7Album.Server.Controllers
                     });
                 });
 
-                ResponseDto.Data = ListUserMapper;
+                ResponseDto.Result = ListUserMapper;
 
                 return Ok(ResponseDto); 
             }
@@ -76,7 +76,7 @@ namespace G7Album.Server.Controllers
                     NombreCompleto = Usuario.NombreCompleto
                 };
 
-                ResponseDto.Data = UserMapper;
+                ResponseDto.Result = UserMapper;
 
                 return Ok(ResponseDto);
             }
@@ -95,6 +95,7 @@ namespace G7Album.Server.Controllers
              
             try
             {
+
                 if (newUsuario.Email == null || newUsuario.Email == string.Empty)
                 {
                     throw new Exception("Email requerido");
@@ -110,11 +111,11 @@ namespace G7Album.Server.Controllers
                     throw new Exception("Contraseña requerida");
                 }
 
-                if (newUsuario.Password != newUsuario.ConfirmPassowrd)
+                if (newUsuario.Password != newUsuario.ConfirmPassword)
                 {
                     throw new Exception("La contraseñas deben coincidir.");
                 }
-                    
+
                 Usuario? UserBD = await this.context.TablaUsuarios.FirstOrDefaultAsync(
                     Usuario => Usuario.Email == newUsuario.Email
                 );
@@ -136,7 +137,7 @@ namespace G7Album.Server.Controllers
 
                 await context.SaveChangesAsync();
 
-                ResponseDto.Data = "!Se ha registrado correctamente! Ahora inicie sesión!.";
+                ResponseDto.Result = "!Se ha registrado correctamente! Ahora inicie sesión!.";
 
                 return Ok(ResponseDto);
 
@@ -177,7 +178,7 @@ namespace G7Album.Server.Controllers
                     throw new Exception("Contraseña incorrecta");
                 }
 
-                ResponseDto.Data = new AuthData
+                ResponseDto.Result = new AuthData
                 {
                     Token = CreateToken(UserBD), //Creamos un nuevo metodo y obtiene usuario
                     User = new User
@@ -223,7 +224,7 @@ namespace G7Album.Server.Controllers
                 await context.SaveChangesAsync();
 
 
-                ResponseDto.Data = "Los datos han sido actualizados correctamente.";
+                ResponseDto.Result = "Los datos han sido actualizados correctamente.";
                 return Ok(ResponseDto);
             }
             catch (Exception ex)
@@ -258,7 +259,7 @@ namespace G7Album.Server.Controllers
                 context.TablaUsuarios.Remove(FindUsuario);
                 await context.SaveChangesAsync();
 
-                ResponseDto.Data = $"El Usuario {FindUsuario.NombreCompleto} ha sido borrado.";
+                ResponseDto.Result = $"El Usuario {FindUsuario.NombreCompleto} ha sido borrado.";
                 return Ok(ResponseDto);
             }
             catch (Exception ex)
