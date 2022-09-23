@@ -1,4 +1,5 @@
 import axios, { Method } from "axios";
+import { IResponseDTO } from "../Interface/DTO Back/IResponseDTO";
 
 interface IDataParams {
   url: string;
@@ -15,12 +16,12 @@ export const axiosMethod = async <TypeResponse>(Params: IDataParams) => {
   let Data = {} as TypeResponse; 
 
   try {
-    let Response = await axios(`${URL_API}${url}`, {
+    let Result = await axios(`${URL_API}${url}`, {
       method: method,
       data: dataSend ?? {},
     });
 
-    Data = await Response.data;
+    Data = await Result.data;
 
   } catch (Error: any) {
 
