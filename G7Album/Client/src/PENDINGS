@@ -2,16 +2,15 @@
 👍 Escribir los metodos respectivos de FormLogin y Register.
 👍 Generar Ruteo en App.js
 👍 Probar en swagger los controllers        
-👍  AxiosMethod:  /// VER TEMA DE CONEXION BACK con el tema de las respuestas en caso de error y no error
+👍 AxiosMethod:  /// VER TEMA DE CONEXION BACK con el tema de las respuestas en caso de error y no error
+👍 Simular un Context a nivel global para los modales pero luego reemplazarlo con Redux
 
 
 
 ⏰ Modificar el titulo de la pagina dependiendo de la navegacion. 
-⏰ Simular un Context a nivel global para los modales pero luego reemplazarlo con Redux
-⏰ Realizar escrito de como funciona Context 
-
-       
+⏰ Ver la manera de manejar los formularios login y registro por el context
+⏰ Realizar escrito de como funciona Context      
 ⏰ Adaptar los name de los formularios para que este acorde a como los recibe el Back.
-⏰ Estuve modificando la Entidad de Usuario, ver si esta acorde al DER.
-
+⏰ Estuve modificando la Entidad de Usuario, ver si esta acorde al DER. (Adaptarlo completamente de ser ASI)
+⏰ Solucionar problemas del CSS
 ⏰ Ver video de Patrick God sobre JWT 
