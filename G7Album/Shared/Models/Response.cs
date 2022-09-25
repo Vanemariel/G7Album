@@ -1,11 +1,16 @@
-﻿namespace G7Album.Shared.Models
+﻿using G7Album.BaseDatos.Entidades;
+
+namespace G7Album.Shared.Models
 {
-    public class Response<TypeData>
+    public class Response<TypeData> 
     {
         public Response()
         {
         }
 
+       /* public List<AlbumImagenes> TablaAlbumes { get; set; } = new List<AlbumImagenes>();
+        public int Pages { get; set; }
+        public int CurrentPage { get; set; } */   
         public Response(TypeData data, bool succeeded = true, string[] errors = null, string message = "Success")
         {
             Data = data;
