@@ -147,7 +147,7 @@ namespace G7Album.BaseDatos.Migrations
             migrationBuilder.InsertData(
                 table: "TablaAlbumes",
                 columns: new[] { "Id", "CantidadImagen", "CantidadImpreso", "CodigoAlbum", "Descripcion", "Desde", "Hasta", "Titulo" },
-                values: new object[] { 1, 1000, 1000, 10, "figus", new DateTime(2022, 9, 29, 21, 56, 29, 87, DateTimeKind.Local).AddTicks(1375), new DateTime(2022, 10, 9, 21, 56, 29, 87, DateTimeKind.Local).AddTicks(1384), "album" });
+                values: new object[] { 1, 1000, 1000, 10, "figus", new DateTime(2022, 10, 1, 12, 58, 25, 395, DateTimeKind.Local).AddTicks(9362), new DateTime(2022, 10, 11, 12, 58, 25, 395, DateTimeKind.Local).AddTicks(9374), "album" });
 
             migrationBuilder.InsertData(
                 table: "TablaUsuarios",

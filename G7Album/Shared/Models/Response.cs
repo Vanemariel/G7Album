@@ -4,25 +4,26 @@ namespace G7Album.Shared.Models
 {
     public class Response<TypeData> 
     {
-        public Response()
-        {
-        }
+        //public Response()
+        //{
+        //}
 
-       /* public List<AlbumImagenes> TablaAlbumes { get; set; } = new List<AlbumImagenes>();
+        public List<AlbumImagenes> TablaAlbumes { get; set; } = new List<AlbumImagenes>();
         public int Pages { get; set; }
-        public int CurrentPage { get; set; } */   
-        public Response(TypeData data, bool succeeded = true, string[] errors = null, string message = "Success")
-        {
-            Data = data;
-            Succeeded = succeeded;
-            Errors = errors;
-            Message = message;
-        }
+        public int CurrentPage { get; set; }
 
-        public TypeData Data { get; set; }
-        public bool Succeeded { get; set; }
-        public string[] Errors { get; set; }
-        public string Message { get; set; }
+        //public Response(TypeData data, bool succeeded = true, string[] errors = null, string message = "Success")
+        //{
+        //    Data = data;
+        //    Succeeded = succeeded;
+        //    Errors = errors;
+        //    Message = message;
+        //}
+
+        //public TypeData Data { get; set; }
+        //public bool Succeeded { get; set; }
+        //public string[] Errors { get; set; }
+        //public string Message { get; set; }
     }
     public static class ResponseMessage
     {
