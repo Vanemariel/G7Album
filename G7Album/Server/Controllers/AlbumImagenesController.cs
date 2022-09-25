@@ -17,9 +17,9 @@ namespace G7Album.Server.Controllers
             this.context = context;
         } 
         
-        [HttpGet]
+        [HttpGet("{page}")]
 
-        public async Task<Response<PagedData<List<AlbumImagenes>>>> Get(int Page = 1)
+        public async Task<Response<PagedData<List<AlbumImagenes>>>> GetAll(int Page = 1)
         {
             var query = new QueryProperty<AlbumImagenes>(Page, 10);
             var paged = new PagedData<List<AlbumImagenes>>(
@@ -37,12 +37,40 @@ namespace G7Album.Server.Controllers
             return response;
         }
 
-        [HttpGet("GetAll")]
+        private Task<int> CountElements() => throw new(); 
+
+        /*public async Task<ActionResult<List<AlbumImagenes>>>Get(int page)
+{
+   if (context.TablaAlbumes == null)
+   {
+       return NotFound();
+
+       var pageResults = 3f;
+       var pageCount =Math.Ceiling(context.TablaAlbumes.Count()/pageResults);
+
+       var albumimagen = await context.TablaAlbumes
+       .Skip((page - 1) + (int)pageResults)
+       .Take((int)pageResults)
+       .ToListAsync();
+
+       var response = new Response
+       {
+           TablaAlbumes = albumimagen,
+           CurrentPage = page,
+           Pages = (int)pageCount
+       };
+       return Ok(response);
+   }
+}*/
+
+
+
+        /*[HttpGet("GetAll")]
         //metodo que me muestra la lista completa  
         public async Task<ActionResult<List<AlbumImagenes>>> GetAll()
         {
             return await context.TablaImagenes.Include(x => x.Album).ToListAsync();
-        }
+        }*/
 
         [HttpGet("Get/one/{id:int}")]
         public async Task<ActionResult<AlbumImagenes>> GetById(int id)
@@ -128,8 +156,8 @@ namespace G7Album.Server.Controllers
             }       
         }
         //public async Task<int> CountElements() => await context.TablaImagenes(); 
-        public async Task<int> CountElements() => await context.Set<AlbumImagenes>().CountAsync();
-        //count async devuelve de manera asin crona el n de elementos de una tabla,
+         //public async Task<int> CountElements() => await context.Set<AlbumImagenes>().CountAsync();
+        //count async devuelve de manera asincrona el n de elementos de una tabla,
        //osea la cantidad de registro.
     }
 }
