@@ -36,8 +36,8 @@ namespace G7Album.Server.Controllers
 
             return response;
         }
-
-        private Task<int> CountElements() => throw new(); 
+        //true viene del manejo del try catch--
+        private int CountElements() => context.TablaAlbumes.Count();
 
         /*public async Task<ActionResult<List<AlbumImagenes>>>Get(int page)
 {
