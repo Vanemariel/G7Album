@@ -15,53 +15,53 @@ namespace G7Album.Server.Controllers
         public AlbumImagenesController(BDContext context)
         {
             this.context = context;
-        } 
-        
-        [HttpGet("{page}")]
+        }
 
-        public async Task<Response<PagedData<List<AlbumImagenes>>>> GetAll(int Page = 1)
+        //[HttpGet()]
+        //public async Task<Response<PagedData<List<AlbumImagenes>>>> GetAll(int Page = 1)
+        //{
+        //    var query = new QueryProperty<AlbumImagenes>(Page, 10);
+        //    var paged = new PagedData<List<AlbumImagenes>>(
+        //        await context.TablaImagenes.ToListAsync(), CountElements(), Page, 10, "AlbumImagenes");
+        //    var response = new Response<PagedData<List<AlbumImagenes>>>(paged);
+        //    //count element es un metodo
+
+        //    if (response.Data == null)
+        //    {
+        //        response.Succeeded = false;
+        //        response.Message = ResponseMessage.NotFound;
+        //        response.Errors = new string[] { "404" };
+        //    }
+
+        //    return response;
+        //}
+        ////true viene del manejo del try catch--
+        //private int CountElements() => context.TablaAlbumes.Count();
+
+        [HttpGet("{page:int}")]
+        public async Task<ActionResult<List<AlbumImagenes>>> GetAll(int page)
         {
-            var query = new QueryProperty<AlbumImagenes>(Page, 10);
-            var paged = new PagedData<List<AlbumImagenes>>(
-                await context.TablaImagenes.ToListAsync(), await CountElements(), Page, 10, "AlbumImagenes");
-            var response = new Response<PagedData<List<AlbumImagenes>>>(paged);
-            //count element es un metodo
-
-            if (response.Data == null)
+            if (context.TablaAlbumes == null)
             {
-                response.Succeeded = false;
-                response.Message = ResponseMessage.NotFound;
-                response.Errors = new string[] { "404" };
+                return NotFound();
             }
 
-            return response;
+            var pageResults = 3f;
+                var pageCount = Math.Ceiling(context.TablaImagenes.Count() / pageResults);
+
+                var albumimagen = await context.TablaImagenes
+                    .Skip((page - 1) * (int)pageResults)
+                    .Take((int)pageResults)
+                    .ToListAsync();
+
+                var response = new Response<string>
+                {
+                    TablaAlbumes = albumimagen,
+                    CurrentPage = page,
+                    Pages = (int)pageCount
+                };
+                return Ok(response);
         }
-        //true viene del manejo del try catch--
-        private int CountElements() => context.TablaAlbumes.Count();
-
-        /*public async Task<ActionResult<List<AlbumImagenes>>>Get(int page)
-{
-   if (context.TablaAlbumes == null)
-   {
-       return NotFound();
-
-       var pageResults = 3f;
-       var pageCount =Math.Ceiling(context.TablaAlbumes.Count()/pageResults);
-
-       var albumimagen = await context.TablaAlbumes
-       .Skip((page - 1) + (int)pageResults)
-       .Take((int)pageResults)
-       .ToListAsync();
-
-       var response = new Response
-       {
-           TablaAlbumes = albumimagen,
-           CurrentPage = page,
-           Pages = (int)pageCount
-       };
-       return Ok(response);
-   }
-}*/
 
 
 
