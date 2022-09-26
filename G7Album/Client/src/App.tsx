@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Loader } from './Components/Loader/Loader';
 import { MessageModal } from './Components/ModalContainer/MessageModal';
+import { RoutePrivate } from './Components/RoutePrivate/RoutePrivate';
 import { GlobalProvider } from './Context/GlobalProvider';
 import { AuthProvider } from './Pages/Authentication/Context/AuthProvider';
 import { Authentication } from './Pages/Authentication/Index';
@@ -10,25 +11,31 @@ import { Home } from './Pages/Home/Index';
 function App() {
 
   return (
-    <GlobalProvider>
 
-      <Routes>
+      <GlobalProvider>
+          {/*Quitar algun momento GlobalProvider por redux */}
+          <Routes>
 
-        <Route path="/" element={
-          <AuthProvider>
-            <Authentication />
-          </AuthProvider>
-        } />
+            <Route path="/" element={
+              <AuthProvider>
+                <Authentication />
+              </AuthProvider>
+            }/>
         
-        <Route path="/home" element={<Home />} />
+            <Route path="/home" element={
+                <RoutePrivate>
+                    <Home />
+                </RoutePrivate>
+            }/>
 
-      </Routes>
 
-      <Loader/>
+          </Routes>
 
-      <MessageModal/>
+          <Loader/>
 
-    </GlobalProvider>
+          <MessageModal/>
+
+      </GlobalProvider>
   );
 }
 const AppWrapper = () => {
