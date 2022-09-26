@@ -39,19 +39,19 @@ export const FormRegister: React.FC = () => {
       storeAuth.SetRegisterActive(false);
       
       storeGlobal.SetShowLoader(false);
-      storeGlobal.SetMessageModal(Result);
-      storeGlobal.SetShowMessageModal(true);
+      storeGlobal.SetMessageModalStatus(Result);
+      storeGlobal.SetShowModalStatus(true);
 
     } catch (error: any) {
       
-      storeGlobal.SetMessageModal(error.Message)
-      storeGlobal.SetShowMessageModal(true)
+       storeGlobal.SetShowLoader(false)
+       storeGlobal.SetMessageModalStatus(`Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`)
+       storeGlobal.SetShowModalStatus(true)
 
     } finally {
-      storeGlobal.SetShowLoader(false)
       resetForm()
       setTimeout(() => {
-        storeGlobal.SetShowMessageModal(false)
+          storeGlobal.SetShowModalStatus(false)
       }, 500);
     }
   }

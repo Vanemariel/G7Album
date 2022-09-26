@@ -5,7 +5,6 @@ import { MessageLogin } from "./Components/MessageLogin/MessageLogin";
 import { MessageRegister } from "./Components/MessageRegister/MessageRegister";
 import { useAuth } from "./Context/useAuth";
 import AuthCSS from "./Index.module.css"
-import AuthService from "./Services/Auth.services";
 
 
 export const Authentication : React.FC = () => {
@@ -16,19 +15,8 @@ export const Authentication : React.FC = () => {
 
 
     /// METODOS
-    const probandoConexion = async () => {
-
-        const asd = await AuthService.Register({
-            Email: "OKAOKA@gmail.com",
-            NombreCompleto: "Esteban Quito",
-            Password: "holahola123",
-            ConfirmPassword: "holahola123"
-        })
-        console.log("🚀 ~ file: Index.tsx ~ line 27 ~ probandoConexion ~ asd", asd)
-    }
 
     useEffect(()=>{
-        //probandoConexion();
         storeAuth.ChangeClassCssForm();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])

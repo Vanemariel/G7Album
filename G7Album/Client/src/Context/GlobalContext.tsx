@@ -12,11 +12,11 @@ export interface IGlobalContext {
    IsShowLoader: () => boolean,
    SetShowLoader: (value: boolean) => void,
 
-   IsShowMessageModal: () => boolean,
-   SetShowMessageModal: (value: boolean) => void,
-   
-   GetMessageModal: () => string,
-   SetMessageModal: (value: string) => void
+   IsShowModalStatus: () => boolean,
+   SetShowModalStatus: (value: boolean) => void, 
+    
+   GetMessageModalStatus: () => string,
+   SetMessageModalStatus: (value: string) => void
 }
 
 /* Este Context tendra alojada toda la informacion que 

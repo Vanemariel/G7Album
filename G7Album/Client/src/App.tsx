@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Loader } from './Components/Loader/Loader';
-import { MessageModal } from './Components/ModalContainer/MessageModal';
+import { ModalStatus } from './Components/ModalStatus/ModalStatus';
 import { RoutePrivate } from './Components/RoutePrivate/RoutePrivate';
 import { GlobalProvider } from './Context/GlobalProvider';
 import { AuthProvider } from './Pages/Authentication/Context/AuthProvider';
@@ -33,7 +33,7 @@ function App() {
 
           <Loader/>
 
-          <MessageModal/>
+          <ModalStatus />
 
       </GlobalProvider>
   );

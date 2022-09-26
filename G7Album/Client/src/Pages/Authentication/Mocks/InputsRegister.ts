@@ -5,7 +5,7 @@ export const InputsMockRegister: IInputs[] = [
       placeholder: "Correo electronico: ",
       type: "email",
       name: "Email",
-      expReg: /^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)[a-zA-Z]{2,6}$/i,
+      expReg: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i,
       errorMessage:
         "El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.",
     },

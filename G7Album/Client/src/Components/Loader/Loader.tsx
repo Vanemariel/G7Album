@@ -9,9 +9,9 @@ export const Loader = () => {
   return (
     <div className={`${storeGlobal.IsShowLoader() ? LoaderCSS.backgroundSpinner : LoaderCSS.CloseLoader} `}>
 
-      <div className="containerSpinner">
+      <div className={LoaderCSS.containerSpinner}>
 
-        <div className="spinner">
+        <div className={LoaderCSS.spinner}>
           <div></div>
           <div></div>
           <div></div>

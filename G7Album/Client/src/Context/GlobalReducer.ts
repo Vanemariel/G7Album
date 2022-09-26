@@ -4,7 +4,7 @@ import { getStorage } from "../Utils/updateStorage";
 
 interface IGlobalState{
     ShowLoader: boolean;
-    MessageModal: ModalModels;
+    ModalStatus: ModalModels;
     User: UserModels;
 
 }
@@ -13,14 +13,14 @@ interface IGlobalState{
 export type TGlobalActions =  
     { type: "SetMyUserData"; payload: {newState: UserModels} }  |  
     { type: "SetShowLoader"; payload: {newState: boolean} } |
-    { type: "SetShowMessageModal"; payload: {newState: boolean} } |
-    { type: "SetMessageModal"; payload: {newState: string} } 
+    { type: "SetShowModalStatus"; payload: {newState: boolean} } |
+    { type: "SetMessageModalStatus"; payload: {newState: string} } 
 ;
 
 
 export const INITIAL_STATE: IGlobalState = {
     ShowLoader: false,
-    MessageModal: {} as ModalModels,
+    ModalStatus: {} as ModalModels,
     User: getStorage<UserModels>("User") ?? {} as UserModels,
 };
 
@@ -43,25 +43,25 @@ export const GlobalReducer = ( state: IGlobalState, action: TGlobalActions): IGl
       }
     ;
     
-    case "SetShowMessageModal":
-      return {
-        ...state,
-        MessageModal: {
-            ...state.MessageModal, 
-            ShowModal: action.payload.newState
-        }
-      }
-    ;
+      case "SetShowModalStatus":
+          return {
+              ...state,
+              ModalStatus: {
+                  ...state.ModalStatus, 
+                  ShowModal: action.payload.newState
+              }
+          }
+      ;
 
-    case "SetMessageModal":
+      case "SetMessageModalStatus":
         return {
             ...state,
-            MessageModal: {
-                ...state.MessageModal, 
+            ModalStatus: {
+                ...state.ModalStatus, 
                 Message: action.payload.newState
             }
           }
-    ;
+       ;
 
     default:
       return state;

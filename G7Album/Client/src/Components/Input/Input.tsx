@@ -96,7 +96,7 @@ export const Input: React.FC<Props> = (props) => {
   useEffect(() => {
     verifyisValueBlank(value);
 
-    console.log("LALALA", props)
+    //console.log("LALALA", props)
   }, [value]);
 
   return (

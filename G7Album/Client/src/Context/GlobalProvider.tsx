@@ -28,18 +28,18 @@ export const GlobalProvider: React.FC<Props> = (props) => {
     });
   };
 
-  const IsShowMessageModal = (): boolean => GlobalState.MessageModal.ShowModal;
-  const SetShowMessageModal = (value: boolean): void => {
+    const IsShowModalStatus = (): boolean => GlobalState.ModalStatus.ShowModal;
+  const SetShowModalStatus = (value: boolean): void => {
     dispatch({
-      type: "SetShowMessageModal",
+      type: "SetShowModalStatus",
       payload: {newState: value}
     });
   };
-  
-  const GetMessageModal = (): string => GlobalState.MessageModal.Message;
-  const SetMessageModal = (value: string): void => {
+
+    const GetMessageModalStatus = (): string => GlobalState.ModalStatus.Message;
+  const SetMessageModalStatus = (value: string): void => {
     dispatch({
-      type: "SetMessageModal",
+      type: "SetMessageModalStatus",
       payload: {newState: value}
     });
   };
@@ -51,10 +51,10 @@ export const GlobalProvider: React.FC<Props> = (props) => {
         SetMyUserData,
         IsShowLoader,
         SetShowLoader,
-        IsShowMessageModal,
-        SetShowMessageModal,
-        GetMessageModal,
-        SetMessageModal
+        IsShowModalStatus,
+        SetShowModalStatus,
+        GetMessageModalStatus,
+        SetMessageModalStatus
       }}
     >
       {props.children}
