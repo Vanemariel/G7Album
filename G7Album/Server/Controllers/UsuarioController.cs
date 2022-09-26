@@ -12,13 +12,13 @@ namespace G7Album.Server.Controllers
     [Route("Api/[controller]")]
     public class UsuarioController : ControllerBase
     {
-        private readonly BDContext context;
+        private readonly BDContext _context;
         private readonly IConfiguration _configuration;
 
 
         public UsuarioController(BDContext context, IConfiguration configuration)
         {
-            this.context = context;
+            this._context = context;
             this._configuration = configuration;
         }
 
@@ -30,7 +30,7 @@ namespace G7Album.Server.Controllers
 
             try
             {
-                List<Usuario> Usuarios = await context.TablaUsuarios.ToListAsync();
+                List<Usuario> Usuarios = await this._context.TablaUsuarios.ToListAsync();
 
                 List<User> ListUserMapper = new List<User> {};
 
@@ -61,7 +61,7 @@ namespace G7Album.Server.Controllers
 
             try
             {
-                Usuario? Usuario = await context.TablaUsuarios
+                Usuario? Usuario = await this._context.TablaUsuarios
                     .Where(Usuario => Usuario.Id == id)
                     .FirstOrDefaultAsync();
  
@@ -116,7 +116,7 @@ namespace G7Album.Server.Controllers
                     throw new Exception("La contraseñas deben coincidir.");
                 }
 
-                Usuario? UserBD = await this.context.TablaUsuarios.FirstOrDefaultAsync(
+                Usuario? UserBD = await this._context.TablaUsuarios.FirstOrDefaultAsync(
                     Usuario => Usuario.Email == newUsuario.Email
                 );
 
@@ -127,7 +127,7 @@ namespace G7Album.Server.Controllers
 
                 var (passwordHash, passwordSalt) = CreatePasswordHash(newUsuario.Password);
 
-                this.context.TablaUsuarios.Add(new Usuario
+                this._context.TablaUsuarios.Add(new Usuario
                 {
                     Email = newUsuario.Email,
                     NombreCompleto = newUsuario.NombreCompleto,
@@ -135,7 +135,7 @@ namespace G7Album.Server.Controllers
                     PasswordSalt = passwordSalt
                 });
 
-                await context.SaveChangesAsync();
+                await this._context.SaveChangesAsync();
 
                 ResponseDto.Result = "!Se ha registrado correctamente! Ahora inicie sesión!.";
 
@@ -166,7 +166,7 @@ namespace G7Album.Server.Controllers
                     throw new Exception("Contraseña incorrecta");
                 }
 
-                Usuario? UserBD = await this.context.TablaUsuarios.FirstOrDefaultAsync(Usuario => Usuario.Email == UsuarioData.Email);
+                Usuario? UserBD = await this._context.TablaUsuarios.FirstOrDefaultAsync(Usuario => Usuario.Email == UsuarioData.Email);
 
                 if (UserBD == null)
                 {
@@ -206,7 +206,7 @@ namespace G7Album.Server.Controllers
             ResponseDto<string> ResponseDto = new ResponseDto<string>();
             try
             {
-                Usuario? FindUsuario = await context.TablaUsuarios
+                Usuario? FindUsuario = await this._context.TablaUsuarios
                     .Where(Usuario => Usuario.Id == id)
                     .FirstOrDefaultAsync();
 
@@ -218,10 +218,10 @@ namespace G7Album.Server.Controllers
                 FindUsuario.NombreCompleto = NewUsuario.NombreCompleto;
                 FindUsuario.Email = NewUsuario.Email ;
                 FindUsuario.Password = NewUsuario.Password ;
-               
-                context.TablaUsuarios.Update(FindUsuario);
 
-                await context.SaveChangesAsync();
+                this._context.TablaUsuarios.Update(FindUsuario);
+
+                await this._context.SaveChangesAsync();
 
 
                 ResponseDto.Result = "Los datos han sido actualizados correctamente.";
@@ -247,7 +247,7 @@ namespace G7Album.Server.Controllers
                     throw new Exception("El Id ingresado no es valido.");
                 }
 
-                Usuario? FindUsuario = await context.TablaUsuarios
+                Usuario? FindUsuario = await this._context.TablaUsuarios
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
@@ -256,8 +256,8 @@ namespace G7Album.Server.Controllers
                     throw new Exception($"No existe el Usuario con id igual a {id}.");
                 }
 
-                context.TablaUsuarios.Remove(FindUsuario);
-                await context.SaveChangesAsync();
+                this._context.TablaUsuarios.Remove(FindUsuario);
+                await this._context.SaveChangesAsync();
 
                 ResponseDto.Result = $"El Usuario {FindUsuario.NombreCompleto} ha sido borrado.";
                 return Ok(ResponseDto);
