@@ -1,5 +1,6 @@
 import { ModalModels } from "../Models/Modal.models";
 import { UserModels } from "../Models/User.models";
+import { getStorage } from "../Utils/updateStorage";
 
 interface IGlobalState{
     ShowLoader: boolean;
@@ -20,7 +21,7 @@ export type TGlobalActions =
 export const INITIAL_STATE: IGlobalState = {
     ShowLoader: false,
     MessageModal: {} as ModalModels,
-    User: {} as UserModels,
+    User: getStorage<UserModels>("User") ?? {} as UserModels,
 };
 
 // ACA MODIFICAMOS EL STATE INICIAL

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace G7Album.BaseDatos.Migrations
 {
-    public partial class Inicio : Migration
+    public partial class inicio : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -147,7 +147,7 @@ namespace G7Album.BaseDatos.Migrations
             migrationBuilder.InsertData(
                 table: "TablaAlbumes",
                 columns: new[] { "Id", "CantidadImagen", "CantidadImpreso", "CodigoAlbum", "Descripcion", "Desde", "Hasta", "Titulo" },
-                values: new object[] { 1, 1000, 1000, 10, "figus", new DateTime(2022, 9, 23, 9, 45, 19, 736, DateTimeKind.Local).AddTicks(6898), new DateTime(2022, 10, 3, 9, 45, 19, 736, DateTimeKind.Local).AddTicks(6909), "album" });
+                values: new object[] { 1, 1000, 1000, 10, "figus", new DateTime(2022, 9, 25, 19, 42, 0, 903, DateTimeKind.Local).AddTicks(8898), new DateTime(2022, 10, 5, 19, 42, 0, 903, DateTimeKind.Local).AddTicks(8906), "album" });
 
             migrationBuilder.InsertData(
                 table: "TablaUsuarios",

@@ -4,9 +4,9 @@
 👍 Probar en swagger los controllers        
 👍 AxiosMethod:  /// VER TEMA DE CONEXION BACK con el tema de las respuestas en caso de error y no error
 👍 Simular un Context a nivel global para los modales pero luego reemplazarlo con Redux
+👍 Ver la manera de manejar los formularios login y registro por el context    
+👍 Adaptar los name de los formularios para que este acorde a como los recibe el Back.
+👍 Ver de agregar los datos obtenidos al localStore para q permanezcan en la pag Home al reloguear.
 
- 
-⏰ Ver la manera de manejar los formularios login y registro por el context    
-⏰ Adaptar los name de los formularios para que este acorde a como los recibe el Back.
 ⏰ Estuve modificando la Entidad de Usuario, ver si esta acorde al DER. (Adaptarlo completamente de ser ASI)
 ⏰ Solucionar problemas del CSS

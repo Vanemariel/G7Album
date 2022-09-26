@@ -8,7 +8,9 @@ export interface IAuthContext {
    IsLoginActive: () => boolean,
    IsRegisterActive: () => boolean,
    GetClassCssFormModifed: () => string,
-   
+   formularioLogin: any;
+   formularioRegister: any;
+
    SetLoginActive: (value: boolean) => void,
    SetRegisterActive: (value: boolean) => void,
    ChangeClassCssForm: () => void

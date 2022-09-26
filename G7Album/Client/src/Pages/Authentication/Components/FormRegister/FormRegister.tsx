@@ -1,33 +1,32 @@
 import { Input } from "../../../../Components/Input/Input";
 import FormRegisterCSS from "./FormRegister.module.css";
-import { InputsRegister } from "../../Mocks/InputsRegister";
+import { InputsMockRegister } from "../../Mocks/InputsRegister";
 import { useAuth } from "../../Context/useAuth";
 
 import { useNavigate } from "react-router-dom"
-import { useFormCustom } from "../../../../Hooks/useFormCustom";
-import { IDataRegisterForm } from "../../../../Interface/DTO Front/Auth/IDataRegisterForm";
 import AuthService from "../../Services/Auth.services";
+import { useGlobalContext } from "../../../../Context/useGlobalContext";
+import { IInputs } from "../../../../Components/Input/Inputs.interface";
 
 export const FormRegister: React.FC = () => {
   
   /// HOOKS
   const storeAuth = useAuth()
+  const storeGlobal = useGlobalContext();
   const navigate = useNavigate();
 
-  const formularioRegister = useFormCustom<IDataRegisterForm>({
-    Email: '',  Password: '', ConfirmPassword: '', NombreCompleto: ''
-  });
 
-  const { formulario, handleChange, resetForm } = formularioRegister;
+
+  const { formulario, handleChange, resetForm } = storeAuth.formularioRegister;
 
 
   const register = async (event: any) => {
 
     try {
       
-      event.preventDefaukt();
+      event.preventDefault();
   
-      /// Loader true
+      storeGlobal.SetShowLoader(true)
   
       const { Result, MessageError } = await AuthService.Register(formulario)
   
@@ -39,23 +38,22 @@ export const FormRegister: React.FC = () => {
       storeAuth.SetLoginActive(true);
       storeAuth.SetRegisterActive(false);
       
-      // storeGlobal.SetShowLoader(false);
-      // storeGlobal.SetMessageModal(Data);
-      // storeGlobal.SetShowMessageModal(true);
+      storeGlobal.SetShowLoader(false);
+      storeGlobal.SetMessageModal(Result);
+      storeGlobal.SetShowMessageModal(true);
 
     } catch (error: any) {
       
-      /// Cargar mensaje de modal error.Message
-      /// Abrir modal
+      storeGlobal.SetMessageModal(error.Message)
+      storeGlobal.SetShowMessageModal(true)
 
     } finally {
-      /// Loader false
-      /// Reset form login
-
-      /// Despues de 5 seg. cerrar Modal
+      storeGlobal.SetShowLoader(false)
+      resetForm()
+      setTimeout(() => {
+        storeGlobal.SetShowMessageModal(false)
+      }, 500);
     }
-
-
   }
 
   return (
@@ -71,7 +69,7 @@ export const FormRegister: React.FC = () => {
 
       <form onSubmit={register}>
 
-        {InputsRegister.map((inputProps: any, index: any) => (
+        {InputsMockRegister.map((inputProps: IInputs, index: number) => (
           <Input
             key={index}
             inputProps={inputProps}

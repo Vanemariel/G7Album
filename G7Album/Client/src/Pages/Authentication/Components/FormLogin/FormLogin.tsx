@@ -1,25 +1,25 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 import { Input } from "../../../../Components/Input/Input";
-import { useFormCustom } from "../../../../Hooks/useFormCustom";
-import { IDataLoginForm } from "../../../../Interface/DTO Front/Auth/IDataLoginForm";
 import { useAuth } from "../../Context/useAuth";
 import FormLoginCSS from "./FormLogin.module.css";
 
-import { InputsLogin } from "../../Mocks/InputsLogin";
+import { InputsMockLogin } from "../../Mocks/InputsLogin";
 import AuthService from "../../Services/Auth.services";
+import { useGlobalContext } from "../../../../Context/useGlobalContext";
+import { IInputs } from "../../../../Components/Input/Inputs.interface";
+import { updateStorage } from "../../../../Utils/updateStorage";
 
 
 export const FormLogin: React.FC = () => {
 
   /// HOOKS
   const storeAuth = useAuth()
+  const storeGlobal = useGlobalContext();
   const navigate = useNavigate();
 
-  const formularioLogin = useFormCustom<IDataLoginForm>({
-    Email: '',  Password: ''
-  });
-  const { formulario, handleChange, resetForm } = formularioLogin;
+
+  const { formulario, handleChange, resetForm } = storeAuth.formularioLogin;
 
   
 
@@ -27,34 +27,36 @@ export const FormLogin: React.FC = () => {
 
     try {
       
-      event.preventDefaukt();
-  
-      /// Loader true
-  
+      event.preventDefault();
+                                  
+      storeGlobal.SetShowLoader(true)
+                                                                    
       const { Result: UserAdapted, MessageError } = await AuthService.Login(formulario)
-  
-       if (UserAdapted == null || MessageError != null)
-       {
-           throw new Error(MessageError);
-       }
-
-      /// Guardar datos del Usuario en el Store de Redux
-      
-      // navigate("/home");
-
+                                                                             
+      if (MessageError != undefined)
+      {
+        throw new Error(MessageError);
+      }
+                                              
+      storeGlobal.SetMyUserData(UserAdapted);                          
+      updateStorage("User", UserAdapted)
+                                                   
+      navigate("/home");
+            
     } catch (error: any) {
-      
-      /// Cargar mensaje de modal error.Message
-      /// Abrir modal
-
+    
+      storeGlobal.SetMessageModal(error.Message)
+      storeGlobal.SetShowMessageModal(true)
+    
     } finally {
-      /// Loader false
-      /// Reset form login
+                
+      storeGlobal.SetShowLoader(false)
+      resetForm()
+      setTimeout(() => {
+        storeGlobal.SetShowMessageModal(false)
+      }, 5000);
 
-      /// Despues de 5 seg. cerrar Modal
     }
-
-
   }
 
 
@@ -71,7 +73,7 @@ export const FormLogin: React.FC = () => {
 
       <form onSubmit={login}>
 
-        {InputsLogin.map((inputProps: any, index: any) => (
+        {InputsMockLogin.map((inputProps: IInputs, index: number) => (
           <Input
             key={index}
             inputProps={inputProps}

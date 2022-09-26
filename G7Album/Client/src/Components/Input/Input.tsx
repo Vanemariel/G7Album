@@ -32,6 +32,7 @@ export const Input: React.FC<Props> = (props) => {
 
   /// METODOS
   const validateInput = () => {
+
     const $iconInput = document.querySelector(
       `#form__${inputProps["name"]} i`
     ) as HTMLElement;
@@ -54,6 +55,7 @@ export const Input: React.FC<Props> = (props) => {
       $formError.classList.remove(
         `${InputCSS.contact_messageErrorActive}`
       );
+
     } else {
       //Cambiamos el color del icono a incorrecto(rojo)
       $iconInput.classList.add(`${InputCSS.iconValidate_incorrect}`);
@@ -94,11 +96,13 @@ export const Input: React.FC<Props> = (props) => {
 
   useEffect(() => {
     verifyisValueBlank(value);
+
+    console.log("LALALA", props)
   }, [value]);
 
   return (
     <div id={`form__${inputProps["name"]}`}>
-      {inputProps.type !== "file" ? (
+      {
         <div className={InputCSS.contact__form__inputs}>
           <input
             name={inputProps["name"]}
@@ -112,42 +116,7 @@ export const Input: React.FC<Props> = (props) => {
           />
           <i className={IconFormClass} />
         </div>
-      ) : (
-        // En caso de cargar imagenes tb
-        <div className={InputCSS.contact__form__inputs}>
-          <input
-            name={inputProps["name"]}
-            type={inputProps.type}
-            onChange={handleChange}
-            onKeyUp={validateInput}
-            required
-            id="imgProyect"
-            style={{ display: "none" }}
-          />
-
-          <div className={InputCSS.inputFile}>
-            {value.name === "" ? (
-              <p> Imagenas del proyecto.</p>
-            ) : (
-              <p style={{ color: "#004" }}> {value.name} </p>
-            )}
-            {/* <Button
-              children={
-                <label htmlFor="imgProyect">Subir imagen</label>
-              }
-            /> */}
-          </div>
-
-          {value.name !== "" && (
-            <i
-              style={{ top: ".5rem" }}
-              className={`${
-                InputCSS.inputFile_icon
-              } ${`fas fa-check-circle ${InputCSS.iconValidate_correct}`}`}
-            />
-          )}
-        </div>
-      )}
+      }
 
       <p className={InputCSS.contact_messageError}>{errorMessage}</p>
     </div>

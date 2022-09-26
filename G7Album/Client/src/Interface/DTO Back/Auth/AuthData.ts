@@ -1,8 +1,8 @@
 export interface AuthData {
-    User: {
-        Id: string; 
-        NombreCompleto: string; 
-        Email: string;
+    user: {
+        id: string; 
+        nombreCompleto: string; 
+        email: string;
     }
-    Token: string;
+    token: string;
 }

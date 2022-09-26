@@ -28,7 +28,7 @@ export const Authentication : React.FC = () => {
     }
 
     useEffect(()=>{
-        probandoConexion();
+        //probandoConexion();
         storeAuth.ChangeClassCssForm();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])

@@ -70,8 +70,8 @@ namespace G7Album.BaseDatos.Migrations
                             CantidadImpreso = 1000,
                             CodigoAlbum = 10,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 9, 23, 9, 45, 19, 736, DateTimeKind.Local).AddTicks(6898),
-                            Hasta = new DateTime(2022, 10, 3, 9, 45, 19, 736, DateTimeKind.Local).AddTicks(6909),
+                            Desde = new DateTime(2022, 9, 25, 19, 42, 0, 903, DateTimeKind.Local).AddTicks(8898),
+                            Hasta = new DateTime(2022, 10, 5, 19, 42, 0, 903, DateTimeKind.Local).AddTicks(8906),
                             Titulo = "album"
                         });
                 });

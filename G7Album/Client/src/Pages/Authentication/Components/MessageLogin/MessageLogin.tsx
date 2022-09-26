@@ -9,14 +9,14 @@ export const MessageLogin: React.FC = () => {
 
   /// HOOKS
   const storeAuth = useAuth()
+  const { resetForm } = storeAuth.formularioRegister;
 
   /// METOODS
   const goToLogin = (): void => {
     storeAuth.SetLoginActive(true);
     storeAuth.SetRegisterActive(false);
-    // storeAuth.ResetFormRegister();
+    resetForm()
   }
-
 
   return (
 

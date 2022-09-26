@@ -18,8 +18,8 @@ const AuthService = {
         });
 
         let UserAdapted = {} as UserModels;
-        
-        if (Response != null && Response.Result != null && Response.MessageError == null) {
+
+        if (Response.Result != undefined && Response.MessageError == undefined) {
             UserAdapted = createAddaptedUser(Response.Result);
         }
 

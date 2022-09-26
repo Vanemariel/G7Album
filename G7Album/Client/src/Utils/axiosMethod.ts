@@ -33,6 +33,7 @@ export const axiosMethod = async<TypeResult>(Params: IDataParams): Promise<IResp
 };
 
 /* 
+
   MODO DE USO
   1) Instalar previamente Axios.
 
@@ -47,8 +48,5 @@ export const axiosMethod = async<TypeResult>(Params: IDataParams): Promise<IResp
       url: "/5e0986ed3ab6208281bd2ec47b0252c1",
       dataSend: dataForm,
   });
-
-
-
 
 */
