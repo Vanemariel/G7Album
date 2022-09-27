@@ -7,7 +7,7 @@
     position: absolute;
     border-radius: 1.25rem;
     text-align: center;
-    padding: 8.5rem 1.25rem;
+    padding: 4.5rem 1.25rem;
 }
 
 .containerFormRegister--hide {
@@ -48,10 +48,11 @@
 @media screen and (max-width: 450px) {
 
     .containerFormRegister {
-        position: relative;
     }
-
+    
     .containerFormRegister--show {
+        margin-top: 2rem;
+        position: relative;
         display: block;
         opacity: 1;
         padding: 4rem 1.25rem;

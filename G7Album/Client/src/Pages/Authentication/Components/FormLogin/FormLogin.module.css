@@ -53,11 +53,9 @@
 
 @media screen and (max-width: 450px) {
 
-    .containerFormLogin {
-        position: relative;
-    }
-
     .containerFormLogin--show {
+        position: relative;
+        margin-top: 2rem;
         display: block;
         opacity: 1;
         padding: 4rem 1.25rem;
