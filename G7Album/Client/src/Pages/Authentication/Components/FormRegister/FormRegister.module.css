@@ -1,22 +1,28 @@
 /*Metodologia BEM de CSS: https://animaticss.com/articulo/que-es-bem-css/ */
 
-.containerFormRegister {
+.containerFormRegister--show {
+    opacity: 1;
     width: 100%;
-    padding: 4rem 1.25rem;
     background: #fff;
     position: absolute;
     border-radius: 1.25rem;
     text-align: center;
+    padding: 8.5rem 1.25rem;
 }
 
-    .containerFormRegister h2 {
+.containerFormRegister--hide {
+    display: none;
+    opacity: 0;
+}
+
+    .containerFormRegister--show  h2 {
         font-size: 2rem;
         text-align: center;
         margin-bottom: 1.25rem;
         color: #46a2fd;
     }
 
-    .containerFormRegister button {
+    .containerFormRegister--show  button {
         padding: 0.5rem 2rem;
         margin-top: 1rem;
         border: none;
@@ -27,19 +33,7 @@
         outline: none;
     }
 
-.containerFormRegister--show {
-    opacity: 1;
-    /* padding: 8.5rem 1.25rem; */
-}
-
-.containerFormRegister--hide {
-    display: none;
-    opacity: 0;
-}
-
-
-
-.containerFormRegister input {
+.containerFormRegister--show  input {
     width: 10%;
     margin-bottom: 1rem;
     padding: 0.5rem;

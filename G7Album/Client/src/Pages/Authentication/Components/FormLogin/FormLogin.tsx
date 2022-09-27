@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 import { Input } from "../../../../Components/Input/Input";
 import { useAuth } from "../../Context/useAuth";
-import FormLoginCSS from "./FormLogin.module.css";
+import FormLoginCSS from "./FormLogin.module.css"
 
 import { InputsMockLogin } from "../../Mocks/InputsLogin";
 import AuthService from "../../Services/Auth.services";
@@ -63,8 +63,8 @@ export const FormLogin: React.FC = () => {
 
   return (
 
+    // ${FormLoginCSS["containerFormLogin"]}} 
     <div className={`
-      ${FormLoginCSS.containerFormLogin}} 
       ${storeAuth.IsLoginActive() 
         ? FormLoginCSS["containerFormLogin--show"] 
         : FormLoginCSS["containerFormLogin--hide"]}
@@ -72,7 +72,7 @@ export const FormLogin: React.FC = () => {
 
       <h2>Iniciar Sesion</h2>
 
-      <form onSubmit={login}>
+      <form onSubmit={login} >
 
         {InputsMockLogin.map((inputProps: IInputs, index: number) => (
           <Input

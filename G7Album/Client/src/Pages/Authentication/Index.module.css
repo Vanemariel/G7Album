@@ -1,6 +1,7 @@
 
 .mainAuthentication {
-    background-image: url(https://media.tycsports.com/files/2021/03/23/206640/roblox-mejores-juegos_862x485.jpg);
+    /* background-image: url(https://media.tycsports.com/files/2021/03/23/206640/roblox-mejores-juegos_862x485.jpg); */
+    background-image: url(https://placeimg.com/640/480/nature);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -16,10 +17,12 @@
     max-width: 50rem;
     position: relative;
 }
+
 /* Contenedor fondo azul text */
 .containerPage__Background {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
     padding: 2.25rem 1.5rem;
     text-align: center;
@@ -31,11 +34,14 @@
 .containerPage__Auth {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
     max-width: 23rem;
+    height: 100%;
     position: relative;
     top: -12rem;
     transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
 }
 
 .containerPage__Auth--loginActive {
@@ -64,6 +70,4 @@
         left: 0rem;
         margin: auto;
     }
-
-
 }

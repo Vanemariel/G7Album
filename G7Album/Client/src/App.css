@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+html {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 850px) {
+  html {
+      font-size: 14px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media screen and (max-height: 570px) {
+  body {
+      margin-top: -5.5rem;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+@media screen and (max-width: 450px) {
+  html {
+      font-size: 12px;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+*::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 1rem;
+  -webkit-appearance: none;
+}
+*::-webkit-scrollbar-track {
+  background: #aaa;
+  margin: .75rem;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: blue;
+  border-radius: 1.25rem;
+  border: 3px solid orange;
 }
