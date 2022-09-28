@@ -1,4 +1,6 @@
-﻿namespace G7Album.Server.Controllers
+﻿using G7Album.Shared.Models;
+
+namespace G7Album.Server.Controllers
 {
     [ApiController]
     [Route("Api/Album")]
@@ -10,17 +12,40 @@
         {
             this.context = context;
         }
-
-
-        [HttpGet]
+        /*[HttpGet]
         public async Task<ActionResult<List<Album>>> Get()
         {
             return await context.TablaAlbumes.ToListAsync();
+        }*/
+
+        [HttpGet("{page:int}")]
+        public async Task<ActionResult<List<Album>>> GetAll(int page)
+        {
+            if (context.TablaAlbumes == null)
+            {
+                return NotFound();
+            }
+
+            var pageResults = 3f;
+            var pageCount = Math.Ceiling(context.TablaAlbumes.Count() / pageResults);
+
+            var album = await context.TablaAlbumes
+                .Skip((page - 1) * (int)pageResults)
+                .Take((int)pageResults)
+                .ToListAsync();
+
+            var response = new Response<string>
+            {
+                TablaAlbumes = album,
+                CurrentPage = page,
+                Pages = (int)pageCount
+            };
+            return Ok(response);
         }
 
 
-        [HttpGet("{id:int}")]
-        public async Task<ActionResult<Album>> Get(int id)
+        /*[HttpGet("{id:int}")]
+        public async Task<ActionResult<Album>> GetById(int id)
         {
             var album = await context.TablaAlbumes.Where(x => x.Id == id).FirstOrDefaultAsync();
 
@@ -29,8 +54,7 @@
                 return NotFound($"No existe el Album con Id = {id}");
             }
             return album;
-
-        }
+        }*/
 
 
         [HttpPost]
@@ -106,6 +130,5 @@
                 return BadRequest($"Los datos no se pudieron eliminarse por :{e.Message}");
             }
         }
-
     }
 }

@@ -1,6 +1,4 @@
 ﻿using G7Album.Shared.Models;
-using G7Album.Shared.Models.ModelsDTO;
-using G7Album.Shared.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -41,7 +39,7 @@ namespace G7Album.Server.Controllers
         [HttpGet("{page:int}")]
         public async Task<ActionResult<List<AlbumImagenes>>> GetAll(int page)
         {
-            if (context.TablaAlbumes == null)
+            if (context.TablaImagenes == null)
             {
                 return NotFound();
             }
@@ -56,7 +54,7 @@ namespace G7Album.Server.Controllers
 
                 var response = new Response<string>
                 {
-                    TablaAlbumes = albumimagen,
+                    TablaImagenes = albumimagen,
                     CurrentPage = page,
                     Pages = (int)pageCount
                 };
