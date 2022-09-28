@@ -1,5 +1,7 @@
 ﻿
 
+using G7Album.Shared.Models;
+
 namespace G7Album.Server.Controllers
 {
     [ApiController]
@@ -13,17 +15,42 @@ namespace G7Album.Server.Controllers
             this.context = context;
         }
 
-        [HttpGet]
+        /*[HttpGet]
 
         public async Task <ActionResult<List<AlbumImagenImpresa>>> Get()
         {
             return await context.TablaImagenesImpresas.Include(x => x.AlbumImagenes)
                 .ToListAsync();
+        }*/
+
+        [HttpGet("{page:int}")]
+        public async Task<ActionResult<List<AlbumImagenImpresa>>> GetAll(int page)
+        {
+            if (context.TablaImagenesImpresas == null)
+            {
+                return NotFound();
+            }
+
+            var pageResults = 3f;
+            var pageCount = Math.Ceiling(context.TablaImagenesImpresas.Count() / pageResults);
+
+            var albumimagenimpresa = await context.TablaImagenesImpresas
+                .Skip((page - 1) * (int)pageResults)
+                .Take((int)pageResults)
+                .ToListAsync();
+
+            var response = new Response<string>
+            {
+                TablaImagenesImpresas = albumimagenimpresa,
+                CurrentPage = page,
+                Pages = (int)pageCount
+            };
+            return Ok(response);
         }
 
-        [HttpGet("{id:int}")]
+        /*[HttpGet("{id:int}")]
 
-        public async Task <ActionResult<AlbumImagenImpresa>> Get(int id)
+        public async Task <ActionResult<AlbumImagenImpresa>> GetById(int id)
         {
             var AlbImaImpres = await context.TablaImagenesImpresas.Where(x => x.Id == id).FirstOrDefaultAsync();
 
@@ -33,7 +60,7 @@ namespace G7Album.Server.Controllers
             }
 
             return AlbImaImpres;
-        }
+        }*/
 
         [HttpPost]
 

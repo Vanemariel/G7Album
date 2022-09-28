@@ -1,4 +1,6 @@
 ﻿
+using G7Album.Shared.Models;
+
 namespace G7Album.Server.Controllers
 {
 
@@ -22,11 +24,8 @@ namespace G7Album.Server.Controllers
             this.context = context; // para acceso a base de datos
         }
 
-        [HttpGet("GetAll")]
+        /*[HttpGet("GetAll")]
         //metodo que me muestra la lista completa  
-
-     
-
             public async Task<ActionResult<List<AlbumUsuarioImagenes>>> GetAll()
             {
             
@@ -34,8 +33,32 @@ namespace G7Album.Server.Controllers
                 .Include(x => x.AlbumUsuario)
                     .Include(x => x.AlbumImagenImpresa)
                     .ToListAsync();
+            }*/
+
+        [HttpGet("{page:int}")]
+        public async Task<ActionResult<List<AlbumUsuarioImagenes>>> GetAll(int page)
+        {
+            if (context.TablaUsuarioImagenes == null)
+            {
+                return NotFound();
             }
 
+            var pageResults = 3f;
+            var pageCount = Math.Ceiling(context.TablaUsuarioImagenes.Count() / pageResults);
+
+            var albumusuarioimagen = await context.TablaUsuarioImagenes
+                .Skip((page - 1) * (int)pageResults)
+                .Take((int)pageResults)
+                .ToListAsync();
+
+            var response = new Response<string>
+            {
+                TablaUsuarioImagenes = albumusuarioimagen,
+                CurrentPage = page,
+                Pages = (int)pageCount
+            };
+            return Ok(response);
+        }
 
         [HttpGet("GetOne/{id:int}")]
         public async Task<ActionResult<AlbumUsuarioImagenes>> GetById(int id)
@@ -67,10 +90,6 @@ namespace G7Album.Server.Controllers
                 return BadRequest(e.Message);
             }
         }
-
-
-
-
 
 
         [HttpPut]
