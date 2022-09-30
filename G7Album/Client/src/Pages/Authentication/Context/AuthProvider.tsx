@@ -17,8 +17,8 @@ export const AuthProvider: React.FC<Props> = (props) => {
   const formularioLogin = useFormCustom<IDataLoginForm>({
     Email: '',  Password: ''
   });
-  const formularioRegister = useFormCustom<IDataRegisterForm>({
-    Email: '',  Password: '', ConfirmPassword: '', NombreCompleto: ''
+    const formularioRegister = useFormCustom<IDataRegisterForm>({
+        EmailRegister: '', PasswordRegister: '', ConfirmPassword: '', NombreCompleto: ''
   })
 
   /// METODOS

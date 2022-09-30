@@ -41,7 +41,7 @@ export const FormLogin: React.FC = () => {
       storeGlobal.SetMyUserData(UserAdapted);                          
       updateStorage("User", UserAdapted)
 
-      //navigate("/home");
+      navigate("/home");
       storeGlobal.SetShowLoader(false)                                         
             
     } catch (error: any) {

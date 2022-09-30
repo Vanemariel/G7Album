@@ -52,7 +52,7 @@ export const FormRegister: React.FC = () => {
       resetForm()
       setTimeout(() => {
           storeGlobal.SetShowModalStatus(false)
-      }, 500);
+      }, 5000);
     }
   }
 

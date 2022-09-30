@@ -32,11 +32,11 @@ export const Authentication : React.FC = () => {
 
                <section className={`
                     ${AuthCSS["containerPage__Auth"]} ${AuthCSS[storeAuth.GetClassCssFormModifed()]}
-                `}>
+               `}>
                     <FormLogin />
                     
                     <FormRegister />
-                </section>                                                                                                                           
+               </section>                                                                                                                           
             </div>
         </main>   
     )

@@ -1,6 +1,6 @@
 export interface IDataRegisterForm {
-    Email: string;
+    EmailRegister: string;
     NombreCompleto: string;
-    Password: string;
+    PasswordRegister: string;
     ConfirmPassword: string;
 }

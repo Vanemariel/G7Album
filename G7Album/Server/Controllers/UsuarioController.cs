@@ -96,7 +96,7 @@ namespace G7Album.Server.Controllers
             try
             {
 
-                if (newUsuario.Email == null || newUsuario.Email == string.Empty)
+                if (newUsuario.EmailRegister == null || newUsuario.EmailRegister == string.Empty)
                 {
                     throw new Exception("Email requerido");
                 }
@@ -106,18 +106,18 @@ namespace G7Album.Server.Controllers
                     throw new Exception("Nombre de usuario requerido");
                 }
 
-                if (newUsuario.Password == null || newUsuario.Password == string.Empty)
+                if (newUsuario.PasswordRegister == null || newUsuario.PasswordRegister == string.Empty)
                 {
                     throw new Exception("Contraseña requerida");
                 }
 
-                if (newUsuario.Password != newUsuario.ConfirmPassword)
+                if (newUsuario.PasswordRegister != newUsuario.ConfirmPassword)
                 {
                     throw new Exception("La contraseñas deben coincidir.");
                 }
 
                 Usuario? UserBD = await this._context.TablaUsuarios.FirstOrDefaultAsync(
-                    Usuario => Usuario.Email == newUsuario.Email
+                    Usuario => Usuario.Email == newUsuario.EmailRegister
                 );
 
                 if (UserBD != null)
@@ -125,11 +125,11 @@ namespace G7Album.Server.Controllers
                     throw new Exception("Ya existe un usuario con este email. Intentelo nuevamente.");
                 }
 
-                var (passwordHash, passwordSalt) = CreatePasswordHash(newUsuario.Password);
+                var (passwordHash, passwordSalt) = CreatePasswordHash(newUsuario.PasswordRegister);
 
                 this._context.TablaUsuarios.Add(new Usuario
                 {
-                    Email = newUsuario.Email,
+                    Email = newUsuario.EmailRegister,
                     NombreCompleto = newUsuario.NombreCompleto,
                     Password = passwordHash,
                     PasswordSalt = passwordSalt
