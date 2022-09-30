@@ -15,7 +15,6 @@ export const Authentication : React.FC = () => {
 
 
     /// METODOS
-
     useEffect(()=>{
         storeAuth.ChangeClassCssForm();
         // eslint-disable-next-line react-hooks/exhaustive-deps
