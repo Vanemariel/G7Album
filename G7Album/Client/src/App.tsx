@@ -7,6 +7,8 @@ import { GlobalProvider } from './Context/GlobalProvider';
 import { AuthProvider } from './Pages/Authentication/Context/AuthProvider';
 import { Authentication } from './Pages/Authentication/Index';
 import { Home } from './Pages/Home/Index';
+import { FiguritasCompra } from './Pages/FiguritasCompra/Index';
+import { ImagenFiguritas } from './Pages/ImagenFigurita/Index';
 
 function App() {
 
