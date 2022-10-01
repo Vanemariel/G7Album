@@ -10,8 +10,7 @@ import { Home } from './Pages/Home/Index';
 import { FiguritasCompra } from './Pages/FiguritasCompra/Index';
 import { ImagenFigurita } from './Pages/ImagenFigurita/Index';
 import { Album } from './Pages/Album/Index';
-import { albumUnitario } from './Pages/albumUnitario/Index';
-import { AlbumUsuario } from './Pages/AlbumUsuario/Index';
+import { AlbumUnitario } from './Pages/AlbumUnitario/Index';
 
 
 
@@ -24,6 +23,8 @@ function App() {
 
       <GlobalProvider>
           {/*Quitar algun momento GlobalProvider por redux */}
+          
+          {/* Contenedor de rutas. */}
           <Routes>
 
             <Route path="/" element={
@@ -64,6 +65,13 @@ function App() {
                   </RoutePrivate>
               } />
 
+
+            <Route path="/Album" element={
+                <RoutePrivate>
+                  <Album/>
+                </RoutePrivate> 
+            }/>
+            
 
           </Routes>
 
