@@ -10,7 +10,7 @@ import { Home } from './Pages/Home/Index';
 import { FiguritasCompra } from './Pages/FiguritasCompra/Index';
 import { ImagenFigurita } from './Pages/ImagenFigurita/Index';
 import { Album } from './Pages/Album/Index';
-import { AlbumUnitario } from './Pages/AlbumUnitario/Index';
+//import { AlbumUnitario } from './Pages/AlbumUnitario/Index';
 import { AlbumUsuario } from './Pages/AlbumUsuario/Index';
 
 
@@ -73,6 +73,9 @@ function App() {
                 </RoutePrivate> 
             }/>
             
+
+
+
 
           </Routes>
 

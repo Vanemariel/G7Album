@@ -62,6 +62,7 @@ div#album-rotator-holder {}
     pointer-events: none;
     background: linear-gradient(-90deg, #161231 5%, transparent 40%);
 }
+
 .album-item {
     word-break: keep-all;
     background: black;
