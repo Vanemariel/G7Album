@@ -8,9 +8,14 @@ import { AuthProvider } from './Pages/Authentication/Context/AuthProvider';
 import { Authentication } from './Pages/Authentication/Index';
 import { Home } from './Pages/Home/Index';
 import { FiguritasCompra } from './Pages/FiguritasCompra/Index';
-import { ImagenFiguritas } from './Pages/ImagenFigurita/Index';
+import { ImagenFigurita } from './Pages/ImagenFigurita/Index';
 import { Album } from './Pages/Album/Index';
 import { albumUnitario } from './Pages/albumUnitario/Index';
+import { AlbumUsuario } from './Pages/AlbumUsuario/Index';
+
+
+
+
 
 
 function App() {
@@ -26,12 +31,39 @@ function App() {
                 <Authentication />
               </AuthProvider>
             }/>
+
         
             <Route path="/home" element={
                 <RoutePrivate>
                     <Home />
                 </RoutePrivate>
-            }/>
+            } />
+
+            <Route path="/AlbumUsuario" element={
+                <RoutePrivate>
+                   <AlbumUsuario />
+               </RoutePrivate>
+              } />
+
+            <Route path="/FiguritasCompra" element={
+                <RoutePrivate>
+                      <FiguritasCompra />
+               </RoutePrivate>
+            } />
+
+
+            <Route path="/ImagenFigurita" element={
+                <RoutePrivate>
+                      <ImagenFigurita />
+                </RoutePrivate>
+            } />
+
+            <Route path="/home" element={
+                <RoutePrivate>
+                      <Home />
+                  </RoutePrivate>
+              } />
+
 
           </Routes>
 

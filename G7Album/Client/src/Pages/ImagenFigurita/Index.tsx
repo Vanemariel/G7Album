@@ -1,6 +1,6 @@
 
 
-export const ImagenFiguritas: React.FC = () => {
+export const ImagenFigurita: React.FC = () => {
 
 
    
