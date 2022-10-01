@@ -15,7 +15,7 @@ namespace G7Album.Server.Controllers
         /*[HttpGet]
         public async Task<ActionResult<List<Album>>> Get()
         {
-            return await context.TablaAlbumes.ToListAsync();
+            return await context.TablaAlbumes.ToListAsync(); a
         }*/
 
         [HttpGet("{page:int}")]
