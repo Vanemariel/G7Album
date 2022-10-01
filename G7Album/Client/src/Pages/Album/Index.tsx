@@ -8,138 +8,136 @@ export const Album: React.FC = () => {
 
 
     return (
-        // <div id="m">
-        //     <div class="container">
-        //         <div class="input-group mb-3" >
-        //         <input type="text" class="form-control" placeholder="Escribe album o torneo deseado" aria-label="Recipient's username" aria-describedby="basic-addon2">
-        //             <div class="input-group-append">
-        //                 <button type="button" class="btn btn-primary">
-        //                     <i class="fas fa-search"></i>
-        //                 </button>
-        //             </div>
-        //         </div>
-        //     </div>
+        <div id="m">
+            <div className="container">
+                <div className="input-group mb-3" >
+                <input type="text" className="form-control" placeholder="Escribe album o torneo deseado" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+                    <div className="input-group-append">
+                        <button type="button" className="btn btn-primary">
+                            <i className="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-        //      <br>
+             <br/>
 
-        //     <h1>Sección Deportes</h1>
-        //     <div id="album-rotator">
+            <h1>Sección Deportes</h1>
+            <div id="album-rotator">
             
-        //         <div id="album-rotator-holder">
-        //             <div target="_top" class="album-item" >
-        //                 <span class="album-details">
-        //                     <span class="icon"><i class="far fa-at"></i> Destacado</span>
+                <div id="album-rotator-holder">
+
+                    {/* <div target="_top" class="album-item" > */}
+                    <a target="_top" className="album-item" >
+
+                        <span className="album-details">
+                            <span className="icon"><i className="far fa-at"></i> Destacado</span>
                         
-        //                     <span class="title"> Futbol</span>
-        //                     <span class="subtext"> <a href="1"> <FONT COLOR="white">Copa Libertadores <br> </FONT></a> <a href="2">  <FONT COLOR="white"> Champions League <br> </a><a href="3">  <FONT COLOR="white"> Copa America<br></FONT>  </a>
-        //                 </span>
-        //             </div>
-        //             <a target="_top" class="album-item" href="https://fjolt.com/article/apple-cards-webl-gl-javascript">
-        //                 <span class="album-details">
-                        
-                        
-        //                     <span class="title"> Tenis</span>
-        //                     <span class="subtext">Wimledon<br>Rollan Garros<br>Us Open</span>
-        //                 </span>
-        //             </a>
-        //             <a target="_top" class="album-item" href="https://twitter.com/smpnjn">
-        //                 <span class="album-details">
-                        
-                        
-        //                     <span class="title"> Basket</span>
-        //                     <span class="subtext">Liga Endesa<br>NBA<br>La Liga Argentina</span></span>
-        //                 </span>
-        //             </a>
-        //             <a target="_top" class="album-item" href="https://twitter.com/smpnjn">
-        //                 <span class="album-details">
-                        
-                            
-        //                     <span class="title"> Rugby</span>
-        //                     <span class="subtext">National Rugby League<br>Super League<br>The Rugby Championship</span>
-        //                 </span>
-        //             </a>
-        //         </div>
-        //     </div>
+                            <span className="title"> Futbol</span>
+                            <span className="subtext"> 
+
+                                {/* <a href="1"> <FONT COLOR="white">Copa Libertadores <br/></FONT> </a> 
+                                <a href="2"> <FONT COLOR="white"> Champions League <br/> </a>
+                                <a href="3"><FONT COLOR="white"> Copa America<br/></FONT> </a> */}
+                                <a href="1">Copa Libertadores<br/></a> 
+                                <a href="2">Champions League<br/></a>
+                                <a href="3">Copa America<br/></a>
+
+                            </span>
+                        </span>
+
+                    {/* </div> */}
+                    </a>
+
+                    <a target="_top" className="album-item" href="https://fjolt.com/article/apple-cards-webl-gl-javascript">
+                        <span className="album-details">
+                            <span className="title"> Tenis</span>
+                            <span className="subtext">Wimledon<br/>Rollan Garros<br/>Us Open </span>
+                        </span>
+                    </a>
+                    <a target="_top" className="album-item" href="https://twitter.com/smpnjn">
+                        <span className="album-details">
+                            <span className="title"> Basket</span>
+                            <span className="subtext">Liga Endesa<br/>NBA<br/>La Liga Argentina</span>
+                        </span>
+                    </a>
+                    <a target="_top" className="album-item" href="https://twitter.com/smpnjn">
+                        <span className="album-details">
+                            <span className="title"> Rugby</span>
+                            <span className="subtext">National Rugby League<br/>Super League<br/>The Rugby Championship</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
 
 
-        //     <div id="album-rotator2">
-        //         <h1>Sección Peliculas Disney</h1>
-        //         <br>
-        //         <div id="album-rotator-holder2">
-        //             <a target="_top" class="album-item2" href="https://twitter.com/smpnjn">
-        //                 <span class="album-details2">
-        //                     <span class="icon"><i class="far fa-at"></i> Destacado</span>
-        //                     <span class="title">Monster Inc</span>
-        //                     <span class="subtitle"></span>
-        //                     <span class="subtext">Monster Inc<br>Monster University</span>
-        //                 </span>
-        //             </a>
-        //             <a target="_top" class="album-item2" href="https://fjolt.com/article/apple-cards-webl-gl-javascript">
-        //                 <span class="album-details2">
-                        
-        //                     <span class="title">High school Musical</span>
-                        
-        //                     <span class="subtext">High school Musical<br>High school Musical 2</span>
-        //                 </span>
-        //             </a>
-        //             <a target="_top" class="album-item2" href="https://twitter.com/smpnjn">
-        //                 <span class="album-details2">
-                        
-        //                     <span class="title">Era del Hielo</span>
-                        
-        //                     <span class="subtext">La era del hielo 1<br>La era del hielo 2<br>La era del hielo 3</span></span>
-        //                 </span>
-        //             </a>
-        //             <a target="_top" class="album-item2" href="https://twitter.com/smpnjn">
-        //                 <span class="album-details2">
-                            
-        //                     <span class="title">Avatar</span>
-                        
-        //                     <span class="subtext">Avatar<br>Avatar 2</span>
-        //                 </span>
-        //             </a>
-        //         </div>
-        //     </div>
+            <div id="album-rotator2">
+                <h1>Sección Peliculas Disney</h1>
+                <br/>
+                <div id="album-rotator-holder2">
+                    <a target="_top" className="album-item2" href="https://twitter.com/smpnjn">
+                        <span className="album-details2">
+                            <span className="icon"><i className="far fa-at"></i> Destacado</span>
+                            <span className="title">Monster Inc</span>
+                            <span className="subtitle"></span>
+                            <span className="subtext">Monster Inc<br/>Monster University</span>
+                        </span>
+                    </a>
+                    <a target="_top" className="album-item2" href="https://fjolt.com/article/apple-cards-webl-gl-javascript">
+                        <span className="album-details2">
+                            <span className="title">High school Musical</span>
+                            <span className="subtext">High school Musical<br/>High school Musical 2</span>
+                        </span>
+                    </a>
+                    <a target="_top" className="album-item2" href="https://twitter.com/smpnjn">
+                        <span className="album-details2">
+                            <span className="title">Era del Hielo</span>
+                            <span className="subtext">La era del hielo 1<br/>La era del hielo 2<br/>La era del hielo 3</span>
+                        </span>
+                    </a>
+                    <a target="_top" className="album-item2" href="https://twitter.com/smpnjn">
+                        <span className="album-details2">
+                            <span className="title">Avatar</span>
+                            <span className="subtext">Avatar<br/>Avatar 2</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
 
-        //     <div id="album-rotator3">
-        //         <h1>Sección Anime</h1>
-        //         <br>
-        //         <div id="album-rotator-holder3">
-        //             <a target="_top" class="album-item3" href="https://twitter.com/smpnjn">
-        //                 <span class="album-details3">
-        //                     <span class="icon"><i class="far fa-at"></i> Destacado</span>
-        //                     <span class="title">Dragon Ball</span>
+            <div id="album-rotator3">
+                <h1>Sección Anime</h1>
+                <br/>
+                <div id="album-rotator-holder3">
+                    <a target="_top" className="album-item3" href="https://twitter.com/smpnjn">
+                        <span className="album-details3">
+                            <span className="icon"><i className="far fa-at"></i> Destacado</span>
+                            <span className="title">Dragon Ball</span>
+                            <span className="subtext">Dragon Ball <br/>Dragon Ball Z<br/> Dragon Ball GT</span>
+                        </span>
+                    </a>
+                    <a target="_top" className="album-item3" href="https://fjolt.com/article/apple-cards-webl-gl-javascript">
+                        <span className="album-details3">
+                            <span className="title">Naruto</span>
+                            <span className="subtext">Naruto<br/>Naruto shippuden<br/>Naruto Next Generation</span>
+                        </span>
+                    </a>
+                    <a target="_top" className="album-item3" href="https://twitter.com/smpnjn">
+                        <span className="album-details3">
                         
-        //                     <span class="subtext">Dragon Ball <br>Dragon Ball Z<br> Dragon Ball GT</span>
-        //                 </span>
-        //             </a>
-        //             <a target="_top" class="album-item3" href="https://fjolt.com/article/apple-cards-webl-gl-javascript">
-        //                 <span class="album-details3">
-                        
-        //                     <span class="title">Naruto</span>
+                            <span className="title">Cab del Zodiaco</span>
                             
-        //                     <span class="subtext">Naruto<br>Naruto shippuden<br>Naruto Next Generation</span>
-        //                 </span>
-        //             </a>
-        //             <a target="_top" class="album-item3" href="https://twitter.com/smpnjn">
-        //                 <span class="album-details3">
-                        
-        //                     <span class="title">Cab del Zodiaco</span>
-                            
-        //                 <span class="subtext">Saint Seiya the Lost Canvas<br>Batalla de Poseidon<br>Batalla de Asgard</span>
-        //                 </span>
-        //             </a>
-        //             <a target="_top" class="album-item3" href="https://twitter.com/smpnjn">
-        //                 <span class="album-details3">
-                        
-        //                     <span class="title">Ataque a los Titanes</span>
-                        
-        //                     <span class="subtext">Temporada 1<br>Temporada 2</span>
-        //                 </span>
-        //             </a>
-        //         </div>
-        //     </div>  
-        // </div>
-        <p>ESTO ES EL ALBUM DEL WACHO MARIAN</p>
+                        <span className="subtext">Saint Seiya the Lost Canvas<br/>Batalla de Poseidon<br/>Batalla de Asgard</span>
+                        </span>
+                    </a>
+                    <a target="_top" className="album-item3" href="https://twitter.com/smpnjn">
+                        <span className="album-details3">
+                            <span className="title">Ataque a los Titanes</span>
+                            <span className="subtext">Temporada 1<br/>Temporada 2</span>
+                        </span>
+                    </a>
+                </div>
+            </div>  
+        </div>
+        // <p>ESTO ES EL ALBUM DEL WACHO MARIAN</p>
     );
 }
