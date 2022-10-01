@@ -14,6 +14,11 @@ export const Authentication: React.FC = () => {
     const storeAuth = useAuth()
 
 
+    /// METODOS
+    useEffect(()=>{
+        storeAuth.ChangeClassCssForm();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <main className={AuthCSS.mainAuthentication}>
