@@ -9,6 +9,9 @@ import { Authentication } from './Pages/Authentication/Index';
 import { Home } from './Pages/Home/Index';
 import { FiguritasCompra } from './Pages/FiguritasCompra/Index';
 import { ImagenFiguritas } from './Pages/ImagenFigurita/Index';
+import { Album } from './Pages/Album/Index';
+import { albumUnitario } from './Pages/albumUnitario/Index';
+
 
 function App() {
 
