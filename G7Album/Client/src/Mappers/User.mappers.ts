@@ -1,7 +1,7 @@
 import { AuthData } from "../Interface/DTO Back/Auth/AuthData";
 import { UserModels } from "../Models/User.models";
 
-export const createAddaptedUser = (AuthData: AuthData): UserModels => {
+export const createMapperUser = (AuthData: AuthData): UserModels => {
 
     const formattedUser: UserModels = {
         Id: AuthData.user?.id,
