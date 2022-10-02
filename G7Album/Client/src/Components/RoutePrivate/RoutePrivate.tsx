@@ -19,7 +19,7 @@ export const RoutePrivate: React.FC<IRoutePrivate> = ({ children, redirectTo ="/
 
 
     if (jwt == undefined) {
-        // return <Navigate to={redirectTo} />
+        return <Navigate to={redirectTo} />
     }
 
     return children
