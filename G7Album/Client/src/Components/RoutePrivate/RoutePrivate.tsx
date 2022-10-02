@@ -10,7 +10,7 @@ interface IRoutePrivate {
 
 export const RoutePrivate: React.FC<IRoutePrivate> = ({ children, redirectTo ="/" }) => {
 
-    /* Futuro: ¿No deberia pegar al back enviando este token para ver si coincide
+    /* Futuro: ï¿½No deberia pegar al back enviando este token para ver si coincide
        con el token actual almacenado?
        Tb deberia hacer que el back me actualice el token cuando envie una peticion y 
        vea q mi token expiro!
@@ -19,7 +19,7 @@ export const RoutePrivate: React.FC<IRoutePrivate> = ({ children, redirectTo ="/
 
 
     if (jwt == undefined) {
-        return <Navigate to={redirectTo} />
+        // return <Navigate to={redirectTo} />
     }
 
     return children
