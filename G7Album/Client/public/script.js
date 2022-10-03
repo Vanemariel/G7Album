@@ -29,6 +29,18 @@ const config = {
         { low: rgb(0, 114, 255), high: rgb(48, 0, 255) },
         { low: rgb(236, 166, 15), high: rgb(233, 104, 0) },
         { low: rgb(43, 75, 235), high: rgb(213, 51, 248) },
+        { low: rgb(0, 114, 255), high: rgb(48, 0, 255) },
+        { low: rgb(236, 166, 15), high: rgb(233, 104, 0) },
+        { low: rgb(43, 75, 235), high: rgb(213, 51, 248) },
+        { low: rgb(0, 114, 255), high: rgb(48, 0, 255) },
+        { low: rgb(236, 166, 15), high: rgb(233, 104, 0) },
+        { low: rgb(43, 75, 235), high: rgb(213, 51, 248) },
+        { low: rgb(0, 114, 255), high: rgb(48, 0, 255) },
+        { low: rgb(236, 166, 15), high: rgb(233, 104, 0) },
+        { low: rgb(43, 75, 235), high: rgb(213, 51, 248) },
+        { low: rgb(0, 114, 255), high: rgb(48, 0, 255) },
+        { low: rgb(236, 166, 15), high: rgb(233, 104, 0) },
+
         { low: rgb(175, 49, 49), high: rgb(123, 16, 16) }
     ]
 }
