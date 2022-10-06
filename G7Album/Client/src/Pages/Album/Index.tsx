@@ -34,10 +34,16 @@ export const Album: React.FC = () => {
 
                         <NavDropdown title="Mi cuenta" id="basic-nav-dropdown">
                             <NavDropdown.Item href="AlbumUsuario">Mis albumes</NavDropdown.Item>
+                            <NavDropdown.Item href="AlbumUsuario">Comprar albumes</NavDropdown.Item>
                             <NavDropdown.Item href="">
-                                Cerar sesion
+                                Cerrar sesion
                             </NavDropdown.Item>
-
+                            <input type="text" className="form-control" placeholder="Escribe album o torneo deseado" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                            <div className="input-group-append">
+                                <button type="button" className="btn btn-primary">
+                                    <i className="fas fa-search"></i>
+                                </button>
+                            </div>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
