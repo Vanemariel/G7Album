@@ -3,10 +3,10 @@
 import './style.css'
 import './style2.css'
 import './style3.css'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+// import Container from 'react-bootstrap/Container';
+// import Nav from 'react-bootstrap/Nav';
+// import Navbar from 'react-bootstrap/Navbar';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -83,7 +83,7 @@ export const AlbumUnitario: React.FC = () => {
                 </div>
                 
                 <div id="album-rotator">
-                    <h1>Secci�n Basket</h1>
+                    <h1>Seccion Basket</h1>
                     <div id="album-rotator-holder">
                         <a target="_top" className="album-item" href="https://twitter.com/smpnjn">
                             <span className="album-details">

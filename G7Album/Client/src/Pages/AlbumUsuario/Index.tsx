@@ -7,12 +7,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
-
-
-
-
 export const AlbumUsuario: React.FC = () => {
 
 
