@@ -1,0 +1,61 @@
+[
+    {
+        "title": "Futbol",
+        "Albumes": [
+            {
+                "title": "Copa Libertadores"
+            },
+            {
+                "title": "Champions League"
+            },
+            {
+                "title": "Copa America"
+            }
+        ]
+    },
+    {
+        "title": "Tenis",
+        "Albumes": [
+            {
+                "title": "Winledom"
+            },
+            {
+                "title": "Rollan Garros"
+            },
+            {
+                "title": "Us Open"
+            }
+        ]
+    },
+    {
+        "title": "Basket",
+        "Albumes": [
+            {
+                "title": "Liga ndesa"
+            },
+            {
+                "title": "NBA"
+            },
+            {
+                "title": "La Liga Argentina"
+            }
+        ]
+    },
+    {
+        "title": "Rugby",
+        "Albumes": [
+            {
+                "title": "National Rugby League"
+            },
+            {
+                "title": "Super League"
+            },
+            {
+                "title": "The Rugby Championship<"
+            }
+        ]
+    }
+
+
+  
+]

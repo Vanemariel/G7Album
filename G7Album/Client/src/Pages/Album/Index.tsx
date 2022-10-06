@@ -1,5 +1,3 @@
-//import { useEffect } from "react";
-//import { FormLogin } from "./Components/FormLogin/FormLogin";
 import './style.css'
 import './style2.css'
 import './style3.css'
@@ -9,8 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
+import AlbumesMock from './Mocks/Albumes.json'
 
 export const Album: React.FC = () => {
 
@@ -21,29 +18,29 @@ export const Album: React.FC = () => {
     return (
 
 
-        <><Navbar bg="dark" variant="dark">
-            <Container>
-                <Navbar.Brand href="">G7Album</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="Home">Inicio</Nav.Link>
-                        <Nav.Link href="Album">Albumes</Nav.Link>
+        <>
+            <Navbar bg="dark" variant="dark">
+                <Container>
+                    <Navbar.Brand href="">G7Album</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link href="Home">Inicio</Nav.Link>
+                            <Nav.Link href="Album">Albumes</Nav.Link>
 
-                        <Nav.Link href="FiguritasCompra">Figuritas</Nav.Link>
+                            <Nav.Link href="FiguritasCompra">Figuritas</Nav.Link>
 
-                        <NavDropdown title="Mi cuenta" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="AlbumUsuario">Mis albumes</NavDropdown.Item>
-                            <NavDropdown.Item href="">
-                                Cerar sesion
-                            </NavDropdown.Item>
+                            <NavDropdown title="Mi cuenta" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="AlbumUsuario">Mis albumes</NavDropdown.Item>
+                                <NavDropdown.Item href="">
+                                    Cerar sesion
+                                </NavDropdown.Item>
 
-                        </NavDropdown>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-
+                            </NavDropdown>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
 
             <div className="containerPageAlbum">
 
@@ -61,55 +58,36 @@ export const Album: React.FC = () => {
 
                     <br />
 
-                    <div id="album-rotator">
-                        <h1>Sección Deportes</h1>
-                        <div id="album-rotator-holder">
+        
+                    {
+                        AlbumesMock.map((Album: any, indexAlbum: number) => (
 
-                            {/* <div target="_top" class="album-item" > */}
-                            <a target="_top" className="album-item">
+                            <div id={`album-rotator${indexAlbum +1}`} key={indexAlbum}>
+                                <h1>{Album.titleSectionMain}</h1>
+                                <section id={`album-rotator-holder${indexAlbum +1}`}>
+                                    {
+                                        Album.targetEsports.map((eSport: any, indexEsport: number) => (
+                                            <a className={`album-item${indexAlbum +1}`} target="_top" href='#' key={indexEsport}>
+                                                <div className={`album-details${indexAlbum +1}`}>
+                                                    <span className="title"> {eSport.title}</span>
+                                                    <span className="subtext">
+                                                        {eSport.subCategorys.map((subCategory: any, indexSubCategory: number) => (
+                                                            <p key={indexSubCategory}>{subCategory.title}</p>
+                                                        ))}
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        ))
+                                    }          
+                                </section>
+                            </div>
+                            
+                        ))
+                    }
 
-                                <span className="album-details">
-                                    <span className="icon"><i className="far fa-at"></i> Destacado</span>
-
-                                    <span className="title"> Futbol</span>
-                                    <span className="subtext">
-
-                                        {/* <a href="1"> <FONT COLOR="white">Copa Libertadores <br/></FONT> </a>
-    <a href="2"> <FONT COLOR="white"> Champions League <br/> </a>
-    <a href="3"><FONT COLOR="white"> Copa America<br/></FONT> </a> */}
-                                        <a href="1">Copa Libertadores<br /></a>
-                                        <a href="2">Champions League<br /></a>
-                                        <a href="3">Copa America<br /></a>
-
-                                    </span>
-                                </span>
-
-                                {/* </div> */}
-                            </a>
-
-                            <a target="_top" className="album-item" href="https://fjolt.com/article/apple-cards-webl-gl-javascript">
-                                <span className="album-details">
-                                    <span className="title"> Tenis</span>
-                                    <span className="subtext">Wimledon<br />Rollan Garros<br />Us Open </span>
-                                </span>
-                            </a>
-                            <a target="_top" className="album-item" href="https://twitter.com/smpnjn">
-                                <span className="album-details">
-                                    <span className="title"> Basket</span>
-                                    <span className="subtext">Liga Endesa<br />NBA<br />La Liga Argentina</span>
-                                </span>
-                            </a>
-                            <a target="_top" className="album-item" href="https://twitter.com/smpnjn">
-                                <span className="album-details">
-                                    <span className="title"> Rugby</span>
-                                    <span className="subtext">National Rugby League<br />Super League<br />The Rugby Championship</span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <div id="album-rotator2">
+               
+              
+                    {/* <div id="album-rotator2">
                         <h1>Sección Peliculas Disney</h1>
                         <br />
                         <div id="album-rotator-holder2">
@@ -174,7 +152,7 @@ export const Album: React.FC = () => {
                                 </span>
                             </a>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
             </div></>
