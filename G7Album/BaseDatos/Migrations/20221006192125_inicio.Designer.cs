@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace G7Album.BaseDatos.Migrations
 {
     [DbContext(typeof(BDContext))]
-    [Migration("20221001155825_inicio")]
+    [Migration("20221006192125_inicio")]
     partial class inicio
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,8 +72,8 @@ namespace G7Album.BaseDatos.Migrations
                             CantidadImpreso = 1000,
                             CodigoAlbum = 10,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 1, 12, 58, 25, 395, DateTimeKind.Local).AddTicks(9362),
-                            Hasta = new DateTime(2022, 10, 11, 12, 58, 25, 395, DateTimeKind.Local).AddTicks(9374),
+                            Desde = new DateTime(2022, 10, 6, 16, 21, 25, 55, DateTimeKind.Local).AddTicks(3973),
+                            Hasta = new DateTime(2022, 10, 16, 16, 21, 25, 55, DateTimeKind.Local).AddTicks(3986),
                             Titulo = "album"
                         });
                 });
