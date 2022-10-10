@@ -20,6 +20,8 @@ export const axiosMethod = async<TypeResult>(Params: IDataParams): Promise<IResp
             method: method,
             data: dataSend ?? {},
         });
+        
+        console.log("🚀 ~ file: axiosMethod.ts ~ line 23 ~ axiosMethod ~ Response", Response)
 
         ResponseDTO.Result = await Response.data.result;
 

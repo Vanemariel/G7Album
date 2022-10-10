@@ -7,14 +7,13 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import AlbumesMock from './Mocks/Albumes.json'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { carouselTarjets } from '../../Utils/carouselTarjets';
+import AlbumService from './Services/Album.service';
 
 export const Album: React.FC = () => {
 
-
-    /// METODOS
-
+    /// VARIABLES
     const config = [
         {
             individualItem: '#album-item0',
@@ -39,7 +38,23 @@ export const Album: React.FC = () => {
         }
     ]
 
-    useEffect(()=> carouselTarjets(config),[])
+    /// HOOKS
+    const [allAlbumes, setAllAlbumes] = useState()
+    
+    /// METODOS
+    const getAllAlbumes = () => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        AlbumService.GetAllAlbumes(1)
+    }
+
+
+
+
+
+    useEffect(()=> {
+        carouselTarjets(config)
+        getAllAlbumes()
+    },[])
 
     return (
 
