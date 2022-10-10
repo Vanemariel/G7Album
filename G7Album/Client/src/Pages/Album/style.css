@@ -11,9 +11,11 @@
 }
 
 
-#album-rotator0,
+/* #album-rotator0,
 #album-rotator1,
-#album-rotator2 {
+#album-rotator2,  */
+.albumRotatorContainer
+{
     width: 1000px;
     float: left;
     white-space: nowrap;
@@ -22,19 +24,11 @@
     word-break: keep-all;
     padding: 2rem 0;
 }
-
-#album-rotator-holder0,
-#album-rotator-holder1,
-#album-rotator-holder2 {
-    position: relative;
-    user-select: none;
-    will-change: transform;
-}
-
-
+/* 
 #album-rotator0:after,
 #album-rotator1:after,
-#album-rotator2:after {
+#album-rotator2:after, */
+.albumRotatorContainer::after {
     content: '';
     position: absolute;
     top: 0;
@@ -45,9 +39,16 @@
     background: linear-gradient(-90deg, #161231 5%, transparent 40%);
 }
 
-.album-item0,
-.album-item1,
-.album-item2 {
+/* #album-rotator-holder0,
+#album-rotator-holder1,
+#album-rotator-holder2, */
+.albumRotatorHolder {
+    position: relative;
+    user-select: none;
+    will-change: transform;
+}
+
+.albumItem {
     word-break: keep-all;
     background: black;
     box-shadow: 0 2px 30px rgba(0,0,0,0.5);
@@ -64,17 +65,15 @@
     transition: all 0.2s ease-out;
     transform: scale(1);
 }
-
-.album-item0:hover,
-.album-item1:hover,
-.album-item2:hover {
+.albumItem:hover {
     transform: scale(1.02);
 }
 
 
-.album-details0,
+/* .album-details0,
 .album-details1,
-.album-details2 {
+.album-details2, */
+.albumItem__details {
     background: transparent;
     position: absolute;
     top: 0;
@@ -97,10 +96,7 @@
     display: inline-block;
     width: 100%;
 }
-.subtitle {
-    font-weight: 100;
-    line-height: 1.25rem;
-}
+
 .subtext {
     font-size: 1.1167rem;
     position: absolute;
@@ -112,12 +108,6 @@
     letter-spacing: 0;
     box-sizing: border-box;
     font-weight: 400;
-}
-.icon {
-    font-size: 1rem;
-    line-height: 1rem;
-    display: block;
-    padding: 0 0 0.5rem 0;
 }
 
 h1 {
