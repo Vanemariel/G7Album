@@ -10,8 +10,9 @@ export const ImagenFigurita: React.FC = () => {
    
 
     return (
+        <><p></p></>
 
-        <div className="containerPageAlbum"> 
+       /* <div className="containerPageAlbum"> 
         
             <div id="m">
 
@@ -212,7 +213,7 @@ export const ImagenFigurita: React.FC = () => {
 
             </div>
 
-        </div>
+        </div>*/
 
     )
 }

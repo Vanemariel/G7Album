@@ -9,6 +9,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import FiguritaCompraMock from './Mocks/FiguritasCompra.json'
+
 export const FiguritasCompra: React.FC = () => {
 
 
@@ -65,13 +67,42 @@ export const FiguritasCompra: React.FC = () => {
                         </div>
                     </div>
 
-                    <div id="album-rotator">
+
+
+                    {
+            FiguritaCompraMock.map((FiguCompra: any, indexFiguritaCompra: number) => (
+
+                <div id={`album-rotator${indexFiguritaCompra +1}`} key={indexFiguritaCompra}>
+                    <h1>{FiguCompra.titleSectionMain}</h1>
+                    <section id={`album-rotator-holder${indexFiguritaCompra +1}`}>
+                        {
+                            FiguCompra.targetEsports.map((eSport: any, indexEsport: number) => (
+                                <a className={`album-item${indexFiguritaCompra +1}`} target="_top" href='#' key={indexEsport}>
+                                    <div className={`album-details${indexFiguritaCompra +1}`}>
+                                        <span className="title"> {eSport.title}</span>
+                                        <span className="subtext">
+                                            {eSport.subCategorys.map((subCategory: any, indexSubCategory: number) => (
+                                                <p key={indexSubCategory}>{subCategory.title}</p>
+                                            ))}
+                                        </span>
+                                    </div>
+                                </a>
+                            ))
+                        }          
+                    </section>
+                </div>
+                
+            ))
+        }
+                    
+
+
+    {
+        /*<div id="album-rotator">
                         <h1>FIGURITAS DE DEPORTES</h1>
                         <div id="album-rotator-holder">
                             <a target="_top" className="album-item" href="https://twitter.com/smpnjn">
                                 <span className="album-details">
-                                    <span className="icon"><i className="far fa-at"></i> GroupAlbumesEdition</span>
-                                    <span className="title">Click</span>
                                     <span className="subtitle">Figus Futbol</span>
                                     <span className="subtext">Copa Libertadores<br />Copa America<br />Champios League</span>
                                 </span>
@@ -102,83 +133,82 @@ export const FiguritasCompra: React.FC = () => {
                             </a>
                         </div>
                     </div>
+       /* <div id="album-rotator2">
+        <h1>FIGURITAS DE DISNEY</h1>
+        <div id="album-rotator-holder2">
+            <a target="_top" className="album-item2" href="https://twitter.com/smpnjn">
+                <span className="album-details2">
+                    <span className="icon"><i className="far fa-at"></i> GroupAlbumesEdition</span>
+                    <span className="title">Click</span>
+                    <span className="subtitle">Figus Monster Inc</span>
+                    <span className="subtext">Monster Inc<br />Monster University</span>
+                </span>
+            </a>
+            <a target="_top" className="album-item2" href="https://fjolt.com/article/apple-cards-webl-gl-javascript">
+                <span className="album-details2">
+                    <span className="icon"><i className="far fa-at"></i> GroupAlbumesEdition</span>
+                    <span className="title">Click</span>
+                    <span className="subtitle">Figus High school Musical</span>
+                    <span className="subtext">High school Musical<br />High school Musical 2</span>
+                </span>
+            </a>
+            <a target="_top" className="album-item2" href="https://twitter.com/smpnjn">
+                <span className="album-details2">
+                    <span className="icon"><i className="far fa-at"></i> GroupAlbumesEdition</span>
+                    <span className="title">hielo</span>
+                    <span className="subtitle">Figus </span>
+                    <span className="subtext">La Hera de hielo 1<br />La era de hielo 2<br />La era de hielo 3</span>
+                </span>
+            </a>
+            <a target="_top" className="album-item2" href="https://twitter.com/smpnjn">
+                <span className="album-details2">
 
+                    <span className="title">Avatar</span>
+                    <span className="subtitle">Figus Avatar</span>
+                    <span className="subtext">Avatar<br />Avatar 2</span>
+                </span>
+            </a>
+        </div>
+    </div>
 
-                    <div id="album-rotator2">
-                        <h1>FIGURITAS DE DISNEY</h1>
-                        <div id="album-rotator-holder2">
-                            <a target="_top" className="album-item2" href="https://twitter.com/smpnjn">
-                                <span className="album-details2">
-                                    <span className="icon"><i className="far fa-at"></i> GroupAlbumesEdition</span>
-                                    <span className="title">Click</span>
-                                    <span className="subtitle">Figus Monster Inc</span>
-                                    <span className="subtext">Monster Inc<br />Monster University</span>
-                                </span>
-                            </a>
-                            <a target="_top" className="album-item2" href="https://fjolt.com/article/apple-cards-webl-gl-javascript">
-                                <span className="album-details2">
-                                    <span className="icon"><i className="far fa-at"></i> GroupAlbumesEdition</span>
-                                    <span className="title">Click</span>
-                                    <span className="subtitle">Figus High school Musical</span>
-                                    <span className="subtext">High school Musical<br />High school Musical 2</span>
-                                </span>
-                            </a>
-                            <a target="_top" className="album-item2" href="https://twitter.com/smpnjn">
-                                <span className="album-details2">
-                                    <span className="icon"><i className="far fa-at"></i> GroupAlbumesEdition</span>
-                                    <span className="title">hielo</span>
-                                    <span className="subtitle">Figus </span>
-                                    <span className="subtext">La Hera de hielo 1<br />La era de hielo 2<br />La era de hielo 3</span>
-                                </span>
-                            </a>
-                            <a target="_top" className="album-item2" href="https://twitter.com/smpnjn">
-                                <span className="album-details2">
-
-                                    <span className="title">Avatar</span>
-                                    <span className="subtitle">Figus Avatar</span>
-                                    <span className="subtext">Avatar<br />Avatar 2</span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div id="album-rotator3">
-                        <h1>FIGURITAS DE ANIME</h1>
-                        <div id="album-rotator-holder3">
-                            <a target="_top" className="album-item3" href="https://twitter.com/smpnjn">
-                                <span className="album-details3">
-                                    <span className="icon"><i className="far fa-at"></i> GroupAlbumesEdition</span>
-                                    <span className="title">Click</span>
-                                    <span className="subtitle">Figus Dragon Ball Z</span>
-                                    <span className="subtext">Dragon Ball Z<br />Dragon Ball GT</span>
-                                </span>
-                            </a>
-                            <a target="_top" className="album-item3" href="https://fjolt.com/article/apple-cards-webl-gl-javascript">
-                                <span className="album-details3">
-                                    <span className="icon"><i className="far fa-at"></i> GroupAlbumesEdition</span>
-                                    <span className="title">Click</span>
-                                    <span className="subtitle">Figus Naruto</span>
-                                    <span className="subtext">Naruto<br />Naruto Shippuden<br />Naruto Next Generation</span>
-                                </span>
-                            </a>
-                            <a target="_top" className="album-item3" href="https://twitter.com/smpnjn">
-                                <span className="album-details3">
-                                    <span className="icon"><i className="far fa-at"></i> GroupAlbumesEdition</span>
-                                    <span className="title">Click</span>
-                                    <span className="subtitle">Figus Los Caballeros de Zodiaco</span>
-                                    <span className="subtext">Saint Seiya the Lost Canvas<br />Batalla de Poseidon<br />Batalla de Asgard</span>
-                                </span>
-                            </a>
-                            <a target="_top" className="album-item3" href="https://twitter.com/smpnjn">
-                                <span className="album-details3">
-                                    <span className="icon"><i className="far fa-at"></i> GroupAlbumesEdition</span>
-                                    <span className="title">Click para ver las figuritas</span>
-                                    <span className="subtitle">Figus da Ataque a los Titanes</span>
-                                    <span className="subtext">Temprada 1<br />Temporada 2</span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
+    <div id="album-rotator3">
+        <h1>FIGURITAS DE ANIME</h1>
+        <div id="album-rotator-holder3">
+            <a target="_top" className="album-item3" href="https://twitter.com/smpnjn">
+                <span className="album-details3">
+                    <span className="icon"><i className="far fa-at"></i> GroupAlbumesEdition</span>
+                    <span className="title">Click</span>
+                    <span className="subtitle">Figus Dragon Ball Z</span>
+                    <span className="subtext">Dragon Ball Z<br />Dragon Ball GT</span>
+                </span>
+            </a>
+            <a target="_top" className="album-item3" href="https://fjolt.com/article/apple-cards-webl-gl-javascript">
+                <span className="album-details3">
+                    <span className="icon"><i className="far fa-at"></i> GroupAlbumesEdition</span>
+                    <span className="title">Click</span>
+                    <span className="subtitle">Figus Naruto</span>
+                    <span className="subtext">Naruto<br />Naruto Shippuden<br />Naruto Next Generation</span>
+                </span>
+            </a>
+            <a target="_top" className="album-item3" href="https://twitter.com/smpnjn">
+                <span className="album-details3">
+                    <span className="icon"><i className="far fa-at"></i> GroupAlbumesEdition</span>
+                    <span className="title">Click</span>
+                    <span className="subtitle">Figus Los Caballeros de Zodiaco</span>
+                    <span className="subtext">Saint Seiya the Lost Canvas<br />Batalla de Poseidon<br />Batalla de Asgard</span>
+                </span>
+            </a>
+            <a target="_top" className="album-item3" href="https://twitter.com/smpnjn">
+                <span className="album-details3">
+                    <span className="icon"><i className="far fa-at"></i> GroupAlbumesEdition</span>
+                    <span className="title">Click para ver las figuritas</span>
+                    <span className="subtitle">Figus da Ataque a los Titanes</span>
+                    <span className="subtext">Temprada 1<br />Temporada 2</span>
+                </span>
+            </a>
+        </div>
+    </div>*/
+    }                
 
                 </div>
 
