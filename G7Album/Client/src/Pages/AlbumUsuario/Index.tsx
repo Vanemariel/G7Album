@@ -28,7 +28,7 @@ export const AlbumUsuario: React.FC = () => {
                         <Nav.Link href="Home">Inicio</Nav.Link>
                         <Nav.Link href="Album">Albumes</Nav.Link>
 
-                        <Nav.Link href="FiguritasCompra">Figuritas</Nav.Link>
+                        <Nav.Link href="AlbumImagenes">Figuritas</Nav.Link>
 
                         <NavDropdown title="Mi cuenta" id="basic-nav-dropdown">
                             <NavDropdown.Item href="AlbumUsuario">Mis albumes</NavDropdown.Item>

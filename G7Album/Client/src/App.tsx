@@ -7,7 +7,7 @@ import { GlobalProvider } from './Context/GlobalProvider';
 import { AuthProvider } from './Pages/Authentication/Context/AuthProvider';
 import { Authentication } from './Pages/Authentication/Index';
 import { Home } from './Pages/Home/Index';
-import { FiguritasCompra } from './Pages/FiguritasCompra/Index';
+import { AlbumImagenes } from './Pages/AlbumImagenes/Index';
 import { ImagenFigurita } from './Pages/ImagenFigurita/Index';
 import { Album } from './Pages/Album/Index';
 import { AlbumUnitario } from './Pages/AlbumUnitario/Index';
@@ -32,7 +32,7 @@ function App() {
             }/>
 
         
-            <Route path="/home" element={
+            <Route path="/Home" element={
                 <RoutePrivate>
                     <Home />
                 </RoutePrivate>
@@ -44,25 +44,18 @@ function App() {
                </RoutePrivate>
               } />
 
-            <Route path="/FiguritasCompra" element={
+            <Route path="/AlbumImagenes" element={
                 <RoutePrivate>
-                      <FiguritasCompra />
+                      <AlbumImagenes />
                </RoutePrivate>
             } />
 
-
+{/* 
             <Route path="/ImagenFigurita" element={
                 <RoutePrivate>
                       <ImagenFigurita />
                 </RoutePrivate>
-            } />
-
-            <Route path="/home" element={
-                <RoutePrivate>
-                      <Home />
-                  </RoutePrivate>
-              } />
-
+            } /> */}
 
             <Route path="/Album" element={
                 <RoutePrivate>
@@ -70,11 +63,11 @@ function App() {
                 </RoutePrivate> 
             }/>
 
-            <Route path="/AlbumUnitario" element={
+            {/* <Route path="/AlbumUnitario" element={
                 <RoutePrivate>
                   <AlbumUnitario/>
                 </RoutePrivate> 
-            }/>
+            }/> */}
             
 
           </Routes>

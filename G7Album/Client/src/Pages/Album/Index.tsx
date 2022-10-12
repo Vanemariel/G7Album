@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { useNavigate } from "react-router-dom";
 import './style.css'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -6,21 +7,48 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import AlbumesMock from './Mocks/Albumes.json'
+// import AlbumesMock from './Mocks/Albumes.json'
+import AlbumesMock from './Mocks/AlbumesV2.json'
 import { useEffect, useState } from 'react';
 import { carouselTarjets } from '../../Utils/carouselTarjets';
 import AlbumService from './Services/Album.service';
 
 export const Album: React.FC = () => {
 
+
+    const navigate = useNavigate();
+
     /// VARIABLES
+    // const config = [
+    //     {
+    //         individualItem: '#album-item0',
+    //         carouselWidth: 1000, // in px
+    //         carouselId: '#album-rotator0',    
+    //         // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
+    //         carouselHolderId: '#album-rotator-holder0'
+    //     },
+    //     {
+    //         individualItem: '#album-item1',
+    //         carouselWidth: 1000, // in p
+    //         carouselId: '#album-rotator1',    
+    //         // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
+    //         carouselHolderId: '#album-rotator-holder1',
+    //     },
+    //     {
+    //         individualItem: '#album-item2',
+    //         carouselWidth: 1000, // in px
+    //         carouselId: '#album-rotator2',    
+    //         // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
+    //         carouselHolderId: '#album-rotator-holder2',
+    //     }
+    // ]
     const config = [
         {
             individualItem: '#album-item0',
             carouselWidth: 1000, // in px
             carouselId: '#album-rotator0',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
-            carouselHolderId: '#album-rotator-holder0',
+            carouselHolderId: '#album-rotator-holder0'
         },
         {
             individualItem: '#album-item1',
@@ -35,6 +63,27 @@ export const Album: React.FC = () => {
             carouselId: '#album-rotator2',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder2',
+        },
+        {
+            individualItem: '#album-item3',
+            carouselWidth: 1000, // in px
+            carouselId: '#album-rotator3',    
+            // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
+            carouselHolderId: '#album-rotator-holder3'
+        },
+        {
+            individualItem: '#album-item4',
+            carouselWidth: 1000, // in p
+            carouselId: '#album-rotator4',    
+            // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
+            carouselHolderId: '#album-rotator-holder4',
+        },
+        {
+            individualItem: '#album-item5',
+            carouselWidth: 1000, // in px
+            carouselId: '#album-rotator5',    
+            // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
+            carouselHolderId: '#album-rotator-holder5',
         }
     ]
 
@@ -69,7 +118,7 @@ export const Album: React.FC = () => {
                             <Nav.Link href="Home">Inicio</Nav.Link>
                             <Nav.Link href="Album">Albumes</Nav.Link>
 
-                            <Nav.Link href="FiguritasCompra">Figuritas</Nav.Link>
+                            <Nav.Link href="AlbumImagenes">Figuritas</Nav.Link>
 
                             <NavDropdown title="Mi cuenta" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="AlbumUsuario">Mis albumes</NavDropdown.Item>
@@ -103,7 +152,7 @@ export const Album: React.FC = () => {
                     </div>
                     <br />
         
-                    {
+                    {/* {
                         AlbumesMock.map((Album: any, indexAlbum: number) => (
                             <div id={`album-rotator${indexAlbum}`} key={indexAlbum} className="albumRotatorContainer">
                                 <h1>{Album.titleSectionMain}</h1>
@@ -129,7 +178,33 @@ export const Album: React.FC = () => {
                             </div>
                             
                         ))
-                    }
+                    } */}
+                
+                {
+                    AlbumesMock.map((Album: any, indexAlbum: number) => (
+
+                        <div id={`album-rotator${indexAlbum}`} key={indexAlbum} className="albumRotatorContainer">
+                           <h1 className='title'>{Album.title}</h1>
+                      
+                            <section id={`album-rotator-holder${indexAlbum}`} className="albumRotatorHolder">
+                                {
+                                    Album.subCategorys.map((category: any, indexEsport: number)=>(
+                                        <article id={`album-item${indexAlbum}`} style={{cursor: 'pointer'}}
+                                            className={`albumItem`} key={indexEsport}
+                                        >
+                                            <div className={`albumItem__details`}>  
+
+                                                <h3>{category.title}</h3>
+            
+                                                <button className="btnAlbumComprar" type='submit' onClick={() => navigate('/AlbumImagenes')}>Comprar</button>
+                                            </div>
+                                        </article>
+                                    ))
+                                }
+                            </section>
+                        </div> 
+                    ))
+                }
                 </div>
             </div>
         </>

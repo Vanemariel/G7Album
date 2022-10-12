@@ -1,27 +1,49 @@
 //import { useEffect } from "react";
 //import { FormLogin } from "./Components/FormLogin/FormLogin";
 import './style.css'
-import './style2.css'
-import './style3.css'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import FiguritaCompraMock from './Mocks/FiguritasCompra.json'
+import AlbumImagenesMock from './Mocks/AlbumImagenes.json'
+import { useEffect } from 'react';
+import { carouselTarjets } from '../../Utils/carouselTarjets';
 
-export const FiguritasCompra: React.FC = () => {
+export const AlbumImagenes: React.FC = () => {
 
 
     /// METODOS
+    const config = [
+        {
+            individualItem: '#album-item0',
+            carouselWidth: 1000, // in px
+            carouselId: '#album-rotator0',    
+            // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
+            carouselHolderId: '#album-rotator-holder0'
+        },
+        {
+            individualItem: '#album-item1',
+            carouselWidth: 1000, // in p
+            carouselId: '#album-rotator1',    
+            // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
+            carouselHolderId: '#album-rotator-holder1',
+        }
+    ]
 
+    useEffect(()=> {
+        carouselTarjets(config)
+    },[])
 
     return (
 
 
 
-        <><Navbar bg="dark" variant="dark">
+
+
+        <>
+            <Navbar bg="dark" variant="dark">
             <Container>
                 <Navbar.Brand href="">G7Album</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -70,30 +92,34 @@ export const FiguritasCompra: React.FC = () => {
 
 
                     {
-            FiguritaCompraMock.map((FiguCompra: any, indexFiguritaCompra: number) => (
+                        AlbumImagenesMock.map((AlbumIMG: any, indexFiguritaCompra: number) => (
 
-                <div id={`album-rotator${indexFiguritaCompra +1}`} key={indexFiguritaCompra}>
-                    <h1>{FiguCompra.titleSectionMain}</h1>
-                    <section id={`album-rotator-holder${indexFiguritaCompra +1}`}>
-                        {
-                            FiguCompra.targetEsports.map((eSport: any, indexEsport: number) => (
-                                <a className={`album-item${indexFiguritaCompra +1}`} target="_top" href='#' key={indexEsport}>
-                                    <div className={`album-details${indexFiguritaCompra +1}`}>
-                                        <span className="title"> {eSport.title}</span>
-                                        <span className="subtext">
-                                            {eSport.subCategorys.map((subCategory: any, indexSubCategory: number) => (
-                                                <p key={indexSubCategory}>{subCategory.title}</p>
-                                            ))}
-                                        </span>
-                                    </div>
-                                </a>
-                            ))
-                        }          
-                    </section>
-                </div>
-                
-            ))
-        }
+                            <div id={`album-rotator${indexFiguritaCompra}`} key={indexFiguritaCompra} className="albumRotatorContainer">
+
+                                <h1 className='title'>{AlbumIMG.titleAlbum}</h1>
+
+                                <section id={`album-rotator-holder${indexFiguritaCompra}`} className="albumRotatorHolder">
+                                    {
+                                        AlbumIMG.ListaFiguritas.map((figuritas: any, indexEsport: number) => (
+                                            <article id={`album-item${indexFiguritaCompra}`} style={{cursor: 'pointer'}}
+                                                className={`albumItem`} key={indexEsport}
+                                            >   
+                                                <div className={`albumItem__details`}>
+                                                    <h3 className="title"> {figuritas.title}</h3>
+                                                    {/* <span className="subtext">
+                                                        {eSport.subCategorys.map((subCategory: any, indexSubCategory: number) => (
+                                                            <p key={indexSubCategory}>{subCategory.title}</p>
+                                                        ))}
+                                                    </span> */}
+                                                </div>
+                                            </article>
+                                        ))
+                                    }          
+                                </section>
+                            </div>
+                            
+                        ))
+                    }
                     
 
 
