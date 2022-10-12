@@ -105,7 +105,7 @@ export const AlbumImagenes: React.FC = () => {
                                                 className={`albumItem`} key={indexEsport}
                                             >   
                                                 <div className={`albumItem__details`}>
-                                                    <h3 className="title"> {figuritas.title}</h3>
+                                                    <h3 className="title">{figuritas.title}</h3>
                                                     {/* <span className="subtext">
                                                         {eSport.subCategorys.map((subCategory: any, indexSubCategory: number) => (
                                                             <p key={indexSubCategory}>{subCategory.title}</p>
