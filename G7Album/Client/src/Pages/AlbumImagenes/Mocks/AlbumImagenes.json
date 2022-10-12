@@ -21,18 +21,6 @@
             {
                 "title": "Armani Franco",
                 "image": ""
-            },
-            {
-                "title": "Franco Danie",
-                "image": ""
-            },
-            {
-                "title": "Armani Franco",
-                "image": ""
-            },
-            {
-                "title": "Franco Danie",
-                "image": ""
             }
         ]
     },
@@ -62,5 +50,709 @@
                 "image": ""
             }
         ]
-    }
+    },
+
+    {
+        "titleAlbum": "Champios League",
+        "ListaFiguritas": [
+            {
+                "title": "Armani AS",
+                "image": ""
+            },
+            {
+                "title": "Franco qwe",
+                "image": ""
+            },            {
+                "title": "Armani 123",
+                "image": ""
+            },
+            {
+                "title": "Franco Danaaaie",
+                "image": ""
+            },            {
+                "title": "Armani Fradwqnco",
+                "image": ""
+            },
+            {
+                "title": "Franco Dangrie",
+                "image": ""
+            }
+        ]  
+    },
+    {
+        "titleAlbum": "Wimledon",
+        "ListaFiguritas": [
+            {
+                "title": "Nadal Rafael",
+                "image": ""
+            },
+            {
+                "title": "Federer Roger",
+                "image": ""
+            },            {
+                "title": "Murray",
+                "image": ""
+            },
+            {
+                "title": "Del Potro",
+                "image": ""
+            },            {
+                "title": "David Nalvandian",
+                "image": ""
+            },
+            {
+                "title": "Novak Djokovich",
+                "image": ""
+            }
+        ]        
+    },
+    {
+        "titleAlbum": "Rollan Garros<",
+        "ListaFiguritas": [
+            {
+                "title": "Nadal Rafael",
+                "image": ""
+            },
+            {
+                "title": "Federer Roger",
+                "image": ""
+            },            {
+                "title": "Murray",
+                "image": ""
+            },
+            {
+                "title": "Del Potro",
+                "image": ""
+            },            {
+                "title": "David Nalvandian",
+                "image": ""
+            },
+            {
+                "title": "Novak Djokovich",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "Us Open",
+        "ListaFiguritas": [
+            {
+                "title": "Nadal Rafael",
+                "image": ""
+            },
+            {
+                "title": "Federer Roger",
+                "image": ""
+            },            {
+                "title": "Murray",
+                "image": ""
+            },
+            {
+                "title": "Del Potro",
+                "image": ""
+            },            {
+                "title": "David Nalvandian",
+                "image": ""
+            },
+            {
+                "title": "Novak Djokovich",
+                "image": ""
+            }
+        ]
+    },
+    
+    {
+        "titleAlbum": "Liga Endesa",
+        "ListaFiguritas": [
+            {
+                "title": "Nadal Rafael",
+                "image": ""
+            },
+            {
+                "title": "Federer Roger",
+                "image": ""
+            },            {
+                "title": "Murray",
+                "image": ""
+            },
+            {
+                "title": "Del Potro",
+                "image": ""
+            },            {
+                "title": "David Nalvandian",
+                "image": ""
+            },
+            {
+                "title": "Novak Djokovich",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "NBA",
+        "ListaFiguritas": [
+            {
+                "title": "Nadal Rafael",
+                "image": ""
+            },
+            {
+                "title": "Federer Roger",
+                "image": ""
+            },            {
+                "title": "Murray",
+                "image": ""
+            },
+            {
+                "title": "Del Potro",
+                "image": ""
+            },            {
+                "title": "David Nalvandian",
+                "image": ""
+            },
+            {
+                "title": "Novak Djokovich",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "La Liga Argentina",
+        "ListaFiguritas": [
+            {
+                "title": "Nadal Rafael",
+                "image": ""
+            },
+            {
+                "title": "Federer Roger",
+                "image": ""
+            },            {
+                "title": "Murray",
+                "image": ""
+            },
+            {
+                "title": "Del Potro",
+                "image": ""
+            },            {
+                "title": "David Nalvandian",
+                "image": ""
+            },
+            {
+                "title": "Novak Djokovich",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "Nationas Rugby League",
+        "ListaFiguritas": [
+            {
+                "title": "lala",
+                "image": ""
+            },
+            {
+                "title": "jaja",
+                "image": ""
+            },            {
+                "title": "tutu",
+                "image": ""
+            },
+            {
+                "title": "qqqq",
+                "image": ""
+            },            {
+                "title": "sasas",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "Super League",
+        "ListaFiguritas": [
+            {
+                "title": "lala",
+                "image": ""
+            },
+            {
+                "title": "jaja",
+                "image": ""
+            },            {
+                "title": "tutu",
+                "image": ""
+            },
+            {
+                "title": "qqqq",
+                "image": ""
+            },            {
+                "title": "sasas",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "The Rugby ChampionsShip",
+        "ListaFiguritas": [
+            {
+                "title": "lala",
+                "image": ""
+            },
+            {
+                "title": "jaja",
+                "image": ""
+            },            {
+                "title": "tutu",
+                "image": ""
+            },
+            {
+                "title": "qqqq",
+                "image": ""
+            },            {
+                "title": "sasas",
+                "image": ""
+            }
+        ]
+    },
+    
+    {
+        "titleAlbum": "Monster Inc",
+        "ListaFiguritas": [
+            {
+                "title": "Boo",
+                "image": ""
+            },
+            {
+                "title": "Mike Wazowski",
+                "image": ""
+            },            {
+                "title": "Fungus",
+                "image": ""
+            },
+            {
+                "title": "Roz",
+                "image": ""
+            },            {
+                "title": "Bile",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "Monster University",
+        "ListaFiguritas": [
+            {
+                "title": "Boo",
+                "image": ""
+            },
+            {
+                "title": "Mike Wazowski",
+                "image": ""
+            },            {
+                "title": "Fungus",
+                "image": ""
+            },
+            {
+                "title": "Roz",
+                "image": ""
+            },            {
+                "title": "Bile",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "High school Musical",
+        "ListaFiguritas": [
+            {
+                "title": "Troy Bolton",
+                "image": ""
+            },
+            {
+                "title": "Gabriela Montes",
+                "image": ""
+            },            {
+                "title": "Sharpay Evans",
+                "image": ""
+            },
+            {
+                "title": "Martha Cox",
+                "image": ""
+            },            {
+                "title": "Lucille Bolton",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "High school Musical 2",
+        "ListaFiguritas": [
+            {
+                "title": "Troy Bolton",
+                "image": ""
+            },
+            {
+                "title": "Gabriela Montes",
+                "image": ""
+            },            {
+                "title": "Sharpay Evans",
+                "image": ""
+            },
+            {
+                "title": "Martha Cox",
+                "image": ""
+            },            {
+                "title": "Lucille Bolton",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "La Hera de hielo 1",
+        "ListaFiguritas": [
+            {
+                "title": "Sid",
+                "image": ""
+            },
+            {
+                "title": "Many",
+                "image": ""
+            },            {
+                "title": "Roshan",
+                "image": ""
+            },
+            {
+                "title": "Diego",
+                "image": ""
+            },            {
+                "title": "Scrat",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "La Hera de hielo 2",
+        "ListaFiguritas": [
+            {
+                "title": "Sid",
+                "image": ""
+            },
+            {
+                "title": "Many",
+                "image": ""
+            },            {
+                "title": "Roshan",
+                "image": ""
+            },
+            {
+                "title": "Diego",
+                "image": ""
+            },            {
+                "title": "Scrat",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "La Hera de hielo 3",
+        "ListaFiguritas": [
+            {
+                "title": "Sid",
+                "image": ""
+            },
+            {
+                "title": "Many",
+                "image": ""
+            },            {
+                "title": "Roshan",
+                "image": ""
+            },
+            {
+                "title": "Diego",
+                "image": ""
+            },            {
+                "title": "Scrat",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "Avatar",
+        "ListaFiguritas": [
+            {
+                "title": "Dra Grace",
+                "image": ""
+            },
+            {
+                "title": "Neytiri",
+                "image": ""
+            },            {
+                "title": "Jake Sully",
+                "image": ""
+            },
+            {
+                "title": "Tsutey",
+                "image": ""
+            },            {
+                "title": "Coronel Milles",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "Avatar 2",
+        "ListaFiguritas": [
+            {
+                "title": "Dra Grace",
+                "image": ""
+            },
+            {
+                "title": "Neytiri",
+                "image": ""
+            },            {
+                "title": "Jake Sully",
+                "image": ""
+            },
+            {
+                "title": "Tsutey",
+                "image": ""
+            },            {
+                "title": "Coronel Milles",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "Dragon Ball Z",
+        "ListaFiguritas": [
+            {
+                "title": "Goku",
+                "image": ""
+            },
+            {
+                "title": "Vegeta",
+                "image": ""
+            },            {
+                "title": "Cell",
+                "image": ""
+            },
+            {
+                "title": "Picolo",
+                "image": ""
+            },            {
+                "title": "Son Gohan",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "Dragon Ball GT",
+        "ListaFiguritas": [
+            {
+                "title": "Goku",
+                "image": ""
+            },
+            {
+                "title": "Vegeta",
+                "image": ""
+            },            {
+                "title": "Cell",
+                "image": ""
+            },
+            {
+                "title": "Picolo",
+                "image": ""
+            },            {
+                "title": "Son Gohan",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "Naruto",
+        "ListaFiguritas": [
+            {
+                "title": "Naruto",
+                "image": ""
+            },
+            {
+                "title": "Sasuke",
+                "image": ""
+            },            {
+                "title": "Itachi",
+                "image": ""
+            },
+            {
+                "title": "Sakura",
+                "image": ""
+            },            {
+                "title": "Madara",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "Naruto Shippuden",
+        "ListaFiguritas": [
+            {
+                "title": "Naruto",
+                "image": ""
+            },
+            {
+                "title": "Sasuke",
+                "image": ""
+            },            {
+                "title": "Itachi",
+                "image": ""
+            },
+            {
+                "title": "Sakura",
+                "image": ""
+            },            {
+                "title": "Madara",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "Naruto Next Generation",
+        "ListaFiguritas": [
+            {
+                "title": "Naruto",
+                "image": ""
+            },
+            {
+                "title": "Sasuke",
+                "image": ""
+            },            {
+                "title": "Itachi",
+                "image": ""
+            },
+            {
+                "title": "Sakura",
+                "image": ""
+            },            {
+                "title": "Madara",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "Saint Seiya the Lost Canvas",
+        "ListaFiguritas": [
+            {
+                "title": "Seiya de Pegaso",
+                "image": ""
+            },
+            {
+                "title": "Saga de Geminis",
+                "image": ""
+            },            {
+                "title": "Atenea",
+                "image": ""
+            },
+            {
+                "title": "Saka de Virgo",
+                "image": ""
+            },            {
+                "title": "Mu de Aries",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "Batalla de Poseidon",
+        "ListaFiguritas": [
+            {
+                "title": "Seiya de Pegaso",
+                "image": ""
+            },
+            {
+                "title": "Saga de Geminis",
+                "image": ""
+            },            {
+                "title": "Atenea",
+                "image": ""
+            },
+            {
+                "title": "Saka de Virgo",
+                "image": ""
+            },            {
+                "title": "Mu de Aries",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "Batalla de Asgard",
+        "ListaFiguritas": [
+            {
+                "title": "Seiya de Pegaso",
+                "image": ""
+            },
+            {
+                "title": "Saga de Geminis",
+                "image": ""
+            },            {
+                "title": "Atenea",
+                "image": ""
+            },
+            {
+                "title": "Saka de Virgo",
+                "image": ""
+            },            {
+                "title": "Mu de Aries",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "Guerra de titanes Temprada 1",
+        "ListaFiguritas": [
+            {
+                "title": "Calibos",
+                "image": ""
+            },
+            {
+                "title": "Medusa",
+                "image": ""
+            },            {
+                "title": "Io",
+                "image": ""
+            },
+            {
+                "title": "Andromeda",
+                "image": ""
+            },            {
+                "title": "Danae",
+                "image": ""
+            }
+        ]
+    },
+    {
+        "titleAlbum": "Guerra de titanes Temprada 2",
+        "ListaFiguritas": [
+            {
+                "title": "Calibos",
+                "image": ""
+            },
+            {
+                "title": "Medusa",
+                "image": ""
+            },            {
+                "title": "Io",
+                "image": ""
+            },
+            {
+                "title": "Andromeda",
+                "image": ""
+            },            {
+                "title": "Danae",
+                "image": ""
+            }
+        ]
+    },
+    
+
+
+
+    
+
 ]
