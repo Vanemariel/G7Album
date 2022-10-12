@@ -34,7 +34,7 @@ export const AlbumImagenes: React.FC = () => {
         {
             individualItem: '#album-item2',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator2',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
@@ -42,196 +42,196 @@ export const AlbumImagenes: React.FC = () => {
         {
             individualItem: '#album-item3',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator3',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item4',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator4',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item5',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator5',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item6',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator6',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item7',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator7',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item8',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator8',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item9',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator8',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item10',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator10',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item11',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator11',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item12',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator12',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item13',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator13',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item14',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator14',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item15',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator15',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item16',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator16',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item17',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator17',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item18',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator18',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item19',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator19',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item20',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator20',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item21',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator21',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item22',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator22',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item23',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator23',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item24',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator24',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item25',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator25',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item26',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator26',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item27',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator27',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item28',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator28',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item29',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator30',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
         {
             individualItem: '#album-item30',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator31',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder1',
         },
