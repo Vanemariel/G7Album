@@ -323,7 +323,7 @@ export const AlbumImagenes: React.FC = () => {
 
                                                    <h3>{figuritas.title}</h3>
 
-                                                   <button className="btnFiguritasComprar" type='submit' onClick={() => navigate('/AlbumImagenes')}>Comprar</button>
+                                                   <button className="btnFiguritasComprar" type='submit' onClick={() => navigate('/AlbumUsuario')}>Comprar</button>
 
                                                 </div>
 
