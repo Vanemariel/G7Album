@@ -1,5 +1,6 @@
 ﻿using G7Album.BaseDatos.Data.Comun;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace G7Album.BaseDatos.Entidades
 {
@@ -28,7 +29,14 @@ namespace G7Album.BaseDatos.Entidades
         [Required(ErrorMessage = "Este campo es obligatorio")]
         public DateTime Hasta { get; set; }
 
-
+        [InverseProperty("Album")]
         public List<AlbumImagenes> ListadoImagenes {get; set;}
+
+
+        public int ColeccionAlbumId {get; set;}
+        
+        [ForeignKey("ColeccionAlbumId")]
+        public ColeccionAlbum ColeccionAlbum {get; set;}
+
     }
 }
