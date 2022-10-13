@@ -6,12 +6,15 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {useNavigate} from 'react-router-dom'
 
 import AlbumImagenesMock from './Mocks/AlbumImagenes.json'
 import { useEffect } from 'react';
 import { carouselTarjets } from '../../Utils/carouselTarjets';
 
 export const AlbumImagenes: React.FC = () => {
+
+    const navigate = useNavigate()
 
 
     /// METODOS
@@ -316,14 +319,14 @@ export const AlbumImagenes: React.FC = () => {
                                             <article id={`album-item${indexFiguritaCompra}`} style={{cursor: 'pointer'}}
                                                 className={`albumItem`} key={indexEsport}
                                             >   
-                                                <div className={`albumItem__details`}>
-                                                    <h3 className="title">{figuritas.title}</h3>
-                                                    {/* <span className="subtext">
-                                                        {eSport.subCategorys.map((subCategory: any, indexSubCategory: number) => (
-                                                            <p key={indexSubCategory}>{subCategory.title}</p>
-                                                        ))}
-                                                    </span> */}
+                                                <div className={`albumItem__details`}>  
+
+                                                   <h3>{figuritas.title}</h3>
+
+                                                   <button className="btnFiguritasComprar" type='submit' onClick={() => navigate('/AlbumUsuario')}>Comprar</button>
+
                                                 </div>
+
                                             </article>
                                         ))
                                     }          
