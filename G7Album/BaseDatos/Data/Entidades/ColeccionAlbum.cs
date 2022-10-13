@@ -14,5 +14,7 @@ namespace G7Album.BaseDatos.Entidades
         [InverseProperty("ColeccionAlbum")]
         public List<Album> ListadoAlbum {get; set;}
 
+
+// asdas
     }
 }
