@@ -3,7 +3,7 @@ using G7Album.Shared.Models;
 namespace G7Album.Server.Controllers
 {
     [ApiController]
-    [Route("Api/Album")]
+    [Route("Api/ColecctionAlbum")]
     public class ColecctionAlbumController : ControllerBase
     {
         private readonly BDContext context;
