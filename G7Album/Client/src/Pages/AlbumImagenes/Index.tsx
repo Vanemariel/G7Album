@@ -227,21 +227,21 @@ export const AlbumImagenes: React.FC = () => {
         {
             individualItem: '#album-item29',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator30',    
+            carouselId: '#album-rotator29',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder29',
         },
         {
             individualItem: '#album-item30',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator31',    
+            carouselId: '#album-rotator30',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder30',
         },
         {
             individualItem: '#album-item31',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
+            carouselId: '#album-rotator31',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder31',
         },

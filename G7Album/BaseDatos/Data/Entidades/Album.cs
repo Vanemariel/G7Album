@@ -27,5 +27,8 @@ namespace G7Album.BaseDatos.Entidades
 
         [Required(ErrorMessage = "Este campo es obligatorio")]
         public DateTime Hasta { get; set; }
+
+
+        public List<AlbumImagenes> ListadoImagenes {get; set;}
     }
 }
