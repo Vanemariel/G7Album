@@ -253,10 +253,6 @@ export const AlbumImagenes: React.FC = () => {
 
     return (
 
-
-
-
-
         <>
             <Navbar bg="dark" variant="dark">
             <Container>
