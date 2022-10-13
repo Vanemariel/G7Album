@@ -3,12 +3,12 @@ using G7Album.Shared.Models;
 namespace G7Album.Server.Controllers
 {
     [ApiController]
-    [Route("Api/ColecctionAlbum")]
-    public class ColecctionAlbumController : ControllerBase
+    [Route("Api/ColeccionAlbum")]
+    public class ColeccionAlbumController : ControllerBase
     {
         private readonly BDContext context;
 
-        public ColecctionAlbumController(BDContext context)
+        public ColeccionAlbumController(BDContext context)
         {
             this.context = context;
         }
