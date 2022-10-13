@@ -15,6 +15,5 @@ namespace G7Album.BaseDatos.Entidades
         public List<Album> ListadoAlbum {get; set;}
 
 
-// asdasasdasd
     }
 }
