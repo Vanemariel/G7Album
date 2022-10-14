@@ -6,4 +6,5 @@ export interface AlbumData {
     cantidadImpreso: string;
     desde: Date;
     hasta: Date;
+    coleccionAlbumId: number;
 }

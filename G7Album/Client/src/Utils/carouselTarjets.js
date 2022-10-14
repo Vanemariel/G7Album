@@ -11,6 +11,7 @@ const randomInteger = function(min, max) {
 // -- End Helper Functions
 
 export const carouselTarjets = (arrayConfigs) => {
+    console.log("🚀 ~ file: carouselTarjets.js ~ line 14 ~ carouselTarjets ~ arrayConfigs", arrayConfigs)
 
     arrayConfigs.forEach(configCarousel => {
 
@@ -37,9 +38,7 @@ export const carouselTarjets = (arrayConfigs) => {
 
         document.querySelectorAll(configCarousel.carouselId).forEach(function(item) {
             item.addEventListener('pointerdown', function(e) {
-
-                console.log("PASA X ACA AL DAR CLICK EN SECCION")
-
+                
                 mousedown = true;
                 selectedItem = item;
                 initialPosition = e.pageX;
