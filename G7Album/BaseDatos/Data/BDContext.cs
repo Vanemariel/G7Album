@@ -57,6 +57,18 @@ namespace G7Album.BaseDatos.Data
                 new ColeccionAlbum{
                     Id = 3,
                     TituloColeccion= "Basket"
+                },
+                new ColeccionAlbum{
+                    Id = 4,
+                    TituloColeccion= "Rugby"
+                }
+                new ColeccionAlbum{
+                    Id = 5,
+                    TituloColeccion= "Anime"
+                }
+                 new ColeccionAlbum{
+                    Id = 6,
+                    TituloColeccion= "Disney"
                 }
             );
 
@@ -137,7 +149,7 @@ namespace G7Album.BaseDatos.Data
             
                 new Album
                 {
-                    Id = 10,
+                    Id = 7,
                     CodigoAlbum = 10,
                     Titulo = "Liga ndesa",
                     Descripcion = "figus",
@@ -149,7 +161,7 @@ namespace G7Album.BaseDatos.Data
                 },
                 new Album
                 {
-                    Id = 11,
+                    Id = 8,
                     CodigoAlbum = 10,
                     Titulo = "NBA",
                     Descripcion = "figus",
@@ -161,7 +173,7 @@ namespace G7Album.BaseDatos.Data
                 },
                 new Album
                 {
-                    Id = 12,
+                    Id = 9,
                     CodigoAlbum = 10,
                     Titulo = "La Liga Argentina",
                     Descripcion = "figus",
@@ -170,6 +182,234 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 3
+                }
+                new Album
+                {
+                    Id = 10,
+                    CodigoAlbum = 10,
+                    Titulo = "National Rugby League",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 4
+                }
+                new Album
+                {
+                    Id = 11,
+                    CodigoAlbum = 11,
+                    Titulo = "Super League",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 4
+                }
+                new Album
+                {
+                    Id = 12,
+                    CodigoAlbum = 12,
+                    Titulo = "The Rugby Championship",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 4
+                }
+                new Album
+                {
+                    Id = 13,
+                    CodigoAlbum = 1,
+                    Titulo = "Dragonball",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 5
+                }
+                new Album
+                {
+                    Id = 14,
+                    CodigoAlbum = 2,
+                    Titulo = "Dragonball Z",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 5
+                }
+                new Album
+                {
+                    Id = 15,
+                    CodigoAlbum = 3,
+                    Titulo = "Dragonball Super",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 5
+                }
+                 new Album
+                {
+                    Id = 16,
+                    CodigoAlbum = 4,
+                    Titulo = "Naruto",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 5
+                }
+                new Album
+                {
+                    Id = 17,
+                    CodigoAlbum = 5,
+                    Titulo = "Naruto Shippuden",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 5
+                }
+                new Album
+                {
+                    Id = 18,
+                    CodigoAlbum = 6,
+                    Titulo = "Naruto Next Generation",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 5
+                }
+                new Album
+                {
+                    Id = 19,
+                    CodigoAlbum = 7,
+                    Titulo = "Saint Seiya the Lost Canvas",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 5
+                }
+                new Album
+                {
+                    Id = 20,
+                    CodigoAlbum = 8,
+                    Titulo = "Batalla de Poseidon",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 5
+                }
+                new Album
+                {
+                    Id = 21,
+                    CodigoAlbum = 9,
+                    Titulo = "Batalla de Asgard",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 5
+                }
+                new Album
+                {
+                    Id = 22,
+                    CodigoAlbum = 100,
+                    Titulo = "Monster Inc",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 6
+                }
+                new Album
+                {
+                    Id = 23,
+                    CodigoAlbum = 101,
+                    Titulo = "Monster University",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 6
+                }
+                new Album
+                {
+                    Id = 24,
+                    CodigoAlbum = 102,
+                    Titulo = "High school Musical",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 6
+                }
+                new Album
+                {
+                    Id = 25,
+                    CodigoAlbum = 104,
+                    Titulo = "High school Musical 2",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 6
+                }
+                new Album
+                {
+                    Id = 26,
+                    CodigoAlbum = 105,
+                    Titulo = "La era del hielo 1",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 6
+                }
+                new Album
+                {
+                    Id = 27,
+                    CodigoAlbum = 106,
+                    Titulo = "La era del hielo 2",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 6
+                }
+                new Album
+                {
+                    Id = 28,
+                    CodigoAlbum = 107,
+                    Titulo = "La era del hielo 3",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 6
                 }
             );
 
