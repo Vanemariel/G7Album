@@ -38,9 +38,7 @@ export const carouselTarjets = (arrayConfigs) => {
 
         document.querySelectorAll(configCarousel.carouselId).forEach(function(item) {
             item.addEventListener('pointerdown', function(e) {
-
-                console.log("PASA X ACA AL DAR CLICK EN SECCION")
-
+                
                 mousedown = true;
                 selectedItem = item;
                 initialPosition = e.pageX;
