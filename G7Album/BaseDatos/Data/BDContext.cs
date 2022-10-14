@@ -9,6 +9,7 @@ namespace G7Album.BaseDatos.Data
         public BDContext(DbContextOptions<BDContext> options) : base(options)
         {
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -17,7 +18,7 @@ namespace G7Album.BaseDatos.Data
                 .SelectMany(e => e.GetForeignKeys()))
             {
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
-            }
+           }
             
             modelBuilder.Entity<Usuario>().HasData(
                 new Usuario
@@ -26,7 +27,7 @@ namespace G7Album.BaseDatos.Data
                     Email = "vanesa@gmail.com",
                     Password = new Byte[10],
                     NombreCompleto = "Vanesa Herrera"
-                },
+               },
                 new Usuario
                 {
                     Id = 2,
@@ -34,41 +35,49 @@ namespace G7Album.BaseDatos.Data
                     Password = new Byte[10],
                     NombreCompleto = "juan ledesma"
 
-                },
+               },
                 new Usuario
                 {
                     Id = 3,
                     Email = "aili@gmail.com",
                     Password = new Byte[10],
                     NombreCompleto = "oriana LALALA",
-                }
+               }
             );
 
             modelBuilder.Entity<ColeccionAlbum>().HasData(
                 new ColeccionAlbum {
                     Id = 1,
                     TituloColeccion= "Futbol"
-                },
+               },
                 new ColeccionAlbum {
                     Id = 2,
                     TituloColeccion= "Tenis"
-                },
+               },
                 new ColeccionAlbum{
                     Id = 3,
                     TituloColeccion= "Basket"
-                },
+               },
                 new ColeccionAlbum{
                     Id = 4,
                     TituloColeccion= "Rugby"
+<<<<<<< HEAD
                 },
                 new ColeccionAlbum{
                     Id = 5,
                     TituloColeccion= "Disney"
                 },
+=======
+               },
+                new ColeccionAlbum{
+                    Id = 5,
+                    TituloColeccion= "Disney"
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                  new ColeccionAlbum{
                     Id = 6,
                     TituloColeccion= "Anime"
-                }
+               }
             );
 
             modelBuilder.Entity<Album>().HasData(
@@ -83,7 +92,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 1
-                },
+               },
                 new Album
                 {
                     Id = 2,
@@ -95,7 +104,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 1
-                },
+               },
                 new Album
                 {
                     Id = 3,
@@ -107,7 +116,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 1
-                },
+               },
 
                 new Album
                 {
@@ -120,7 +129,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 2
-                },
+               },
                 new Album
                 {
                     Id = 5,
@@ -132,7 +141,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 2
-                },               
+               },               
                 new Album
                 {
                     Id = 6,
@@ -144,7 +153,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 2
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
             
                 new Album
                 {
@@ -157,7 +170,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 3
-                },
+               },
                 new Album
                 {
                     Id = 8,
@@ -169,7 +182,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 3
-                },
+               },
                 new Album
                 {
                     Id = 9,
@@ -181,7 +194,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 3
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 10,
@@ -193,7 +210,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 4
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 11,
@@ -205,7 +226,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 4
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 12,
@@ -217,7 +242,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 4
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 13,
@@ -229,7 +258,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 14,
@@ -241,7 +274,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 15,
@@ -253,9 +290,15 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5
+<<<<<<< HEAD
                 },
                  new Album
                 {
+=======
+               },
+                new Album
+                 {
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                     Id = 16,
                     CodigoAlbum = 4,
                     Titulo = "Naruto",
@@ -265,7 +308,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 17,
@@ -277,7 +324,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 18,
@@ -289,7 +340,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 19,
@@ -301,7 +356,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 20,
@@ -313,7 +372,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 21,
@@ -325,7 +388,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 22,
@@ -337,7 +404,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 6
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 23,
@@ -349,7 +420,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 6
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 24,
@@ -361,7 +436,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 6
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 25,
@@ -373,7 +452,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 6
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 26,
@@ -385,7 +468,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 6
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 27,
@@ -397,7 +484,11 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 6
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new Album
                 {
                     Id = 28,
@@ -420,7 +511,7 @@ namespace G7Album.BaseDatos.Data
                    CodigoAlbum = "a",
                    AlbumId = 1,
                    UsuarioId = 1,
-               },
+              },
                new AlbumUsuario
                {
                    Id = 2,
@@ -428,7 +519,7 @@ namespace G7Album.BaseDatos.Data
                    CodigoAlbum = "b",
                    AlbumId = 1,
                    UsuarioId = 2,
-               },
+              },
                new AlbumUsuario
                {
                    Id = 3,
@@ -436,7 +527,11 @@ namespace G7Album.BaseDatos.Data
                    CodigoAlbum = "c",
                    AlbumId = 1,
                    UsuarioId = 3,
+<<<<<<< HEAD
                 }
+=======
+              }
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
             );
 
             modelBuilder.Entity<AlbumImagenes>().HasData(
@@ -447,9 +542,9 @@ namespace G7Album.BaseDatos.Data
                     CodigoImagenOriginal = 31,
                     CantidadImpresa = 1000,
                     Imagen = " ",
-                    Imagen = "Armani Franco",
+                    Titulo = "Armani Franco",
                     AlbumId = 1,
-                },
+               },
                 new AlbumImagenes
                 {
                     Id = 2,
@@ -457,9 +552,9 @@ namespace G7Album.BaseDatos.Data
                     CodigoImagenOriginal = 32,
                     CantidadImpresa = 1000,
                     Imagen = " ",
-                    Imagen = "Franco Daniel",
+                    Titulo = "Franco Daniel",
                     AlbumId = 1,
-                },
+               },
                 new AlbumImagenes
                 {
                     Id = 3,
@@ -469,7 +564,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = "si",
                     Titulo = "Guido Herrera",
                     AlbumId = 1,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 4,
@@ -479,7 +578,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = "si",
                     Titulo = "Pratto Lucas",
                     AlbumId = 1,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 5,
@@ -489,7 +592,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Bou Walter",
                     AlbumId = 1,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 6,
@@ -499,7 +606,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Valoyes Diego",
                     AlbumId = 1,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 7,
@@ -509,7 +620,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Bou Walter",
                     AlbumId = 1,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 8,
@@ -519,7 +634,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Pratto Lucas",
                     AlbumId = 1,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 9,
@@ -529,7 +648,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Franco Daniel",
                     AlbumId = 1,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 10,
@@ -539,7 +662,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "ArmanI Franco",
                     AlbumId = 1,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 11,
@@ -549,7 +676,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Guido Herrera",
                     AlbumId = 1,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 12,
@@ -559,7 +690,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Salas",
                     AlbumId = 1,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 13,
@@ -569,7 +704,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = "si",
                     Titulo = "Firmiño",
                     AlbumId = 1,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 14,
@@ -579,7 +718,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Alvarez Julian",
                     AlbumId = 1,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 15,
@@ -589,7 +732,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Halan",
                     AlbumId = 1,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 16,
@@ -599,7 +746,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Cuti Romero",
                     AlbumId = 1,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 17,
@@ -609,7 +760,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Dibu Martinez",
                     AlbumId = 1,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 18,
@@ -619,7 +774,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Nadal Rafael",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 19,
@@ -629,7 +788,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Federer Roger",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 20,
@@ -639,7 +802,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Murray",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 21,
@@ -649,7 +816,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Del Potro",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 22,
@@ -659,7 +830,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "David Nalvandian",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 23,
@@ -669,17 +844,25 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Novak Djovich",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 24,
                     NumeroImagen = 37,
                     CodigoImagenOriginal = 54,
                     CantidadImpresa = 1000,
-                    Imagen " "
+                    Imagen= "",
                     Titulo = "Nadal Rafael",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 25,
@@ -689,7 +872,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Federer Roger",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 26,
@@ -699,7 +886,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Murray",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 27,
@@ -709,7 +900,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Del Potro",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 28,
@@ -719,17 +914,25 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "David Nalvandian",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
-                    Id = 28,
+                    Id = 2800,
                     NumeroImagen = 41,
                     CodigoImagenOriginal = 59,
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Novak Djokovich",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 29,
@@ -739,7 +942,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Nadal Rafael",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 30,
@@ -749,7 +956,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Federer Roger",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 31,
@@ -759,7 +970,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Murray",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 32,
@@ -769,7 +984,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Del Potro",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 33,
@@ -779,7 +998,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "David Nalvandian",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 34,
@@ -789,7 +1012,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Novak Djokovich",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 35,
@@ -799,7 +1026,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Nadal Rafael",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 36,
@@ -809,7 +1040,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Federer Roger",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 37,
@@ -819,7 +1054,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Murray",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 38,
@@ -829,7 +1068,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Del Potro",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 39,
@@ -839,7 +1082,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "David Nalvandian",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 40,
@@ -849,7 +1096,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Novak Djokovich",
                     AlbumId = 2,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 41,
@@ -859,7 +1110,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Manuel Ginobilli",
                     AlbumId = 3,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 42,
@@ -869,7 +1124,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Kevin Durant",
                     AlbumId = 3,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 43,
@@ -879,7 +1138,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Elvin Hayes",
                     AlbumId = 3,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 44,
@@ -889,7 +1152,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Bob Pettit",
                     AlbumId = 3,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 45,
@@ -899,7 +1166,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Giannis Antokoumpo",
                     AlbumId = 3,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 46,
@@ -909,17 +1180,25 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Oscar Robertson",
                     AlbumId = 3,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
-                    Id = 46,
+                    Id = 460,
                     NumeroImagen = 60,
                     CodigoImagenOriginal = 78,
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Fernando Martina",
                     AlbumId = 3,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 47,
@@ -929,7 +1208,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Martin Cabrera",
                     AlbumId = 3,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 48,
@@ -939,7 +1222,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Franco Barroso",
                     AlbumId = 3,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 49,
@@ -949,7 +1236,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Juan Cruz Oberto",
                     AlbumId = 3,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 50,
@@ -959,7 +1250,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Marcelo Milanesio",
                     AlbumId = 3,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                  new AlbumImagenes
                 {
                     Id = 51,
@@ -969,7 +1264,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Julian Montoya",
                     AlbumId = 4,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                  new AlbumImagenes
                 {
                     Id = 52,
@@ -979,7 +1278,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Matias Alemano",
                     AlbumId = 4,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 53,
@@ -989,7 +1292,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Julian Cruz Mallia",
                     AlbumId = 4,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 54,
@@ -999,7 +1306,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Tomas Cubeli",
                     AlbumId = 4,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 55,
@@ -1009,7 +1320,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Felipe Contemponi",
                     AlbumId = 4,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 56,
@@ -1019,7 +1334,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Julian Montoya",
                     AlbumId = 4,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 57,
@@ -1029,7 +1348,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Matias Alemano",
                     AlbumId = 4,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 58,
@@ -1039,7 +1362,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Julian Cruz Mallia",
                     AlbumId = 4,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 59,
@@ -1049,7 +1376,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Tomas Cubelli",
                     AlbumId = 4,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 60,
@@ -1059,7 +1390,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Felipe Contemponi",
                     AlbumId = 4,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 61,
@@ -1069,7 +1404,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Julian Montoya",
                     AlbumId = 4,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 62,
@@ -1079,7 +1418,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Matias Alemano",
                     AlbumId = 4,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 63,
@@ -1089,7 +1432,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Julian Cruz Mallia",
                     AlbumId = 4,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 64,
@@ -1099,7 +1446,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Tomas Cubelli",
                     AlbumId = 4,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 65,
@@ -1109,7 +1460,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Felipe Contemponi",
                     AlbumId = 4,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 66,
@@ -1119,7 +1474,11 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Julian Montoya",
                     AlbumId = 4,
+<<<<<<< HEAD
                 },
+=======
+               },
+>>>>>>> baa7f4f37eb93063370a19fe4a6cad07d18efded
                 new AlbumImagenes
                 {
                     Id = 67,
@@ -1129,7 +1488,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Matias Alemano",
                     AlbumId = 4,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 68,
@@ -1139,7 +1498,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Julian Cruz Mallia",
                     AlbumId = 4,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 69,
@@ -1149,7 +1508,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Tomas Cubelli",
                     AlbumId = 4,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 70,
@@ -1159,97 +1518,97 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Felipe Contemponi",
                     AlbumId = 4,
-                }
+               },
                 new AlbumImagenes
                 {
-                    Id = 62,
+                    Id = 620,
                     NumeroImagen = 85,
                     CodigoImagenOriginal = 103,
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Matias Alemano",
                     AlbumId = 4,
-                }
+               },
                 new AlbumImagenes
                 {
-                    Id = 63,
+                    Id = 630,
                     NumeroImagen = 86,
                     CodigoImagenOriginal = 104,
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Boo",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
-                    Id = 64,
+                    Id = 640,
                     NumeroImagen = 87,
                     CodigoImagenOriginal = 105,
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Mike Wazowski",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
-                    Id = 65,
+                    Id = 650,
                     NumeroImagen = 88,
                     CodigoImagenOriginal = 106,
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Fungus",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
-                    Id = 66,
+                    Id = 660,
                     NumeroImagen = 89,
                     CodigoImagenOriginal = 107,
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Roz",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
-                    Id = 67,
+                    Id = 670,
                     NumeroImagen = 90,
                     CodigoImagenOriginal = 108,
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Bile",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
-                    Id = 68,
+                    Id = 680,
                     NumeroImagen = 91,
                     CodigoImagenOriginal = 109,
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Boo",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
-                    Id = 69,
+                    Id = 690,
                     NumeroImagen = 92,
                     CodigoImagenOriginal = 110,
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Mike Wazowski",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
-                    Id = 70,
+                    Id = 700,
                     NumeroImagen = 93,
                     CodigoImagenOriginal = 111,
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Fungus",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 71,
@@ -1259,7 +1618,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Roz",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 72,
@@ -1269,7 +1628,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Bile",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 73,
@@ -1279,7 +1638,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Troy Bolton",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 74,
@@ -1289,7 +1648,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Gabriela Montes",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 75,
@@ -1299,7 +1658,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sharpay Evans",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 76,
@@ -1309,7 +1668,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Martha Cox",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 77,
@@ -1319,7 +1678,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Lucille Bolton",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 78,
@@ -1329,7 +1688,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Troy Bolton",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 79,
@@ -1339,7 +1698,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Gabriela Montes",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 80,
@@ -1349,7 +1708,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sharpay Evans",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 81,
@@ -1359,7 +1718,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Martha Cox",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 82,
@@ -1369,7 +1728,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Lucile Bolton",
                     AlbumId = 5,
-                }
+               },
                  new AlbumImagenes
                 {
                     Id = 83,
@@ -1379,7 +1738,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Troy Bolton",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 84,
@@ -1389,7 +1748,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Gabriela Montes",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 85,
@@ -1399,7 +1758,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sharpay Evans",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 86,
@@ -1409,7 +1768,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Martha Cox",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 87,
@@ -1419,7 +1778,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Lucile Bolton",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 88,
@@ -1429,7 +1788,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sid",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 89,
@@ -1439,7 +1798,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Many",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 90,
@@ -1449,7 +1808,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Roshan",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 91,
@@ -1459,7 +1818,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Diego",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 92,
@@ -1469,7 +1828,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Scrat",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 93,
@@ -1479,7 +1838,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sid",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 94,
@@ -1489,7 +1848,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Many",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 95,
@@ -1499,7 +1858,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Roshan",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 96,
@@ -1509,7 +1868,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Diego",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 97,
@@ -1519,7 +1878,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Scrat",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 98,
@@ -1529,7 +1888,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sid",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 99,
@@ -1539,7 +1898,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Many",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 100,
@@ -1549,7 +1908,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Roshan",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 101,
@@ -1559,7 +1918,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Diego",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 102,
@@ -1569,7 +1928,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Scrat",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 103,
@@ -1579,7 +1938,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Dra Grace",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 104,
@@ -1589,7 +1948,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Neyriti",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 105,
@@ -1599,7 +1958,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Jake Sully",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 106,
@@ -1609,7 +1968,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Tsutey",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 107,
@@ -1619,7 +1978,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Coronel Milles",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 108,
@@ -1629,7 +1988,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Dra Grace",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 109,
@@ -1639,7 +1998,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Neyriti",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 110,
@@ -1649,7 +2008,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Jake Sully",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 111,
@@ -1659,7 +2018,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Tsutey",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 112,
@@ -1669,7 +2028,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Coronel Milles",
                     AlbumId = 5,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 113,
@@ -1679,7 +2038,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Goku",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 114,
@@ -1689,7 +2048,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Vegeta",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 115,
@@ -1699,7 +2058,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Cell",
                     AlbumId = 6,
-                }
+               },
                  new AlbumImagenes
                 {
                     Id = 116,
@@ -1709,7 +2068,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Picolo",
                     AlbumId = 6,
-                }
+               },
                  new AlbumImagenes
                 {
                     Id = 117,
@@ -1719,7 +2078,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Son Gohan",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 118,
@@ -1729,17 +2088,17 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Goku",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
-                    Id = 118,
+                    Id = 1180,
                     NumeroImagen = 142,
                     CodigoImagenOriginal = 160,
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Vegeta",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 119,
@@ -1749,7 +2108,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Cell",
                     AlbumId = 6,
-                }
+               },
                  new AlbumImagenes
                 {
                     Id = 120,
@@ -1759,7 +2118,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Picolo",
                     AlbumId = 6,
-                }
+               },
                  new AlbumImagenes
                 {
                     Id = 121,
@@ -1769,7 +2128,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Son Gohan",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 122,
@@ -1779,7 +2138,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Goku",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 123,
@@ -1789,7 +2148,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Vegeta",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 124,
@@ -1799,7 +2158,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Cell",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 125,
@@ -1809,7 +2168,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Picolo",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 126,
@@ -1819,7 +2178,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Son Gohan",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 127,
@@ -1829,7 +2188,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Naruto",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 128,
@@ -1839,7 +2198,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sasuke",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 129,
@@ -1849,7 +2208,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Itachi",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 130,
@@ -1859,7 +2218,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sakura",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 131,
@@ -1869,7 +2228,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Madara",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 132,
@@ -1879,7 +2238,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Naruto",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 133,
@@ -1889,7 +2248,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sasuke",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 134,
@@ -1899,7 +2258,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Itachi",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 135,
@@ -1909,7 +2268,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sakura",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 136,
@@ -1919,7 +2278,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Madara",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 137,
@@ -1929,7 +2288,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Naruto",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 138,
@@ -1939,7 +2298,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sasuke",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 139,
@@ -1949,7 +2308,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Itachi",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 140,
@@ -1959,7 +2318,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sakura",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 141,
@@ -1969,7 +2328,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Madara",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 142,
@@ -1979,7 +2338,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Seiya de Pegaso",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 143,
@@ -1989,7 +2348,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Seya de Geminis",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 144,
@@ -1999,7 +2358,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Atenea",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 145,
@@ -2009,7 +2368,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Saka de Virgo",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 146,
@@ -2019,7 +2378,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Mu de Aries",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 147,
@@ -2029,7 +2388,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Seiya de Pegaso",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 148,
@@ -2039,7 +2398,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Seya de Geminis",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 149,
@@ -2049,7 +2408,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Atenea",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 150,
@@ -2059,7 +2418,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Saka de Virgo",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 151,
@@ -2069,7 +2428,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Mu de Aries",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 152,
@@ -2079,7 +2438,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Seiya de Pegaso",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 153,
@@ -2089,7 +2448,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Seya de Geminis",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 154,
@@ -2099,7 +2458,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Atenea",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 155,
@@ -2109,7 +2468,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Saka de Virgo",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 156,
@@ -2119,7 +2478,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Mu de Aries",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 157,
@@ -2129,7 +2488,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Calibos",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 158,
@@ -2139,7 +2498,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Medusa",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 159,
@@ -2149,7 +2508,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Io",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 160,
@@ -2159,7 +2518,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Andromeda",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 161,
@@ -2169,7 +2528,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Danae",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 162,
@@ -2179,7 +2538,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Calibos",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 163,
@@ -2189,7 +2548,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Medusa",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 164,
@@ -2199,7 +2558,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Io",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 165,
@@ -2209,7 +2568,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Andromeda",
                     AlbumId = 6,
-                }
+               },
                 new AlbumImagenes
                 {
                     Id = 166,
@@ -2219,7 +2578,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Danae",
                     AlbumId = 6,
-                }
+               }
             );
 
             modelBuilder.Entity<AlbumImagenImpresa>().HasData(
@@ -2230,7 +2589,7 @@ namespace G7Album.BaseDatos.Data
                     PathImagenImpreso = "gsk",
                     AlbumImagenId = 1,
 
-                },
+               },
                 new AlbumImagenImpresa
                 {
                     Id = 2,
@@ -2238,7 +2597,7 @@ namespace G7Album.BaseDatos.Data
                     PathImagenImpreso = "sbcik",
                     AlbumImagenId = 1,
 
-                },
+               },
                 new AlbumImagenImpresa
                 {
                     Id = 3,
@@ -2246,7 +2605,7 @@ namespace G7Album.BaseDatos.Data
                     PathImagenImpreso = "knxhi",
                     AlbumImagenId = 1,
 
-                }
+               }
             );
 
             modelBuilder.Entity<AlbumUsuarioImagenes>().HasData(
@@ -2257,7 +2616,7 @@ namespace G7Album.BaseDatos.Data
                    AlbumUsuarioId = 1,
                    AlbumImagenImpresaId = 1,
 
-               },
+              },
                new AlbumUsuarioImagenes
                {
                    Id = 2,
@@ -2265,7 +2624,7 @@ namespace G7Album.BaseDatos.Data
                    AlbumUsuarioId = 2,
                    AlbumImagenImpresaId = 2,
 
-               },
+              },
                new AlbumUsuarioImagenes
                {
                    Id = 3,
@@ -2273,16 +2632,16 @@ namespace G7Album.BaseDatos.Data
                    AlbumUsuarioId = 3,
                    AlbumImagenImpresaId = 3,
 
-               }
+              }
             );
         }
 
-        public DbSet<ColeccionAlbum> TablaColeccionAlbumes  { get; set; }
-        public DbSet<Album> TablaAlbumes  { get; set; }
-        public DbSet<AlbumImagenImpresa> TablaImagenesImpresas  { get; set; }
-        public DbSet<AlbumImagenes> TablaImagenes  { get; set; }
-        public DbSet<AlbumUsuarioImagenes> TablaUsuarioImagenes { get; set; }
-        public DbSet<AlbumUsuario> TablaAlbumesUsuarios { get; set; }
-        public DbSet<Usuario> TablaUsuarios { get; set; }
+        public DbSet<ColeccionAlbum> TablaColeccionAlbumes  { get; set;}
+        public DbSet<Album> TablaAlbumes  { get; set;}
+        public DbSet<AlbumImagenImpresa> TablaImagenesImpresas  { get; set;}
+        public DbSet<AlbumImagenes> TablaImagenes  { get; set;}
+        public DbSet<AlbumUsuarioImagenes> TablaUsuarioImagenes { get; set;}
+        public DbSet<AlbumUsuario> TablaAlbumesUsuarios { get; set;}
+        public DbSet<Usuario> TablaUsuarios { get; set;}
     }
 }
