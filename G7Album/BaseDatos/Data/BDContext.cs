@@ -19,7 +19,6 @@ namespace G7Album.BaseDatos.Data
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
             }
             
-
             modelBuilder.Entity<Usuario>().HasData(
                 new Usuario
                 {
@@ -413,8 +412,6 @@ namespace G7Album.BaseDatos.Data
                 }
             );
 
-
-
             modelBuilder.Entity<AlbumUsuario>().HasData(
                new AlbumUsuario
                {
@@ -449,8 +446,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 200,
                     CodigoImagenOriginal = 31,
                     CantidadImpresa = 1000,
-                    PathModeloImagen = "hola",
-                    Descripcion = "era de hielo",
+                    Imagen = "hola",
+                    Imagen = "era de hielo",
                     AlbumId = 1,
                 },
                 new AlbumImagenes
@@ -459,8 +456,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 201,
                     CodigoImagenOriginal = 32,
                     CantidadImpresa = 1000,
-                    PathModeloImagen = "chau",
-                    Descripcion = "REY LEON",
+                    Imagen = "chau",
+                    Imagen = "REY LEON",
                     AlbumId = 1,
                 },
                 new AlbumImagenes
@@ -469,8 +466,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 202,
                     CodigoImagenOriginal = 33,
                     CantidadImpresa = 1000,
-                    PathModeloImagen = "si",
-                    Descripcion = "Tarzan",
+                    Imagen = "si",
+                    Titulo = "Tarzan",
                     AlbumId = 1,
                 }
             );

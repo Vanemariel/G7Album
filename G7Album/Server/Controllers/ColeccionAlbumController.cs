@@ -34,5 +34,30 @@ namespace G7Album.Server.Controllers
                 return BadRequest(ResponseDto);
             }
         }
+
+         [HttpGet("{page:int}")]
+        public async Task<ActionResult<List<ColeccionAlbum>>> GetAll(int page)
+        {
+            if (context.TablaColeccionAlbumes == null)
+            {
+                return NotFound();
+            }
+
+            var pageResults = 3f;
+                var pageCount = Math.Ceiling(context.TablaColeccionAlbumes.Count() / pageResults);
+
+                var albumcoleccion = await context.TablaColeccionAlbumes
+                    .Skip((page - 1) * (int)pageResults)
+                    .Take((int)pageResults)
+                    .ToListAsync();
+
+                var response = new Response<string>
+                {
+                    TablaColeccionAlbumes = albumcoleccion,
+                    CurrentPage = page,
+                    Pages = (int)pageCount
+                };
+                return Ok(response);
+        }
     }
 }

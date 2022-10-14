@@ -21,10 +21,13 @@ namespace G7Album.BaseDatos.Entidades
         public int CantidadImpresa { get; set; }
 
         [Required(ErrorMessage = "Campo obligatorio.")]
-        public string PathModeloImagen { get; set; }
+        public string Imagen { get; set; }
 
+        //[Required(ErrorMessage = "Campo obligatorio.")]
+        //public string Descripcion { get; set; }
         [Required(ErrorMessage = "Campo obligatorio.")]
-        public string Descripcion { get; set; }
+        public string Titulo { get; set; }
+
 
         [Required(ErrorMessage = "Campo obligatorio.")]
         public int AlbumId { get; set; }
