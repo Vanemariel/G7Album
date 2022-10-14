@@ -12,6 +12,7 @@ namespace G7Album.Shared.Models
         public List<AlbumImagenImpresa> TablaImagenesImpresas { get; set; } = new List<AlbumImagenImpresa>();
         public List<AlbumImagenes> TablaImagenes { get; set; } = new List<AlbumImagenes>();   
         public List<AlbumUsuarioImagenes> TablaUsuarioImagenes { get; set; } = new List<AlbumUsuarioImagenes>();
+        public List<ColeccionAlbum> TablaColeccionAlbumes { get; set; } = new List<ColeccionAlbum>();
 
         public int Pages { get; set; }
         public int CurrentPage { get; set; }

@@ -114,9 +114,9 @@ namespace G7Album.Server.Controllers
             AlbumImgs.NumeroImagen = img.NumeroImagen;
             AlbumImgs.CodigoImagenOriginal = img.CodigoImagenOriginal;
             AlbumImgs.CantidadImpresa = img.CantidadImpresa;
-            AlbumImgs.Imagen = img.PathModeloImagen;
+            AlbumImgs.Imagen = img.Imagen;
             //AlbumImgs.Descripcion = img.Descripcion;
-            AlbumImg.Titulo = img.Titulo;
+            AlbumImgs.Titulo = img.Titulo;
 
             try
             {
