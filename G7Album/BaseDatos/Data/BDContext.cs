@@ -723,7 +723,7 @@ namespace G7Album.BaseDatos.Data
                },
                 new AlbumImagenes
                 {
-                    Id = 28,
+                    Id = 2800,
                     NumeroImagen = 41,
                     CodigoImagenOriginal = 59,
                     CantidadImpresa = 1000,
@@ -913,7 +913,7 @@ namespace G7Album.BaseDatos.Data
                },
                 new AlbumImagenes
                 {
-                    Id = 46,
+                    Id = 460,
                     NumeroImagen = 60,
                     CodigoImagenOriginal = 78,
                     CantidadImpresa = 1000,
@@ -1163,7 +1163,7 @@ namespace G7Album.BaseDatos.Data
                },
                 new AlbumImagenes
                 {
-                    Id = 62,
+                    Id = 620,
                     NumeroImagen = 85,
                     CodigoImagenOriginal = 103,
                     CantidadImpresa = 1000,
@@ -1173,7 +1173,7 @@ namespace G7Album.BaseDatos.Data
                },
                 new AlbumImagenes
                 {
-                    Id = 63,
+                    Id = 630,
                     NumeroImagen = 86,
                     CodigoImagenOriginal = 104,
                     CantidadImpresa = 1000,
@@ -1183,7 +1183,7 @@ namespace G7Album.BaseDatos.Data
                },
                 new AlbumImagenes
                 {
-                    Id = 64,
+                    Id = 640,
                     NumeroImagen = 87,
                     CodigoImagenOriginal = 105,
                     CantidadImpresa = 1000,
@@ -1193,7 +1193,7 @@ namespace G7Album.BaseDatos.Data
                },
                 new AlbumImagenes
                 {
-                    Id = 65,
+                    Id = 650,
                     NumeroImagen = 88,
                     CodigoImagenOriginal = 106,
                     CantidadImpresa = 1000,
@@ -1203,7 +1203,7 @@ namespace G7Album.BaseDatos.Data
                },
                 new AlbumImagenes
                 {
-                    Id = 66,
+                    Id = 660,
                     NumeroImagen = 89,
                     CodigoImagenOriginal = 107,
                     CantidadImpresa = 1000,
@@ -1213,7 +1213,7 @@ namespace G7Album.BaseDatos.Data
                },
                 new AlbumImagenes
                 {
-                    Id = 67,
+                    Id = 670,
                     NumeroImagen = 90,
                     CodigoImagenOriginal = 108,
                     CantidadImpresa = 1000,
@@ -1223,7 +1223,7 @@ namespace G7Album.BaseDatos.Data
                },
                 new AlbumImagenes
                 {
-                    Id = 68,
+                    Id = 680,
                     NumeroImagen = 91,
                     CodigoImagenOriginal = 109,
                     CantidadImpresa = 1000,
@@ -1233,7 +1233,7 @@ namespace G7Album.BaseDatos.Data
                },
                 new AlbumImagenes
                 {
-                    Id = 69,
+                    Id = 690,
                     NumeroImagen = 92,
                     CodigoImagenOriginal = 110,
                     CantidadImpresa = 1000,
@@ -1243,7 +1243,7 @@ namespace G7Album.BaseDatos.Data
                },
                 new AlbumImagenes
                 {
-                    Id = 70,
+                    Id = 700,
                     NumeroImagen = 93,
                     CodigoImagenOriginal = 111,
                     CantidadImpresa = 1000,
@@ -1733,7 +1733,7 @@ namespace G7Album.BaseDatos.Data
                },
                 new AlbumImagenes
                 {
-                    Id = 118,
+                    Id = 1180,
                     NumeroImagen = 142,
                     CodigoImagenOriginal = 160,
                     CantidadImpresa = 1000,
