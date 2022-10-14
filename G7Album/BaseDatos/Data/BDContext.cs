@@ -133,7 +133,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 2
-                }
+                },
             
                 new Album
                 {

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace G7Album.BaseDatos.Migrations
 {
-    public partial class inicio : Migration
+    public partial class Alb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -170,7 +170,8 @@ namespace G7Album.BaseDatos.Migrations
                 values: new object[,]
                 {
                     { 1, "Futbol" },
-                    { 2, "Tenis" }
+                    { 2, "Tenis" },
+                    { 3, "Basket" }
                 });
 
             migrationBuilder.InsertData(
@@ -188,12 +189,15 @@ namespace G7Album.BaseDatos.Migrations
                 columns: new[] { "Id", "CantidadImagen", "CantidadImpreso", "CodigoAlbum", "ColeccionAlbumId", "Descripcion", "Desde", "Hasta", "Titulo" },
                 values: new object[,]
                 {
-                    { 1, 1000, 1000, 10, 1, "figus", new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(588), new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(596), "Copa Libertadores" },
-                    { 2, 1000, 1000, 10, 1, "figus", new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(601), new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(601), "Champions Lague" },
-                    { 3, 1000, 1000, 10, 1, "figus", new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(603), new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(603), "Copa America" },
-                    { 4, 1000, 1000, 10, 2, "figus", new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(604), new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(605), "Chanchito Feliz" },
-                    { 5, 1000, 1000, 10, 2, "figus", new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(606), new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(607), "Rollan Garros" },
-                    { 6, 1000, 1000, 10, 2, "figus", new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(608), new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(608), "Us Open" }
+                    { 1, 1000, 1000, 10, 1, "figus", new DateTime(2022, 10, 13, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2161), new DateTime(2022, 10, 23, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2173), "Copa Libertadores" },
+                    { 2, 1000, 1000, 10, 1, "figus", new DateTime(2022, 10, 13, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2186), new DateTime(2022, 10, 23, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2187), "Champions Lague" },
+                    { 3, 1000, 1000, 10, 1, "figus", new DateTime(2022, 10, 13, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2189), new DateTime(2022, 10, 23, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2190), "Copa America" },
+                    { 4, 1000, 1000, 10, 2, "figus", new DateTime(2022, 10, 13, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2192), new DateTime(2022, 10, 23, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2193), "Winledom" },
+                    { 5, 1000, 1000, 10, 2, "figus", new DateTime(2022, 10, 13, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2195), new DateTime(2022, 10, 23, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2196), "Rollan Garros" },
+                    { 6, 1000, 1000, 10, 2, "figus", new DateTime(2022, 10, 13, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2198), new DateTime(2022, 10, 23, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2199), "Us Open" },
+                    { 10, 1000, 1000, 10, 3, "figus", new DateTime(2022, 10, 13, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2201), new DateTime(2022, 10, 23, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2202), "Liga ndesa" },
+                    { 11, 1000, 1000, 10, 3, "figus", new DateTime(2022, 10, 13, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2205), new DateTime(2022, 10, 23, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2206), "NBA" },
+                    { 12, 1000, 1000, 10, 3, "figus", new DateTime(2022, 10, 13, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2208), new DateTime(2022, 10, 23, 23, 11, 24, 56, DateTimeKind.Local).AddTicks(2209), "La Liga Argentina" }
                 });
 
             migrationBuilder.InsertData(
