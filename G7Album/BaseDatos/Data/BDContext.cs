@@ -53,6 +53,10 @@ namespace G7Album.BaseDatos.Data
                 new ColeccionAlbum {
                     Id = 2,
                     TituloColeccion= "Tenis"
+                },
+                new ColeccionAlbum{
+                    Id = 3,
+                    TituloColeccion= "Basket"
                 }
             );
 
@@ -98,7 +102,7 @@ namespace G7Album.BaseDatos.Data
                 {
                     Id = 4,
                     CodigoAlbum = 10,
-                    Titulo = "Chanchito Feliz",
+                    Titulo = "Winledom",
                     Descripcion = "figus",
                     CantidadImagen = 1000,
                     CantidadImpreso = 1000,
@@ -129,6 +133,43 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 2
+                }
+            
+                new Album
+                {
+                    Id = 10,
+                    CodigoAlbum = 10,
+                    Titulo = "Liga ndesa",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 3
+                },
+                new Album
+                {
+                    Id = 11,
+                    CodigoAlbum = 10,
+                    Titulo = "NBA",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 3
+                },
+                new Album
+                {
+                    Id = 12,
+                    CodigoAlbum = 10,
+                    Titulo = "La Liga Argentina",
+                    Descripcion = "figus",
+                    CantidadImagen = 1000,
+                    CantidadImpreso = 1000,
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10),
+                    ColeccionAlbumId = 3
                 }
             );
 

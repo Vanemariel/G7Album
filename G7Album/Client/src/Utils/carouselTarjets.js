@@ -11,6 +11,7 @@ const randomInteger = function(min, max) {
 // -- End Helper Functions
 
 export const carouselTarjets = (arrayConfigs) => {
+    console.log("🚀 ~ file: carouselTarjets.js ~ line 14 ~ carouselTarjets ~ arrayConfigs", arrayConfigs)
 
     arrayConfigs.forEach(configCarousel => {
 

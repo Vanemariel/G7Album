@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace G7Album.BaseDatos.Migrations
 {
     [DbContext(typeof(BDContext))]
-    [Migration("20221006192125_inicio")]
+    [Migration("20221013231931_inicio")]
     partial class inicio
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,9 @@ namespace G7Album.BaseDatos.Migrations
                     b.Property<int>("CodigoAlbum")
                         .HasColumnType("int");
 
+                    b.Property<int>("ColeccionAlbumId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasMaxLength(1000)
@@ -59,6 +62,8 @@ namespace G7Album.BaseDatos.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ColeccionAlbumId");
+
                     b.HasIndex(new[] { "Id" }, "Entity_Id")
                         .IsUnique();
 
@@ -71,10 +76,71 @@ namespace G7Album.BaseDatos.Migrations
                             CantidadImagen = 1000,
                             CantidadImpreso = 1000,
                             CodigoAlbum = 10,
+                            ColeccionAlbumId = 1,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 6, 16, 21, 25, 55, DateTimeKind.Local).AddTicks(3973),
-                            Hasta = new DateTime(2022, 10, 16, 16, 21, 25, 55, DateTimeKind.Local).AddTicks(3986),
-                            Titulo = "album"
+                            Desde = new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(588),
+                            Hasta = new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(596),
+                            Titulo = "Copa Libertadores"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CantidadImagen = 1000,
+                            CantidadImpreso = 1000,
+                            CodigoAlbum = 10,
+                            ColeccionAlbumId = 1,
+                            Descripcion = "figus",
+                            Desde = new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(601),
+                            Hasta = new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(601),
+                            Titulo = "Champions Lague"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CantidadImagen = 1000,
+                            CantidadImpreso = 1000,
+                            CodigoAlbum = 10,
+                            ColeccionAlbumId = 1,
+                            Descripcion = "figus",
+                            Desde = new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(603),
+                            Hasta = new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(603),
+                            Titulo = "Copa America"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CantidadImagen = 1000,
+                            CantidadImpreso = 1000,
+                            CodigoAlbum = 10,
+                            ColeccionAlbumId = 2,
+                            Descripcion = "figus",
+                            Desde = new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(604),
+                            Hasta = new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(605),
+                            Titulo = "Chanchito Feliz"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CantidadImagen = 1000,
+                            CantidadImpreso = 1000,
+                            CodigoAlbum = 10,
+                            ColeccionAlbumId = 2,
+                            Descripcion = "figus",
+                            Desde = new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(606),
+                            Hasta = new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(607),
+                            Titulo = "Rollan Garros"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CantidadImagen = 1000,
+                            CantidadImpreso = 1000,
+                            CodigoAlbum = 10,
+                            ColeccionAlbumId = 2,
+                            Descripcion = "figus",
+                            Desde = new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(608),
+                            Hasta = new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(608),
+                            Titulo = "Us Open"
                         });
                 });
 
@@ -318,6 +384,39 @@ namespace G7Album.BaseDatos.Migrations
                         });
                 });
 
+            modelBuilder.Entity("G7Album.BaseDatos.Entidades.ColeccionAlbum", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("TituloColeccion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex(new[] { "Id" }, "Entity_Id")
+                        .IsUnique()
+                        .HasDatabaseName("Entity_Id5");
+
+                    b.ToTable("TablaColeccionAlbumes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            TituloColeccion = "Futbol"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            TituloColeccion = "Tenis"
+                        });
+                });
+
             modelBuilder.Entity("G7Album.BaseDatos.Entidades.Usuario", b =>
                 {
                     b.Property<int>("Id")
@@ -348,7 +447,7 @@ namespace G7Album.BaseDatos.Migrations
 
                     b.HasIndex(new[] { "Id" }, "Entity_Id")
                         .IsUnique()
-                        .HasDatabaseName("Entity_Id5");
+                        .HasDatabaseName("Entity_Id6");
 
                     b.ToTable("TablaUsuarios");
 
@@ -376,10 +475,21 @@ namespace G7Album.BaseDatos.Migrations
                         });
                 });
 
+            modelBuilder.Entity("G7Album.BaseDatos.Entidades.Album", b =>
+                {
+                    b.HasOne("G7Album.BaseDatos.Entidades.ColeccionAlbum", "ColeccionAlbum")
+                        .WithMany("ListadoAlbum")
+                        .HasForeignKey("ColeccionAlbumId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ColeccionAlbum");
+                });
+
             modelBuilder.Entity("G7Album.BaseDatos.Entidades.AlbumImagenes", b =>
                 {
                     b.HasOne("G7Album.BaseDatos.Entidades.Album", "Album")
-                        .WithMany()
+                        .WithMany("ListadoImagenes")
                         .HasForeignKey("AlbumId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -434,6 +544,16 @@ namespace G7Album.BaseDatos.Migrations
                     b.Navigation("AlbumImagenImpresa");
 
                     b.Navigation("AlbumUsuario");
+                });
+
+            modelBuilder.Entity("G7Album.BaseDatos.Entidades.Album", b =>
+                {
+                    b.Navigation("ListadoImagenes");
+                });
+
+            modelBuilder.Entity("G7Album.BaseDatos.Entidades.ColeccionAlbum", b =>
+                {
+                    b.Navigation("ListadoAlbum");
                 });
 #pragma warning restore 612, 618
         }

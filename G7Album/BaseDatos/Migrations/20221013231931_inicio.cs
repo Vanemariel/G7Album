@@ -10,22 +10,16 @@ namespace G7Album.BaseDatos.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "TablaAlbumes",
+                name: "TablaColeccionAlbumes",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CodigoAlbum = table.Column<int>(type: "int", nullable: false),
-                    Titulo = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Descripcion = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
-                    CantidadImagen = table.Column<int>(type: "int", nullable: false),
-                    CantidadImpreso = table.Column<int>(type: "int", nullable: false),
-                    Desde = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Hasta = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    TituloColeccion = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TablaAlbumes", x => x.Id);
+                    table.PrimaryKey("PK_TablaColeccionAlbumes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -45,25 +39,27 @@ namespace G7Album.BaseDatos.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TablaImagenes",
+                name: "TablaAlbumes",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NumeroImagen = table.Column<int>(type: "int", nullable: false),
-                    CodigoImagenOriginal = table.Column<int>(type: "int", nullable: false),
-                    CantidadImpresa = table.Column<int>(type: "int", nullable: false),
-                    PathModeloImagen = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AlbumId = table.Column<int>(type: "int", nullable: false)
+                    CodigoAlbum = table.Column<int>(type: "int", nullable: false),
+                    Titulo = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Descripcion = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    CantidadImagen = table.Column<int>(type: "int", nullable: false),
+                    CantidadImpreso = table.Column<int>(type: "int", nullable: false),
+                    Desde = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Hasta = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ColeccionAlbumId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TablaImagenes", x => x.Id);
+                    table.PrimaryKey("PK_TablaAlbumes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TablaImagenes_TablaAlbumes_AlbumId",
-                        column: x => x.AlbumId,
-                        principalTable: "TablaAlbumes",
+                        name: "FK_TablaAlbumes_TablaColeccionAlbumes_ColeccionAlbumId",
+                        column: x => x.ColeccionAlbumId,
+                        principalTable: "TablaColeccionAlbumes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -92,6 +88,30 @@ namespace G7Album.BaseDatos.Migrations
                         name: "FK_TablaAlbumesUsuarios_TablaUsuarios_UsuarioId",
                         column: x => x.UsuarioId,
                         principalTable: "TablaUsuarios",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TablaImagenes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NumeroImagen = table.Column<int>(type: "int", nullable: false),
+                    CodigoImagenOriginal = table.Column<int>(type: "int", nullable: false),
+                    CantidadImpresa = table.Column<int>(type: "int", nullable: false),
+                    PathModeloImagen = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AlbumId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TablaImagenes", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_TablaImagenes_TablaAlbumes_AlbumId",
+                        column: x => x.AlbumId,
+                        principalTable: "TablaAlbumes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -145,9 +165,13 @@ namespace G7Album.BaseDatos.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "TablaAlbumes",
-                columns: new[] { "Id", "CantidadImagen", "CantidadImpreso", "CodigoAlbum", "Descripcion", "Desde", "Hasta", "Titulo" },
-                values: new object[] { 1, 1000, 1000, 10, "figus", new DateTime(2022, 10, 6, 16, 21, 25, 55, DateTimeKind.Local).AddTicks(3973), new DateTime(2022, 10, 16, 16, 21, 25, 55, DateTimeKind.Local).AddTicks(3986), "album" });
+                table: "TablaColeccionAlbumes",
+                columns: new[] { "Id", "TituloColeccion" },
+                values: new object[,]
+                {
+                    { 1, "Futbol" },
+                    { 2, "Tenis" }
+                });
 
             migrationBuilder.InsertData(
                 table: "TablaUsuarios",
@@ -157,6 +181,19 @@ namespace G7Album.BaseDatos.Migrations
                     { 1, "vanesa@gmail.com", "Vanesa Herrera", new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, null },
                     { 2, "juanledesma@gmail.com", "juan ledesma", new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, null },
                     { 3, "aili@gmail.com", "oriana LALALA", new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "TablaAlbumes",
+                columns: new[] { "Id", "CantidadImagen", "CantidadImpreso", "CodigoAlbum", "ColeccionAlbumId", "Descripcion", "Desde", "Hasta", "Titulo" },
+                values: new object[,]
+                {
+                    { 1, 1000, 1000, 10, 1, "figus", new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(588), new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(596), "Copa Libertadores" },
+                    { 2, 1000, 1000, 10, 1, "figus", new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(601), new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(601), "Champions Lague" },
+                    { 3, 1000, 1000, 10, 1, "figus", new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(603), new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(603), "Copa America" },
+                    { 4, 1000, 1000, 10, 2, "figus", new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(604), new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(605), "Chanchito Feliz" },
+                    { 5, 1000, 1000, 10, 2, "figus", new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(606), new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(607), "Rollan Garros" },
+                    { 6, 1000, 1000, 10, 2, "figus", new DateTime(2022, 10, 13, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(608), new DateTime(2022, 10, 23, 20, 19, 31, 663, DateTimeKind.Local).AddTicks(608), "Us Open" }
                 });
 
             migrationBuilder.InsertData(
@@ -216,6 +253,11 @@ namespace G7Album.BaseDatos.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_TablaAlbumes_ColeccionAlbumId",
+                table: "TablaAlbumes",
+                column: "ColeccionAlbumId");
+
+            migrationBuilder.CreateIndex(
                 name: "Entity_Id3",
                 table: "TablaAlbumesUsuarios",
                 column: "Id",
@@ -230,6 +272,12 @@ namespace G7Album.BaseDatos.Migrations
                 name: "IX_TablaAlbumesUsuarios_UsuarioId",
                 table: "TablaAlbumesUsuarios",
                 column: "UsuarioId");
+
+            migrationBuilder.CreateIndex(
+                name: "Entity_Id5",
+                table: "TablaColeccionAlbumes",
+                column: "Id",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "Entity_Id2",
@@ -270,7 +318,7 @@ namespace G7Album.BaseDatos.Migrations
                 column: "AlbumUsuarioId");
 
             migrationBuilder.CreateIndex(
-                name: "Entity_Id5",
+                name: "Entity_Id6",
                 table: "TablaUsuarios",
                 column: "Id",
                 unique: true);
@@ -295,6 +343,9 @@ namespace G7Album.BaseDatos.Migrations
 
             migrationBuilder.DropTable(
                 name: "TablaAlbumes");
+
+            migrationBuilder.DropTable(
+                name: "TablaColeccionAlbumes");
         }
     }
 }
