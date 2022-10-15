@@ -36,10 +36,11 @@ namespace G7Album.Server.Controllers
         //    }
         //}
 
-        [HttpGet("{page:int}")]
+        [HttpGet("GetAllPage/{page:int}")]
         public async Task<ActionResult<ResponseDto<Pagination<List<ColeccionAlbum>>>>> GetAll(int page)
         {
             ResponseDto<Pagination<List<ColeccionAlbum>>> ResponseDto = new ResponseDto<Pagination<List<ColeccionAlbum>>>();
+            Pagination<List<ColeccionAlbum>> Pagination = new Pagination<List<ColeccionAlbum>>();
 
             try
             {
@@ -52,9 +53,11 @@ namespace G7Album.Server.Controllers
                     .Include(x => x.ListadoAlbum)
                     .ToListAsync();
 
-                ResponseDto.Result.ListItems = albumColeccion;
-                ResponseDto.Result.CurrentPage = page;
-                ResponseDto.Result.Pages = (int)pageCount;
+                Pagination.ListItems = albumColeccion;
+                Pagination.CurrentPage = page;
+                Pagination.Pages = (int)pageCount;
+
+                ResponseDto.Result = Pagination;
 
                 return Ok(ResponseDto);
             }
