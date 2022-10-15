@@ -1,4 +1,4 @@
-export interface AuthData {
+export interface IAuthData {
     user: {
         id: string; 
         nombreCompleto: string; 

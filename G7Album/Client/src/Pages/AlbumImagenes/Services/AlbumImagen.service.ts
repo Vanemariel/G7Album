@@ -1,16 +1,17 @@
 
+import { IAlbumImagenesData } from "../../../Interface/DTO Back/AlbumImagenes/IAlbumImagenes";
 import { IColeccionData } from "../../../Interface/DTO Back/ColeccionAlbum/IColeccionAlbumData";
 import { IPagination } from "../../../Interface/DTO Back/IPagination";
 import { IResponseDTO } from "../../../Interface/DTO Back/IResponseDTO";
 import { axiosMethod } from "../../../Utils/axiosMethod";
 
-const ColeccionAlbumService = {
+const AlbumImagenService = {
 
-    GetAllColeccionAlbumes: async (page: number): Promise<IResponseDTO<IPagination<IColeccionData[]>>> => {
+    GetAllColeccionAlbumes: async (page: number): Promise<IResponseDTO<IPagination<IAlbumImagenesData[]>>> => {
         
-        const Response = await axiosMethod<IPagination<IColeccionData[]>>({
+        const Response = await axiosMethod<IPagination<IAlbumImagenesData[]>>({
             method: "GET",
-            url: `/ColeccionAlbum/GetAllPage/${page}`
+            url: `/AlbumImagenes/GetAllPage/${page}`
         });
 
         return {
@@ -22,4 +23,4 @@ const ColeccionAlbumService = {
 
 }
 
-export default ColeccionAlbumService; 
+export default AlbumImagenService; 

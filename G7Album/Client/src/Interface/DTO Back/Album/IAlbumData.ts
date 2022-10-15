@@ -1,4 +1,4 @@
-export interface AlbumData {
+export interface IAlbumData {
     codigoAlbum: number;
     titulo: string;
     descripcion: string;

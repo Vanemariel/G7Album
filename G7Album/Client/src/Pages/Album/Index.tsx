@@ -12,8 +12,8 @@ import AlbumesMock from './Mocks/AlbumesV2.json'
 import { useEffect, useState } from 'react';
 import { carouselTarjets } from '../../Utils/carouselTarjets';
 import ColeccionAlbumService from './Services/ColeccionAlbum.service';
-import { IColeccionData } from "../../Interface/DTO Back/ColeccionAlbum/ColeccionAlbumData";
-import { AlbumData } from "../../Interface/DTO Back/Album/AlbumData";
+import { IColeccionData } from "../../Interface/DTO Back/ColeccionAlbum/IColeccionAlbumData";
+import { IAlbumData } from "../../Interface/DTO Back/Album/IAlbumData";
 import { ConfigCarrouselModels } from "../../Models/ConfigCarrousel.models";
 
 export const Album: React.FC = () => {
@@ -32,7 +32,9 @@ export const Album: React.FC = () => {
         
         let arrAlbum: ConfigCarrouselModels[] = []
         
-        data.Result.map((coleccion: any, index: number) => {
+        console.log("🚀 ~ file: Index.tsx ~ line 43 ~ data.Result.ListItems.map ~ data.Result", data.Result)
+       
+        data.Result?.listItems.map((coleccion: any, index: number) => {
             arrAlbum.push({
                 individualItem: `#album-item${index}`,
                 carouselWidth: 1000, // in p
@@ -41,7 +43,7 @@ export const Album: React.FC = () => {
             })
         })
     
-        setAllColecciones(data.Result)
+        setAllColecciones(data.Result.listItems)
         carouselTarjets(arrAlbum)
     }
 
@@ -133,7 +135,7 @@ export const Album: React.FC = () => {
                       
                             <section id={`album-rotator-holder${indexAlbum}`} className="albumRotatorHolder">
                                 {
-                                    Coleccion?.listadoAlbum.map((album: AlbumData, indexEsport: number)=>(
+                                    Coleccion?.listadoAlbum.map((album: IAlbumData, indexEsport: number)=>(
                                         <article id={`album-item${indexAlbum}`} style={{cursor: 'pointer'}}
                                             className={`albumItem`} key={indexEsport}
                                         >

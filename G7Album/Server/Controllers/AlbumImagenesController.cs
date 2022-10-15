@@ -36,7 +36,7 @@ namespace G7Album.Server.Controllers
         ////true viene del manejo del try catch--
         //private int CountElements() => context.TablaAlbumes.Count();
 
-        [HttpGet("{page:int}")]
+        // [HttpGet("{page:int}")]
         /*public async Task<ActionResult<List<AlbumImagenes>>> GetAll(int page)
         {
             if (context.TablaImagenes == null)
@@ -60,6 +60,8 @@ namespace G7Album.Server.Controllers
                 };
                 return Ok(response);
         }*/
+        
+        [HttpGet("GetAllPage/{page:int}")]
         public async Task<ActionResult<ResponseDto<Pagination<List<AlbumImagenes>>>>> GetAll(int page)
         {
             ResponseDto<Pagination<List<AlbumImagenes>>> ResponseDto = new ResponseDto<Pagination<List<AlbumImagenes>>>();

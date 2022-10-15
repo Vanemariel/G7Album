@@ -9,12 +9,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate} from 'react-router-dom'
 
 import AlbumImagenesMock from './Mocks/AlbumImagenes.json'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { carouselTarjets } from '../../Utils/carouselTarjets';
+import { IAlbumImagenesData } from '../../Interface/DTO Back/AlbumImagenes/IAlbumImagenes';
+import { ConfigCarrouselModels } from '../../Models/ConfigCarrousel.models';
+import AlbumImagenService from './Services/AlbumImagen.service';
 
 export const AlbumImagenes: React.FC = () => {
 
     const navigate = useNavigate()
+
+
+    /// HOOKS
+    const [allAlbumImagenes, setAllAlbumImagenes] = useState<IAlbumImagenesData[]>([])
 
 
     /// METODOS
@@ -87,7 +94,7 @@ export const AlbumImagenes: React.FC = () => {
         {
             individualItem: '#album-item9',
             carouselWidth: 1000, // in p
-            carouselId: '#album-rotator8',    
+            carouselId: '#album-rotator9',    
             // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
             carouselHolderId: '#album-rotator-holder9',
         },
@@ -247,8 +254,31 @@ export const AlbumImagenes: React.FC = () => {
         },
     ]
 
+
+    const getAllAlbumImagenes = async () => {
+
+        const data = await AlbumImagenService.GetAllColeccionAlbumes(1)
+
+        let arrAlbumImg: ConfigCarrouselModels[] = []
+        
+        console.log("🚀 ~ file: Index.tsx ~ line 43 ~ data.Result.ListItems.map ~ data.Result", data.Result)
+       
+        data.Result?.listItems.map((coleccion: any, index: number) => {
+            arrAlbumImg.push({
+                individualItem: `#album-item${index}`,
+                carouselWidth: 1000, // in p
+                carouselId: `#album-rotator${index}`,    
+                carouselHolderId: `#album-rotator-holder${index}`,
+            })
+        })
+        setAllAlbumImagenes(data.Result.listItems)
+        carouselTarjets(arrAlbumImg)
+    }
+
+
+
     useEffect(()=> {
-        carouselTarjets(config)
+        getAllAlbumImagenes()
     },[])
 
     return (
