@@ -37,7 +37,7 @@ namespace G7Album.Server.Controllers
         //private int CountElements() => context.TablaAlbumes.Count();
 
         [HttpGet("{page:int}")]
-        public async Task<ActionResult<List<AlbumImagenes>>> GetAll(int page)
+        /*public async Task<ActionResult<List<AlbumImagenes>>> GetAll(int page)
         {
             if (context.TablaImagenes == null)
             {
@@ -59,7 +59,35 @@ namespace G7Album.Server.Controllers
                     Pages = (int)pageCount
                 };
                 return Ok(response);
+        }*/
+        public async Task<ActionResult<ResponseDto<Pagination<List<AlbumImagenes>>>>> GetAll(int page)
+        {
+            ResponseDto<Pagination<List<AlbumImagenes>>> ResponseDto = new ResponseDto<Pagination<List<AlbumImagenes>>>();
+
+            try
+            {
+                var pageResults = 3f;
+                var pageCount = Math.Ceiling(context.TablaImagenes.Count() / pageResults);
+
+                List<AlbumImagenes> albumImagenes = await context.TablaImagenes
+                    .Skip((page - 1) * (int)pageResults)
+                    .Take((int)pageResults)
+                    .Include(x => x.Album)
+                    .ToListAsync();
+
+                ResponseDto.Result.ListItems = albumImagenes;
+                ResponseDto.Result.CurrentPage = page;
+                ResponseDto.Result.Pages = (int)pageCount;
+
+                return Ok(ResponseDto);
+            }
+            catch (Exception ex)
+            {
+                ResponseDto.MessageError = $"Ha ocurrido un error, {ex.Message}";
+                return BadRequest(ResponseDto);
+            }
         }
+
 
 
 
