@@ -12,23 +12,25 @@ namespace G7Album.Server.Controllers
             this.context = context;
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet("GetAll/{idUsuario:int}")]
         //metodo que me muestra la lista completa  
-        public async Task<ActionResult<List<AlbumUsuario>>> GetAll()
+        public async Task<ActionResult<List<AlbumUsuario>>> GetAll(int idUsuario)
         {
-            return await context.TablaAlbumesUsuarios.Include(x => x.Album)
+            return await context.TablaAlbumesUsuarios
+                .Where(x => x.UsuarioId == idUsuario)
+                .Include(x => x.Album)
                 .Include(x => x.Usuario)
                 .ToListAsync();
         }
 
         [HttpGet("Get/one{id:int}")]
-        public async Task<ActionResult<AlbumUsuario>> GetById(int id)
+        public async Task<ActionResult<AlbumUsuario>> GetById(int idAlbum)
         {
-            AlbumUsuario usua = await context.TablaAlbumesUsuarios.Where(x => x.Id == id).FirstOrDefaultAsync();
+            AlbumUsuario usua = await context.TablaAlbumesUsuarios.Where(x => x.Id == idAlbum).FirstOrDefaultAsync();
             //x=>x.id x seria el registro donde esta el id 
             if (usua == null)
             {
-                return NotFound($"No existe el Albumusuario con id igual a {id}.");
+                return NotFound($"No existe el Albumusuario con id igual a {idAlbum}.");
             }
             return usua;
         }
@@ -51,19 +53,47 @@ namespace G7Album.Server.Controllers
 
         [HttpPost]
         //verbo es el http post, pero a la base de datos ingresa como un insert
-        public async Task<ActionResult<AlbumUsuario>> SendAlbum(int IdUsuario, int IdAlbum)
+        public async Task<ActionResult<string>> SendAlbum(int IdUsuario, int IdAlbum)
         {
-            // try
-            // {
-            //     context.TablaAlbumesUsuarios.Add(albumusuario);
-            //     await context.SaveChangesAsync();
-            //     return Ok("Se ha creado correctamente");
-            // }
-            // catch (Exception ex)
-            // {
-            //     return BadRequest($"Ha ocurrido un error, {ex.Message}");
-            // }
-            return Ok();
+
+            ResponseDto<string> ResponseDto = new ResponseDto<string>();
+
+            try
+            {
+                Usuario? Usuario = await this.context.TablaUsuarios
+                    .Where(Usuario => Usuario.Id == IdUsuario)
+                    .FirstOrDefaultAsync();
+
+                if (IdUsuario == null)
+                {
+                    throw new Exception($"no existe el Usuario con id igual a {IdUsuario}.");
+                }
+
+                Album? Album = await this.context.TablaAlbumes
+                    .Where(Album => Album.Id == IdAlbum)
+                    .FirstOrDefaultAsync();
+
+                if (IdAlbum == null)
+                {
+                    throw new Exception($"no existe el Album con id igual a {IdUsuario}.");
+                }
+
+                context.TablaAlbumesUsuarios.Add( new AlbumUsuario {
+                    AlbumId = IdAlbum,
+                    UsuarioId = IdUsuario
+                });
+                
+                await context.SaveChangesAsync();
+
+                ResponseDto.Result = "Se ha comprado un Album correctamente"; 
+
+                return Ok(ResponseDto);
+            }
+            catch (Exception ex)
+            {
+                ResponseDto.MessageError = $"Ha ocurrido un error, {ex.Message}";
+                return BadRequest(ResponseDto);
+            }
         }
 
         [HttpPut]

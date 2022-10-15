@@ -26,7 +26,7 @@ namespace G7Album.BaseDatos.Entidades
         public string NombreCompleto { get; set; }
 
 
-        // [InverseProperty("Usuario")]
-        // public List<AlbumUsuario> ListaAlbumUsuario {get; set;}
+        [InverseProperty("Usuario")]
+        public List<AlbumUsuario> ListaAlbumUsuario {get; set;}
     }
 }
