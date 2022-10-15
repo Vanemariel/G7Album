@@ -51,7 +51,7 @@ namespace G7Album.Server.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("SendAlbum")]
         //verbo es el http post, pero a la base de datos ingresa como un insert
         public async Task<ActionResult<string>> SendAlbum(int IdUsuario, int IdAlbum)
         {

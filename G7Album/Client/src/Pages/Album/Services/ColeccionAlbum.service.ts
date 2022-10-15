@@ -5,11 +5,11 @@ import { axiosMethod } from "../../../Utils/axiosMethod";
 
 const ColeccionAlbumService = {
 
-    GetAllColeccionAlbumes: async (): Promise<IResponseDTO<IColeccionData[]>> => {
+    GetAllColeccionAlbumes: async (page: number): Promise<IResponseDTO<IColeccionData[]>> => {
         
         const Response = await axiosMethod<IColeccionData[]>({
             method: "GET",
-            url: `/ColeccionAlbum/GetAll`
+            url: `/ColeccionAlbum/GetAllPage/${page}`
         });
         // UNIFICAR LOS DTO REPSONSE PARA TRAER LA RESPUESTA DE ACA Y MOSTAR EN PAG
         

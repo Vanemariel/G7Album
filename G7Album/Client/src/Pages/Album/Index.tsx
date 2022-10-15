@@ -21,51 +21,6 @@ export const Album: React.FC = () => {
 
     const navigate = useNavigate();
 
- 
-    const config = [
-        {
-            individualItem: '#album-item0',
-            carouselWidth: 1000, // in px
-            carouselId: '#album-rotator0',    
-            // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
-            carouselHolderId: '#album-rotator-holder0'
-        },
-        {
-            individualItem: '#album-item1',
-            carouselWidth: 1000, // in p
-            carouselId: '#album-rotator1',    
-            // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
-            carouselHolderId: '#album-rotator-holder1',
-        },
-        {
-            individualItem: '#album-item2',
-            carouselWidth: 1000, // in px
-            carouselId: '#album-rotator2',    
-            // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
-            carouselHolderId: '#album-rotator-holder2',
-        },
-        {
-            individualItem: '#album-item3',
-            carouselWidth: 1000, // in px
-            carouselId: '#album-rotator3',    
-            // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
-            carouselHolderId: '#album-rotator-holder3'
-        },
-        {
-            individualItem: '#album-item4',
-            carouselWidth: 1000, // in p
-            carouselId: '#album-rotator4',    
-            // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
-            carouselHolderId: '#album-rotator-holder4',
-        },
-        {
-            individualItem: '#album-item5',
-            carouselWidth: 1000, // in px
-            carouselId: '#album-rotator5',    
-            // carousel should be <div id="carouselId3"><div id="carouselHolderId3">{items}</div></div>
-            carouselHolderId: '#album-rotator-holder5',
-        }
-    ]
 
     /// HOOKS
     const [allColecciones, setAllColecciones] = useState<IColeccionData[]>([])
@@ -73,7 +28,7 @@ export const Album: React.FC = () => {
     /// METODOS
     const getAllColeccionAlbumes = async () => {
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-        const data = await ColeccionAlbumService.GetAllColeccionAlbumes()
+        const data = await ColeccionAlbumService.GetAllColeccionAlbumes(1)
         
         let arrAlbum: ConfigCarrouselModels[] = []
         
