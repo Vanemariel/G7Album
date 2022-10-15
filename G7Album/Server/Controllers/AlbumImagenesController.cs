@@ -65,6 +65,7 @@ namespace G7Album.Server.Controllers
         public async Task<ActionResult<ResponseDto<Pagination<List<AlbumImagenes>>>>> GetAll(int page)
         {
             ResponseDto<Pagination<List<AlbumImagenes>>> ResponseDto = new ResponseDto<Pagination<List<AlbumImagenes>>>();
+            Pagination<List<AlbumImagenes>> Pagination = new Pagination<List<AlbumImagenes>>();
 
             try
             {
@@ -80,6 +81,9 @@ namespace G7Album.Server.Controllers
                 ResponseDto.Result.ListItems = albumImagenes;
                 ResponseDto.Result.CurrentPage = page;
                 ResponseDto.Result.Pages = (int)pageCount;
+
+                 ResponseDto.Result = Pagination;
+
 
                 return Ok(ResponseDto);
             }
