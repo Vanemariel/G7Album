@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,5 +25,8 @@ namespace G7Album.BaseDatos.Entidades
         [MaxLength(100, ErrorMessage = "El Codigo del album no puede superar {1} caracteres")]
         public string NombreCompleto { get; set; }
 
+
+        // [InverseProperty("Usuario")]
+        // public List<AlbumUsuario> ListaAlbumUsuario {get; set;}
     }
 }

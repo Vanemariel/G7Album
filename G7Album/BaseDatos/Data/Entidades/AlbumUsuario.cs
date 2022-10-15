@@ -25,8 +25,8 @@ namespace G7Album.BaseDatos.Entidades
         [Required(ErrorMessage = "Este campo es obligatorio")]
         public int UsuarioId { get; set; }
 
-         [InverseProperty("AlbumId")]
-        public List<AlbumUsuario> ListaAlbumUsuario {get; set;}
+        //  [InverseProperty("AlbumId")]
+        // public List<AlbumUsuario> ListaAlbumUsuario {get; set;}
 
 
         [ForeignKey("AlbumId")]

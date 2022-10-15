@@ -29,14 +29,16 @@ namespace G7Album.BaseDatos.Entidades
         [Required(ErrorMessage = "Este campo es obligatorio")]
         public DateTime Hasta { get; set; }
 
-        [InverseProperty("Album")]
-        public List<AlbumImagenes> ListadoImagenes {get; set;}
-
-
+        [Required(ErrorMessage = "Este campo es obligatorio")]
         public int ColeccionAlbumId {get; set;}
         
         [ForeignKey("ColeccionAlbumId")]
         public ColeccionAlbum ColeccionAlbum {get; set;}
 
+
+
+
+        [InverseProperty("Album")]
+        public List<AlbumImagenes> ListadoImagenes {get; set;}
     }
 }

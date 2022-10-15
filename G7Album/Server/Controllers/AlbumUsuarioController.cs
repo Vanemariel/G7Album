@@ -48,20 +48,22 @@ namespace G7Album.Server.Controllers
                 return BadRequest($"Ha ocurrido un error, {ex.Message}");
             }
         }
+
         [HttpPost]
         //verbo es el http post, pero a la base de datos ingresa como un insert
-        public async Task<ActionResult<AlbumUsuario>> Insert(int IdUsuario, int IdAlbum)
+        public async Task<ActionResult<AlbumUsuario>> SendAlbum(int IdUsuario, int IdAlbum)
         {
-            try
-            {
-                context.TablaAlbumesUsuarios.Add(albumusuario);
-                await context.SaveChangesAsync();
-                return Ok("Se ha creado correctamente");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"Ha ocurrido un error, {ex.Message}");
-            }
+            // try
+            // {
+            //     context.TablaAlbumesUsuarios.Add(albumusuario);
+            //     await context.SaveChangesAsync();
+            //     return Ok("Se ha creado correctamente");
+            // }
+            // catch (Exception ex)
+            // {
+            //     return BadRequest($"Ha ocurrido un error, {ex.Message}");
+            // }
+            return Ok();
         }
 
         [HttpPut]
