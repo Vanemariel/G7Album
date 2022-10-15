@@ -1,4 +1,6 @@
-export interface IAlbumData {
+import { IComunId } from "../../Comun/IComunId.interface";
+
+export interface IAlbumData extends IComunId {
     codigoAlbum: number;
     titulo: string;
     descripcion: string;

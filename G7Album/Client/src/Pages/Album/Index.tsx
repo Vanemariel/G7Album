@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import './style.css'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -20,7 +20,7 @@ export const Album: React.FC = () => {
 
 
     const navigate = useNavigate();
-
+    const location = useLocation()
 
     /// HOOKS
     const [allColecciones, setAllColecciones] = useState<IColeccionData[]>([])
@@ -28,8 +28,10 @@ export const Album: React.FC = () => {
     /// METODOS
     const getAllColeccionAlbumes = async () => {
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-        const data = await ColeccionAlbumService.GetAllColeccionAlbumes(1)
         
+        // Pegarle a Album getAll 
+        const data = await ColeccionAlbumService.GetAllColeccionAlbumes(1)
+
         let arrAlbum: ConfigCarrouselModels[] = []
         
         console.log("🚀 ~ file: Index.tsx ~ line 43 ~ data.Result.ListItems.map ~ data.Result", data.Result)
@@ -48,6 +50,9 @@ export const Album: React.FC = () => {
     }
 
 
+    const sendAlbum = (idAlbum: number) => {
+        alert("Has comprado un Album")
+    }
 
 
 
@@ -57,36 +62,7 @@ export const Album: React.FC = () => {
 
     return (
 
-
         <>
-            <Navbar bg="dark" variant="dark">
-                <Container>
-                    <Navbar.Brand href="">G7Album</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link href="Home">Inicio</Nav.Link>
-                            <Nav.Link href="Album">Albumes</Nav.Link>
-
-                            <Nav.Link href="AlbumImagenes">Figuritas</Nav.Link>
-
-                            <NavDropdown title="Mi cuenta" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="AlbumUsuario">Mis albumes</NavDropdown.Item>
-                                <NavDropdown.Item href="AlbumUsuario">Comprar albumes</NavDropdown.Item>
-                                <NavDropdown.Item href="">
-                                    Cerrar sesion
-                                </NavDropdown.Item>
-                                <input type="text" className="form-control" placeholder="Escribe album o torneo deseado" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                                <div className="input-group-append">
-                                    <button type="button" className="btn btn-primary">
-                                        <i className="fas fa-search"></i>
-                                    </button>
-                                </div>
-                            </NavDropdown>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
 
             <div className="containerPageAlbum">
                 <div id="m">
@@ -143,7 +119,7 @@ export const Album: React.FC = () => {
 
                                                 <h3>{album.titulo}</h3>
             
-                                                <button className="btnAlbumComprar" type='submit' onClick={() => navigate('/AlbumImagenes')}>Comprar</button>
+                                                <button className="btnAlbumComprar" type='submit' onClick={() => sendAlbum(album.id)}>Comprar</button>
                                             </div>
                                         </article>
                                     ))

@@ -1,8 +1,10 @@
-import { Route, Routes } from 'react-router-dom';
+import {  Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Loader } from './Components/Loader/Loader';
 import { ModalStatus } from './Components/ModalStatus/ModalStatus';
 import { RoutePrivate } from './Components/RoutePrivate/RoutePrivate';
+import { useLocation } from "react-router-dom";
+
 import { GlobalProvider } from './Context/GlobalProvider';
 import { AuthProvider } from './Pages/Authentication/Context/AuthProvider';
 import { Authentication } from './Pages/Authentication/Index';
@@ -12,17 +14,17 @@ import { ImagenFigurita } from './Pages/ImagenFigurita/Index';
 import { Album } from './Pages/Album/Index';
 
 import { AlbumUsuario } from './Pages/AlbumUsuario/Index';
-
+import { Navigate } from './Components/Navigate/Navigate';
 
 
 function App() {
 
   return (
-
+    <>
       <GlobalProvider>
-          {/*Quitar algun momento GlobalProvider por redux */}
-          
-          {/* Contenedor de rutas. */}
+  
+        <Navigate/>
+
           <Routes>
 
             <Route path="/" element={
@@ -72,11 +74,13 @@ function App() {
 
           </Routes>
 
-          <Loader/>
+        <Loader/>
 
-          <ModalStatus />
+        <ModalStatus />
 
       </GlobalProvider>
+
+    </>
   );
 }
 const AppWrapper = () => {

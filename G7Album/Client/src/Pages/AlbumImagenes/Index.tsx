@@ -284,35 +284,6 @@ export const AlbumImagenes: React.FC = () => {
     return (
 
         <>
-            <Navbar bg="dark" variant="dark">
-            <Container>
-                <Navbar.Brand href="">G7Album</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="Home">Inicio</Nav.Link>
-                        <Nav.Link href="Album">Albumes</Nav.Link>
-                    
-                        <Nav.Link href="FiguritasCompra">Figuritas</Nav.Link>
-
-                        <NavDropdown title="Mi cuenta" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="AlbumUsuario">Mis albumes</NavDropdown.Item>
-                            <NavDropdown.Item href="AlbumUsuario">Comprar albumes</NavDropdown.Item>
-                            <NavDropdown.Item href="">
-                                Cerrar sesion
-                            </NavDropdown.Item>
-                        
-                        </NavDropdown>
-                        <input type="text" className="form-control" placeholder="Escribe album o torneo deseado" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                            <div className="input-group-append">
-                                <button type="button" className="btn btn-primary">
-                                    <i className="fas fa-search"></i>
-                                </button>
-                            </div>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
 
             <div className="containerPageAlbum">
 
@@ -333,15 +304,15 @@ export const AlbumImagenes: React.FC = () => {
 
 
                     {
-                        AlbumImagenesMock.map((AlbumIMG: any, indexFiguritaCompra: number) => (
+                        allAlbumImagenes.map((AlbumIMG: IAlbumImagenesData, indexFiguritaCompra: number) => (
 
                             <div id={`album-rotator${indexFiguritaCompra}`} key={indexFiguritaCompra} className="albumRotatorContainer">
 
-                                <h1 className='title'>{AlbumIMG.titleAlbum}</h1>
-
+                                <h1 className='title'>{AlbumIMG.titulo}</h1>
+{/* 
                                 <section id={`album-rotator-holder${indexFiguritaCompra}`} className="albumRotatorHolder">
                                     {
-                                        AlbumIMG.ListaFiguritas.map((figuritas: any, indexEsport: number) => (
+                                        AlbumIMG.listadoAlbum.map((figuritas: any, indexEsport: number) => (
                                             <article id={`album-item${indexFiguritaCompra}`} style={{cursor: 'pointer'}}
                                                 className={`albumItem`} key={indexEsport}
                                             >   
@@ -356,7 +327,7 @@ export const AlbumImagenes: React.FC = () => {
                                             </article>
                                         ))
                                     }          
-                                </section>
+                                </section> */}
                             </div>
                             
                         ))
