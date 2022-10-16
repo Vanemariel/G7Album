@@ -4,11 +4,18 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import NavigateModuleCSS from './Navigate.module.css'
+import { deleteStorage } from '../../Utils/updateStorage';
 
 export const Navigate: React.FC = () => {
 
+    const navigate = useNavigate()
+
+    const closeSesion = () => {
+      navigate("/")
+      deleteStorage("User")
+    }
 
     if (useLocation().pathname === '/') {
         return <></>
@@ -30,7 +37,7 @@ export const Navigate: React.FC = () => {
               <NavDropdown title="Mi cuenta" id="basic-nav-dropdown">
                 {/* <NavDropdown.Item href="AlbumUsuario">Mis albumes</NavDropdown.Item> */}
                 {/* <NavDropdown.Item href="AlbumUsuario">Comprar albumes</NavDropdown.Item> */}
-                <NavDropdown.Item href=""> Cerar sesion </NavDropdown.Item>
+                <NavDropdown.Item href="" onClick={closeSesion}> Cerar sesion </NavDropdown.Item>
               </NavDropdown>
             </Nav>
 
