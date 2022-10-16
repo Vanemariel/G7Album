@@ -5,6 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
+import NavigateModuleCSS from './Navigate.module.css'
 
 export const Navigate: React.FC = () => {
 
@@ -15,7 +16,7 @@ export const Navigate: React.FC = () => {
 
     return (
 
-        <Navbar bg="dark" variant="dark">
+      <Navbar bg="dark" variant="dark" className={NavigateModuleCSS.containerNavigate}>
         <Container>
           <Navbar.Brand href="">G7Album</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

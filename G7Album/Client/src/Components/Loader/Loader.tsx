@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useGlobalContext } from "../../Context/useGlobalContext";
 import LoaderCSS from "./Loader.module.css";
 
@@ -6,6 +7,17 @@ export const Loader = () => {
   
   const storeGlobal  = useGlobalContext()
   
+  useEffect(()=>{
+    const $body = document.querySelector("body") as HTMLBodyElement;
+    if (storeGlobal.IsShowLoader()) {
+      // slideCarrusel();
+      $body.style.overflowY = "hidden";
+    } else {
+      $body.style.overflowY = "scroll";
+    }
+    
+  },[storeGlobal.IsShowLoader()])
+
   return (
     <div className={`${storeGlobal.IsShowLoader() ? LoaderCSS.backgroundSpinner : LoaderCSS.CloseLoader} `}>
 
