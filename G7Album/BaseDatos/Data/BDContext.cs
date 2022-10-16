@@ -416,24 +416,18 @@ namespace G7Album.BaseDatos.Data
                new AlbumUsuario
                {
                    Id = 1,
-                   CodigoAlbumUsuario = "s",
-                   CodigoAlbum = "a",
                    AlbumId = 1,
                    UsuarioId = 1,
               },
                new AlbumUsuario
                {
                    Id = 2,
-                   CodigoAlbumUsuario = "t",
-                   CodigoAlbum = "b",
                    AlbumId = 1,
                    UsuarioId = 2,
               },
                new AlbumUsuario
                {
                    Id = 3,
-                   CodigoAlbumUsuario = "u",
-                   CodigoAlbum = "c",
                    AlbumId = 1,
                    UsuarioId = 3,
                 }

@@ -11,13 +11,13 @@ namespace G7Album.BaseDatos.Entidades
 {
     public class AlbumUsuario : BaseEntity
     {
-        [Required(ErrorMessage = "Este campo es obligatorio")]
-        [MaxLength(100, ErrorMessage = "El Codigo del album no puede superar {1} caracteres")]
-        public string CodigoAlbumUsuario{ get; set; }
+        // [Required(ErrorMessage = "Este campo es obligatorio")]
+        // [MaxLength(100, ErrorMessage = "El Codigo del album no puede superar {1} caracteres")]
+        // public string CodigoAlbumUsuario{ get; set; }
 
-        [Required(ErrorMessage = "Este campo es obligatorio")]
-        [MaxLength(100, ErrorMessage = "El Codigo del album no puede superar {1} caracteres")]
-        public string CodigoAlbum { get; set; }
+        // [Required(ErrorMessage = "Este campo es obligatorio")]
+        // [MaxLength(100, ErrorMessage = "El Codigo del album no puede superar {1} caracteres")]
+        // public string CodigoAlbum { get; set; }
 
         [Required(ErrorMessage = "Este campo es obligatorio")]
         public int AlbumId { get; set; }

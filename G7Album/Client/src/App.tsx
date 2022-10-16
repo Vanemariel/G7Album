@@ -32,15 +32,11 @@ function App() {
             </AuthProvider>
           }/>
       
-          <Route path="/Home" element={
-              <RoutePrivate>
-                  <Home />
-              </RoutePrivate>
-          } />
+
           <Route path="/AlbumUsuario" element={
               <RoutePrivate>
                  <AlbumUsuario />
-             </RoutePrivate>
+              </RoutePrivate>
             } />
           <Route path="/AlbumImagenes" element={
               <RoutePrivate>
@@ -66,6 +62,12 @@ function App() {
                 <AlbumUnitario/>
               </RoutePrivate> 
           }/> */}
+         
+          <Route path="/Home" element={
+              <RoutePrivate>
+                  <Home />
+              </RoutePrivate>
+          } />
           
         </Routes>
 

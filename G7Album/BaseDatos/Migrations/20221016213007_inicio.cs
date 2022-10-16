@@ -70,8 +70,6 @@ namespace G7Album.BaseDatos.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CodigoAlbumUsuario = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    CodigoAlbum = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     AlbumId = table.Column<int>(type: "int", nullable: false),
                     UsuarioId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -192,44 +190,44 @@ namespace G7Album.BaseDatos.Migrations
                 columns: new[] { "Id", "CantidadImagen", "CantidadImpreso", "CodigoAlbum", "ColeccionAlbumId", "Descripcion", "Desde", "Hasta", "Titulo" },
                 values: new object[,]
                 {
-                    { 1, 1000, 1000, 1, 1, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(6993), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7002), "Copa Libertadores" },
-                    { 2, 1000, 1000, 2, 1, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7008), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7009), "Champions Lague" },
-                    { 3, 1000, 1000, 3, 1, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7011), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7011), "Copa America" },
-                    { 4, 1000, 1000, 4, 2, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7013), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7014), "Winledom" },
-                    { 5, 1000, 1000, 5, 2, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7015), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7016), "Rollan Garros" },
-                    { 6, 1000, 1000, 6, 2, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7018), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7018), "Us Open" },
-                    { 7, 1000, 1000, 7, 3, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7020), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7020), "Liga ndesa" },
-                    { 8, 1000, 1000, 8, 3, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7022), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7023), "NBA" },
-                    { 9, 1000, 1000, 9, 3, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7024), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7025), "La Liga Argentina" },
-                    { 10, 1000, 1000, 10, 4, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7027), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7027), "National Rugby League" },
-                    { 11, 1000, 1000, 11, 4, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7029), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7030), "Super League" },
-                    { 12, 1000, 1000, 12, 4, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7031), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7032), "The Rugby Championship" },
-                    { 13, 1000, 1000, 1, 5, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7033), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7034), "Dragonball" },
-                    { 14, 1000, 1000, 2, 5, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7036), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7036), "Dragonball Z" },
-                    { 15, 1000, 1000, 3, 5, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7038), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7039), "Dragonball Super" },
-                    { 16, 1000, 1000, 4, 5, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7040), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7041), "Naruto" },
-                    { 17, 1000, 1000, 5, 5, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7042), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7043), "Naruto Shippuden" },
-                    { 18, 1000, 1000, 6, 5, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7045), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7045), "Naruto Next Generation" },
-                    { 19, 1000, 1000, 7, 5, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7047), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7048), "Saint Seiya the Lost Canvas" },
-                    { 20, 1000, 1000, 8, 5, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7049), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7050), "Batalla de Poseidon" },
-                    { 21, 1000, 1000, 9, 5, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7052), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7052), "Batalla de Asgard" },
-                    { 22, 1000, 1000, 100, 6, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7054), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7054), "Monster Inc" },
-                    { 23, 1000, 1000, 101, 6, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7056), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7057), "Monster University" },
-                    { 24, 1000, 1000, 102, 6, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7059), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7059), "High school Musical" },
-                    { 25, 1000, 1000, 104, 6, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7061), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7061), "High school Musical 2" },
-                    { 26, 1000, 1000, 105, 6, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7063), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7064), "La era del hielo 1" },
-                    { 27, 1000, 1000, 106, 6, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7065), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7066), "La era del hielo 2" },
-                    { 28, 1000, 1000, 107, 6, "figus", new DateTime(2022, 10, 15, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7068), new DateTime(2022, 10, 25, 13, 48, 30, 183, DateTimeKind.Local).AddTicks(7068), "La era del hielo 3" }
+                    { 1, 1000, 1000, 1, 1, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6830), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6841), "Copa Libertadores" },
+                    { 2, 1000, 1000, 2, 1, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6851), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6852), "Champions Lague" },
+                    { 3, 1000, 1000, 3, 1, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6853), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6854), "Copa America" },
+                    { 4, 1000, 1000, 4, 2, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6855), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6856), "Winledom" },
+                    { 5, 1000, 1000, 5, 2, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6857), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6857), "Rollan Garros" },
+                    { 6, 1000, 1000, 6, 2, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6859), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6859), "Us Open" },
+                    { 7, 1000, 1000, 7, 3, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6861), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6861), "Liga ndesa" },
+                    { 8, 1000, 1000, 8, 3, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6863), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6863), "NBA" },
+                    { 9, 1000, 1000, 9, 3, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6871), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6871), "La Liga Argentina" },
+                    { 10, 1000, 1000, 10, 4, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6879), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6880), "National Rugby League" },
+                    { 11, 1000, 1000, 11, 4, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6884), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6884), "Super League" },
+                    { 12, 1000, 1000, 12, 4, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6889), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6890), "The Rugby Championship" },
+                    { 13, 1000, 1000, 1, 5, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6892), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6893), "Dragonball" },
+                    { 14, 1000, 1000, 2, 5, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6894), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6895), "Dragonball Z" },
+                    { 15, 1000, 1000, 3, 5, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6896), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6897), "Dragonball Super" },
+                    { 16, 1000, 1000, 4, 5, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6898), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6898), "Naruto" },
+                    { 17, 1000, 1000, 5, 5, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6900), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6900), "Naruto Shippuden" },
+                    { 18, 1000, 1000, 6, 5, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6902), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6902), "Naruto Next Generation" },
+                    { 19, 1000, 1000, 7, 5, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6904), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6904), "Saint Seiya the Lost Canvas" },
+                    { 20, 1000, 1000, 8, 5, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6905), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6906), "Batalla de Poseidon" },
+                    { 21, 1000, 1000, 9, 5, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6907), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6908), "Batalla de Asgard" },
+                    { 22, 1000, 1000, 100, 6, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6909), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6910), "Monster Inc" },
+                    { 23, 1000, 1000, 101, 6, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6911), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6912), "Monster University" },
+                    { 24, 1000, 1000, 102, 6, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6913), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6914), "High school Musical" },
+                    { 25, 1000, 1000, 104, 6, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6915), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6915), "High school Musical 2" },
+                    { 26, 1000, 1000, 105, 6, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6917), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6917), "La era del hielo 1" },
+                    { 27, 1000, 1000, 106, 6, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6919), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6919), "La era del hielo 2" },
+                    { 28, 1000, 1000, 107, 6, "figus", new DateTime(2022, 10, 16, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6920), new DateTime(2022, 10, 26, 18, 30, 6, 806, DateTimeKind.Local).AddTicks(6921), "La era del hielo 3" }
                 });
 
             migrationBuilder.InsertData(
                 table: "TablaAlbumesUsuarios",
-                columns: new[] { "Id", "AlbumId", "CodigoAlbum", "CodigoAlbumUsuario", "UsuarioId" },
+                columns: new[] { "Id", "AlbumId", "UsuarioId" },
                 values: new object[,]
                 {
-                    { 1, 1, "a", "s", 1 },
-                    { 2, 1, "b", "t", 2 },
-                    { 3, 1, "c", "u", 3 }
+                    { 1, 1, 1 },
+                    { 2, 1, 2 },
+                    { 3, 1, 3 }
                 });
 
             migrationBuilder.InsertData(
@@ -249,7 +247,7 @@ namespace G7Album.BaseDatos.Migrations
                     { 10, 1, 1000, 40, " ", 23, "ArmanI Franco" },
                     { 11, 1, 1000, 41, " ", 24, "Guido Herrera" },
                     { 12, 1, 1000, 42, " ", 25, "Salas" },
-                    { 13, 1, 1000, 43, "si", 26, "Firmiño" },
+                    { 13, 1, 1000, 43, " ", 26, "Firmiño" },
                     { 14, 1, 1000, 44, " ", 27, "Alvarez Julian" },
                     { 15, 1, 1000, 45, " ", 28, "Halan" },
                     { 16, 1, 1000, 46, " ", 29, "Cuti Romero" },
@@ -260,7 +258,7 @@ namespace G7Album.BaseDatos.Migrations
                     { 21, 2, 1000, 51, " ", 34, "Del Potro" },
                     { 22, 2, 1000, 52, " ", 35, "David Nalvandian" },
                     { 23, 2, 1000, 53, " ", 36, "Novak Djovich" },
-                    { 24, 2, 1000, 54, "", 37, "Nadal Rafael" },
+                    { 24, 2, 1000, 54, " ", 37, "Nadal Rafael" },
                     { 25, 2, 1000, 55, " ", 37, "Federer Roger" },
                     { 26, 2, 1000, 56, " ", 38, "Murray" },
                     { 27, 2, 1000, 57, " ", 39, "Del Potro" },

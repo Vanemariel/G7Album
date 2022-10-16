@@ -1,10 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useLocation, useNavigate } from "react-router-dom";
 import './style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import AlbumesMock from './Mocks/Albumes.json'
-import AlbumesMock from './Mocks/AlbumesV2.json'
 import { useEffect, useState } from 'react';
 import { carouselTarjets } from '../../Utils/carouselTarjets';
 import AlbumService from './Services/Album.service';
@@ -45,25 +42,23 @@ export const Album: React.FC = () => {
 
 
     const sendAlbum = async (idAlbum: number) => {
-        alert("Has comprado un Album")
 
         try {
                       
             storeGlobal.SetShowLoader(true)
                                         
-            // const {Result, MessageError } = await AlbumService.sendAlbum(
-            const data = await AlbumService.sendAlbum(
-                storeGlobal.GetMyUserData().Id,
-                idAlbum
-            )
+            const {Result, MessageError } = await AlbumService.sendAlbum({
+               IdUsuario: storeGlobal.GetMyUserData().Id, 
+               IdAlbum: idAlbum
+            })
 
-            // if (MessageError != undefined)
-            // {
-            //   throw new Error(MessageError);
-            // }
+            if (MessageError != undefined)
+            {
+              throw new Error(MessageError);
+            }
                                
-            // storeGlobal.SetShowLoader(false)                                         
-            // storeGlobal.SetMessageModalStatus(Result)
+            storeGlobal.SetShowLoader(false)                                         
+            storeGlobal.SetMessageModalStatus(Result)
                   
         } catch (error: any) {
             
@@ -77,7 +72,7 @@ export const Album: React.FC = () => {
                storeGlobal.SetShowModalStatus(false)
             }, 5000);
       
-          }
+        }
     }
 
 
