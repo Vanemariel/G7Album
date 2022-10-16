@@ -1,6 +1,6 @@
 export interface IAuthData {
     user: {
-        id: string; 
+        id: number; 
         nombreCompleto: string; 
         email: string;
     }

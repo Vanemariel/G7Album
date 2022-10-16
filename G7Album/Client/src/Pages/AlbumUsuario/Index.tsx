@@ -19,39 +19,7 @@ export const AlbumUsuario: React.FC = () => {
     return (
 
 
-        <><Navbar bg="dark" variant="dark">
-            <Container>
-                <Navbar.Brand href="">G7Album</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="Home">Inicio</Nav.Link>
-                        <Nav.Link href="Album">Albumes</Nav.Link>
-
-                        <Nav.Link href="AlbumImagenes">Figuritas</Nav.Link>
-
-                        <NavDropdown title="Mi cuenta" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="AlbumUsuario">Mis albumes</NavDropdown.Item>
-                            <NavDropdown.Item href="AlbumUsuario">Comprar albumes</NavDropdown.Item>
-                            <NavDropdown.Item href="">
-                                Cerar sesion
-                            </NavDropdown.Item>
-
-                        </NavDropdown>
-               
-                        <input type="text" className="form-control" placeholder="Escribe album o torneo deseado" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                            <div className="input-group-append">
-                                <button type="button" className="btn btn-primary">
-                                    <i className="fas fa-search"></i>
-                                </button>
-                            </div>
-
-                    </Nav>
-                </Navbar.Collapse>
-
-            </Container>
-        </Navbar>
-
+        <>
 
 
             <div className="containerPageAlbum">

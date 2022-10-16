@@ -15,15 +15,15 @@ export const carouselTarjets = (arrayConfigs) => {
 
     arrayConfigs.forEach(configCarousel => {
 
-        // TODO: VOlver a poner efecto CSS
 
         // Get items
         const el = document.querySelector(configCarousel.individualItem);
-        const elWidth = parseFloat(
-            window.getComputedStyle(el).width) + 
+        const elWidth = 
+            parseFloat(window.getComputedStyle(el).width) + 
             parseFloat(window.getComputedStyle(el).marginLeft) + 
-            parseFloat(window.getComputedStyle(el).marginRight
-        );
+            parseFloat(window.getComputedStyle(el).marginRight)
+        
+        console.log("🚀 ~ file: carouselTarjets.js ~ line 24 ~ carouselTarjets ~ elWidth", elWidth)
 
         // Track carousel
         let mousedown = false;

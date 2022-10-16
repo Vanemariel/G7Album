@@ -1,12 +1,14 @@
 import { IComunId } from "../../Comun/IComunId.interface";
+import { IAlbumImagenesData } from "../AlbumImagenes/IAlbumImagenes";
 
 export interface IAlbumData extends IComunId {
-    codigoAlbum: number;
-    titulo: string;
-    descripcion: string;
     cantidadImagen: string;
     cantidadImpreso: string;
+    codigoAlbum: number;
+    coleccionAlbumId: number;
+    descripcion: string;
     desde: Date;
     hasta: Date;
-    coleccionAlbumId: number;
+    listadoImagenes: IAlbumImagenesData[];
+    titulo: string;
 }

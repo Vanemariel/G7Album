@@ -14,6 +14,7 @@ import { carouselTarjets } from '../../Utils/carouselTarjets';
 import { IAlbumImagenesData } from '../../Interface/DTO Back/AlbumImagenes/IAlbumImagenes';
 import { ConfigCarrouselModels } from '../../Models/ConfigCarrousel.models';
 import AlbumImagenService from './Services/AlbumImagen.service';
+import { IAlbumData } from '../../Interface/DTO Back/Album/IAlbumData';
 
 export const AlbumImagenes: React.FC = () => {
 
@@ -21,7 +22,7 @@ export const AlbumImagenes: React.FC = () => {
 
 
     /// HOOKS
-    const [allAlbumImagenes, setAllAlbumImagenes] = useState<IAlbumImagenesData[]>([])
+    const [allAlbumImagenes, setAllAlbumImagenes] = useState<IAlbumData[]>([])
 
 
     /// METODOS
@@ -257,12 +258,10 @@ export const AlbumImagenes: React.FC = () => {
 
     const getAllAlbumImagenes = async () => {
 
-        const data = await AlbumImagenService.GetAllColeccionAlbumes(1)
+        const data = await AlbumImagenService.GetAllFiguritasAlbumes(1)
 
         let arrAlbumImg: ConfigCarrouselModels[] = []
         
-        console.log("🚀 ~ file: Index.tsx ~ line 43 ~ data.Result.ListItems.map ~ data.Result", data.Result)
-       
         data.Result?.listItems.map((coleccion: any, index: number) => {
             arrAlbumImg.push({
                 individualItem: `#album-item${index}`,
@@ -272,7 +271,7 @@ export const AlbumImagenes: React.FC = () => {
             })
         })
         setAllAlbumImagenes(data.Result.listItems)
-        carouselTarjets(arrAlbumImg)
+       carouselTarjets(arrAlbumImg)
     }
 
 
@@ -301,33 +300,31 @@ export const AlbumImagenes: React.FC = () => {
                         </div>
                     </div>
 
-
-
                     {
-                        allAlbumImagenes.map((AlbumIMG: IAlbumImagenesData, indexFiguritaCompra: number) => (
+                        allAlbumImagenes.map((AlbumIMG: IAlbumData, indexAlbum: number) => (
 
-                            <div id={`album-rotator${indexFiguritaCompra}`} key={indexFiguritaCompra} className="albumRotatorContainer">
+                            <div id={`album-rotator${indexAlbum}`} key={indexAlbum} className="albumRotatorContainer">
 
                                 <h1 className='title'>{AlbumIMG.titulo}</h1>
-{/* 
-                                <section id={`album-rotator-holder${indexFiguritaCompra}`} className="albumRotatorHolder">
+
+                                <section id={`album-rotator-holder${indexAlbum}`} className="albumRotatorHolder">
                                     {
-                                        AlbumIMG.listadoAlbum.map((figuritas: any, indexEsport: number) => (
-                                            <article id={`album-item${indexFiguritaCompra}`} style={{cursor: 'pointer'}}
+                                        AlbumIMG.listadoImagenes.map((figuritas: IAlbumImagenesData, indexEsport: number) => (
+                                            <article id={`album-item${indexAlbum}`} style={{cursor: 'pointer'}}
                                                 className={`albumItem`} key={indexEsport}
                                             >   
                                                 <div className={`albumItem__details`}>  
 
-                                                   <h3>{figuritas.title}</h3>
+                                                   <h3>{figuritas.titulo}</h3>
 
-                                                   <button className="btnFiguritasComprar" type='submit' onClick={() => navigate('/AlbumUsuario')}>Comprar</button>
+                                                   <button className="btnFiguritasComprar" type='submit' onClick={() => alert("Funcion no realizada")}>Comprar</button>
 
                                                 </div>
 
                                             </article>
                                         ))
                                     }          
-                                </section> */}
+                                </section>
                             </div>
                             
                         ))

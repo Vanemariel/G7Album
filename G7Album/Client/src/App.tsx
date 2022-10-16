@@ -25,54 +25,49 @@ function App() {
   
         <Navigate/>
 
-          <Routes>
-
-            <Route path="/" element={
-              <AuthProvider>
-                <Authentication />
-              </AuthProvider>
-            }/>
-
-        
-            <Route path="/Home" element={
-                <RoutePrivate>
-                    <Home />
-                </RoutePrivate>
+        <Routes>
+          <Route path="/" element={
+            <AuthProvider>
+              <Authentication />
+            </AuthProvider>
+          }/>
+      
+          <Route path="/Home" element={
+              <RoutePrivate>
+                  <Home />
+              </RoutePrivate>
+          } />
+          <Route path="/AlbumUsuario" element={
+              <RoutePrivate>
+                 <AlbumUsuario />
+             </RoutePrivate>
             } />
+          <Route path="/AlbumImagenes" element={
+              <RoutePrivate>
+                    <AlbumImagenes />
+             </RoutePrivate>
+          } />
 
-            <Route path="/AlbumUsuario" element={
-                <RoutePrivate>
-                   <AlbumUsuario />
-               </RoutePrivate>
-              } />
-
-            <Route path="/AlbumImagenes" element={
-                <RoutePrivate>
-                      <AlbumImagenes />
-               </RoutePrivate>
-            } />
-
-{/* 
+          <Route path="/Album" element={
+            <RoutePrivate>
+                <Album/>
+              </RoutePrivate> 
+          }/>
+          
+          {/* 
             <Route path="/ImagenFigurita" element={
                 <RoutePrivate>
                       <ImagenFigurita />
                 </RoutePrivate>
             } /> */}
 
-            <Route path="/Album" element={
-                <RoutePrivate>
-                  <Album/>
-                </RoutePrivate> 
-            }/>
-
-            {/* <Route path="/AlbumUnitario" element={
-                <RoutePrivate>
-                  <AlbumUnitario/>
-                </RoutePrivate> 
-            }/> */}
-            
-
-          </Routes>
+          {/* <Route path="/AlbumUnitario" element={
+              <RoutePrivate>
+                <AlbumUnitario/>
+              </RoutePrivate> 
+          }/> */}
+          
+        </Routes>
 
         <Loader/>
 

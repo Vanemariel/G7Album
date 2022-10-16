@@ -1,27 +1,23 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useLocation, useNavigate } from "react-router-dom";
 import './style.css'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import AlbumesMock from './Mocks/Albumes.json'
 import AlbumesMock from './Mocks/AlbumesV2.json'
 import { useEffect, useState } from 'react';
 import { carouselTarjets } from '../../Utils/carouselTarjets';
-import ColeccionAlbumService from './Services/ColeccionAlbum.service';
+import AlbumService from './Services/Album.service';
 import { IColeccionData } from "../../Interface/DTO Back/ColeccionAlbum/IColeccionAlbumData";
 import { IAlbumData } from "../../Interface/DTO Back/Album/IAlbumData";
 import { ConfigCarrouselModels } from "../../Models/ConfigCarrousel.models";
+import { useGlobalContext } from "../../Context/useGlobalContext";
 
 export const Album: React.FC = () => {
 
 
-    const navigate = useNavigate();
-    const location = useLocation()
-
+    const storeGlobal = useGlobalContext();
+    
     /// HOOKS
     const [allColecciones, setAllColecciones] = useState<IColeccionData[]>([])
 
@@ -30,12 +26,10 @@ export const Album: React.FC = () => {
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         
         // Pegarle a Album getAll 
-        const data = await ColeccionAlbumService.GetAllColeccionAlbumes(1)
+        const data = await AlbumService.GetAllColeccionAlbumes(1)
 
         let arrAlbum: ConfigCarrouselModels[] = []
         
-        console.log("🚀 ~ file: Index.tsx ~ line 43 ~ data.Result.ListItems.map ~ data.Result", data.Result)
-       
         data.Result?.listItems.map((coleccion: any, index: number) => {
             arrAlbum.push({
                 individualItem: `#album-item${index}`,
@@ -50,8 +44,40 @@ export const Album: React.FC = () => {
     }
 
 
-    const sendAlbum = (idAlbum: number) => {
+    const sendAlbum = async (idAlbum: number) => {
         alert("Has comprado un Album")
+
+        try {
+                      
+            storeGlobal.SetShowLoader(true)
+                                        
+            // const {Result, MessageError } = await AlbumService.sendAlbum(
+            const data = await AlbumService.sendAlbum(
+                storeGlobal.GetMyUserData().Id,
+                idAlbum
+            )
+
+            // if (MessageError != undefined)
+            // {
+            //   throw new Error(MessageError);
+            // }
+                               
+            // storeGlobal.SetShowLoader(false)                                         
+            // storeGlobal.SetMessageModalStatus(Result)
+                  
+        } catch (error: any) {
+            
+            storeGlobal.SetShowLoader(false)
+            storeGlobal.SetMessageModalStatus(`Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`)
+            
+        } finally {
+            storeGlobal.SetShowModalStatus(true)
+                      
+            setTimeout(() => {
+               storeGlobal.SetShowModalStatus(false)
+            }, 5000);
+      
+          }
     }
 
 
