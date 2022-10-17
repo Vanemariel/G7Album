@@ -7,25 +7,28 @@ import AlbumUnitarioService from './Services/AlbumUnitario';
 import { IAlbumUsuarioData } from '../../Interface/DTO Back/AlbumUsuario/IAlbumUsuario';
 import { carouselTarjets } from '../../Utils/carouselTarjets';
 import { ConfigCarrouselModels } from '../../Models/ConfigCarrousel.models';
+import { usePaginate } from '../../Hooks/usePaginate';
+import { Paginate } from '../../Components/Paginate/Paginate';
 
 
 
 export const AlbumUsuario: React.FC = () => {
 
     /// HOOKS
+    const {paginate, setPaginate} = usePaginate()
     const storeGlobal = useGlobalContext();
     const [allMyAlbumes, setAllMyAlbumes] = useState<IAlbumUsuarioData[]>([])
 
 
     /// METODOS
-    const getAllMyAlbumes = async () => {
+    const getAllMyAlbumes = async (page: number = 1) => {
 
         try {
                       
             storeGlobal.SetShowLoader(true)
                                         
             const {Result, MessageError } = await AlbumUnitarioService.GetAllMyAlbumes({
-                page: 1,
+                page,
                 idUsuario: storeGlobal.GetMyUserData().Id
             })
 
@@ -44,7 +47,10 @@ export const AlbumUsuario: React.FC = () => {
                     carouselHolderId: `#album-rotator-holder${index}`,
                 })
             })
-        
+            setPaginate({
+                currentPage: Result.currentPage -1,
+                pagesTotal: Result.pages 
+            })
             setAllMyAlbumes(Result.listItems)
             // carouselTarjets(arrAlbum)
 
@@ -61,6 +67,11 @@ export const AlbumUsuario: React.FC = () => {
       
         }
 
+    }
+
+    const changePage = ({selected}: any) => {
+        window.scrollTo(0,0);
+        getAllMyAlbumes(selected+1)
     }
    
     useEffect(()=> {
@@ -95,30 +106,14 @@ export const AlbumUsuario: React.FC = () => {
                             </section>
                         </div>
                 }
-                {/* {
-                    allMyAlbumes?.map((Coleccion: IAlbumUsuarioData, indexAlbum: number) => (
-
-                        <div id={`album-rotator${indexAlbum}`} key={indexAlbum} className="albumRotatorContainer">
-                      
-                            <section id={`album-rotator-holder${indexAlbum}`} className="albumRotatorHolder">
-                                {
-                                    Coleccion?.listadoAlbum.map((album: IAlbumData, indexEsport: number)=>(
-                                        <article id={`album-item${indexAlbum}`} style={{cursor: 'pointer'}}
-                                            className={`albumItem`} key={indexEsport}
-                                        >
-                                            <div className={`albumItem__details`}>  
-
-                                                <h3>{album.titulo}</h3>
-            
-                                                <button className="btnAlbumComprar" type='submit' onClick={() => sendAlbum(album.id)}>Comprar</button>
-                                            </div>
-                                        </article>
-                                    ))
-                                }
-                            </section>
-                        </div> 
-                    ))
-                } */}
+                
+                <div>
+                    <Paginate
+                        ChangePage={changePage}
+                        PageCount={paginate.pagesTotal}
+                        LocatedPageNumber={paginate.currentPage}
+                    />
+                </div>
         
             </div>
         </div>
