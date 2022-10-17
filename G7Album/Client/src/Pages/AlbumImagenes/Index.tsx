@@ -15,9 +15,6 @@ import { Paginate } from '../../Components/Paginate/Paginate';
 
 export const AlbumImagenes: React.FC = () => {
 
-    const navigate = useNavigate()
-
-
     /// HOOKS
     const [allAlbumImagenes, setAllAlbumImagenes] = useState<IAlbumData[]>([])
     const {paginate, setPaginate} = usePaginate()

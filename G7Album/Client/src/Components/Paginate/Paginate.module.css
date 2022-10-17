@@ -14,7 +14,7 @@
   .PaginationBttns a {
     padding: 0.625rem;
     margin: 0rem 0.5rem;
-    color: #fff;
+    color: #aaa !important;
     font-weight: 600;
     font-size: 0.875rem;
     border-radius: 0.3125rem;
@@ -35,6 +35,6 @@
   .paginationActive a{
     font-weight: 600;
     text-align: center;
-    color: #ddd;
+    color: #000 !important;
     background-color: #ccc;
   }
