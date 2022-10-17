@@ -9,21 +9,25 @@ import { IColeccionData } from "../../Interface/DTO Back/ColeccionAlbum/IColecci
 import { IAlbumData } from "../../Interface/DTO Back/Album/IAlbumData";
 import { ConfigCarrouselModels } from "../../Models/ConfigCarrousel.models";
 import { useGlobalContext } from "../../Context/useGlobalContext";
+import { Paginate } from '../../Components/Paginate/Paginate';
+import { usePaginate } from '../../Hooks/usePaginate';
 
 export const Album: React.FC = () => {
 
 
-    const storeGlobal = useGlobalContext();
     
     /// HOOKS
+    const storeGlobal = useGlobalContext();
     const [allColecciones, setAllColecciones] = useState<IColeccionData[]>([])
+    const {paginate, setPaginate} = usePaginate()
+
+
 
     /// METODOS
-    const getAllColeccionAlbumes = async () => {
+    const getAllColeccionAlbumes = async (page: number = 1) => {
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         
-        // Pegarle a Album getAll 
-        const data = await AlbumService.GetAllColeccionAlbumes(1)
+        const data = await AlbumService.GetAllColeccionAlbumes(page)
 
         let arrAlbum: ConfigCarrouselModels[] = []
         
@@ -35,11 +39,13 @@ export const Album: React.FC = () => {
                 carouselHolderId: `#album-rotator-holder${index}`,
             })
         })
-    
+        setPaginate({
+            currentPage: data.Result.currentPage -1,
+            pagesTotal: data.Result.pages 
+        })
         setAllColecciones(data.Result.listItems)
         carouselTarjets(arrAlbum)
     }
-
 
     const sendAlbum = async (idAlbum: number) => {
 
@@ -75,7 +81,10 @@ export const Album: React.FC = () => {
         }
     }
 
-
+    const changePage = ({selected}: any) => {
+        window.scrollTo(0,0);
+        getAllColeccionAlbumes(selected+1)
+    }
 
     useEffect(()=> {
         getAllColeccionAlbumes()
@@ -98,32 +107,7 @@ export const Album: React.FC = () => {
                         </div>
                     </div>
                     <br />
-                
-                {/* {
-                    AlbumesMock.map((Album: any, indexAlbum: number) => (
 
-                        <div id={`album-rotator${indexAlbum}`} key={indexAlbum} className="albumRotatorContainer">
-                           <h1 className='title'>{Album.title}</h1>
-                      
-                            <section id={`album-rotator-holder${indexAlbum}`} className="albumRotatorHolder">
-                                {
-                                    Album.subCategorys.map((category: any, indexEsport: number)=>(
-                                        <article id={`album-item${indexAlbum}`} style={{cursor: 'pointer'}}
-                                            className={`albumItem`} key={indexEsport}
-                                        >
-                                            <div className={`albumItem__details`}>  
-
-                                                <h3>{category.title}</h3>
-            
-                                                <button className="btnAlbumComprar" type='submit' onClick={() => navigate('/AlbumImagenes')}>Comprar</button>
-                                            </div>
-                                        </article>
-                                    ))
-                                }
-                            </section>
-                        </div> 
-                    ))
-                } */}
                 {
                     allColecciones?.map((Coleccion: IColeccionData, indexAlbum: number) => (
 
@@ -149,7 +133,15 @@ export const Album: React.FC = () => {
                         </div> 
                     ))
                 }
+                    <div>
+                        <Paginate
+                            ChangePage={changePage}
+                            PageCount={paginate.pagesTotal}
+                            LocatedPageNumber={paginate.currentPage}
+                        />
+                    </div>
                 </div>
+
             </div>
         </>
     );

@@ -52,6 +52,9 @@ html {
   border: 3px solid orange;
 }
 
+body{
+  overflow-x: hidden;
+}
 
 /* ------------------------------------- CARROUSEL CSS ------------------------------------- */
 .containerPageAlbum {
