@@ -10,6 +10,7 @@ import { Home } from './Pages/Home/Index';
 import { AlbumImagenes } from './Pages/AlbumImagenes/Index';
 import { ImagenFigurita } from './Pages/ImagenFigurita/Index';
 import { Album } from './Pages/Album/Index';
+import { PaginatedItems } from './Pages/PruebaPaginacion/Paginacion';
 
 import { AlbumUsuario } from './Pages/AlbumUsuario/Index';
 
@@ -20,16 +21,14 @@ function App() {
   return (
 
       <GlobalProvider>
-          {/*Quitar algun momento GlobalProvider por redux */}
-          
-          {/* Contenedor de rutas. */}
+
           <Routes>
 
             <Route path="/" element={
               <AuthProvider>
                 <Authentication />
               </AuthProvider>
-            }/>
+            }/> 
 
         
             <Route path="/Home" element={
@@ -61,6 +60,10 @@ function App() {
                 <RoutePrivate>
                   <Album/>
                 </RoutePrivate> 
+            }/>
+
+            <Route path="/Paginacion" element={
+                  <PaginatedItems/>
             }/>
 
             {/* <Route path="/AlbumUnitario" element={
