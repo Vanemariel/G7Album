@@ -12,7 +12,6 @@ import { Home } from './Pages/Home/Index';
 import { AlbumImagenes } from './Pages/AlbumImagenes/Index';
 import { ImagenFigurita } from './Pages/ImagenFigurita/Index';
 import { Album } from './Pages/Album/Index';
-import { PaginatedItems } from './Pages/PruebaPaginacion/Paginacion';
 
 import { AlbumUsuario } from './Pages/AlbumUsuario/Index';
 import { Navigate } from './Components/Navigate/Navigate';
@@ -23,35 +22,35 @@ function App() {
   return (
     <>
       <GlobalProvider>
+  
+        <Navigate/>
 
-          <Routes>
+        <Routes>
+          <Route path="/" element={
+            <AuthProvider>
+              <Authentication />
+            </AuthProvider>
+          }/>
+      
 
-            <Route path="/" element={
-              <AuthProvider>
-                <Authentication />
-              </AuthProvider>
-            }/> 
-
-        
-            <Route path="/Home" element={
-                <RoutePrivate>
-                    <Home />
-                </RoutePrivate>
+          <Route path="/AlbumUsuario" element={
+              <RoutePrivate>
+                 <AlbumUsuario />
+              </RoutePrivate>
             } />
+          <Route path="/AlbumImagenes" element={
+              <RoutePrivate>
+                    <AlbumImagenes />
+             </RoutePrivate>
+          } />
 
-            <Route path="/AlbumUsuario" element={
-                <RoutePrivate>
-                   <AlbumUsuario />
-               </RoutePrivate>
-              } />
-
-            <Route path="/AlbumImagenes" element={
-                <RoutePrivate>
-                      <AlbumImagenes />
-               </RoutePrivate>
-            } />
-
-{/* 
+          <Route path="/Album" element={
+            <RoutePrivate>
+                <Album/>
+              </RoutePrivate> 
+          }/>
+          
+          {/* 
             <Route path="/ImagenFigurita" element={
                 <RoutePrivate>
                       <ImagenFigurita />
@@ -72,16 +71,7 @@ function App() {
           
         </Routes>
 
-            <Route path="/Paginacion" element={
-                  <PaginatedItems/>
-            }/>
-
-            {/* <Route path="/AlbumUnitario" element={
-                <RoutePrivate>
-                  <AlbumUnitario/>
-                </RoutePrivate> 
-            }/> */}
-            
+        <Loader/>
 
         <ModalStatus />
 
