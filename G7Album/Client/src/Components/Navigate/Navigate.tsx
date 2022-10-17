@@ -28,18 +28,20 @@ export const Navigate: React.FC = () => {
           <Navbar.Brand href="">G7Album</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+          <Nav className="me-auto">
               {/* <Nav.Link href="Home">Inicio</Nav.Link> */}
-              <Nav.Link href="AlbumUsuario">Mis albumes</Nav.Link>
+              {/* <Nav.Link href="AlbumUsuario">Mis albumes</Nav.Link> */}
               <Nav.Link href="Album">Albumes</Nav.Link>
               <Nav.Link href="AlbumImagenes">Figuritas</Nav.Link>
 
               <NavDropdown title="Mi cuenta" id="basic-nav-dropdown">
-                {/* <NavDropdown.Item href="AlbumUsuario">Mis albumes</NavDropdown.Item> */}
+                <NavDropdown.Item href="AlbumUsuario">Mis albumes</NavDropdown.Item>
+                <NavDropdown.Item href="">Mis figuritas</NavDropdown.Item>
                 {/* <NavDropdown.Item href="AlbumUsuario">Comprar albumes</NavDropdown.Item> */}
                 <NavDropdown.Item href="" onClick={closeSesion}> Cerrar sesion </NavDropdown.Item>
               </NavDropdown>
             </Nav>
+
 
             <Form className="d-flex">
               <Form.Control

@@ -63,11 +63,11 @@ function App() {
               </RoutePrivate> 
           }/> */}
          
-          <Route path="/Home" element={
+          {/* <Route path="/Home" element={
               <RoutePrivate>
                   <Home />
               </RoutePrivate>
-          } />
+          } /> */}
           
         </Routes>
 
