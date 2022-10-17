@@ -35,7 +35,6 @@ namespace G7Album.Server.Controllers
                     .ToListAsync();
             }*/
 
-        [HttpGet("{page:int}")]
         /*public async Task<ActionResult<List<AlbumUsuarioImagenes>>> GetAll(int page)
         {
             if (context.TablaUsuarioImagenes == null)
@@ -59,6 +58,7 @@ namespace G7Album.Server.Controllers
             };
             return Ok(response);
         }*/
+        [HttpGet("{page:int}")]
         public async Task<ActionResult<ResponseDto<Pagination<List<AlbumUsuarioImagenes>>>>> GetAll(int page)
         {
             ResponseDto<Pagination<List<AlbumUsuarioImagenes>>> ResponseDto = new ResponseDto<Pagination<List<AlbumUsuarioImagenes>>>();

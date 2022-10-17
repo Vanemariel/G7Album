@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import { UserModels } from "../Models/User.models";
+import { getStorage } from "../Utils/updateStorage";
 import { GlobalContext } from "./GlobalContext";
 import { GlobalReducer, INITIAL_STATE } from "./GlobalReducer";
 
@@ -12,7 +13,7 @@ export const GlobalProvider: React.FC<Props> = (props) => {
 
   const [GlobalState, dispatch] = useReducer(GlobalReducer, INITIAL_STATE);
 
-  const GetMyUserData = (): UserModels => GlobalState.User;
+  const GetMyUserData = (): UserModels => GlobalState.User ?? getStorage<UserModels>("User");
   const SetMyUserData = (value: UserModels): void => {
     dispatch({
       type: "SetMyUserData",

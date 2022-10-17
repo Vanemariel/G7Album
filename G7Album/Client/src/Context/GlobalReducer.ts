@@ -19,9 +19,9 @@ export type TGlobalActions =
 
 
 export const INITIAL_STATE: IGlobalState = {
-    ShowLoader: false,
-    ModalStatus: {} as ModalModels,
-    User: getStorage<UserModels>("User") ?? {} as UserModels,
+  ShowLoader: false,
+  ModalStatus: {} as ModalModels,
+  User: getStorage<UserModels>("User") ?? {} as UserModels,
 };
 
 // ACA MODIFICAMOS EL STATE INICIAL

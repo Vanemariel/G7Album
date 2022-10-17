@@ -9,3 +9,8 @@ export const updateStorage = <TypeStorage extends Object>(
 export const getStorage = <TypeStorage>(nameStorage: string) => {
     return JSON.parse(localStorage.getItem(nameStorage) as any) as TypeStorage;
 };
+
+
+export const deleteStorage = (nameStorage: string) => {
+  localStorage.removeItem(nameStorage);
+}

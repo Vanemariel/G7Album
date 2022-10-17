@@ -12,15 +12,40 @@ namespace G7Album.Server.Controllers
             this.context = context;
         }
 
-        [HttpGet("GetAll/{idUsuario:int}")]
+        [HttpGet("GetAllPage/{page:int}/{idUsuario:int}")]
         //metodo que me muestra la lista completa  
-        public async Task<ActionResult<List<AlbumUsuario>>> GetAll(int idUsuario)
+        public async Task<ActionResult<ResponseDto<List<AlbumUsuario>>>> GetAll(int page, int idUsuario)
         {
-            return await context.TablaAlbumesUsuarios
-                .Where(x => x.UsuarioId == idUsuario)
-                .Include(x => x.Album)
-                .Include(x => x.Usuario)
-                .ToListAsync();
+            ResponseDto<Pagination<List<AlbumUsuario>>> ResponseDto = new ResponseDto<Pagination<List<AlbumUsuario>>>();
+            Pagination<List<AlbumUsuario>> Pagination = new Pagination<List<AlbumUsuario>>();
+           
+            try
+            {
+                var pageResults = 3f;
+                var pageCount = Math.Ceiling(context.TablaAlbumesUsuarios.Count() / pageResults);
+
+                List<AlbumUsuario> ListadoMisAlbumes = await context.TablaAlbumesUsuarios
+                    .Where(x => x.UsuarioId == idUsuario)
+                    .Skip((page - 1) * (int)pageResults)
+                    .Take((int)pageResults)
+                    .Include(x => x.Album)
+                    .Include(x => x.Usuario)
+                    .ToListAsync();
+
+                Pagination.ListItems = ListadoMisAlbumes;
+                Pagination.CurrentPage = page;
+                Pagination.Pages = (int)pageCount;
+
+                ResponseDto.Result = Pagination;
+
+                return Ok(ResponseDto);
+
+            }
+            catch (Exception ex)
+            {
+                ResponseDto.MessageError = $"Ha ocurrido un error, {ex.Message}";
+                return BadRequest(ResponseDto);
+            }
         }
 
         [HttpGet("Get/one{id:int}")]
@@ -53,37 +78,55 @@ namespace G7Album.Server.Controllers
 
         [HttpPost("SendAlbum")]
         //verbo es el http post, pero a la base de datos ingresa como un insert
-        public async Task<ActionResult<string>> SendAlbum(int IdUsuario, int IdAlbum)
+        public async Task<ActionResult<string>> SendAlbum(DataAlbumSend DataAlbumSend)
         {
 
             ResponseDto<string> ResponseDto = new ResponseDto<string>();
 
             try
             {
+                if (DataAlbumSend.IdUsuario == 0 || DataAlbumSend.IdAlbum == 0)
+                {
+                    throw new Exception("debe enviar todos los datos requeridos");
+                }
+
                 Usuario? Usuario = await this.context.TablaUsuarios
-                    .Where(Usuario => Usuario.Id == IdUsuario)
+                    .Where(Usuario => Usuario.Id == DataAlbumSend.IdUsuario)
                     .FirstOrDefaultAsync();
 
-                if (IdUsuario == null)
+                if (Usuario == null )
                 {
-                    throw new Exception($"no existe el Usuario con id igual a {IdUsuario}.");
+                    throw new Exception($"no existe el Usuario con id igual a {DataAlbumSend.IdUsuario}.");
                 }
 
                 Album? Album = await this.context.TablaAlbumes
-                    .Where(Album => Album.Id == IdAlbum)
+                    .Where(Album => Album.Id == DataAlbumSend.IdAlbum)
                     .FirstOrDefaultAsync();
 
-                if (IdAlbum == null)
+                if (Album == null)
                 {
-                    throw new Exception($"no existe el Album con id igual a {IdUsuario}.");
+                    throw new Exception($"no existe el Album con id igual a {DataAlbumSend.IdAlbum}.");
                 }
 
-                context.TablaAlbumesUsuarios.Add( new AlbumUsuario {
-                    AlbumId = IdAlbum,
-                    UsuarioId = IdUsuario
-                });
                 
-                await context.SaveChangesAsync();
+                AlbumUsuario? AlbumComprado = await context.TablaAlbumesUsuarios
+                    .Where(AlbumComprado => AlbumComprado.AlbumId == DataAlbumSend.IdAlbum)
+                    .Where(AlbumComprado => AlbumComprado.UsuarioId == DataAlbumSend.IdUsuario)
+                    .FirstOrDefaultAsync();
+
+                if (AlbumComprado != null)
+                {
+                    throw new Exception("ya has comprado este Album!");
+                }
+
+                AlbumUsuario AlbumCompra = new AlbumUsuario {
+                    AlbumId = DataAlbumSend.IdAlbum,
+                    UsuarioId = DataAlbumSend.IdUsuario
+                };
+
+                context.TablaAlbumesUsuarios.Add(AlbumCompra);
+                
+                await this.context.SaveChangesAsync();
 
                 ResponseDto.Result = "Se ha comprado un Album correctamente"; 
 
@@ -107,7 +150,7 @@ namespace G7Album.Server.Controllers
                 return NotFound("no existe el AlbumUsuario a modificar.");
             }
             //si es correcto puedo modificar todo lo q sigue
-            Albumpersona.CodigoAlbumUsuario = persona.CodigoAlbumUsuario;
+            // Albumpersona.CodigoAlbumUsuario = persona.CodigoAlbumUsuario;
 
             try
             {

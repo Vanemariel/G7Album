@@ -5,6 +5,7 @@ global using G7Album.BaseDatos.Data;
 global using G7Album.BaseDatos.Entidades;
 global using Microsoft.AspNetCore.Mvc;
 global using G7Album.Shared.DTO_Back;
+global using G7Album.Shared.DTO_Front;
 global using G7Album.Shared.Models;
 #endregion
 

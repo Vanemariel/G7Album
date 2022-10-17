@@ -1,5 +1,5 @@
 import { createMapperUser } from "../../../Mappers/User.mappers";
-import { AuthData } from "../../../Interface/DTO Back/Auth/AuthData";
+import { IAuthData } from "../../../Interface/DTO Back/Auth/IAuthData";
 import { IResponseDTO } from "../../../Interface/DTO Back/IResponseDTO";
 import { IDataLoginForm } from "../../../Interface/DTO Front/Auth/IDataLoginForm";
 import { IDataRegisterForm } from "../../../Interface/DTO Front/Auth/IDataRegisterForm";
@@ -11,7 +11,7 @@ const AuthService = {
 
     Login: async (DataLoginForm: IDataLoginForm): Promise<IResponseDTO<UserModels>> => {
         
-        const Response = await axiosMethod<AuthData>({
+        const Response = await axiosMethod<IAuthData>({
             method: "POST",
             url: "/Usuario/Login",
             dataSend: DataLoginForm,

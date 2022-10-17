@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useGlobalContext } from "../../Context/useGlobalContext";
 import ModalStatusCSS from "./ModalStatus.module.css";
 
@@ -12,7 +12,18 @@ export const ModalStatus: React.FC = () => {
     /// HOOKS
     const storeGlobal  = useGlobalContext()
 
-  return (
+    useEffect(()=>{
+        const $body = document.querySelector("body") as HTMLBodyElement;
+        if (storeGlobal.IsShowModalStatus()) {
+          // slideCarrusel();
+          $body.style.overflowY = "hidden";
+        } else {
+          $body.style.overflowY = "scroll";
+        }        
+    },[storeGlobal.IsShowModalStatus()])
+
+
+    return (
       <article className={`${storeGlobal.IsShowModalStatus() ? OpenModalCss : CloseModalCss}`}>
           <div>
               <article className={ModalStatusCSS.contentModal}>
@@ -21,5 +32,5 @@ export const ModalStatus: React.FC = () => {
               </article>
           </div>
       </article>
-  );
+    );
 };

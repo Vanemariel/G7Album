@@ -1,217 +1,127 @@
 //import { useEffect } from "react";
 //import { FormLogin } from "./Components/FormLogin/FormLogin";
 import './style.css'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect, useState } from 'react';
+import { useGlobalContext } from '../../Context/useGlobalContext';
+import AlbumUnitarioService from './Services/AlbumUnitario';
+import { IAlbumUsuarioData } from '../../Interface/DTO Back/AlbumUsuario/IAlbumUsuario';
+import { carouselTarjets } from '../../Utils/carouselTarjets';
+import { ConfigCarrouselModels } from '../../Models/ConfigCarrousel.models';
 
 
 
 export const AlbumUsuario: React.FC = () => {
 
+    /// HOOKS
+    const storeGlobal = useGlobalContext();
+    const [allMyAlbumes, setAllMyAlbumes] = useState<IAlbumUsuarioData[]>([])
+
 
     /// METODOS
+    const getAllMyAlbumes = async () => {
 
+        try {
+                      
+            storeGlobal.SetShowLoader(true)
+                                        
+            const {Result, MessageError } = await AlbumUnitarioService.GetAllMyAlbumes({
+                page: 1,
+                idUsuario: storeGlobal.GetMyUserData().Id
+            })
+
+            if (MessageError !== undefined)
+            {
+              throw new Error(MessageError);
+            }
+                               
+            let arrAlbum: ConfigCarrouselModels[] = []
+        
+            Result?.listItems.map((coleccion: any, index: number) => {
+                arrAlbum.push({
+                    individualItem: `#album-item${index}`,
+                    carouselWidth: 1000, // in p
+                    carouselId: `#album-rotator${index}`,    
+                    carouselHolderId: `#album-rotator-holder${index}`,
+                })
+            })
+        
+            setAllMyAlbumes(Result.listItems)
+            // carouselTarjets(arrAlbum)
+
+            storeGlobal.SetShowLoader(false)  
+                  
+        } catch (error: any) {
+            storeGlobal.SetShowLoader(false)
+            storeGlobal.SetShowModalStatus(true)
+            storeGlobal.SetMessageModalStatus(`Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`)
+        } finally {
+            setTimeout(() => {
+               storeGlobal.SetShowModalStatus(false)
+            }, 5000);
+      
+        }
+
+    }
    
-
+    useEffect(()=> {
+        getAllMyAlbumes()
+    },[])
+    
     return (
 
 
-        <><Navbar bg="dark" variant="dark">
-            <Container>
-                <Navbar.Brand href="">G7Album</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="Home">Inicio</Nav.Link>
-                        <Nav.Link href="Album">Albumes</Nav.Link>
+        <div className="containerPageAlbum">
+            <div id="m">
+              
+                <h1>Mis Albumes </h1>
+        
+                {
+                        <div id={`album-rotator0`} className="albumRotatorContainer">
+                      
+                            <section id={`album-rotator-holder0`} className="albumRotatorHolder">
+                                {
+                                    allMyAlbumes.map((myAlbum: IAlbumUsuarioData, indexEsport: number)=>(
+                                        <article id={`album-item0`} style={{cursor: 'pointer'}}
+                                            className={`albumItem`} key={indexEsport}
+                                        >
+                                            <div className={`albumItem__details`}>  
 
-                        <Nav.Link href="AlbumImagenes">Figuritas</Nav.Link>
+                                                <h3>{myAlbum.album.titulo}</h3>
+            
+                                            </div>
+                                        </article>
+                                    ))
+                                }
+                            </section>
+                        </div>
+                }
+                {/* {
+                    allMyAlbumes?.map((Coleccion: IAlbumUsuarioData, indexAlbum: number) => (
 
-                        <NavDropdown title="Mi cuenta" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="AlbumUsuario">Mis albumes</NavDropdown.Item>
-                            <NavDropdown.Item href="AlbumUsuario">Comprar albumes</NavDropdown.Item>
-                            <NavDropdown.Item href="">
-                                Cerar sesion
-                            </NavDropdown.Item>
+                        <div id={`album-rotator${indexAlbum}`} key={indexAlbum} className="albumRotatorContainer">
+                      
+                            <section id={`album-rotator-holder${indexAlbum}`} className="albumRotatorHolder">
+                                {
+                                    Coleccion?.listadoAlbum.map((album: IAlbumData, indexEsport: number)=>(
+                                        <article id={`album-item${indexAlbum}`} style={{cursor: 'pointer'}}
+                                            className={`albumItem`} key={indexEsport}
+                                        >
+                                            <div className={`albumItem__details`}>  
 
-                        </NavDropdown>
-               
-                        <input type="text" className="form-control" placeholder="Escribe album o torneo deseado" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                            <div className="input-group-append">
-                                <button type="button" className="btn btn-primary">
-                                    <i className="fas fa-search"></i>
-                                </button>
-                            </div>
-
-                    </Nav>
-                </Navbar.Collapse>
-
-            </Container>
-        </Navbar>
-
-
-
-            <div className="containerPageAlbum">
-
-                <div id="m">
-                  
-
-                    <div id="album-rotator">
-                     
-                    <h1>Mis Albumes </h1>
-                        <br />
-                    <div id="album-rotator-holder">
-                        <a target="_top" className="album-item">
-                            <span className="album-details">
-
-
-                                <span className="title"> Futbol</span>
-                                <span className="subtext">
-                                    <a href="1"> Copa Libertadores <br /> </a>
-                                    <a href="2"> Champions League <br /> </a>
-                                    <a href="3"> Copa America<br />  </a>
-                                </span>
-                            </span>
-                        </a>
-                        <a target="_top" className="album-item" href="https://fjolt.com/article/apple-cards-webl-gl-javascript">
-                            <span className="album-details">
-
-
-                                <span className="title"> Tenis</span>
-                                <span className="subtext">Wimledon<br />Rollan Garros<br />Us Open</span>
-                            </span>
-                        </a>
-                        <a target="_top" className="album-item" href="https://twitter.com/smpnjn">
-                            <span className="album-details">
-
-
-                                <span className="title"> Basket</span>
-                                <span className="subtext">Liga Endesa<br />NBA<br />La Liga Argentina</span></span>
-                        </a>
-
-                        <a target="_top" className="album-item" href="https://twitter.com/smpnjn">
-                            <span className="album-details">
-
-
-                                <span className="title"> Rugby</span>
-                                <span className="subtext">National Rugby League<br />Super League<br />The Rugby Championship</span>
-                            </span>
-                        </a>
-
-
-                        <a target="_top" className="album-item" href="https://twitter.com/smpnjn">
-                            <span className="album-details">
-                                <span className="icon"><i className="far fa-at"></i> Destacado</span>
-                                <span className="title">Monster Inc</span>
-                                <span className="subtitle"></span>
-                                <span className="subtext">Monster Inc<br />Monster University</span>
-                            </span>
-                        </a>
-                        <a target="_top" className="album-item" href="https://fjolt.com/article/apple-cards-webl-gl-javascript">
-                            <span className="album-details">
-
-                                <span className="title">High school Musical</span>
-
-                                <span className="subtext">High school Musical<br />High school Musical 2</span>
-                            </span>
-                        </a>
-                        <a target="_top" className="album-item" href="https://twitter.com/smpnjn">
-                            <span className="album-details">
-
-                                <span className="title">Era del Hielo</span>
-
-                                <span className="subtext">La era del hielo 1<br />La era del hielo 2<br />La era del hielo 3</span>
-                            </span>
-                        </a>
-                        <a target="_top" className="album-item" href="https://twitter.com/smpnjn">
-                            <span className="album-details">
-
-                                <span className="title">Avatar</span>
-
-                                <span className="subtext">Avatar<br />Avatar 2</span>
-                            </span>
-                        </a>
-                        <a target="_top" className="album-item" href="https://twitter.com/smpnjn">
-                            <span className="album-details">
-                                <span className="icon"><i className="far fa-at"></i> Destacado</span>
-                                <span className="title">Dragon Ball</span>
-
-                                <span className="subtext">Dragon Ball <br />Dragon Ball Z<br /> Dragon Ball GT</span>
-                            </span>
-                        </a>
-                        <a target="_top" className="album-item" href="https://fjolt.com/article/apple-cards-webl-gl-javascript">
-                            <span className="album-details">
-
-                                <span className="title">Naruto</span>
-
-                                <span className="subtext">Naruto<br />Naruto shippuden<br />Naruto Next Generation</span>
-                            </span>
-                        </a>
-                        <a target="_top" className="album-item" href="https://twitter.com/smpnjn">
-                            <span className="album-details">
-
-                                <span className="title">Cab del Zodiaco</span>
-
-                                <span className="subtext">Saint Seiya the Lost Canvas<br />Batalla de Poseidon<br />Batalla de Asgard</span>
-                            </span>
-                        </a>
-                        <a target="_top" className="album-item" href="https://twitter.com/smpnjn">
-                            <span className="album-details">
-
-                                <span className="title">Ataque a los Titanes</span>
-
-                                <span className="subtext">Temporada 1<br />Temporada 2</span>
-                            </span>
-                        </a>
-
-                    </div>
-                 </div>
-                </div>
-         </div></>
-
-
-    //    <div id="album-rotator2">
-    //    <h1>Mis figuritas</h1>
-    //    <br>
-    //    <div id="album-rotator-holder2">
-    //        <a target="_top" className="album-item2" href="https://twitter.com/smpnjn">
-    //            <span class="album-details2">
-                   
-    //                <span className="title">Monster Inc</span>
-                   
-    //                <span className="subtext">Monster Inc<br>Monster University</span>
-    //            </span>
-    //        </a>
-    //        <a target="_top" className="album-item2" href="https://fjolt.com/article/apple-cards-webl-gl-javascript">
-    //            <span className="album-details2">
-                
-    //                <span className="title">High school Musical</span>
-                   
-    //                <span className="subtext">High school Musical<br>High school Musical 2</span>
-    //            </span>
-    //        </a>
-    //        <a target="_top" className="album-item2" href="https://twitter.com/smpnjn">
-    //            <span class="album-details2">
-                  
-    //                <span className="title">La Hera de hielo</span>
-                   
-    //                <span className="subtext">La Hera de hielo 1<br>La era de hielo 2<br>La era de hielo 3</span>
-    //            </span>
-    //        </a>
-    //        <a target="_top" className="album-item2" href="https://twitter.com/smpnjn">
-    //            <span className="album-details2">
-                   
-    //            <span className="title">Avatar</span>
-                  
-    //                <span className="subtext">Avatar<br>Avatar 2</span>
-    //            </span>
-    //        </a>
-    //    </div>
-    //</div>
-
+                                                <h3>{album.titulo}</h3>
+            
+                                                <button className="btnAlbumComprar" type='submit' onClick={() => sendAlbum(album.id)}>Comprar</button>
+                                            </div>
+                                        </article>
+                                    ))
+                                }
+                            </section>
+                        </div> 
+                    ))
+                } */}
+        
+            </div>
+        </div>
 
     )
 }

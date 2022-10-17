@@ -1,38 +1,37 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useNavigate } from "react-router-dom";
 import './style.css'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import AlbumesMock from './Mocks/Albumes.json'
-import AlbumesMock from './Mocks/AlbumesV2.json'
 import { useEffect, useState } from 'react';
 import { carouselTarjets } from '../../Utils/carouselTarjets';
-import ColeccionAlbumService from './Services/ColeccionAlbum.service';
-import { IColeccionData } from "../../Interface/DTO Back/ColeccionAlbum/ColeccionAlbumData";
-import { AlbumData } from "../../Interface/DTO Back/Album/AlbumData";
+import AlbumService from './Services/Album.service';
+import { IColeccionData } from "../../Interface/DTO Back/ColeccionAlbum/IColeccionAlbumData";
+import { IAlbumData } from "../../Interface/DTO Back/Album/IAlbumData";
 import { ConfigCarrouselModels } from "../../Models/ConfigCarrousel.models";
+import { useGlobalContext } from "../../Context/useGlobalContext";
+import { Paginate } from '../../Components/Paginate/Paginate';
+import { usePaginate } from '../../Hooks/usePaginate';
 
 export const Album: React.FC = () => {
 
 
-    const navigate = useNavigate();
-
-
+    
     /// HOOKS
+    const storeGlobal = useGlobalContext();
     const [allColecciones, setAllColecciones] = useState<IColeccionData[]>([])
+    const {paginate, setPaginate} = usePaginate()
+
+
 
     /// METODOS
-    const getAllColeccionAlbumes = async () => {
+    const getAllColeccionAlbumes = async (page: number = 1) => {
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-        const data = await ColeccionAlbumService.GetAllColeccionAlbumes(1)
         
+        const data = await AlbumService.GetAllColeccionAlbumes(page)
+
         let arrAlbum: ConfigCarrouselModels[] = []
         
-        data.Result.map((coleccion: any, index: number) => {
+        data.Result?.listItems.map((coleccion: any, index: number) => {
             arrAlbum.push({
                 individualItem: `#album-item${index}`,
                 carouselWidth: 1000, // in p
@@ -40,14 +39,52 @@ export const Album: React.FC = () => {
                 carouselHolderId: `#album-rotator-holder${index}`,
             })
         })
-    
-        setAllColecciones(data.Result)
+        setPaginate({
+            currentPage: data.Result.currentPage -1,
+            pagesTotal: data.Result.pages 
+        })
+        setAllColecciones(data.Result.listItems)
         carouselTarjets(arrAlbum)
     }
 
+    const sendAlbum = async (idAlbum: number) => {
 
+        try {
+                      
+            storeGlobal.SetShowLoader(true)
+                                        
+            const {Result, MessageError } = await AlbumService.sendAlbum({
+               IdUsuario: storeGlobal.GetMyUserData().Id, 
+               IdAlbum: idAlbum
+            })
 
+            if (MessageError != undefined)
+            {
+              throw new Error(MessageError);
+            }
+                               
+            storeGlobal.SetShowLoader(false)                                         
+            storeGlobal.SetMessageModalStatus(Result)
+                  
+        } catch (error: any) {
+            
+            storeGlobal.SetShowLoader(false)
+            storeGlobal.SetMessageModalStatus(`Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`)
+            
+        } finally {
+            storeGlobal.SetShowModalStatus(true)
+                      
+            setTimeout(() => {
+               storeGlobal.SetShowModalStatus(false)
+            }, 5000);
+      
+        }
+    }
 
+    const changePage = ({selected}: any) => {
+        window.scrollTo(0,0);
+        getAllColeccionAlbumes(selected+1)
+    }
 
     useEffect(()=> {
         getAllColeccionAlbumes()
@@ -55,36 +92,7 @@ export const Album: React.FC = () => {
 
     return (
 
-
         <>
-            <Navbar bg="dark" variant="dark">
-                <Container>
-                    <Navbar.Brand href="">G7Album</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link href="Home">Inicio</Nav.Link>
-                            <Nav.Link href="Album">Albumes</Nav.Link>
-
-                            <Nav.Link href="AlbumImagenes">Figuritas</Nav.Link>
-
-                            <NavDropdown title="Mi cuenta" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="AlbumUsuario">Mis albumes</NavDropdown.Item>
-                                <NavDropdown.Item href="AlbumUsuario">Comprar albumes</NavDropdown.Item>
-                                <NavDropdown.Item href="">
-                                    Cerrar sesion
-                                </NavDropdown.Item>
-                                <input type="text" className="form-control" placeholder="Escribe album o torneo deseado" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                                <div className="input-group-append">
-                                    <button type="button" className="btn btn-primary">
-                                        <i className="fas fa-search"></i>
-                                    </button>
-                                </div>
-                            </NavDropdown>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
 
             <div className="containerPageAlbum">
                 <div id="m">
@@ -99,32 +107,7 @@ export const Album: React.FC = () => {
                         </div>
                     </div>
                     <br />
-                
-                {/* {
-                    AlbumesMock.map((Album: any, indexAlbum: number) => (
 
-                        <div id={`album-rotator${indexAlbum}`} key={indexAlbum} className="albumRotatorContainer">
-                           <h1 className='title'>{Album.title}</h1>
-                      
-                            <section id={`album-rotator-holder${indexAlbum}`} className="albumRotatorHolder">
-                                {
-                                    Album.subCategorys.map((category: any, indexEsport: number)=>(
-                                        <article id={`album-item${indexAlbum}`} style={{cursor: 'pointer'}}
-                                            className={`albumItem`} key={indexEsport}
-                                        >
-                                            <div className={`albumItem__details`}>  
-
-                                                <h3>{category.title}</h3>
-            
-                                                <button className="btnAlbumComprar" type='submit' onClick={() => navigate('/AlbumImagenes')}>Comprar</button>
-                                            </div>
-                                        </article>
-                                    ))
-                                }
-                            </section>
-                        </div> 
-                    ))
-                } */}
                 {
                     allColecciones?.map((Coleccion: IColeccionData, indexAlbum: number) => (
 
@@ -133,7 +116,7 @@ export const Album: React.FC = () => {
                       
                             <section id={`album-rotator-holder${indexAlbum}`} className="albumRotatorHolder">
                                 {
-                                    Coleccion?.listadoAlbum.map((album: AlbumData, indexEsport: number)=>(
+                                    Coleccion?.listadoAlbum.map((album: IAlbumData, indexEsport: number)=>(
                                         <article id={`album-item${indexAlbum}`} style={{cursor: 'pointer'}}
                                             className={`albumItem`} key={indexEsport}
                                         >
@@ -141,7 +124,7 @@ export const Album: React.FC = () => {
 
                                                 <h3>{album.titulo}</h3>
             
-                                                <button className="btnAlbumComprar" type='submit' onClick={() => navigate('/AlbumImagenes')}>Comprar</button>
+                                                <button className="btnAlbumComprar" type='submit' onClick={() => sendAlbum(album.id)}>Comprar</button>
                                             </div>
                                         </article>
                                     ))
@@ -150,7 +133,15 @@ export const Album: React.FC = () => {
                         </div> 
                     ))
                 }
+                    <div>
+                        <Paginate
+                            ChangePage={changePage}
+                            PageCount={paginate.pagesTotal}
+                            LocatedPageNumber={paginate.currentPage}
+                        />
+                    </div>
                 </div>
+
             </div>
         </>
     );
