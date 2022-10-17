@@ -150,7 +150,7 @@ namespace G7Album.BaseDatos.Data
                 {
                     Id = 7,
                     CodigoAlbum = 7,
-                    Titulo = "Liga ndesa",
+                    Titulo = "Liga Endesa",
                     Descripcion = "figus",
                     CantidadImagen = 1000,
                     CantidadImpreso = 1000,
@@ -502,7 +502,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Bou Walter",
-                    AlbumId = 1,
+                    AlbumId = 2,
                 },
                 new AlbumImagenes
                 {
@@ -512,7 +512,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Pratto Lucas",
-                    AlbumId = 1,
+                    AlbumId = 2,
                 },
                 new AlbumImagenes
                 {
@@ -522,7 +522,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Franco Daniel",
-                    AlbumId = 1,
+                    AlbumId = 2,
                 },
                 new AlbumImagenes
                 {
@@ -532,7 +532,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "ArmanI Franco",
-                    AlbumId = 1,
+                    AlbumId = 2,
                 },
                 new AlbumImagenes
                 {
@@ -542,7 +542,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Guido Herrera",
-                    AlbumId = 1,
+                    AlbumId = 2,
                 },
                 new AlbumImagenes
                 {
@@ -552,7 +552,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Salas",
-                    AlbumId = 1,
+                    AlbumId = 2,
                 },
                 new AlbumImagenes
                 {
@@ -562,7 +562,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Firmiño",
-                    AlbumId = 1,
+                    AlbumId = 3,
                 },
                 new AlbumImagenes
                 {
@@ -572,7 +572,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Alvarez Julian",
-                    AlbumId = 1,
+                    AlbumId = 3,
                 },
                 new AlbumImagenes
                 {
@@ -582,7 +582,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Halan",
-                    AlbumId = 1,
+                    AlbumId = 3,
                 },
                 new AlbumImagenes
                 {
@@ -592,7 +592,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Cuti Romero",
-                    AlbumId = 1,
+                    AlbumId = 3,
                 },
                 new AlbumImagenes
                 {
@@ -602,7 +602,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Dibu Martinez",
-                    AlbumId = 1,
+                    AlbumId = 3,
                 },
                 new AlbumImagenes
                 {
@@ -612,7 +612,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Nadal Rafael",
-                    AlbumId = 2,
+                    AlbumId = 4,
                 },
                 new AlbumImagenes
                 {
@@ -622,7 +622,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Federer Roger",
-                    AlbumId = 2,
+                    AlbumId = 4,
                 },
                 new AlbumImagenes
                 {
@@ -632,7 +632,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Murray",
-                    AlbumId = 2,
+                    AlbumId = 4,
                 },
                 new AlbumImagenes
                 {
@@ -642,7 +642,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Del Potro",
-                    AlbumId = 2,
+                    AlbumId = 4,
                 },
                 new AlbumImagenes
                 {
@@ -672,7 +672,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen= " ",
                     Titulo = "Nadal Rafael",
-                    AlbumId = 2,
+                    AlbumId = 5,
                 },
                 new AlbumImagenes
                 {
@@ -682,7 +682,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Federer Roger",
-                    AlbumId = 2,
+                    AlbumId = 5,
                 },
                 new AlbumImagenes
                 {
@@ -692,7 +692,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Murray",
-                    AlbumId = 2,
+                    AlbumId = 5,
                 },
                 new AlbumImagenes
                 {
@@ -702,7 +702,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Del Potro",
-                    AlbumId = 2,
+                    AlbumId = 5,
                 },
                 new AlbumImagenes
                 {
@@ -712,7 +712,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "David Nalvandian",
-                    AlbumId = 2,
+                    AlbumId = 4,
                 },
                 new AlbumImagenes
                 {
@@ -722,7 +722,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Novak Djokovich",
-                    AlbumId = 2,
+                    AlbumId = 5,
                 },
                 new AlbumImagenes
                 {
@@ -732,7 +732,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Nadal Rafael",
-                    AlbumId = 2,
+                    AlbumId = 6,
                 },
                 new AlbumImagenes
                 {
@@ -742,7 +742,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Federer Roger",
-                    AlbumId = 2,
+                    AlbumId = 6,
                 },
                 new AlbumImagenes
                 {
@@ -752,7 +752,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Murray",
-                    AlbumId = 2,
+                    AlbumId = 6,
                 },
                 new AlbumImagenes
                 {
@@ -762,7 +762,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Del Potro",
-                    AlbumId = 2,
+                    AlbumId = 6,
                 },
                 new AlbumImagenes
                 {
@@ -772,7 +772,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "David Nalvandian",
-                    AlbumId = 2,
+                    AlbumId = 6,
                 },
                 new AlbumImagenes
                 {
@@ -782,68 +782,9 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Novak Djokovich",
-                    AlbumId = 2,
+                    AlbumId = 6,
                 },
-                new AlbumImagenes
-                {
-                    Id = 35,
-                    NumeroImagen = 48,
-                    CodigoImagenOriginal = 66,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Nadal Rafael",
-                    AlbumId = 2,
-                },
-                new AlbumImagenes
-                {
-                    Id = 36,
-                    NumeroImagen = 49,
-                    CodigoImagenOriginal = 67,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Federer Roger",
-                    AlbumId = 2,
-                },
-                new AlbumImagenes
-                {
-                    Id = 37,
-                    NumeroImagen = 50,
-                    CodigoImagenOriginal = 68,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Murray",
-                    AlbumId = 2,
-                },
-                new AlbumImagenes
-                {
-                    Id = 38,
-                    NumeroImagen = 51,
-                    CodigoImagenOriginal = 69,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Del Potro",
-                    AlbumId = 2,
-                },
-                new AlbumImagenes
-                {
-                    Id = 39,
-                    NumeroImagen = 52,
-                    CodigoImagenOriginal = 70,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "David Nalvandian",
-                    AlbumId = 2,
-                },
-                new AlbumImagenes
-                {
-                    Id = 40,
-                    NumeroImagen = 53,
-                    CodigoImagenOriginal = 71,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Novak Djokovich",
-                    AlbumId = 2,
-                },
+                
                 new AlbumImagenes
                 {
                     Id = 41,
