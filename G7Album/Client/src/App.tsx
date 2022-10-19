@@ -3,14 +3,10 @@ import './App.css';
 import { Loader } from './Components/Loader/Loader';
 import { ModalStatus } from './Components/ModalStatus/ModalStatus';
 import { RoutePrivate } from './Components/RoutePrivate/RoutePrivate';
-import { useLocation } from "react-router-dom";
-
 import { GlobalProvider } from './Context/GlobalProvider';
 import { AuthProvider } from './Pages/Authentication/Context/AuthProvider';
 import { Authentication } from './Pages/Authentication/Index';
-import { Home } from './Pages/Home/Index';
 import { AlbumImagenes } from './Pages/AlbumImagenes/Index';
-import { ImagenFigurita } from './Pages/ImagenFigurita/Index';
 import { Album } from './Pages/Album/Index';
 
 import { AlbumUsuario } from './Pages/AlbumUsuario/Index';

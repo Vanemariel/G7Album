@@ -3,7 +3,7 @@ import { IPagination } from "../../../Interface/DTO Back/IPagination";
 import { IResponseDTO } from "../../../Interface/DTO Back/IResponseDTO";
 import { axiosMethod } from "../../../Utils/axiosMethod";
 
-const AlbumUnitarioService = {
+const AlbumUsuarioService = {
 
     GetAllMyAlbumes: async ({page, idUsuario} : any): Promise<IResponseDTO<IPagination<IAlbumUsuarioData[]>>> => {
         
@@ -20,4 +20,4 @@ const AlbumUnitarioService = {
     },
 }
 
-export default AlbumUnitarioService; 
+export default AlbumUsuarioService; 

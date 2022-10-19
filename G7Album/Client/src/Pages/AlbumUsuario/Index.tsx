@@ -2,7 +2,7 @@
 import './style.css'
 import { useEffect, useState } from 'react';
 import { useGlobalContext } from '../../Context/useGlobalContext';
-import AlbumUnitarioService from './Services/AlbumUnitario';
+import AlbumUsuarioService from './Services/AlbumUsuario';
 import { IAlbumUsuarioData } from '../../Interface/DTO Back/AlbumUsuario/IAlbumUsuario';
 import { carouselTarjets } from '../../Utils/carouselTarjets';
 import { ConfigCarrouselModels } from '../../Models/ConfigCarrousel.models';
@@ -26,7 +26,7 @@ export const AlbumUsuario: React.FC = () => {
                       
             storeGlobal.SetShowLoader(true)
                                         
-            const {Result, MessageError } = await AlbumUnitarioService.GetAllMyAlbumes({
+            const {Result, MessageError } = await AlbumUsuarioService.GetAllMyAlbumes({
                 page,
                 idUsuario: storeGlobal.GetMyUserData().Id
             })
@@ -51,7 +51,7 @@ export const AlbumUsuario: React.FC = () => {
                 pagesTotal: Result.pages 
             })
             setAllMyAlbumes(Result.listItems)
-            // carouselTarjets(arrAlbum)
+            carouselTarjets(arrAlbum)
 
             storeGlobal.SetShowLoader(false)  
                   

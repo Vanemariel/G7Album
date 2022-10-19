@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace G7Album.BaseDatos.Migrations
 {
     [DbContext(typeof(BDContext))]
-    [Migration("20221017225514_inicio")]
-    partial class inicio
+    [Migration("20221017234215_inico")]
+    partial class inico
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -78,8 +78,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 1,
                             ColeccionAlbumId = 1,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9251),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9267),
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5337),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5345),
                             Titulo = "Copa Libertadores"
                         },
                         new
@@ -90,8 +90,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 2,
                             ColeccionAlbumId = 1,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9280),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9281),
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5351),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5351),
                             Titulo = "Champions Lague"
                         },
                         new
@@ -102,8 +102,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 3,
                             ColeccionAlbumId = 1,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9282),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9283),
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5353),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5353),
                             Titulo = "Copa America"
                         },
                         new
@@ -114,8 +114,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 4,
                             ColeccionAlbumId = 2,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9285),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9285),
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5354),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5355),
                             Titulo = "Winledom"
                         },
                         new
@@ -126,8 +126,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 5,
                             ColeccionAlbumId = 2,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9287),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9287),
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5356),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5356),
                             Titulo = "Rollan Garros"
                         },
                         new
@@ -138,8 +138,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 6,
                             ColeccionAlbumId = 2,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9289),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9290),
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5358),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5358),
                             Titulo = "Us Open"
                         },
                         new
@@ -150,8 +150,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 7,
                             ColeccionAlbumId = 3,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9291),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9292),
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5359),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5360),
                             Titulo = "Liga Endesa"
                         },
                         new
@@ -162,8 +162,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 8,
                             ColeccionAlbumId = 3,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9293),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9294),
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5361),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5362),
                             Titulo = "NBA"
                         },
                         new
@@ -174,8 +174,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 9,
                             ColeccionAlbumId = 3,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9295),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9296),
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5363),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5363),
                             Titulo = "La Liga Argentina"
                         },
                         new
@@ -186,8 +186,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 10,
                             ColeccionAlbumId = 4,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9298),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9299),
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5365),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5365),
                             Titulo = "National Rugby League"
                         },
                         new
@@ -198,8 +198,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 11,
                             ColeccionAlbumId = 4,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9301),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9301),
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5366),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5367),
                             Titulo = "Super League"
                         },
                         new
@@ -210,8 +210,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 12,
                             ColeccionAlbumId = 4,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9303),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9303),
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5368),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5368),
                             Titulo = "The Rugby Championship"
                         },
                         new
@@ -219,155 +219,47 @@ namespace G7Album.BaseDatos.Migrations
                             Id = 13,
                             CantidadImagen = 1000,
                             CantidadImpreso = 1000,
-                            CodigoAlbum = 1,
+                            CodigoAlbum = 100,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9305),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9306),
-                            Titulo = "Dragonball"
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5370),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5370),
+                            Titulo = "Monster Inc"
                         },
                         new
                         {
                             Id = 14,
                             CantidadImagen = 1000,
                             CantidadImpreso = 1000,
-                            CodigoAlbum = 2,
+                            CodigoAlbum = 101,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9307),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9308),
-                            Titulo = "Dragonball Z"
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5397),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5398),
+                            Titulo = "Monster University"
                         },
                         new
                         {
                             Id = 15,
                             CantidadImagen = 1000,
                             CantidadImpreso = 1000,
-                            CodigoAlbum = 3,
+                            CodigoAlbum = 102,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9309),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9310),
-                            Titulo = "Dragonball Super"
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5399),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5399),
+                            Titulo = "High school Musical"
                         },
                         new
                         {
                             Id = 16,
                             CantidadImagen = 1000,
                             CantidadImpreso = 1000,
-                            CodigoAlbum = 4,
-                            ColeccionAlbumId = 5,
-                            Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9312),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9312),
-                            Titulo = "Naruto"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            CantidadImagen = 1000,
-                            CantidadImpreso = 1000,
-                            CodigoAlbum = 5,
-                            ColeccionAlbumId = 5,
-                            Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9314),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9315),
-                            Titulo = "Naruto Shippuden"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            CantidadImagen = 1000,
-                            CantidadImpreso = 1000,
-                            CodigoAlbum = 6,
-                            ColeccionAlbumId = 5,
-                            Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9316),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9317),
-                            Titulo = "Naruto Next Generation"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            CantidadImagen = 1000,
-                            CantidadImpreso = 1000,
-                            CodigoAlbum = 7,
-                            ColeccionAlbumId = 5,
-                            Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9318),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9319),
-                            Titulo = "Saint Seiya the Lost Canvas"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            CantidadImagen = 1000,
-                            CantidadImpreso = 1000,
-                            CodigoAlbum = 8,
-                            ColeccionAlbumId = 5,
-                            Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9320),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9321),
-                            Titulo = "Batalla de Poseidon"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            CantidadImagen = 1000,
-                            CantidadImpreso = 1000,
-                            CodigoAlbum = 9,
-                            ColeccionAlbumId = 5,
-                            Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9323),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9323),
-                            Titulo = "Batalla de Asgard"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            CantidadImagen = 1000,
-                            CantidadImpreso = 1000,
-                            CodigoAlbum = 100,
-                            ColeccionAlbumId = 6,
-                            Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9325),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9325),
-                            Titulo = "Monster Inc"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            CantidadImagen = 1000,
-                            CantidadImpreso = 1000,
-                            CodigoAlbum = 101,
-                            ColeccionAlbumId = 6,
-                            Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9328),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9329),
-                            Titulo = "Monster University"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            CantidadImagen = 1000,
-                            CantidadImpreso = 1000,
-                            CodigoAlbum = 102,
-                            ColeccionAlbumId = 6,
-                            Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9331),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9331),
-                            Titulo = "High school Musical"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            CantidadImagen = 1000,
-                            CantidadImpreso = 1000,
                             CodigoAlbum = 104,
-                            ColeccionAlbumId = 6,
+                            ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9333),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9333),
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5401),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5401),
                             Titulo = "High school Musical 2"
                         },
                         new
@@ -376,10 +268,10 @@ namespace G7Album.BaseDatos.Migrations
                             CantidadImagen = 1000,
                             CantidadImpreso = 1000,
                             CodigoAlbum = 105,
-                            ColeccionAlbumId = 6,
+                            ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9338),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9338),
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5402),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5403),
                             Titulo = "La era del hielo 1"
                         },
                         new
@@ -388,10 +280,10 @@ namespace G7Album.BaseDatos.Migrations
                             CantidadImagen = 1000,
                             CantidadImpreso = 1000,
                             CodigoAlbum = 106,
-                            ColeccionAlbumId = 6,
+                            ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9340),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9340),
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5404),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5405),
                             Titulo = "La era del hielo 2"
                         },
                         new
@@ -400,11 +292,143 @@ namespace G7Album.BaseDatos.Migrations
                             CantidadImagen = 1000,
                             CantidadImpreso = 1000,
                             CodigoAlbum = 107,
+                            ColeccionAlbumId = 5,
+                            Descripcion = "figus",
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5406),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5406),
+                            Titulo = "La era del hielo 3"
+                        },
+                        new
+                        {
+                            Id = 100,
+                            CantidadImagen = 1000,
+                            CantidadImpreso = 1000,
+                            CodigoAlbum = 107,
+                            ColeccionAlbumId = 5,
+                            Descripcion = "figus",
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5408),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5408),
+                            Titulo = "Avatar"
+                        },
+                        new
+                        {
+                            Id = 101,
+                            CantidadImagen = 1000,
+                            CantidadImpreso = 1000,
+                            CodigoAlbum = 107,
+                            ColeccionAlbumId = 5,
+                            Descripcion = "figus",
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5410),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5410),
+                            Titulo = "Avatar 2"
+                        },
+                        new
+                        {
+                            Id = 63,
+                            CantidadImagen = 1000,
+                            CantidadImpreso = 1000,
+                            CodigoAlbum = 1,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 17, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9342),
-                            Hasta = new DateTime(2022, 10, 27, 19, 55, 14, 661, DateTimeKind.Local).AddTicks(9343),
-                            Titulo = "La era del hielo 3"
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5411),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5412),
+                            Titulo = "Dragonball"
+                        },
+                        new
+                        {
+                            Id = 64,
+                            CantidadImagen = 1000,
+                            CantidadImpreso = 1000,
+                            CodigoAlbum = 2,
+                            ColeccionAlbumId = 6,
+                            Descripcion = "figus",
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5413),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5413),
+                            Titulo = "Dragonball Z"
+                        },
+                        new
+                        {
+                            Id = 65,
+                            CantidadImagen = 1000,
+                            CantidadImpreso = 1000,
+                            CodigoAlbum = 3,
+                            ColeccionAlbumId = 6,
+                            Descripcion = "figus",
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5415),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5415),
+                            Titulo = "Dragonball Super"
+                        },
+                        new
+                        {
+                            Id = 96,
+                            CantidadImagen = 1000,
+                            CantidadImpreso = 1000,
+                            CodigoAlbum = 4,
+                            ColeccionAlbumId = 6,
+                            Descripcion = "figus",
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5417),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5417),
+                            Titulo = "Naruto"
+                        },
+                        new
+                        {
+                            Id = 70,
+                            CantidadImagen = 1000,
+                            CantidadImpreso = 1000,
+                            CodigoAlbum = 5,
+                            ColeccionAlbumId = 6,
+                            Descripcion = "figus",
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5418),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5419),
+                            Titulo = "Naruto Shippuden"
+                        },
+                        new
+                        {
+                            Id = 71,
+                            CantidadImagen = 1000,
+                            CantidadImpreso = 1000,
+                            CodigoAlbum = 6,
+                            ColeccionAlbumId = 6,
+                            Descripcion = "figus",
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5420),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5420),
+                            Titulo = "Naruto Next Generation"
+                        },
+                        new
+                        {
+                            Id = 80,
+                            CantidadImagen = 1000,
+                            CantidadImpreso = 1000,
+                            CodigoAlbum = 7,
+                            ColeccionAlbumId = 6,
+                            Descripcion = "figus",
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5422),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5422),
+                            Titulo = "Saint Seiya the Lost Canvas"
+                        },
+                        new
+                        {
+                            Id = 81,
+                            CantidadImagen = 1000,
+                            CantidadImpreso = 1000,
+                            CodigoAlbum = 8,
+                            ColeccionAlbumId = 6,
+                            Descripcion = "figus",
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5423),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5424),
+                            Titulo = "Batalla de Poseidon"
+                        },
+                        new
+                        {
+                            Id = 82,
+                            CantidadImagen = 1000,
+                            CantidadImpreso = 1000,
+                            CodigoAlbum = 9,
+                            ColeccionAlbumId = 6,
+                            Descripcion = "figus",
+                            Desde = new DateTime(2022, 10, 17, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5425),
+                            Hasta = new DateTime(2022, 10, 27, 20, 42, 15, 350, DateTimeKind.Local).AddTicks(5426),
+                            Titulo = "Batalla de Asgard"
                         });
                 });
 
@@ -800,7 +824,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 41,
-                            AlbumId = 3,
+                            AlbumId = 7,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 72,
                             Imagen = " ",
@@ -810,7 +834,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 42,
-                            AlbumId = 3,
+                            AlbumId = 7,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 73,
                             Imagen = " ",
@@ -820,7 +844,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 43,
-                            AlbumId = 3,
+                            AlbumId = 7,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 74,
                             Imagen = " ",
@@ -830,7 +854,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 44,
-                            AlbumId = 3,
+                            AlbumId = 7,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 75,
                             Imagen = " ",
@@ -840,7 +864,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 45,
-                            AlbumId = 3,
+                            AlbumId = 8,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 76,
                             Imagen = " ",
@@ -850,7 +874,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 46,
-                            AlbumId = 3,
+                            AlbumId = 8,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 77,
                             Imagen = " ",
@@ -860,7 +884,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 460,
-                            AlbumId = 3,
+                            AlbumId = 8,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 78,
                             Imagen = " ",
@@ -870,7 +894,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 47,
-                            AlbumId = 3,
+                            AlbumId = 8,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 79,
                             Imagen = " ",
@@ -880,7 +904,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 48,
-                            AlbumId = 3,
+                            AlbumId = 8,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 80,
                             Imagen = " ",
@@ -890,7 +914,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 49,
-                            AlbumId = 3,
+                            AlbumId = 9,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 81,
                             Imagen = " ",
@@ -900,7 +924,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 50,
-                            AlbumId = 3,
+                            AlbumId = 9,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 82,
                             Imagen = " ",
@@ -910,7 +934,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 51,
-                            AlbumId = 4,
+                            AlbumId = 10,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 83,
                             Imagen = " ",
@@ -920,7 +944,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 52,
-                            AlbumId = 4,
+                            AlbumId = 10,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 84,
                             Imagen = " ",
@@ -930,7 +954,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 53,
-                            AlbumId = 4,
+                            AlbumId = 10,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 85,
                             Imagen = " ",
@@ -940,7 +964,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 54,
-                            AlbumId = 4,
+                            AlbumId = 10,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 86,
                             Imagen = " ",
@@ -950,7 +974,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 55,
-                            AlbumId = 4,
+                            AlbumId = 10,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 87,
                             Imagen = " ",
@@ -960,7 +984,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 56,
-                            AlbumId = 4,
+                            AlbumId = 10,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 88,
                             Imagen = " ",
@@ -970,7 +994,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 57,
-                            AlbumId = 4,
+                            AlbumId = 10,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 89,
                             Imagen = " ",
@@ -980,7 +1004,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 58,
-                            AlbumId = 4,
+                            AlbumId = 10,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 90,
                             Imagen = " ",
@@ -990,7 +1014,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 59,
-                            AlbumId = 4,
+                            AlbumId = 10,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 91,
                             Imagen = " ",
@@ -1000,7 +1024,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 60,
-                            AlbumId = 4,
+                            AlbumId = 11,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 92,
                             Imagen = " ",
@@ -1010,7 +1034,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 61,
-                            AlbumId = 4,
+                            AlbumId = 11,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 93,
                             Imagen = " ",
@@ -1020,7 +1044,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 62,
-                            AlbumId = 4,
+                            AlbumId = 11,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 94,
                             Imagen = " ",
@@ -1030,7 +1054,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 63,
-                            AlbumId = 4,
+                            AlbumId = 11,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 95,
                             Imagen = " ",
@@ -1040,7 +1064,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 64,
-                            AlbumId = 4,
+                            AlbumId = 11,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 96,
                             Imagen = " ",
@@ -1050,7 +1074,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 65,
-                            AlbumId = 4,
+                            AlbumId = 12,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 97,
                             Imagen = " ",
@@ -1060,7 +1084,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 66,
-                            AlbumId = 4,
+                            AlbumId = 12,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 98,
                             Imagen = " ",
@@ -1070,7 +1094,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 67,
-                            AlbumId = 4,
+                            AlbumId = 12,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 99,
                             Imagen = " ",
@@ -1080,7 +1104,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 68,
-                            AlbumId = 4,
+                            AlbumId = 12,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 100,
                             Imagen = " ",
@@ -1090,7 +1114,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 69,
-                            AlbumId = 4,
+                            AlbumId = 12,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 101,
                             Imagen = " ",
@@ -1100,7 +1124,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 70,
-                            AlbumId = 4,
+                            AlbumId = 12,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 102,
                             Imagen = " ",
@@ -1110,7 +1134,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 620,
-                            AlbumId = 4,
+                            AlbumId = 12,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 103,
                             Imagen = " ",
@@ -1120,7 +1144,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 630,
-                            AlbumId = 5,
+                            AlbumId = 13,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 104,
                             Imagen = " ",
@@ -1130,7 +1154,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 640,
-                            AlbumId = 5,
+                            AlbumId = 13,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 105,
                             Imagen = " ",
@@ -1140,7 +1164,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 650,
-                            AlbumId = 5,
+                            AlbumId = 13,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 106,
                             Imagen = " ",
@@ -1150,7 +1174,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 660,
-                            AlbumId = 5,
+                            AlbumId = 13,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 107,
                             Imagen = " ",
@@ -1160,7 +1184,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 670,
-                            AlbumId = 5,
+                            AlbumId = 13,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 108,
                             Imagen = " ",
@@ -1170,7 +1194,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 680,
-                            AlbumId = 5,
+                            AlbumId = 14,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 109,
                             Imagen = " ",
@@ -1180,7 +1204,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 690,
-                            AlbumId = 5,
+                            AlbumId = 14,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 110,
                             Imagen = " ",
@@ -1190,7 +1214,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 700,
-                            AlbumId = 5,
+                            AlbumId = 14,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 111,
                             Imagen = " ",
@@ -1200,7 +1224,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 71,
-                            AlbumId = 5,
+                            AlbumId = 14,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 112,
                             Imagen = " ",
@@ -1210,7 +1234,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 72,
-                            AlbumId = 5,
+                            AlbumId = 14,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 113,
                             Imagen = " ",
@@ -1220,7 +1244,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 73,
-                            AlbumId = 5,
+                            AlbumId = 14,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 114,
                             Imagen = " ",
@@ -1230,7 +1254,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 74,
-                            AlbumId = 5,
+                            AlbumId = 15,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 115,
                             Imagen = " ",
@@ -1240,7 +1264,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 75,
-                            AlbumId = 5,
+                            AlbumId = 15,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 116,
                             Imagen = " ",
@@ -1250,7 +1274,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 76,
-                            AlbumId = 5,
+                            AlbumId = 15,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 117,
                             Imagen = " ",
@@ -1260,7 +1284,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 77,
-                            AlbumId = 5,
+                            AlbumId = 15,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 118,
                             Imagen = " ",
@@ -1270,7 +1294,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 78,
-                            AlbumId = 5,
+                            AlbumId = 15,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 119,
                             Imagen = " ",
@@ -1280,7 +1304,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 79,
-                            AlbumId = 5,
+                            AlbumId = 15,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 120,
                             Imagen = " ",
@@ -1290,7 +1314,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 80,
-                            AlbumId = 5,
+                            AlbumId = 16,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 121,
                             Imagen = " ",
@@ -1300,7 +1324,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 81,
-                            AlbumId = 5,
+                            AlbumId = 15,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 122,
                             Imagen = " ",
@@ -1310,7 +1334,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 82,
-                            AlbumId = 5,
+                            AlbumId = 16,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 123,
                             Imagen = " ",
@@ -1320,7 +1344,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 83,
-                            AlbumId = 5,
+                            AlbumId = 16,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 124,
                             Imagen = " ",
@@ -1330,7 +1354,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 84,
-                            AlbumId = 5,
+                            AlbumId = 16,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 125,
                             Imagen = " ",
@@ -1340,7 +1364,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 85,
-                            AlbumId = 5,
+                            AlbumId = 16,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 126,
                             Imagen = " ",
@@ -1350,7 +1374,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 86,
-                            AlbumId = 5,
+                            AlbumId = 16,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 127,
                             Imagen = " ",
@@ -1360,7 +1384,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 87,
-                            AlbumId = 5,
+                            AlbumId = 16,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 128,
                             Imagen = " ",
@@ -1370,7 +1394,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 88,
-                            AlbumId = 5,
+                            AlbumId = 26,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 129,
                             Imagen = " ",
@@ -1380,7 +1404,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 89,
-                            AlbumId = 5,
+                            AlbumId = 26,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 130,
                             Imagen = " ",
@@ -1390,7 +1414,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 90,
-                            AlbumId = 5,
+                            AlbumId = 26,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 131,
                             Imagen = " ",
@@ -1400,7 +1424,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 91,
-                            AlbumId = 5,
+                            AlbumId = 26,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 132,
                             Imagen = " ",
@@ -1410,7 +1434,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 92,
-                            AlbumId = 5,
+                            AlbumId = 26,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 133,
                             Imagen = " ",
@@ -1420,7 +1444,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 93,
-                            AlbumId = 5,
+                            AlbumId = 27,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 134,
                             Imagen = " ",
@@ -1430,7 +1454,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 94,
-                            AlbumId = 5,
+                            AlbumId = 27,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 135,
                             Imagen = " ",
@@ -1440,7 +1464,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 95,
-                            AlbumId = 5,
+                            AlbumId = 27,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 136,
                             Imagen = " ",
@@ -1450,7 +1474,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 96,
-                            AlbumId = 5,
+                            AlbumId = 27,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 137,
                             Imagen = " ",
@@ -1460,7 +1484,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 97,
-                            AlbumId = 5,
+                            AlbumId = 27,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 138,
                             Imagen = " ",
@@ -1470,7 +1494,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 98,
-                            AlbumId = 5,
+                            AlbumId = 28,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 139,
                             Imagen = " ",
@@ -1480,7 +1504,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 99,
-                            AlbumId = 5,
+                            AlbumId = 28,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 140,
                             Imagen = " ",
@@ -1490,7 +1514,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 100,
-                            AlbumId = 5,
+                            AlbumId = 28,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 141,
                             Imagen = " ",
@@ -1500,7 +1524,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 101,
-                            AlbumId = 5,
+                            AlbumId = 28,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 142,
                             Imagen = " ",
@@ -1510,7 +1534,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 102,
-                            AlbumId = 5,
+                            AlbumId = 28,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 143,
                             Imagen = " ",
@@ -1520,7 +1544,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 103,
-                            AlbumId = 5,
+                            AlbumId = 100,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 144,
                             Imagen = " ",
@@ -1530,7 +1554,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 104,
-                            AlbumId = 5,
+                            AlbumId = 100,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 145,
                             Imagen = " ",
@@ -1540,7 +1564,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 105,
-                            AlbumId = 5,
+                            AlbumId = 100,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 146,
                             Imagen = " ",
@@ -1550,7 +1574,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 106,
-                            AlbumId = 5,
+                            AlbumId = 100,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 147,
                             Imagen = " ",
@@ -1560,7 +1584,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 107,
-                            AlbumId = 5,
+                            AlbumId = 100,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 148,
                             Imagen = " ",
@@ -1570,7 +1594,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 108,
-                            AlbumId = 5,
+                            AlbumId = 101,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 149,
                             Imagen = " ",
@@ -1580,7 +1604,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 109,
-                            AlbumId = 5,
+                            AlbumId = 101,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 150,
                             Imagen = " ",
@@ -1590,7 +1614,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 110,
-                            AlbumId = 5,
+                            AlbumId = 101,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 151,
                             Imagen = " ",
@@ -1600,7 +1624,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 111,
-                            AlbumId = 5,
+                            AlbumId = 101,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 152,
                             Imagen = " ",
@@ -1610,7 +1634,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 112,
-                            AlbumId = 5,
+                            AlbumId = 101,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 153,
                             Imagen = " ",
@@ -1620,7 +1644,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 113,
-                            AlbumId = 6,
+                            AlbumId = 63,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 154,
                             Imagen = " ",
@@ -1630,7 +1654,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 114,
-                            AlbumId = 6,
+                            AlbumId = 63,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 155,
                             Imagen = " ",
@@ -1640,7 +1664,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 115,
-                            AlbumId = 6,
+                            AlbumId = 63,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 156,
                             Imagen = " ",
@@ -1650,7 +1674,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 116,
-                            AlbumId = 6,
+                            AlbumId = 63,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 157,
                             Imagen = " ",
@@ -1660,7 +1684,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 117,
-                            AlbumId = 6,
+                            AlbumId = 63,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 158,
                             Imagen = " ",
@@ -1670,7 +1694,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 118,
-                            AlbumId = 6,
+                            AlbumId = 64,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 159,
                             Imagen = " ",
@@ -1680,7 +1704,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 1180,
-                            AlbumId = 6,
+                            AlbumId = 64,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 160,
                             Imagen = " ",
@@ -1690,7 +1714,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 119,
-                            AlbumId = 6,
+                            AlbumId = 64,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 161,
                             Imagen = " ",
@@ -1700,7 +1724,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 120,
-                            AlbumId = 6,
+                            AlbumId = 64,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 162,
                             Imagen = " ",
@@ -1710,7 +1734,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 121,
-                            AlbumId = 6,
+                            AlbumId = 64,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 163,
                             Imagen = " ",
@@ -1720,7 +1744,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 122,
-                            AlbumId = 6,
+                            AlbumId = 65,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 164,
                             Imagen = " ",
@@ -1730,7 +1754,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 123,
-                            AlbumId = 6,
+                            AlbumId = 65,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 165,
                             Imagen = " ",
@@ -1740,7 +1764,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 124,
-                            AlbumId = 6,
+                            AlbumId = 65,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 166,
                             Imagen = " ",
@@ -1750,7 +1774,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 125,
-                            AlbumId = 6,
+                            AlbumId = 65,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 167,
                             Imagen = " ",
@@ -1760,7 +1784,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 126,
-                            AlbumId = 6,
+                            AlbumId = 65,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 168,
                             Imagen = " ",
@@ -1770,7 +1794,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 127,
-                            AlbumId = 6,
+                            AlbumId = 69,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 169,
                             Imagen = " ",
@@ -1780,7 +1804,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 128,
-                            AlbumId = 6,
+                            AlbumId = 69,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 170,
                             Imagen = " ",
@@ -1790,7 +1814,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 129,
-                            AlbumId = 6,
+                            AlbumId = 69,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 171,
                             Imagen = " ",
@@ -1800,7 +1824,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 130,
-                            AlbumId = 6,
+                            AlbumId = 69,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 172,
                             Imagen = " ",
@@ -1810,7 +1834,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 131,
-                            AlbumId = 6,
+                            AlbumId = 69,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 173,
                             Imagen = " ",
@@ -1820,7 +1844,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 132,
-                            AlbumId = 6,
+                            AlbumId = 70,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 174,
                             Imagen = " ",
@@ -1830,7 +1854,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 133,
-                            AlbumId = 6,
+                            AlbumId = 70,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 175,
                             Imagen = " ",
@@ -1840,7 +1864,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 134,
-                            AlbumId = 6,
+                            AlbumId = 70,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 176,
                             Imagen = " ",
@@ -1850,7 +1874,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 135,
-                            AlbumId = 6,
+                            AlbumId = 70,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 177,
                             Imagen = " ",
@@ -1860,7 +1884,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 136,
-                            AlbumId = 6,
+                            AlbumId = 70,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 178,
                             Imagen = " ",
@@ -1870,7 +1894,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 137,
-                            AlbumId = 6,
+                            AlbumId = 71,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 179,
                             Imagen = " ",
@@ -1880,7 +1904,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 138,
-                            AlbumId = 6,
+                            AlbumId = 71,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 180,
                             Imagen = " ",
@@ -1890,7 +1914,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 139,
-                            AlbumId = 6,
+                            AlbumId = 71,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 181,
                             Imagen = " ",
@@ -1900,7 +1924,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 140,
-                            AlbumId = 6,
+                            AlbumId = 71,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 182,
                             Imagen = " ",
@@ -1910,7 +1934,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 141,
-                            AlbumId = 6,
+                            AlbumId = 71,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 183,
                             Imagen = " ",
@@ -1920,7 +1944,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 142,
-                            AlbumId = 6,
+                            AlbumId = 80,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 184,
                             Imagen = " ",
@@ -1930,7 +1954,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 143,
-                            AlbumId = 6,
+                            AlbumId = 80,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 185,
                             Imagen = " ",
@@ -1940,7 +1964,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 144,
-                            AlbumId = 6,
+                            AlbumId = 80,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 186,
                             Imagen = " ",
@@ -1950,7 +1974,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 145,
-                            AlbumId = 6,
+                            AlbumId = 80,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 187,
                             Imagen = " ",
@@ -1960,7 +1984,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 146,
-                            AlbumId = 6,
+                            AlbumId = 80,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 188,
                             Imagen = " ",
@@ -1970,7 +1994,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 147,
-                            AlbumId = 6,
+                            AlbumId = 81,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 189,
                             Imagen = " ",
@@ -1980,7 +2004,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 148,
-                            AlbumId = 6,
+                            AlbumId = 81,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 190,
                             Imagen = " ",
@@ -1990,7 +2014,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 149,
-                            AlbumId = 6,
+                            AlbumId = 81,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 191,
                             Imagen = " ",
@@ -2000,7 +2024,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 150,
-                            AlbumId = 6,
+                            AlbumId = 81,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 192,
                             Imagen = " ",
@@ -2010,7 +2034,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 151,
-                            AlbumId = 6,
+                            AlbumId = 81,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 193,
                             Imagen = " ",
@@ -2020,7 +2044,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 152,
-                            AlbumId = 6,
+                            AlbumId = 82,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 194,
                             Imagen = " ",
@@ -2030,7 +2054,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 153,
-                            AlbumId = 6,
+                            AlbumId = 82,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 194,
                             Imagen = " ",
@@ -2040,7 +2064,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 154,
-                            AlbumId = 6,
+                            AlbumId = 82,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 194,
                             Imagen = " ",
@@ -2050,7 +2074,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 155,
-                            AlbumId = 6,
+                            AlbumId = 82,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 195,
                             Imagen = " ",
@@ -2060,7 +2084,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 156,
-                            AlbumId = 6,
+                            AlbumId = 82,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 196,
                             Imagen = " ",
@@ -2070,7 +2094,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 157,
-                            AlbumId = 6,
+                            AlbumId = 82,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 197,
                             Imagen = " ",
@@ -2080,7 +2104,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 158,
-                            AlbumId = 6,
+                            AlbumId = 82,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 198,
                             Imagen = " ",
@@ -2090,7 +2114,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 159,
-                            AlbumId = 6,
+                            AlbumId = 82,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 199,
                             Imagen = " ",
@@ -2100,7 +2124,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 160,
-                            AlbumId = 6,
+                            AlbumId = 82,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 200,
                             Imagen = " ",
@@ -2110,7 +2134,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 161,
-                            AlbumId = 6,
+                            AlbumId = 82,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 1001,
                             Imagen = " ",
@@ -2130,7 +2154,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 163,
-                            AlbumId = 6,
+                            AlbumId = 82,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 103,
                             Imagen = " ",
@@ -2140,7 +2164,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 164,
-                            AlbumId = 6,
+                            AlbumId = 82,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 104,
                             Imagen = " ",
@@ -2150,7 +2174,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 165,
-                            AlbumId = 6,
+                            AlbumId = 82,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 105,
                             Imagen = " ",
@@ -2160,7 +2184,7 @@ namespace G7Album.BaseDatos.Migrations
                         new
                         {
                             Id = 166,
-                            AlbumId = 6,
+                            AlbumId = 82,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 106,
                             Imagen = " ",
