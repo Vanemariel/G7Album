@@ -1,6 +1,6 @@
 import {  Route, Routes } from 'react-router-dom';
 import './App.css';
-import { Loader } from './Components/Loader/Loader';
+import { ModalLoader } from './Components/ModalLoader/ModalLoader';
 import { ModalStatus } from './Components/ModalStatus/ModalStatus';
 import { RoutePrivate } from './Components/RoutePrivate/RoutePrivate';
 import { GlobalProvider } from './Context/GlobalProvider';
@@ -11,6 +11,7 @@ import { Album } from './Pages/Album/Index';
 
 import { AlbumUsuario } from './Pages/AlbumUsuario/Index';
 import { Navigate } from './Components/Navigate/Navigate';
+import { AlbumUsuarioImagen } from './Pages/AlbumUsuarioImagen/Index';
 
 
 function App() {
@@ -33,7 +34,14 @@ function App() {
               <RoutePrivate>
                  <AlbumUsuario />
               </RoutePrivate>
-            } />
+          }/>
+
+          <Route path="/AlbumUsuarioImagen" element={
+              <RoutePrivate>
+                 <AlbumUsuarioImagen />
+              </RoutePrivate>
+          }/>
+
           <Route path="/AlbumImagenes" element={
               <RoutePrivate>
                     <AlbumImagenes />
@@ -67,7 +75,7 @@ function App() {
           
         </Routes>
 
-        <Loader/>
+        <ModalLoader/>
 
         <ModalStatus />
 

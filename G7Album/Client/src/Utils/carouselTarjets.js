@@ -1,13 +1,13 @@
-import * as THREE from 'https://cdn.skypack.dev/three@v0.122.0';
+// import * as THREE from 'https://cdn.skypack.dev/three@v0.122.0';
 
 
 // Helper functions
-const rgb = function(r, g, b) {
-    return new THREE.Vector3(r, g, b);
-}
-const randomInteger = function(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+// const rgb = function(r, g, b) {
+//     return new THREE.Vector3(r, g, b);
+// }
+// const randomInteger = function(min, max) {
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
 // -- End Helper Functions
 
 export const carouselTarjets = (arrayConfigs) => {

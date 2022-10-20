@@ -2,20 +2,23 @@
 import './style.css'
 import { useEffect, useState } from 'react';
 import { useGlobalContext } from '../../Context/useGlobalContext';
-import AlbumUnitarioService from './Services/AlbumUsuarioImagen';
+import AlbumUnitarioService from './Services/AlbumUsuarioImagen.service';
 import { IAlbumUsuarioData } from '../../Interface/DTO Back/AlbumUsuario/IAlbumUsuario';
 import { carouselTarjets } from '../../Utils/carouselTarjets';
 import { ConfigCarrouselModels } from '../../Models/ConfigCarrousel.models';
 import { usePaginate } from '../../Hooks/usePaginate';
 import { Paginate } from '../../Components/Paginate/Paginate';
 import { IAlbumUsuarioImagenes } from '../../Interface/DTO Back/AlbumUsuarioImagenes/IAlbumUsuarioImagenes';
-import AlbumUsuarioImagenService from './Services/AlbumUsuarioImagen';
+import AlbumUsuarioImagenService from './Services/AlbumUsuarioImagen.service';
+import { useNavigate } from 'react-router-dom';
 
 
 
 export const AlbumUsuarioImagen: React.FC = () => {
 
     /// HOOKS
+    
+    const navigate = useNavigate()
     const {paginate, setPaginate} = usePaginate()
     const storeGlobal = useGlobalContext();
     const [allMyFiguritas , setAllMyFiguritas] = useState<IAlbumUsuarioImagenes[]>([])
@@ -89,6 +92,15 @@ export const AlbumUsuarioImagen: React.FC = () => {
               
                 <h1>Mis Figuritas </h1>
         
+
+                {allMyFiguritas.length === 0 &&
+                    <div className='containerNotFigus'>
+                        <h3>Uups... Aun no tiene ninguna Figurita! ¿Desea comprar una? </h3>
+
+                        <button className='btnAlbumComprar' onClick={() => navigate('/AlbumImagenes')}>Ir a Figuritas</button>
+                    </div>
+                }
+
                 {
                         <div id={`album-rotator0`} className="albumRotatorContainer">
                       
@@ -110,13 +122,13 @@ export const AlbumUsuarioImagen: React.FC = () => {
                         </div>
                 }
                 
-                <div>
+                { allMyFiguritas.length !== 0 && <div>
                     <Paginate
                         ChangePage={changePage}
                         PageCount={paginate.pagesTotal}
                         LocatedPageNumber={paginate.currentPage}
                     />
-                </div>
+                </div>}
         
             </div>
         </div>

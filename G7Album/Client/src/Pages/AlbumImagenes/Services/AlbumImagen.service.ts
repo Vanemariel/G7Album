@@ -2,6 +2,7 @@
 import { IAlbumData } from "../../../Interface/DTO Back/Album/IAlbumData";
 import { IPagination } from "../../../Interface/DTO Back/IPagination";
 import { IResponseDTO } from "../../../Interface/DTO Back/IResponseDTO";
+import { IAlbumImagenDataBuy } from "../../../Interface/DTO Front/AlbumImagen/IAlbumImagenDataBuy";
 import { axiosMethod } from "../../../Utils/axiosMethod";
 
 const AlbumImagenService = {
@@ -18,7 +19,20 @@ const AlbumImagenService = {
             MessageError: Response.MessageError
         };
         
+    },
+    buyFigurita: async (dataAlbum: IAlbumImagenDataBuy) => {
+        const Response = await axiosMethod<string>({
+            method: "POST",
+            url: `/AlbumUsuarioImagenes/buy/figus`,
+            dataSend: dataAlbum
+        });
+
+        return {
+            Result: Response.Result,
+            MessageError: Response.MessageError
+        };
     }
+
 
 }
 

@@ -11,6 +11,7 @@ import { ConfigCarrouselModels } from "../../Models/ConfigCarrousel.models";
 import { useGlobalContext } from "../../Context/useGlobalContext";
 import { Paginate } from '../../Components/Paginate/Paginate';
 import { usePaginate } from '../../Hooks/usePaginate';
+import { Loader } from '../../Components/Loader/Loader';
 
 export const Album: React.FC = () => {
 
@@ -47,7 +48,7 @@ export const Album: React.FC = () => {
         carouselTarjets(arrAlbum)
     }
 
-    const sendAlbum = async (idAlbum: number) => {
+    const buyAlbum = async (idAlbum: number) => {
 
         try {
                       
@@ -108,31 +109,33 @@ export const Album: React.FC = () => {
                     </div>
                     <br />
 
-                {
-                    allColecciones?.map((Coleccion: IColeccionData, indexAlbum: number) => (
+                    {allColecciones.length === 0 && <Loader/>}
 
-                        <div id={`album-rotator${indexAlbum}`} key={indexAlbum} className="albumRotatorContainer">
-                           <h1 className='title'>{Coleccion.tituloColeccion}</h1>
-                      
-                            <section id={`album-rotator-holder${indexAlbum}`} className="albumRotatorHolder">
-                                {
-                                    Coleccion?.listadoAlbum.map((album: IAlbumData, indexEsport: number)=>(
-                                        <article id={`album-item${indexAlbum}`} style={{cursor: 'pointer'}}
-                                            className={`albumItem`} key={indexEsport}
-                                        >
-                                            <div className={`albumItem__details`}>  
+                    {
+                        allColecciones?.map((Coleccion: IColeccionData, indexAlbum: number) => (
 
-                                                <h3>{album.titulo}</h3>
-            
-                                                <button className="btnAlbumComprar" type='submit' onClick={() => sendAlbum(album.id)}>Comprar</button>
-                                            </div>
-                                        </article>
-                                    ))
-                                }
-                            </section>
-                        </div> 
-                    ))
-                }
+                            <div id={`album-rotator${indexAlbum}`} key={indexAlbum} className="albumRotatorContainer">
+                            <h1 className='title'>{Coleccion.tituloColeccion}</h1>
+                        
+                                <section id={`album-rotator-holder${indexAlbum}`} className="albumRotatorHolder">
+                                    {
+                                        Coleccion?.listadoAlbum.map((album: IAlbumData, indexEsport: number)=>(
+                                            <article id={`album-item${indexAlbum}`} style={{cursor: 'pointer'}}
+                                                className={`albumItem`} key={indexEsport}
+                                            >
+                                                <div className={`albumItem__details`}>  
+
+                                                    <h3>{album.titulo}</h3>
+                
+                                                    <button className="btnAlbumComprar" type='submit' onClick={() => buyAlbum(album.id)}>Comprar</button>
+                                                </div>
+                                            </article>
+                                        ))
+                                    }
+                                </section>
+                            </div> 
+                        ))
+                    }
                     <div>
                         <Paginate
                             ChangePage={changePage}

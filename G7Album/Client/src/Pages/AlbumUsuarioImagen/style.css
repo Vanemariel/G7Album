@@ -2,3 +2,17 @@
     font-size: 16px;
     border-radius: .75rem;
 }
+
+.containerNotFigus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3rem;
+    color: #fff;
+}
+.containerNotFigus button {
+    width: auto;
+    height: auto;
+    padding: 5px;
+}

@@ -2,3 +2,16 @@
     font-size: 16px;
     border-radius: .75rem;
 }
+
+.containerNotAlbum {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3rem;
+    color: #fff;
+}
+.containerNotAlbum button {
+    width: 100px;
+    height: 35px;
+}

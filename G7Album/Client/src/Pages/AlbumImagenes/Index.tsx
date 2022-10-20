@@ -12,16 +12,16 @@ import AlbumImagenService from './Services/AlbumImagen.service';
 import { IAlbumData } from '../../Interface/DTO Back/Album/IAlbumData';
 import { usePaginate } from '../../Hooks/usePaginate';
 import { Paginate } from '../../Components/Paginate/Paginate';
+import { Loader } from '../../Components/Loader/Loader';
+import { useGlobalContext } from '../../Context/useGlobalContext';
 
 export const AlbumImagenes: React.FC = () => {
-
-    const navigate = useNavigate()
 
 
     /// HOOKS
     const [allAlbumImagenes, setAllAlbumImagenes] = useState<IAlbumData[]>([])
     const {paginate, setPaginate} = usePaginate()
-
+    const storeGlobal = useGlobalContext();
 
     /// METODOS
     const config = [
@@ -281,6 +281,40 @@ export const AlbumImagenes: React.FC = () => {
         getAllAlbumImagenes(selected+1)
     }
 
+    const buyFigurita = async ( idFigurita: number) => {
+
+        try {
+                      
+            storeGlobal.SetShowLoader(true)
+                                        
+            const {Result, MessageError } = await AlbumImagenService.buyFigurita({
+               IdUsuario: storeGlobal.GetMyUserData().Id,
+               IdAlbumImagen: idFigurita
+            })
+
+            if (MessageError != undefined)
+            {
+              throw new Error(MessageError);
+            }
+                               
+            storeGlobal.SetShowLoader(false)                                         
+            storeGlobal.SetMessageModalStatus(Result)
+                  
+        } catch (error: any) {
+            
+            storeGlobal.SetShowLoader(false)
+            storeGlobal.SetMessageModalStatus(`Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`)
+            
+        } finally {
+            storeGlobal.SetShowModalStatus(true)
+                      
+            setTimeout(() => {
+               storeGlobal.SetShowModalStatus(false)
+            }, 5000);
+      
+        }
+    }
+
     useEffect(()=> {
         getAllAlbumImagenes()
     },[])
@@ -305,6 +339,8 @@ export const AlbumImagenes: React.FC = () => {
                         </div>
                     </div>
 
+                    {allAlbumImagenes.length === 0 && <Loader/>}
+
                     {
                         allAlbumImagenes.map((AlbumIMG: IAlbumData, indexAlbum: number) => (
 
@@ -322,7 +358,8 @@ export const AlbumImagenes: React.FC = () => {
 
                                                    <h3>{figuritas.titulo}</h3>
 
-                                                   <button className="btnFiguritasComprar" type='submit' onClick={() => alert("Funcion no realizada")}>Comprar</button>
+                                                   <button className="btnFiguritasComprar" type='submit' 
+                                                   onClick={() => buyFigurita(figuritas.id)}>Comprar</button>
 
                                                 </div>
 

@@ -58,27 +58,29 @@ namespace G7Album.Server.Controllers
             return Ok(response);
         }*/
         [HttpGet("GetAllPage/{page:int}/{idUsuario:int}")]
-        public async Task<ActionResult<ResponseDto<Pagination<List<AlbumUsuarioImagenes>>>>> GetAll(int page)
+        public async Task<ActionResult<ResponseDto<Pagination<List<AlbumUsuarioImagenes>>>>> GetAll(int page, int idUsuario)
         {
             ResponseDto<Pagination<List<AlbumUsuarioImagenes>>> ResponseDto = new ResponseDto<Pagination<List<AlbumUsuarioImagenes>>>();
             Pagination<List<AlbumUsuarioImagenes>> Pagination = new Pagination<List<AlbumUsuarioImagenes>>();
             try
             {
                 var pageResults = 3f;
-                var pageCount = Math.Ceiling(context.TablaImagenes.Count() / pageResults);
 
                 List<AlbumUsuarioImagenes> FigusUsuario = await context.TablaUsuarioImagenes
+                    .Where(x => x.UsuarioId == idUsuario)
                     .Skip((page - 1) * (int)pageResults)
                     .Take((int)pageResults)
                     //.Include(x => x.AlbumImagenImpresa)
                     .Include(x => x.AlbumUsuario)
                     .ToListAsync();
 
+                var pageCount = Math.Ceiling(FigusUsuario.Count() / pageResults);
+
                 Pagination.ListItems = FigusUsuario;
                 Pagination.CurrentPage = page;
                 Pagination.Pages = (int)pageCount;
-                 ResponseDto.Result = Pagination;
 
+                ResponseDto.Result = Pagination;
 
                 return Ok(ResponseDto);
             }
@@ -114,7 +116,7 @@ namespace G7Album.Server.Controllers
             {
                 //cuando envio el dato numerico el vallor x defecto es 0 por lo que entonces el dato no fue enviado
                 //aca se aplkica la excepcion de error
-                if (CompraFigus.IdUsuario == 0 || CompraFigus.IdAlbum == 0 || CompraFigus.IdAlbumImagen == 0)
+                if (CompraFigus.IdUsuario == 0 || CompraFigus.IdAlbumImagen == 0)
                 {
                     throw new Exception("debe enviar todos los datos requeridos");
                 }
@@ -145,8 +147,7 @@ namespace G7Album.Server.Controllers
                 
                 AlbumUsuarioImagenes AlbumCompra = new AlbumUsuarioImagenes {
                     AlbumImagenesId = CompraFigus.IdAlbumImagen,
-                    UsuarioId = CompraFigus.IdUsuario
-
+                    UsuarioId = CompraFigus.IdUsuario,
                 };
 
                 context.TablaUsuarioImagenes.Add(AlbumCompra);

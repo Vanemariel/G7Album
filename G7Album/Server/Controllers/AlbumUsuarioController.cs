@@ -22,7 +22,6 @@ namespace G7Album.Server.Controllers
             try
             {
                 var pageResults = 3f;
-                var pageCount = Math.Ceiling(context.TablaAlbumesUsuarios.Count() / pageResults);
 
                 List<AlbumUsuario> ListadoMisAlbumes = await context.TablaAlbumesUsuarios
                     .Where(x => x.UsuarioId == idUsuario)
@@ -31,6 +30,8 @@ namespace G7Album.Server.Controllers
                     .Include(x => x.Album)
                     .Include(x => x.Usuario)
                     .ToListAsync();
+
+                var pageCount = Math.Ceiling(ListadoMisAlbumes.Count() / pageResults);
 
                 Pagination.ListItems = ListadoMisAlbumes;
                 Pagination.CurrentPage = page;
