@@ -71,7 +71,7 @@ namespace G7Album.Server.Controllers
                     .Skip((page - 1) * (int)pageResults)
                     .Take((int)pageResults)
                     //.Include(x => x.AlbumImagenImpresa)
-                    // .Include(x => x.AlbumUsuario)
+                    .Include(x => x.AlbumImagenes)
                     .ToListAsync();
 
                 var pageCount = Math.Ceiling(FigusUsuario.Count() / pageResults);
