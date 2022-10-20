@@ -35,6 +35,9 @@ namespace G7Album.BaseDatos.Entidades
         [ForeignKey("ColeccionAlbumId")]
         public ColeccionAlbum ColeccionAlbum {get; set;}
 
+         [Required(ErrorMessage = "Campo obligatorio.")]
+        public string Imagen { get; set; }
+
 
 
 

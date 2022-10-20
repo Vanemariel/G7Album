@@ -82,7 +82,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 1
+                    ColeccionAlbumId = 1,
+                    Imagen = ""
                },
                 new Album
                 {
@@ -94,7 +95,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 1
+                    ColeccionAlbumId = 1,
+                    Imagen = ""
                },
                 new Album
                 {
@@ -106,7 +108,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 1
+                    ColeccionAlbumId = 1,
+                    Imagen = ""
                },
 
                 new Album
@@ -119,7 +122,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 2
+                    ColeccionAlbumId = 2,
+                    Imagen = ""
                },
                 new Album
                 {
@@ -131,7 +135,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 2
+                    ColeccionAlbumId = 2,
+                    Imagen = ""
                },               
                 new Album
                 {
@@ -143,7 +148,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 2
+                    ColeccionAlbumId = 2,
+                    Imagen = ""
                 },
             
                 new Album
@@ -156,7 +162,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 3
+                    ColeccionAlbumId = 3,
+                    Imagen = ""
                },
                 new Album
                 {
@@ -168,7 +175,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 3
+                    ColeccionAlbumId = 3,
+                    Imagen = ""
                },
                 new Album
                 {
@@ -180,7 +188,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 3
+                    ColeccionAlbumId = 3,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -192,7 +201,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 4
+                    ColeccionAlbumId = 4,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -204,7 +214,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 4
+                    ColeccionAlbumId = 4,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -216,7 +227,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 4
+                    ColeccionAlbumId = 4,
+                    Imagen = ""
                 },
                
                 new Album
@@ -229,7 +241,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 5
+                    ColeccionAlbumId = 5,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -241,7 +254,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 5
+                    ColeccionAlbumId = 5,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -253,7 +267,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 5
+                    ColeccionAlbumId = 5,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -265,7 +280,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 5
+                    ColeccionAlbumId = 5,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -277,7 +293,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 5
+                    ColeccionAlbumId = 5,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -289,7 +306,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 5
+                    ColeccionAlbumId = 5,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -301,7 +319,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 5
+                    ColeccionAlbumId = 5,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -313,7 +332,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 5
+                    ColeccionAlbumId = 5,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -325,7 +345,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 5
+                    ColeccionAlbumId = 5,
+                    Imagen = ""
                 },
                  new Album
                 {
@@ -337,7 +358,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 6
+                    ColeccionAlbumId = 6,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -349,7 +371,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 6
+                    ColeccionAlbumId = 6,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -361,7 +384,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 6
+                    ColeccionAlbumId = 6,
+                    Imagen = ""
                 },
                  new Album
                 {
@@ -373,7 +397,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 6
+                    ColeccionAlbumId = 6,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -385,7 +410,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 6
+                    ColeccionAlbumId = 6,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -397,7 +423,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 6
+                    ColeccionAlbumId = 6,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -409,7 +436,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 6
+                    ColeccionAlbumId = 6,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -421,7 +449,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 6
+                    ColeccionAlbumId = 6,
+                    Imagen = ""
                 },
                 new Album
                 {
@@ -433,7 +462,8 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
-                    ColeccionAlbumId = 6
+                    ColeccionAlbumId = 6,
+                    Imagen = ""
                 }
             );
 
@@ -471,7 +501,7 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 200,
                     CodigoImagenOriginal = 31,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://www.cariverplate.com.ar/imagenes/jugadores/2022-08/1638-01-armani-imagenprincipal.png",
                     Titulo = "Armani Franco",
                     AlbumId = 1,
                },
@@ -2220,25 +2250,31 @@ namespace G7Album.BaseDatos.Data
                new AlbumUsuarioImagenes
                {
                    Id = 1,
-                   EstaPegada = "si",
+                //    EstaPegada = "si",
                    AlbumUsuarioId = 1,
-                   AlbumImagenImpresaId = 1,
+                   AlbumImagenesId = 1,
+                   UsuarioId = 1
+                   //AlbumImagenImpresaId = 1,
 
               },
                new AlbumUsuarioImagenes
                {
                    Id = 2,
-                   EstaPegada = "si",
+                //    EstaPegada = "si",
                    AlbumUsuarioId = 2,
-                   AlbumImagenImpresaId = 2,
+                   AlbumImagenesId= 2,
+                   UsuarioId = 2
+                   //AlbumImagenImpresaId = 2,
 
               },
                new AlbumUsuarioImagenes
                {
                    Id = 3,
-                   EstaPegada = "si",
+                //    EstaPegada = "si",
                    AlbumUsuarioId = 3,
-                   AlbumImagenImpresaId = 3,
+                   AlbumImagenesId = 3,
+                   UsuarioId = 3
+                   //AlbumImagenImpresaId = 3,
 
               }
               

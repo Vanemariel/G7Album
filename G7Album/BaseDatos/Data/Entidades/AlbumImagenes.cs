@@ -1,12 +1,6 @@
 ﻿using G7Album.BaseDatos.Data.Comun;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace G7Album.BaseDatos.Entidades
 {
     public class AlbumImagenes : BaseEntity 

@@ -1,5 +1,4 @@
-﻿
-using G7Album.Shared.Models;
+﻿using G7Album.Shared.Models;
 
 namespace G7Album.Server.Controllers
 {
@@ -58,7 +57,7 @@ namespace G7Album.Server.Controllers
             };
             return Ok(response);
         }*/
-        [HttpGet("{page:int}")]
+        [HttpGet("GetAllPage/{page:int}/{idUsuario:int}")]
         public async Task<ActionResult<ResponseDto<Pagination<List<AlbumUsuarioImagenes>>>>> GetAll(int page)
         {
             ResponseDto<Pagination<List<AlbumUsuarioImagenes>>> ResponseDto = new ResponseDto<Pagination<List<AlbumUsuarioImagenes>>>();
@@ -71,13 +70,13 @@ namespace G7Album.Server.Controllers
                 List<AlbumUsuarioImagenes> FigusUsuario = await context.TablaUsuarioImagenes
                     .Skip((page - 1) * (int)pageResults)
                     .Take((int)pageResults)
-                    .Include(x => x.AlbumImagenImpresa)
+                    //.Include(x => x.AlbumImagenImpresa)
+                    .Include(x => x.AlbumUsuario)
                     .ToListAsync();
 
-                ResponseDto.Result.ListItems = FigusUsuario;
-                ResponseDto.Result.CurrentPage = page;
-                ResponseDto.Result.Pages = (int)pageCount;
-
+                Pagination.ListItems = FigusUsuario;
+                Pagination.CurrentPage = page;
+                Pagination.Pages = (int)pageCount;
                  ResponseDto.Result = Pagination;
 
 
@@ -101,7 +100,68 @@ namespace G7Album.Server.Controllers
                 return NotFound($"No existe el Albumusuario con id igual a {id}.");
             }
             return usua;
+        }
 
+        [HttpPost("buy/figus")]
+        //verbo es el http post, pero a la base de datos ingresa como un insert
+        public async Task<ActionResult<string>> buyFigus(ImagenesFiguritasBuy CompraFigus)
+        //imagenesf es el tipo de dato y el otro es el objeto
+        {
+
+            ResponseDto<string> ResponseDto = new ResponseDto<string>();
+
+            try
+            {
+                //cuando envio el dato numerico el vallor x defecto es 0 por lo que entonces el dato no fue enviado
+                //aca se aplkica la excepcion de error
+                if (CompraFigus.IdUsuario == 0 || CompraFigus.IdAlbum == 0 || CompraFigus.IdAlbumImagen == 0)
+                {
+                    throw new Exception("debe enviar todos los datos requeridos");
+                }
+                //? significa que posiblemente puede ser nulo
+                Usuario? Usuario = await this.context.TablaUsuarios//busco el usuario x id
+                    .Where(Usuario => Usuario.Id == CompraFigus.IdUsuario)//valido
+                    .FirstOrDefaultAsync();
+                //valido si el usuario existe 
+                if (Usuario == null )
+                {
+                    throw new Exception($"no existe el Usuario con id igual a {CompraFigus.IdUsuario}.");
+                }
+
+                    //LOGICA DE NEGOCIO
+                
+                //valido si ya lo compre para no adquirir la misma figus
+                AlbumUsuarioImagenes? FiguritaComprada = await context.TablaUsuarioImagenes //imagen comprada es lo 
+                //q me devuelve la base de datos
+                    .Where(Figuritas => Figuritas.AlbumImagenesId == CompraFigus.IdAlbumImagen) //lo llamo unitario
+                    .Where(Figuritas => Figuritas.UsuarioId == CompraFigus.IdUsuario)
+                    .FirstOrDefaultAsync();
+
+                if (FiguritaComprada != null)
+                {
+                    throw new Exception("ya compraste esta figurita!");
+                }
+                
+                
+                AlbumUsuarioImagenes AlbumCompra = new AlbumUsuarioImagenes {
+                    AlbumImagenesId = CompraFigus.IdAlbumImagen,
+                    UsuarioId = CompraFigus.IdUsuario
+
+                };
+
+                context.TablaUsuarioImagenes.Add(AlbumCompra);
+                
+                await this.context.SaveChangesAsync();
+
+                ResponseDto.Result = "Se ha comprado esta figurita correctamente"; 
+
+                return Ok(ResponseDto);
+            }
+            catch (Exception ex)
+            {
+                ResponseDto.MessageError = $"Ha ocurrido un error, {ex.Message}";
+                return BadRequest(ResponseDto);
+            }
         }
 
 

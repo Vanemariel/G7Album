@@ -11,22 +11,33 @@ namespace G7Album.BaseDatos.Entidades
 {
     public class AlbumUsuarioImagenes : BaseEntity 
     {
-        [Required(ErrorMessage = "Campo obligatorio.")]
-        //preguntar xq tin y int
-        public string EstaPegada { get; set; }
+        // [Required(ErrorMessage = "Campo obligatorio.")]
+        // //preguntar xq tin y int
+        // public string EstaPegada { get; set; }
 
         [Required(ErrorMessage = "Campo obligatorio.")]
         public int AlbumUsuarioId { get; set; }
 
         [Required(ErrorMessage = "Campo obligatorio.")]
-        public int AlbumImagenImpresaId { get; set; }
+        public int AlbumImagenesId { get; set; }
+
+        [Required(ErrorMessage = "Campo obligatorio.")]
+        public int UsuarioId { get; set; }
+        
+
 
         //claves foraneas
         [ForeignKey("AlbumUsuarioId")]
         public AlbumUsuario AlbumUsuario { get; set; }
 
-        [ForeignKey("AlbumImagenImpresaId")]
-        public AlbumImagenImpresa AlbumImagenImpresa { get; set; }
+        [ForeignKey("AlbumImagenesId")]
+        public AlbumImagenes AlbumImagenes { get; set; }
+
+        [ForeignKey("UsuarioId")]
+        public Usuario Usuario { get; set; }
+
+        //[ForeignKey("AlbumImagenImpresaId")]
+        //public AlbumImagenImpresa AlbumImagenImpresa { get; set; }
 
 
 
