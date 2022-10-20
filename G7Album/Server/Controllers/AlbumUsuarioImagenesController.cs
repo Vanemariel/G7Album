@@ -147,7 +147,7 @@ namespace G7Album.Server.Controllers
                 
                 AlbumUsuarioImagenes AlbumCompra = new AlbumUsuarioImagenes {
                     AlbumImagenesId = CompraFigus.IdAlbumImagen,
-                    UsuarioId = CompraFigus.IdUsuario,
+                    UsuarioId = CompraFigus.IdUsuario
                 };
 
                 context.TablaUsuarioImagenes.Add(AlbumCompra);

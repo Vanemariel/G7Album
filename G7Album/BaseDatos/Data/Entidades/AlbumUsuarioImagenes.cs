@@ -15,7 +15,7 @@ namespace G7Album.BaseDatos.Entidades
         // //preguntar xq tin y int
         // public string EstaPegada { get; set; }
 
-        [Required(ErrorMessage = "Campo obligatorio.")]
+        // [Required(ErrorMessage = "Campo obligatorio.")]
         public int AlbumUsuarioId { get; set; }
 
         [Required(ErrorMessage = "Campo obligatorio.")]
