@@ -11,14 +11,14 @@
 👍 Utilizar componente ruta privada
 👍 Solucionar problemas del CSS formulario
 
-🕐 En modelo de TablaAlbum no se adapta con los datos que se necesita en el front.
+👍 En modelo de TablaAlbum no se adapta con los datos que se necesita en el front.
     Falta Img de Album y sus sub categorias
-🕐 Unificar los ResponseDTO de Vane y mios
-🕐 Integrar servioco del back con el front.
+👍 Unificar los ResponseDTO de Vane y mios
+👍 Integrar servioco del back con el front.
 
-🕐Hacer que todos los albumes de las otras pages, consuman el 
+👍Hacer que todos los albumes de las otras pages, consuman el 
     Utils para hacerlos genericos. Idem a album
     NOTA: Una vez hecho esto, eliminar de Public los archivos
         scripts del index.html y los .css de cada page para
         reemplazarlo por el de album
-🕐 Incorporar a cada Album, su imagen.        
+👍 Incorporar a cada Album, su imagen.        
