@@ -2251,7 +2251,7 @@ namespace G7Album.BaseDatos.Data
                {
                    Id = 1,
                 //    EstaPegada = "si",
-                   AlbumUsuarioId = 1,
+                //    AlbumUsuarioId = 1,
                    AlbumImagenesId = 1,
                    UsuarioId = 1
                    //AlbumImagenImpresaId = 1,
@@ -2261,7 +2261,7 @@ namespace G7Album.BaseDatos.Data
                {
                    Id = 2,
                 //    EstaPegada = "si",
-                   AlbumUsuarioId = 2,
+                //    AlbumUsuarioId = 2,
                    AlbumImagenesId= 2,
                    UsuarioId = 2
                    //AlbumImagenImpresaId = 2,
@@ -2271,7 +2271,7 @@ namespace G7Album.BaseDatos.Data
                {
                    Id = 3,
                 //    EstaPegada = "si",
-                   AlbumUsuarioId = 3,
+                //    AlbumUsuarioId = 3,
                    AlbumImagenesId = 3,
                    UsuarioId = 3
                    //AlbumImagenImpresaId = 3,

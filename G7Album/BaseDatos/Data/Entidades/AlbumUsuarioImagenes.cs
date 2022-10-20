@@ -16,7 +16,7 @@ namespace G7Album.BaseDatos.Entidades
         // public string EstaPegada { get; set; }
 
         // [Required(ErrorMessage = "Campo obligatorio.")]
-        public int AlbumUsuarioId { get; set; }
+        // public int AlbumUsuarioId { get; set; }
 
         [Required(ErrorMessage = "Campo obligatorio.")]
         public int AlbumImagenesId { get; set; }
@@ -27,8 +27,8 @@ namespace G7Album.BaseDatos.Entidades
 
 
         //claves foraneas
-        [ForeignKey("AlbumUsuarioId")]
-        public AlbumUsuario AlbumUsuario { get; set; }
+        // [ForeignKey("AlbumUsuarioId")]
+        // public AlbumUsuario AlbumUsuario { get; set; }
 
         [ForeignKey("AlbumImagenesId")]
         public AlbumImagenes AlbumImagenes { get; set; }

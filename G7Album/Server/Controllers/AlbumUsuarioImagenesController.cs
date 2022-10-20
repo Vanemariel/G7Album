@@ -71,7 +71,7 @@ namespace G7Album.Server.Controllers
                     .Skip((page - 1) * (int)pageResults)
                     .Take((int)pageResults)
                     //.Include(x => x.AlbumImagenImpresa)
-                    .Include(x => x.AlbumUsuario)
+                    // .Include(x => x.AlbumUsuario)
                     .ToListAsync();
 
                 var pageCount = Math.Ceiling(FigusUsuario.Count() / pageResults);
@@ -95,7 +95,7 @@ namespace G7Album.Server.Controllers
         public async Task<ActionResult<AlbumUsuarioImagenes>> GetById(int id)
         {
             //'await' para asegurarse de que se hayan completado todas las operaciones asincrónicas antes de llamar a otro método
-            AlbumUsuarioImagenes usua = await context.TablaUsuarioImagenes.Where(x => x.Id == id).FirstOrDefaultAsync();  //Devuelve de forma asincrónica el primer elemento 
+            AlbumUsuarioImagenes? usua = await context.TablaUsuarioImagenes.Where(x => x.Id == id).FirstOrDefaultAsync();  //Devuelve de forma asincrónica el primer elemento 
             //x=>x.id x seria el registro donde esta el id 
             if (usua == null)
             {
@@ -188,14 +188,14 @@ namespace G7Album.Server.Controllers
         public async Task<ActionResult> Modified(int id, [FromBody] AlbumUsuarioImagenes persona)
         {
             //Albumpersona
-            AlbumUsuarioImagenes Albumpersona = await context.TablaUsuarioImagenes.Where(x => x.Id == id).FirstOrDefaultAsync();
+            AlbumUsuarioImagenes? Albumpersona = await context.TablaUsuarioImagenes.Where(x => x.Id == id).FirstOrDefaultAsync();
             //si mi id es null no existe 
             if (Albumpersona == null)
             {
                 return NotFound("no existe el AlbumUsuario a modificar.");
             }
             //si es correcto puedo modificar todo lo q sigue
-            Albumpersona.AlbumUsuarioId = persona.AlbumUsuarioId;
+            // Albumpersona.AlbumUsuarioId = persona.AlbumUsuarioId;
 
             try
             {
@@ -220,7 +220,7 @@ namespace G7Album.Server.Controllers
             {
                 return BadRequest("No es correcto");
             }
-            AlbumUsuarioImagenes albumUsuario = await context.TablaUsuarioImagenes.Where(x => x.Id == id).FirstOrDefaultAsync();
+            AlbumUsuarioImagenes? albumUsuario = await context.TablaUsuarioImagenes.Where(x => x.Id == id).FirstOrDefaultAsync();
             if (albumUsuario == null)//parametro de q no puede ser nulo el dato
             {
                 return NotFound($"No existe el AlbumUsuario con id igual a {id}.");//retorna error
