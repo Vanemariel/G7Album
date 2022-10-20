@@ -53,7 +53,7 @@ export const Album: React.FC = () => {
                       
             storeGlobal.SetShowLoader(true)
                                         
-            const {Result, MessageError } = await AlbumService.sendAlbum({
+            const {Result, MessageError } = await AlbumService.buyAlbum({
                IdUsuario: storeGlobal.GetMyUserData().Id, 
                IdAlbum: idAlbum
             })

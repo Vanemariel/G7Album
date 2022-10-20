@@ -76,9 +76,9 @@ namespace G7Album.Server.Controllers
             }
         }
 
-        [HttpPost("SendAlbum")]
+        [HttpPost("BuyAlbum")]
         //verbo es el http post, pero a la base de datos ingresa como un insert
-        public async Task<ActionResult<string>> SendAlbum(DataAlbumSend DataAlbumSend)
+        public async Task<ActionResult<string>> BuyAlbum(DataAlbumSend DataAlbumSend)
         {
 
             ResponseDto<string> ResponseDto = new ResponseDto<string>();

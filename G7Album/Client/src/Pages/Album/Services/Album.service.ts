@@ -21,10 +21,10 @@ const AlbumService = {
         
     },
 
-    sendAlbum: async (dataAlbum: IDataAlbumSend) => {
+    buyAlbum: async (dataAlbum: IDataAlbumSend) => {
         const Response = await axiosMethod<string>({
             method: "POST",
-            url: `/AlbumUsuario/SendAlbum`,
+            url: `/AlbumUsuario/BuyAlbum`,
             dataSend: dataAlbum
         });
 
