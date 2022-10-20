@@ -1825,7 +1825,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Naruto",
-                    AlbumId = 69,
+                    AlbumId = 96,
                },
                 new AlbumImagenes
                 {
@@ -1835,7 +1835,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Sasuke",
-                    AlbumId = 69,
+                    AlbumId = 96,
                },
                 new AlbumImagenes
                 {
@@ -1845,7 +1845,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Itachi",
-                    AlbumId = 69,
+                    AlbumId = 96,
                },
                 new AlbumImagenes
                 {
@@ -1855,7 +1855,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Sakura",
-                    AlbumId = 69,
+                    AlbumId = 96,
                },
                 new AlbumImagenes
                 {
@@ -1865,7 +1865,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Madara",
-                    AlbumId = 69,
+                    AlbumId = 96,
                },
                 new AlbumImagenes
                 {
