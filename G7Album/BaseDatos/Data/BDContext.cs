@@ -17,7 +17,7 @@ namespace G7Album.BaseDatos.Data
                 .SelectMany(e => e.GetForeignKeys()))
             {
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
-           }
+            }
             
             modelBuilder.Entity<Usuario>().HasData(
                 new Usuario
@@ -26,7 +26,7 @@ namespace G7Album.BaseDatos.Data
                     Email = "vanesa@gmail.com",
                     Password = new Byte[10],
                     NombreCompleto = "Vanesa Herrera"
-               },
+                },
                 new Usuario
                 {
                     Id = 2,
@@ -34,41 +34,41 @@ namespace G7Album.BaseDatos.Data
                     Password = new Byte[10],
                     NombreCompleto = "juan ledesma"
 
-               },
+                },
                 new Usuario
                 {
                     Id = 3,
                     Email = "aili@gmail.com",
                     Password = new Byte[10],
                     NombreCompleto = "oriana LALALA",
-               }
+                }
             );
 
             modelBuilder.Entity<ColeccionAlbum>().HasData(
                 new ColeccionAlbum {
                     Id = 1,
                     TituloColeccion= "Futbol"
-               },
+                },
                 new ColeccionAlbum {
                     Id = 2,
                     TituloColeccion= "Tenis"
-               },
+                },
                 new ColeccionAlbum{
                     Id = 3,
                     TituloColeccion= "Basket"
-               },
+                },
                 new ColeccionAlbum{
                     Id = 4,
                     TituloColeccion= "Rugby"
-               },
+                },
                 new ColeccionAlbum{
                     Id = 5,
                     TituloColeccion= "Disney"
-               },
-                 new ColeccionAlbum{
+                },
+                new ColeccionAlbum{
                     Id = 6,
                     TituloColeccion= "Anime"
-               }
+                }
             );
 
             modelBuilder.Entity<Album>().HasData(
@@ -84,7 +84,7 @@ namespace G7Album.BaseDatos.Data
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 1,
                     Imagen = ""
-               },
+                },
                 new Album
                 {
                     Id = 2,
@@ -97,7 +97,7 @@ namespace G7Album.BaseDatos.Data
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 1,
                     Imagen = ""
-               },
+                },
                 new Album
                 {
                     Id = 3,
@@ -110,7 +110,7 @@ namespace G7Album.BaseDatos.Data
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 1,
                     Imagen = ""
-               },
+                },
 
                 new Album
                 {
@@ -124,7 +124,7 @@ namespace G7Album.BaseDatos.Data
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 2,
                     Imagen = ""
-               },
+                },
                 new Album
                 {
                     Id = 5,
@@ -137,7 +137,7 @@ namespace G7Album.BaseDatos.Data
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 2,
                     Imagen = ""
-               },               
+                },               
                 new Album
                 {
                     Id = 6,
@@ -713,7 +713,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "David Nalvandian",
-                    AlbumId = 2,
+                    AlbumId = 5,
                 },
                 new AlbumImagenes
                 {
@@ -723,7 +723,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "Novak Djovich",
-                    AlbumId = 2,
+                    AlbumId = 5,
                 },
                 new AlbumImagenes
                 {
@@ -773,7 +773,7 @@ namespace G7Album.BaseDatos.Data
                     CantidadImpresa = 1000,
                     Imagen = " ",
                     Titulo = "David Nalvandian",
-                    AlbumId = 4,
+                    AlbumId = 5,
                 },
                 new AlbumImagenes
                 {
