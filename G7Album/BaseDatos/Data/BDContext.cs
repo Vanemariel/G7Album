@@ -504,7 +504,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = "https://www.cariverplate.com.ar/imagenes/jugadores/2022-08/1638-01-armani-imagenprincipal.png",
                     Titulo = "Armani Franco",
                     AlbumId = 1,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 2,
@@ -514,7 +514,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Franco Daniel",
                     AlbumId = 1,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 3,
@@ -731,7 +731,7 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 37,
                     CodigoImagenOriginal = 54,
                     CantidadImpresa = 1000,
-                    Imagen= "https://www.atptour.com/-/media/tennis/players/gladiator/2022/05/18/21/10/tsitsipas-full-2022-may.png",
+                    Imagen = "https://www.atptour.com/-/media/tennis/players/gladiator/2022/05/18/21/10/tsitsipas-full-2022-may.png",
                     Titulo = "Stefanos Tsitsipas",
                     AlbumId = 5,
                 },
@@ -845,7 +845,7 @@ namespace G7Album.BaseDatos.Data
                     Titulo = "John Isner",
                     AlbumId = 6,
                 },
-                
+
                 new AlbumImagenes
                 {
                     Id = 41,
@@ -957,25 +957,25 @@ namespace G7Album.BaseDatos.Data
                     AlbumId = 9,
                 },
                  new AlbumImagenes
-                {
-                    Id = 51,
-                    NumeroImagen = 65,
-                    CodigoImagenOriginal = 83,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Julian Montoya",
-                    AlbumId = 10,
-                },
+                 {
+                     Id = 51,
+                     NumeroImagen = 65,
+                     CodigoImagenOriginal = 83,
+                     CantidadImpresa = 1000,
+                     Imagen = " ",
+                     Titulo = "Julian Montoya",
+                     AlbumId = 10,
+                 },
                  new AlbumImagenes
-                {
-                    Id = 52,
-                    NumeroImagen = 66,
-                    CodigoImagenOriginal = 84,
-                    CantidadImpresa = 1000,
-                    Imagen = "https://www.lavoz.com.ar/resizer/9fLRQKRS9-FVN2RZHhyjb4l_thI=/1024x683/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/RL7CQYI2W5CPNNXEXDSOIRPCII.jpg",
-                    Titulo = "Matias Alemano",
-                    AlbumId = 10,
-                },
+                 {
+                     Id = 52,
+                     NumeroImagen = 66,
+                     CodigoImagenOriginal = 84,
+                     CantidadImpresa = 1000,
+                     Imagen = "https://www.lavoz.com.ar/resizer/9fLRQKRS9-FVN2RZHhyjb4l_thI=/1024x683/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/RL7CQYI2W5CPNNXEXDSOIRPCII.jpg",
+                     Titulo = "Matias Alemano",
+                     AlbumId = 10,
+                 },
                 new AlbumImagenes
                 {
                     Id = 53,
@@ -1035,7 +1035,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = "https://www.allblacks.com/assets/Uploads/SW-copy__FocusFillWyIwLjAwIiwiMC4wMCIsMzUwLDQ2MF0.png",
                     Titulo = "Sam Whitelock",
                     AlbumId = 10,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 59,
@@ -1045,7 +1045,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = "https://cordobaxv.com.ar/wp-content/uploads/2021/12/Sam-Cane-contratro-allblacks-2025.jpg",
                     Titulo = "San Cane",
                     AlbumId = 10,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 60,
@@ -1055,7 +1055,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = "https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2015/10/30/14462260859727.jpg",
                     Titulo = "David Pocock",
                     AlbumId = 11,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 61,
@@ -1065,7 +1065,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = "https://a.espncdn.com/photo/2022/0805/r1044928_1296x729_16-9.jpg",
                     Titulo = "Michael Hooper",
                     AlbumId = 11,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 62,
@@ -1075,7 +1075,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = "https://d3gbf3ykm8gp5c.cloudfront.net/content/uploads/2022/02/18081522/Jake-Gordon-Waratahs-Super-Rugby-TT-2021-PA.jpg",
                     Titulo = "Jake Gordon",
                     AlbumId = 11,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 63,
@@ -1085,7 +1085,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = "https://s.libertaddigital.com/fotos/noticias/sebastien-chabal-050514.jpg",
                     Titulo = "Sebastian Chabal",
                     AlbumId = 11,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 64,
@@ -1115,7 +1115,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = "https://www.ultimaterugby.com/images/entities/231381-a666c147e2-11/KenkiFukuokarugbyplayer.jpg",
                     Titulo = "Kenki Fukuoka",
                     AlbumId = 12,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 67,
@@ -1125,7 +1125,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = "https://d3gbf3ykm8gp5c.cloudfront.net/content/uploads/2019/10/05130704/Yu-Tamura-Japan-RWC-2019-PA.jpg",
                     Titulo = "Yu Tamura",
                     AlbumId = 12,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 68,
@@ -1135,7 +1135,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = "https://d3gbf3ykm8gp5c.cloudfront.net/content/uploads/2020/07/15094835/Johnny-Williams-Newcastle-Falcons-training-2020-PA.jpg",
                     Titulo = "Johnny Williams",
                     AlbumId = 12,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 69,
@@ -1145,7 +1145,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = "https://d3gbf3ykm8gp5c.cloudfront.net/content/uploads/2021/10/26123449/Wales-centre-Jonathan-Davies-looking-back-PA-1024x630.jpg",
                     Titulo = "Jonathan Davies",
                     AlbumId = 12,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 70,
@@ -1155,7 +1155,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = "https://d3gbf3ykm8gp5c.cloudfront.net/content/uploads/2020/09/17162439/Dan-Biggar-for-Wales-v-England-PA.jpg",
                     Titulo = "Dan Biggar",
                     AlbumId = 12,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 620,
@@ -1165,7 +1165,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = "https://i.ytimg.com/vi/O6IPRouzvU0/hqdefault.jpg",
                     Titulo = "Joaquin Prada Centro",
                     AlbumId = 12,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 630,
@@ -1175,7 +1175,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Boo",
                     AlbumId = 13,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 640,
@@ -1185,7 +1185,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Mike Wazowski",
                     AlbumId = 13,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 650,
@@ -1195,7 +1195,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Fungus",
                     AlbumId = 13,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 660,
@@ -1205,7 +1205,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Roz",
                     AlbumId = 13,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 670,
@@ -1215,7 +1215,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Bile",
                     AlbumId = 13,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 680,
@@ -1225,7 +1225,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Boo",
                     AlbumId = 14,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 690,
@@ -1235,7 +1235,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Mike Wazowski",
                     AlbumId = 14,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 700,
@@ -1245,7 +1245,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Fungus",
                     AlbumId = 14,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 71,
@@ -1255,7 +1255,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Roz",
                     AlbumId = 14,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 72,
@@ -1265,7 +1265,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Bile",
                     AlbumId = 14,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 73,
@@ -1275,7 +1275,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Troy Bolton",
                     AlbumId = 14,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 74,
@@ -1285,7 +1285,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Gabriela Montes",
                     AlbumId = 15,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 75,
@@ -1295,7 +1295,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sharpay Evans",
                     AlbumId = 15,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 76,
@@ -1305,7 +1305,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Martha Cox",
                     AlbumId = 15,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 77,
@@ -1315,7 +1315,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Lucille Bolton",
                     AlbumId = 15,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 78,
@@ -1325,7 +1325,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Troy Bolton",
                     AlbumId = 15,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 79,
@@ -1335,7 +1335,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Gabriela Montes",
                     AlbumId = 15,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 80,
@@ -1345,7 +1345,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sharpay Evans",
                     AlbumId = 16,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 81,
@@ -1355,7 +1355,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Martha Cox",
                     AlbumId = 15,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 82,
@@ -1365,17 +1365,17 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Lucile Bolton",
                     AlbumId = 16,
-               },
+                },
                  new AlbumImagenes
-                {
-                    Id = 83,
-                    NumeroImagen = 106,
-                    CodigoImagenOriginal = 124,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Troy Bolton",
-                    AlbumId = 16,
-               },
+                 {
+                     Id = 83,
+                     NumeroImagen = 106,
+                     CodigoImagenOriginal = 124,
+                     CantidadImpresa = 1000,
+                     Imagen = " ",
+                     Titulo = "Troy Bolton",
+                     AlbumId = 16,
+                 },
                 new AlbumImagenes
                 {
                     Id = 84,
@@ -1385,7 +1385,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Gabriela Montes",
                     AlbumId = 16,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 85,
@@ -1395,7 +1395,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sharpay Evans",
                     AlbumId = 16,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 86,
@@ -1405,7 +1405,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Martha Cox",
                     AlbumId = 16,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 87,
@@ -1415,7 +1415,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Lucile Bolton",
                     AlbumId = 16,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 88,
@@ -1425,7 +1425,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sid",
                     AlbumId = 26,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 89,
@@ -1435,7 +1435,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Many",
                     AlbumId = 26,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 90,
@@ -1445,7 +1445,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Roshan",
                     AlbumId = 26,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 91,
@@ -1455,7 +1455,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Diego",
                     AlbumId = 26,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 92,
@@ -1465,7 +1465,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Scrat",
                     AlbumId = 26,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 93,
@@ -1475,7 +1475,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sid",
                     AlbumId = 27,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 94,
@@ -1485,7 +1485,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Many",
                     AlbumId = 27,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 95,
@@ -1495,7 +1495,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Roshan",
                     AlbumId = 27,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 96,
@@ -1505,7 +1505,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Diego",
                     AlbumId = 27,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 97,
@@ -1515,7 +1515,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Scrat",
                     AlbumId = 27,
-               },
+                },
                 new AlbumImagenes
                 {
                     //era hielo 3
@@ -1526,7 +1526,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Sid",
                     AlbumId = 28,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 99,
@@ -1536,7 +1536,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Many",
                     AlbumId = 28,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 100,
@@ -1546,7 +1546,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Roshan",
                     AlbumId = 28,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 101,
@@ -1556,7 +1556,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Diego",
                     AlbumId = 28,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 102,
@@ -1566,7 +1566,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Scrat",
                     AlbumId = 28,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 103,
@@ -1576,7 +1576,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Dra Grace",
                     AlbumId = 100,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 104,
@@ -1586,7 +1586,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Neyriti",
                     AlbumId = 100,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 105,
@@ -1596,7 +1596,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Jake Sully",
                     AlbumId = 100,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 106,
@@ -1606,7 +1606,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Tsutey",
                     AlbumId = 100,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 107,
@@ -1616,7 +1616,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Coronel Milles",
                     AlbumId = 100,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 108,
@@ -1626,7 +1626,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Dra Grace",
                     AlbumId = 101,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 109,
@@ -1636,7 +1636,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Neyriti",
                     AlbumId = 101,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 110,
@@ -1646,7 +1646,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Jake Sully",
                     AlbumId = 101,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 111,
@@ -1656,7 +1656,7 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Tsutey",
                     AlbumId = 101,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 112,
@@ -1666,557 +1666,509 @@ namespace G7Album.BaseDatos.Data
                     Imagen = " ",
                     Titulo = "Coronel Milles",
                     AlbumId = 101,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 113,
                     NumeroImagen = 136,
                     CodigoImagenOriginal = 154,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://tierragamer.com/wp-content/uploads/2019/06/Dragon-Ball-Pequeno-Goku.jpg",
                     Titulo = "Goku",
                     AlbumId = 63,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 114,
                     NumeroImagen = 137,
                     CodigoImagenOriginal = 155,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Vegeta",
+                    Imagen = "https://i.pinimg.com/originals/01/1f/32/011f32363d97557ee7eaa383a07c2f5a.jpg",
+                    Titulo = "Krilin",
                     AlbumId = 63,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 115,
                     NumeroImagen = 138,
                     CodigoImagenOriginal = 156,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Cell",
+                    Imagen = "https://www.geekmi.news/__export/1654699584752/sites/debate/img/2022/06/08/taopaipai.jpg_1339198940.jpg",
+                    Titulo = "Tao Pai Pai",
                     AlbumId = 63,
-               },
+                },
                  new AlbumImagenes
-                {
-                    Id = 116,
-                    NumeroImagen = 139,
-                    CodigoImagenOriginal = 157,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Picolo",
-                    AlbumId = 63,
-               },
+                 {
+                     Id = 116,
+                     NumeroImagen = 139,
+                     CodigoImagenOriginal = 157,
+                     CantidadImpresa = 1000,
+                     Imagen = "https://mir-s3-cdn-cf.behance.net/projects/404/11c0cc103711653.5f52b4b6a6dbd.png",
+                     Titulo = "Picolo",
+                     AlbumId = 63,
+                 },
                  new AlbumImagenes
-                {
-                    Id = 117,
-                    NumeroImagen = 140,
-                    CodigoImagenOriginal = 158,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Son Gohan",
-                    AlbumId = 63,
-               },
+                 {
+                     Id = 117,
+                     NumeroImagen = 140,
+                     CodigoImagenOriginal = 158,
+                     CantidadImpresa = 1000,
+                     Imagen = "https://pm1.narvii.com/6988/9052161534eeeec16bb57b2c7ab7441e25ce4dc5r1-720-404v2_hq.jpg",
+                     Titulo = "General Blue",
+                     AlbumId = 63,
+                 },
                 new AlbumImagenes
                 {
                     Id = 118,
                     NumeroImagen = 141,
                     CodigoImagenOriginal = 159,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Goku",
+                    Imagen = "https://www.fayerwayer.com/resizer/UAeNc2JHJP1xypVHNAVrMPqxEz4=/800x0/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/metroworldnews/VBRF4I3YM5G63AU637TTONVARE.jpg",
+                    Titulo = "Vegeta",
                     AlbumId = 64,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 1180,
                     NumeroImagen = 142,
                     CodigoImagenOriginal = 160,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Vegeta",
+                    Imagen = "https://e.rpp-noticias.io/xlarge/2019/10/09/015501_849974.jpg",
+                    Titulo = "Gohan",
                     AlbumId = 64,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 119,
                     NumeroImagen = 143,
                     CodigoImagenOriginal = 161,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://www.latercera.com/resizer/dFjofjUYrC3BacG8B3PGUYcgRnc=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/WVF74GVKZZAI5KZQQRW6OZ6QGI.jpg",
                     Titulo = "Cell",
                     AlbumId = 64,
-               },
+                },
                  new AlbumImagenes
-                {
-                    Id = 120,
-                    NumeroImagen = 144,
-                    CodigoImagenOriginal = 162,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Picolo",
-                    AlbumId = 64,
-               },
+                 {
+                     Id = 120,
+                     NumeroImagen = 144,
+                     CodigoImagenOriginal = 162,
+                     CantidadImpresa = 1000,
+                     Imagen = "https://i.pinimg.com/originals/26/d0/8b/26d08be0ab87326fc6ad26cc9bdb2ddf.png",
+                     Titulo = "Majin Boo",
+                     AlbumId = 64,
+                 },
                  new AlbumImagenes
-                {
-                    Id = 121,
-                    NumeroImagen = 145,
-                    CodigoImagenOriginal = 163,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Son Gohan",
-                    AlbumId = 64,
-               },
+                 {
+                     Id = 121,
+                     NumeroImagen = 145,
+                     CodigoImagenOriginal = 163,
+                     CantidadImpresa = 1000,
+                     Imagen = "https://i.pinimg.com/originals/4e/3e/b5/4e3eb5933953657a4d1ea95cee39f366.png",
+                     Titulo = "Darbura",
+                     AlbumId = 64,
+                 },
                 new AlbumImagenes
                 {
                     Id = 122,
                     NumeroImagen = 146,
                     CodigoImagenOriginal = 164,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Goku",
+                    Imagen = "http://pm1.narvii.com/6542/f434e2fb6efb78b182057696bbfef9760016dc5a_00.jpg",
+                    Titulo = "Bills",
                     AlbumId = 65,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 123,
                     NumeroImagen = 147,
                     CodigoImagenOriginal = 165,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Vegeta",
+                    Imagen = "https://depor.com/resizer/0FTdOejzzLcQZgm2s-GDC87wDU8=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/WDXFCIRCYNCHDCZ7F3FPT7K5V4.jpg",
+                    Titulo = "Wiss",
                     AlbumId = 65,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 124,
                     NumeroImagen = 148,
                     CodigoImagenOriginal = 166,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Cell",
+                    Imagen = "https://gcdn.lanetaneta.com/wp-content/uploads/2022/03/La-historia-de-fondo-de-Dragon-Ball-Super-de-Jiren-780x470.jpg",
+                    Titulo = "Jiren",
                     AlbumId = 65,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 125,
                     NumeroImagen = 149,
                     CodigoImagenOriginal = 167,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Picolo",
+                    Imagen = "https://depor.com/resizer/hY70NAtbG9xSjZW65ZDRrs7X_tU=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/XYRVWY753VGBZJA6FFXIAJBHF4.jpg",
+                    Titulo = "Topo",
                     AlbumId = 65,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 126,
                     NumeroImagen = 150,
                     CodigoImagenOriginal = 168,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Son Gohan",
+                    Imagen = "https://media.vandal.net/i/1440x1080/49072/dragon-ball-fighterz-2018927193257_3.jpg",
+                    Titulo = "Androide 17",
                     AlbumId = 65,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 127,
                     NumeroImagen = 151,
                     CodigoImagenOriginal = 169,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://i.blogs.es/bc1dd2/naruto/450_1000.png",
                     Titulo = "Naruto",
                     AlbumId = 96,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 128,
                     NumeroImagen = 152,
                     CodigoImagenOriginal = 170,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://i.pinimg.com/600x315/a6/1f/be/a61fbe0e9d11632d65dd09fa0bead32d.jpg",
                     Titulo = "Sasuke",
                     AlbumId = 96,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 129,
                     NumeroImagen = 153,
                     CodigoImagenOriginal = 171,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://www.egames.news/__export/1637434465357/sites/debate/img/2021/11/20/itachi-uchiha.jpg_423682103.jpg",
                     Titulo = "Itachi",
                     AlbumId = 96,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 130,
                     NumeroImagen = 154,
-                    CodigoImagenOriginal = 172 ,
+                    CodigoImagenOriginal = 172,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://w7.pngwing.com/pngs/130/591/png-transparent-sakura-haruno-kakashi-hatake-naruto-anime-sakura-fictional-character-cartoon-arm.png",
                     Titulo = "Sakura",
                     AlbumId = 96,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 131,
                     NumeroImagen = 155,
                     CodigoImagenOriginal = 173,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://www.lifeder.com/wp-content/uploads/2016/12/frases-de-Madara-Uchiha.jpg",
                     Titulo = "Madara",
                     AlbumId = 96,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 132,
                     NumeroImagen = 156,
                     CodigoImagenOriginal = 174,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Naruto",
+                    Imagen = "https://indiehoy.com/wp-content/uploads/2018/11/naruto.jpg",
+                    Titulo = "Jiraiya",
                     AlbumId = 70,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 133,
                     NumeroImagen = 157,
                     CodigoImagenOriginal = 175,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Sasuke",
+                    Imagen = "https://www.looper.com/img/gallery/untold-truth-of-obito-uchiha/l-intro-1663609851.jpg",
+                    Titulo = "Obito Uchiha",
                     AlbumId = 70,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 134,
                     NumeroImagen = 158,
                     CodigoImagenOriginal = 176,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Itachi",
+                    Imagen = "http://pm1.narvii.com/6807/cc8cd27924f9b644bf1a449ea5094c7869fbf60bv2_00.jpg",
+                    Titulo = "Hinata Hyūga",
                     AlbumId = 70,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 135,
                     NumeroImagen = 159,
                     CodigoImagenOriginal = 177,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Sakura",
+                    Imagen = "https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/07/shikamaru-serious-face.jpg",
+                    Titulo = "Shikamaru Nara",
                     AlbumId = 70,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 136,
                     NumeroImagen = 160,
                     CodigoImagenOriginal = 178,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Madara",
+                    Imagen = "https://pm1.narvii.com/6292/86499d2e3fd4b37f9c14709d4f899be025072251_hq.jpg",
+                    Titulo = "Sasori",
                     AlbumId = 70,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 137,
                     NumeroImagen = 161,
                     CodigoImagenOriginal = 179,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Naruto",
+                    Imagen = "http://pm1.narvii.com/6903/05259702594930914773e2c9bad84e3897de1d0er1-720-496v2_00.jpg",
+                    Titulo = "Boruto Uzumaki",
                     AlbumId = 71,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 138,
                     NumeroImagen = 162,
                     CodigoImagenOriginal = 180,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Sasuke",
+                    Imagen = "https://i.ytimg.com/vi/lCNj1tOMeSg/maxresdefault.jpg",
+                    Titulo = "Sarada Uchiha",
                     AlbumId = 71,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 139,
                     NumeroImagen = 163,
                     CodigoImagenOriginal = 181,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Itachi",
+                    Imagen = "http://pm1.narvii.com/6587/d7cd0f0324e819bcfb72eb49151eb11cc5f774da_00.jpg",
+                    Titulo = "Mitsuki",
                     AlbumId = 71,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 140,
                     NumeroImagen = 164,
                     CodigoImagenOriginal = 182,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Sakura",
+                    Imagen = "https://e7.pngegg.com/pngimages/858/176/png-clipart-inojin-yamanaka-ino-yamanaka-naruto-sarada-uchiha-sai-naruto-fictional-character-cartoon.png",
+                    Titulo = "Inojin Yamanaka",
                     AlbumId = 71,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 141,
                     NumeroImagen = 165,
                     CodigoImagenOriginal = 183,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Madara",
+                    Imagen = "https://animeargentina.net/wp-content/uploads/2022/09/shikadai-nara-boruto-1024x567.jpg",
+                    Titulo = "Shikadai Nara",
                     AlbumId = 71,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 142,
                     NumeroImagen = 166,
                     CodigoImagenOriginal = 184,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://w0.peakpx.com/wallpaper/188/670/HD-wallpaper-seiya-pegaso-seiya-thumbnail.jpg",
                     Titulo = "Seiya de Pegaso",
                     AlbumId = 80,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 143,
                     NumeroImagen = 167,
                     CodigoImagenOriginal = 185,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Seya de Geminis",
+                    Imagen = "https://i.ytimg.com/vi/ERU1RT0p4XI/maxresdefault.jpg",
+                    Titulo = "Seiya de Geminis",
                     AlbumId = 80,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 144,
                     NumeroImagen = 168,
                     CodigoImagenOriginal = 186,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://4.bp.blogspot.com/-Y8dZy1ueVNE/UkH7jm2pQ0I/AAAAAAAAECo/nGb9T-6d39Q/w1200-h630-p-k-no-nu/Athena-Saori+47.JPG",
                     Titulo = "Atenea",
                     AlbumId = 80,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 145,
                     NumeroImagen = 169,
                     CodigoImagenOriginal = 187,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Saka de Virgo",
+                    Imagen = "https://i.pinimg.com/originals/31/e9/9e/31e99e59c05f07d0cd4428c9713f4e26.jpg",
+                    Titulo = "Shaka de Virgo",
                     AlbumId = 80,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 146,
                     NumeroImagen = 170,
                     CodigoImagenOriginal = 188,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://i.pinimg.com/736x/01/3a/db/013adb562fba898abe5d2ec869e6e31d.jpg",
                     Titulo = "Mu de Aries",
                     AlbumId = 80,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 147,
                     NumeroImagen = 171,
                     CodigoImagenOriginal = 189,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Seiya de Pegaso",
+                    Imagen = "http://pm1.narvii.com/6293/87a989c9c38a945509db9d65522169977e3e5e30_00.jpg",
+                    Titulo = "Shun de Andromeda",
                     AlbumId = 81,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 148,
                     NumeroImagen = 172,
                     CodigoImagenOriginal = 190,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Seya de Geminis",
+                    Imagen = "http://pm1.narvii.com/6712/ec816326096d2fe230f28f0760c5be0802e8399f_00.jpg",
+                    Titulo = "Shura de Capricornio",
                     AlbumId = 81,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 149,
                     NumeroImagen = 173,
                     CodigoImagenOriginal = 191,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Atenea",
+                    Imagen = "https://w0.peakpx.com/wallpaper/553/97/HD-wallpaper-dragon-shiryu-dragon-shiryu.jpg",
+                    Titulo = "Shiryū de Dragón",
                     AlbumId = 81,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 150,
                     NumeroImagen = 174,
                     CodigoImagenOriginal = 192,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Saka de Virgo",
+                    Imagen = "http://pm1.narvii.com/6803/9d7b4a867dec204fa73dea3b81b37053230fdb94v2_00.jpg",
+                    Titulo = "Camus de Acuario",
                     AlbumId = 81,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 151,
                     NumeroImagen = 175,
                     CodigoImagenOriginal = 193,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Mu de Aries",
+                    Imagen = "http://pm1.narvii.com/6890/8c48ea5abaaad37c00a1a635b366553d2f33009br1-1280-1335v2_uhq.jpg",
+                    Titulo = "Shion de Aries",
                     AlbumId = 81,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 152,
                     NumeroImagen = 176,
                     CodigoImagenOriginal = 194,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Seiya de Pegaso",
+                    Imagen = "http://2.bp.blogspot.com/-du6bFdb47Xg/U-VQAgM3DVI/AAAAAAAAAs0/MvlEAOV6kHU/s1600/Siegfried+de+Dubhe+Alfa.JPG",
+                    Titulo = "Siegfried de Dubhe Alfa",
                     AlbumId = 82,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 153,
                     NumeroImagen = 177,
                     CodigoImagenOriginal = 194,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Seya de Geminis",
+                    Imagen = "http://pm1.narvii.com/6568/493d72b9815f1c67068f0b145128fbd7abc2ef78_00.jpg",
+                    Titulo = "Syd de Mizar Zeta",
                     AlbumId = 82,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 154,
                     NumeroImagen = 178,
                     CodigoImagenOriginal = 194,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Atenea",
+                    Imagen = "https://1.bp.blogspot.com/-EcqwLj7ds_M/TjXC8ySud9I/AAAAAAAAB-Y/7eKlYXKpEuo/s1600/Bud%2Bde%2BAlcor%2B14.JPG",
+                    Titulo = "Bud de Alcor Zeta",
                     AlbumId = 82,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 155,
                     NumeroImagen = 179,
                     CodigoImagenOriginal = 195,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Saka de Virgo",
+                    Imagen = "http://pm1.narvii.com/6943/0468c2b73ddcf1e183974f4f7ca9c6e5011fc215r1-500-625v2_00.jpg",
+                    Titulo = "Thor de Phecda Gamma",
                     AlbumId = 82,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 156,
                     NumeroImagen = 180,
                     CodigoImagenOriginal = 196,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Mu de Aries",
+                    Imagen = "http://1.bp.blogspot.com/-LVDyeco5Ob4/T7SlNpDoxFI/AAAAAAAAAqs/34-fPlEuEGM/s1600/1222475717580_f.jpg",
+                    Titulo = "Fenrir de Alioth Epsilon",
                     AlbumId = 82,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 157,
                     NumeroImagen = 181,
                     CodigoImagenOriginal = 197,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Calibos",
+                    Imagen = "http://1.bp.blogspot.com/-bnI3Btv9PZo/T7TI4m7QCDI/AAAAAAAAAro/3ZtVAZG-IoM/s1600/mime0.jpg",
+                    Titulo = "Mime de Benetnasch Eta",
                     AlbumId = 82,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 158,
                     NumeroImagen = 182,
                     CodigoImagenOriginal = 198,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Medusa",
+                    Imagen = "http://pm1.narvii.com/6482/f62e6851ea49e05180b1df59281f1c51a37379ef_00.jpg",
+                    Titulo = "Alberich de Megrez Delta",
                     AlbumId = 82,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 159,
                     NumeroImagen = 183,
                     CodigoImagenOriginal = 199,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Io",
+                    Imagen = "https://2.bp.blogspot.com/-wLMXGMh4VaQ/Tgod1AWZBPI/AAAAAAAABw8/9xDpIpNMWIE/s1600/Hagen%2Bde%2BMerak%2B%2528Beta%2529%2B21.JPG",
+                    Titulo = "Hagen de Merak Beta",
                     AlbumId = 82,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 160,
                     NumeroImagen = 184,
                     CodigoImagenOriginal = 200,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://i.pinimg.com/736x/5b/fa/40/5bfa4054ea0ec72fb6a79486403978cc.jpg",
                     Titulo = "Andromeda",
                     AlbumId = 82,
-               },
+                },
                 new AlbumImagenes
                 {
                     Id = 161,
                     NumeroImagen = 185,
                     CodigoImagenOriginal = 1001,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://i.pinimg.com/736x/8e/13/39/8e1339160a22b5c26a3e42dd859360b0.jpg",
                     Titulo = "Danae",
                     AlbumId = 82,
-               },
-                new AlbumImagenes
-                {
-                    Id = 162,
-                    NumeroImagen = 186,
-                    CodigoImagenOriginal = 102,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Calibos",
-                    AlbumId = 6,
-               },
-                new AlbumImagenes
-                {
-                    Id = 163,
-                    NumeroImagen = 187,
-                    CodigoImagenOriginal = 103,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Medusa",
-                    AlbumId = 82,
-               },
-                new AlbumImagenes
-                {
-                    Id = 164,
-                    NumeroImagen = 188,
-                    CodigoImagenOriginal = 104,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Io",
-                    AlbumId = 82,
-               },
-                new AlbumImagenes
-                {
-                    Id = 165,
-                    NumeroImagen = 189,
-                    CodigoImagenOriginal = 105,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Andromeda",
-                    AlbumId = 82,
-               },
-                new AlbumImagenes
-                {
-                    Id = 166,
-                    NumeroImagen = 189,
-                    CodigoImagenOriginal = 106,
-                    CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Danae",
-                    AlbumId = 82,
-               }
+                }
+
+
             );
 
             modelBuilder.Entity<AlbumImagenImpresa>().HasData(
