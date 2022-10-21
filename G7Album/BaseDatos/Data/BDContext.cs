@@ -123,7 +123,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 2,
-                    Imagen = ""
+                    Imagen = "https://play-lh.googleusercontent.com/Mbf1Mu_NyuJRewclw2Wa3ihxK-mtvxDL0Qmy8gJgjIXwc4zp31OsnGz_J7CFNdHMQD5w"
                 },
                 new Album
                 {
@@ -136,7 +136,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 2,
-                    Imagen = ""
+                    Imagen = "https://play-lh.googleusercontent.com/sa5ItfT36umDabIVwH5X6e-apBO_6lUmw2kCw0GH9-YumVaRQufkx_rP5a3zHWdsrfw"
                 },               
                 new Album
                 {
@@ -149,7 +149,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 2,
-                    Imagen = ""
+                    Imagen = "https://brandemia.org/sites/default/files/inline/images/us_open_logo.jpg"
                 },
             
                 new Album
@@ -202,7 +202,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 4,
-                    Imagen = ""
+                    Imagen = "https://searchvectorlogo.com/wp-content/uploads/2020/09/national-rugby-league-nrl-vector-logo.png"
                 },
                 new Album
                 {
@@ -215,7 +215,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 4,
-                    Imagen = ""
+                    Imagen = "https://upload.wikimedia.org/wikipedia/en/a/a5/Super_League_logo_2017.jpg"
                 },
                 new Album
                 {
@@ -228,7 +228,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 4,
-                    Imagen = ""
+                    Imagen = "https://www.prensa-latina.cu/wp-content/uploads/2022/08/Rugby-Championship-2022.jpg"
                 },
                
                 new Album
@@ -359,8 +359,8 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 6,
-                    Imagen = ""
-                },
+                    Imagen = "https://img2.rtve.es/i/?w=1600&i=1657019155649.jpg"
+                 },
                 new Album
                 {
                     Id = 64,
@@ -372,7 +372,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 6,
-                    Imagen = ""
+                    Imagen = "https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2022/09/dragon-ball-z-crunchyroll.jpg?fit=1280%2C720&quality=80&ssl=1"
                 },
                 new Album
                 {
@@ -385,7 +385,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 6,
-                    Imagen = ""
+                    Imagen = "https://depor.com/resizer/6Gmj2BD2B09Yug9skT5G_37oBgg=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/B35WNLM7UJGIJNOWQFDO3UPY34.jpg"
                 },
                  new Album
                 {
@@ -398,8 +398,8 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 6,
-                    Imagen = ""
-                },
+                    Imagen = "https://i.pinimg.com/originals/3f/0d/1a/3f0d1afe64a74343c0f173faec9df8e0.jpg"
+                 },
                 new Album
                 {
                     Id = 70,
@@ -411,7 +411,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 6,
-                    Imagen = ""
+                    Imagen = "https://es.web.img3.acsta.net/pictures/13/12/13/09/11/515425.jpg"
                 },
                 new Album
                 {
@@ -424,7 +424,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 6,
-                    Imagen = ""
+                    Imagen = "https://img1.ak.crunchyroll.com/i/spire4/7dde3a40ce5d5615813a5ac12683631a1616450115_full.jpg"
                 },
                 new Album
                 {
@@ -437,7 +437,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 6,
-                    Imagen = ""
+                    Imagen = "https://larepublica.pe/resizer/e0pacYSNg1Mt_pZBIbVHe65wXHw=/1200x660/top/arc-anglerfish-arc2-prod-gruporepublica.s3.amazonaws.com/public/ATQBEGGFCRDSHAONTOR7O2VCNM.jpg"
                 },
                 new Album
                 {
@@ -450,7 +450,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 6,
-                    Imagen = ""
+                    Imagen = "https://i.ytimg.com/vi/p2POuLSrWms/maxresdefault.jpg"
                 },
                 new Album
                 {
@@ -463,7 +463,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 6,
-                    Imagen = ""
+                    Imagen = "https://i.ytimg.com/vi/vsGd6A-CrbY/maxresdefault.jpg"
                 }
             );
 
@@ -671,7 +671,7 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 31,
                     CodigoImagenOriginal = 48,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://www.atptour.com/-/media/tennis/players/head-shot/2022/05/25/15/47/nadal-head-2022-may.png",
                     Titulo = "Nadal Rafael",
                     AlbumId = 4,
                 },
@@ -681,7 +681,7 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 32,
                     CodigoImagenOriginal = 49,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://www.mdzol.com/u/fotografias/m/2022/9/15/f608x342-1282478_1312201_10.jpg",
                     Titulo = "Federer Roger",
                     AlbumId = 4,
                 },
@@ -691,8 +691,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 33,
                     CodigoImagenOriginal = 50,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Murray",
+                    Imagen = "https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg):focal(1313x574:1315x572)/origin-imgresizer.eurosport.com/2021/06/28/3163279-64821308-2560-1440.jpg",
+                    Titulo = "Andy Murray",
                     AlbumId = 4,
                 },
                 new AlbumImagenes
@@ -701,8 +701,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 34,
                     CodigoImagenOriginal = 51,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Del Potro",
+                    Imagen = "https://www.atptour.com/-/media/tennis/players/head-shot/2019/05/13/18/27/delpotro_head_rome19.png",
+                    Titulo = "Juan Martin Del Potro",
                     AlbumId = 4,
                 },
                 new AlbumImagenes
@@ -711,8 +711,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 35,
                     CodigoImagenOriginal = 52,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "David Nalvandian",
+                    Imagen = "https://resizer.iproimg.com/unsafe/880x/filters:format(webp)/https://assets.iproup.com/assets/jpg/2021/11/23871.jpg",
+                    Titulo = "David Nalbandian",
                     AlbumId = 5,
                 },
                 new AlbumImagenes
@@ -721,7 +721,7 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 36,
                     CodigoImagenOriginal = 53,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://www.atptour.com/-/media/tennis/players/head-shot/2019/02/25/18/18/djokovic_head_ao19.png",
                     Titulo = "Novak Djovich",
                     AlbumId = 5,
                 },
@@ -731,8 +731,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 37,
                     CodigoImagenOriginal = 54,
                     CantidadImpresa = 1000,
-                    Imagen= " ",
-                    Titulo = "Nadal Rafael",
+                    Imagen= "https://www.atptour.com/-/media/tennis/players/gladiator/2022/05/18/21/10/tsitsipas-full-2022-may.png",
+                    Titulo = "Stefanos Tsitsipas",
                     AlbumId = 5,
                 },
                 new AlbumImagenes
@@ -741,8 +741,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 37,
                     CodigoImagenOriginal = 55,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Federer Roger",
+                    Imagen = "https://www.atptour.com/-/media/alias/player-headshot/MM58",
+                    Titulo = "Danil Medvedev",
                     AlbumId = 5,
                 },
                 new AlbumImagenes
@@ -751,8 +751,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 38,
                     CodigoImagenOriginal = 56,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Murray",
+                    Imagen = "https://www.atptour.com/-/media/alias/player-headshot/Z355",
+                    Titulo = "Alexander Zverev",
                     AlbumId = 5,
                 },
                 new AlbumImagenes
@@ -761,8 +761,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 39,
                     CodigoImagenOriginal = 57,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Del Potro",
+                    Imagen = "https://www.atptour.com/-/media/tennis/players/gladiator/2022/06/18/22/21/fognini-full-2022-june-1.png",
+                    Titulo = "Fabio Fognini",
                     AlbumId = 5,
                 },
                 new AlbumImagenes
@@ -771,8 +771,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 40,
                     CodigoImagenOriginal = 58,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "David Nalvandian",
+                    Imagen = "https://www.atptour.com/-/media/images/news/2022/10/01/11/07/ruud-tokyo-2022-draw.jpg",
+                    Titulo = "Casper Ruud",
                     AlbumId = 5,
                 },
                 new AlbumImagenes
@@ -781,8 +781,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 41,
                     CodigoImagenOriginal = 59,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Novak Djokovich",
+                    Imagen = "https://www.atptour.com/-/media/tennis/players/gladiator/2022/06/18/23/00/fritz-full-2022-june-1.png",
+                    Titulo = "Taylor Fritz",
                     AlbumId = 5,
                 },
                 new AlbumImagenes
@@ -791,8 +791,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 42,
                     CodigoImagenOriginal = 60,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Nadal Rafael",
+                    Imagen = "https://www.atptour.com/-/media/tennis/players/gladiator/2022/06/16/03/16/tiafoe-full-2022-june.png",
+                    Titulo = "Frances Tiafoe",
                     AlbumId = 6,
                 },
                 new AlbumImagenes
@@ -801,8 +801,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 43,
                     CodigoImagenOriginal = 61,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Federer Roger",
+                    Imagen = "https://fotos.perfil.com/2022/01/31/trim/720/410/schwartzman-1306189.jpg",
+                    Titulo = "Diego Schwartzman",
                     AlbumId = 6,
                 },
                 new AlbumImagenes
@@ -811,8 +811,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 44,
                     CodigoImagenOriginal = 62,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Murray",
+                    Imagen = "https://www.atptour.com/-/media/alias/player-headshot/BK40",
+                    Titulo = "Matteo Berretini",
                     AlbumId = 6,
                 },
                 new AlbumImagenes
@@ -821,8 +821,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 45,
                     CodigoImagenOriginal = 63,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Del Potro",
+                    Imagen = "https://www.atptour.com/-/media/tennis/players/gladiator/2022/05/25/15/17/baez-full-2022-may.png",
+                    Titulo = "Sebastian Baez",
                     AlbumId = 6,
                 },
                 new AlbumImagenes
@@ -831,8 +831,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 46,
                     CodigoImagenOriginal = 64,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "David Nalvandian",
+                    Imagen = "https://www.atptour.com/-/media/tennis/players/head-shot/2022/05/25/15/45/auger-aliassime-head-2022-may.png",
+                    Titulo = "Felix Auger-Aliassime",
                     AlbumId = 6,
                 },
                 new AlbumImagenes
@@ -841,8 +841,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 47,
                     CodigoImagenOriginal = 65,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Novak Djokovich",
+                    Imagen = "https://www.atptour.com/es/players/john-isner/i186/www.atptour.com/-/media/tennis/players/head-shot/2022/05/25/15/38/isner-head-2022-may.png",
+                    Titulo = "John Isner",
                     AlbumId = 6,
                 },
                 
@@ -972,7 +972,7 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 66,
                     CodigoImagenOriginal = 84,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://www.lavoz.com.ar/resizer/9fLRQKRS9-FVN2RZHhyjb4l_thI=/1024x683/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/RL7CQYI2W5CPNNXEXDSOIRPCII.jpg",
                     Titulo = "Matias Alemano",
                     AlbumId = 10,
                 },
@@ -982,7 +982,7 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 67,
                     CodigoImagenOriginal = 85,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVBi6OujLCFBCmpgMvMZQE6f9zLelwg1mEYPZs_Rt2tl0xszSijQdHiwhK4YtvWWlv08Q&usqp=CAU",
                     Titulo = "Julian Cruz Mallia",
                     AlbumId = 10,
                 },
@@ -992,7 +992,7 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 68,
                     CodigoImagenOriginal = 86,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://deporfe.com/wp-content/uploads/2022/05/cubelli.jpg",
                     Titulo = "Tomas Cubeli",
                     AlbumId = 10,
                 },
@@ -1002,7 +1002,7 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 69,
                     CodigoImagenOriginal = 87,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://sites.google.com/site/vidapuma/_/rsrc/1318771820838/jugadores/felipe-contepomi/J-12-Contepomi_%20Felipe.jpg",
                     Titulo = "Felipe Contemponi",
                     AlbumId = 10,
                 },
@@ -1012,7 +1012,7 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 70,
                     CodigoImagenOriginal = 88,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
+                    Imagen = "https://a.espncdn.com/photo/2021/0528/r860181_2_1024x576_16-9.jpg",
                     Titulo = "Julian Montoya",
                     AlbumId = 10,
                 },
@@ -1022,8 +1022,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 71,
                     CodigoImagenOriginal = 89,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Matias Alemano",
+                    Imagen = "https://cordobaxv.com.ar/wp-content/uploads/2020/07/2BZUZGQLGBHSPCRYIDF7POGUWY.jpg",
+                    Titulo = "Beauden Barrett",
                     AlbumId = 10,
                 },
                 new AlbumImagenes
@@ -1032,8 +1032,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 72,
                     CodigoImagenOriginal = 90,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Julian Cruz Mallia",
+                    Imagen = "https://www.allblacks.com/assets/Uploads/SW-copy__FocusFillWyIwLjAwIiwiMC4wMCIsMzUwLDQ2MF0.png",
+                    Titulo = "Sam Whitelock",
                     AlbumId = 10,
                },
                 new AlbumImagenes
@@ -1042,8 +1042,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 73,
                     CodigoImagenOriginal = 91,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Tomas Cubelli",
+                    Imagen = "https://cordobaxv.com.ar/wp-content/uploads/2021/12/Sam-Cane-contratro-allblacks-2025.jpg",
+                    Titulo = "San Cane",
                     AlbumId = 10,
                },
                 new AlbumImagenes
@@ -1052,8 +1052,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 74,
                     CodigoImagenOriginal = 92,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Felipe Contemponi",
+                    Imagen = "https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2015/10/30/14462260859727.jpg",
+                    Titulo = "David Pocock",
                     AlbumId = 11,
                },
                 new AlbumImagenes
@@ -1062,8 +1062,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 75,
                     CodigoImagenOriginal = 93,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Julian Montoya",
+                    Imagen = "https://a.espncdn.com/photo/2022/0805/r1044928_1296x729_16-9.jpg",
+                    Titulo = "Michael Hooper",
                     AlbumId = 11,
                },
                 new AlbumImagenes
@@ -1072,8 +1072,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 76,
                     CodigoImagenOriginal = 94,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Matias Alemano",
+                    Imagen = "https://d3gbf3ykm8gp5c.cloudfront.net/content/uploads/2022/02/18081522/Jake-Gordon-Waratahs-Super-Rugby-TT-2021-PA.jpg",
+                    Titulo = "Jake Gordon",
                     AlbumId = 11,
                },
                 new AlbumImagenes
@@ -1082,8 +1082,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 77,
                     CodigoImagenOriginal = 95,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Julian Cruz Mallia",
+                    Imagen = "https://s.libertaddigital.com/fotos/noticias/sebastien-chabal-050514.jpg",
+                    Titulo = "Sebastian Chabal",
                     AlbumId = 11,
                },
                 new AlbumImagenes
@@ -1092,8 +1092,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 78,
                     CodigoImagenOriginal = 96,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Tomas Cubelli",
+                    Imagen = "https://www.lequipe.fr/_medias/img-photo-jpg/atonio-a-ete-condamne-a-six-mois-de-prison-avec-sursis-r-perrocheau-l-equipe/1500000001048599/168:174,1656:1166-828-552-75/c1350.jpg",
+                    Titulo = "Uini Atonio",
                     AlbumId = 11,
                 },
                 new AlbumImagenes
@@ -1102,8 +1102,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 79,
                     CodigoImagenOriginal = 97,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Felipe Contemponi",
+                    Imagen = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiFcdujAoFWYVHreXcZehSiNpkZ8qyDb9BSg&usqp=CAU",
+                    Titulo = "Atsushi Sakate",
                     AlbumId = 12,
                 },
                 new AlbumImagenes
@@ -1112,8 +1112,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 80,
                     CodigoImagenOriginal = 98,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Julian Montoya",
+                    Imagen = "https://www.ultimaterugby.com/images/entities/231381-a666c147e2-11/KenkiFukuokarugbyplayer.jpg",
+                    Titulo = "Kenki Fukuoka",
                     AlbumId = 12,
                },
                 new AlbumImagenes
@@ -1122,8 +1122,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 81,
                     CodigoImagenOriginal = 99,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Matias Alemano",
+                    Imagen = "https://d3gbf3ykm8gp5c.cloudfront.net/content/uploads/2019/10/05130704/Yu-Tamura-Japan-RWC-2019-PA.jpg",
+                    Titulo = "Yu Tamura",
                     AlbumId = 12,
                },
                 new AlbumImagenes
@@ -1132,8 +1132,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 82,
                     CodigoImagenOriginal = 100,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Julian Cruz Mallia",
+                    Imagen = "https://d3gbf3ykm8gp5c.cloudfront.net/content/uploads/2020/07/15094835/Johnny-Williams-Newcastle-Falcons-training-2020-PA.jpg",
+                    Titulo = "Johnny Williams",
                     AlbumId = 12,
                },
                 new AlbumImagenes
@@ -1142,8 +1142,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 83,
                     CodigoImagenOriginal = 101,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Tomas Cubelli",
+                    Imagen = "https://d3gbf3ykm8gp5c.cloudfront.net/content/uploads/2021/10/26123449/Wales-centre-Jonathan-Davies-looking-back-PA-1024x630.jpg",
+                    Titulo = "Jonathan Davies",
                     AlbumId = 12,
                },
                 new AlbumImagenes
@@ -1152,8 +1152,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 84,
                     CodigoImagenOriginal = 102,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Felipe Contemponi",
+                    Imagen = "https://d3gbf3ykm8gp5c.cloudfront.net/content/uploads/2020/09/17162439/Dan-Biggar-for-Wales-v-England-PA.jpg",
+                    Titulo = "Dan Biggar",
                     AlbumId = 12,
                },
                 new AlbumImagenes
@@ -1162,8 +1162,8 @@ namespace G7Album.BaseDatos.Data
                     NumeroImagen = 85,
                     CodigoImagenOriginal = 103,
                     CantidadImpresa = 1000,
-                    Imagen = " ",
-                    Titulo = "Matias Alemano",
+                    Imagen = "https://i.ytimg.com/vi/O6IPRouzvU0/hqdefault.jpg",
+                    Titulo = "Joaquin Prada Centro",
                     AlbumId = 12,
                },
                 new AlbumImagenes
