@@ -83,7 +83,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 1,
-                    Imagen = ""
+                    Imagen = "https://www.elcomercio.com/wp-content/uploads/2022/10/Liber-COnme-700x391.jpg"
                 },
                 new Album
                 {
@@ -96,7 +96,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 1,
-                    Imagen = ""
+                    Imagen = "https://a.espncdn.com/photo/2021/0913/r908628_1296x729_16-9.jpg"
                 },
                 new Album
                 {
@@ -109,21 +109,21 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 1,
-                    Imagen = ""
+                    Imagen = "https://auf.org.uy/imagenes/img_contenido/contenido/c/copa-america_5.jpg"
                 },
 
                 new Album
                 {
                     Id = 4,
                     CodigoAlbum = 4,
-                    Titulo = "Winledom",
+                    Titulo = "Wimledom",
                     Descripcion = "figus",
                     CantidadImagen = 1000,
                     CantidadImpreso = 1000,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 2,
-                    Imagen = "https://play-lh.googleusercontent.com/Mbf1Mu_NyuJRewclw2Wa3ihxK-mtvxDL0Qmy8gJgjIXwc4zp31OsnGz_J7CFNdHMQD5w"
+                    Imagen = "https://image.shutterstock.com/image-photo/london-uk-april-2022-close-260nw-2165550065.jpg"
                 },
                 new Album
                 {
@@ -136,7 +136,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 2,
-                    Imagen = "https://play-lh.googleusercontent.com/sa5ItfT36umDabIVwH5X6e-apBO_6lUmw2kCw0GH9-YumVaRQufkx_rP5a3zHWdsrfw"
+                    Imagen = "https://espnpressroom.com/mexico/files/2018/05/Roland-Garros.png"
                 },               
                 new Album
                 {
@@ -163,8 +163,8 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 3,
-                    Imagen = ""
-               },
+                    Imagen = "https://www.unocontraunoweb.com/wp-content/uploads/2021/01/acb-logo-2019.jpg"
+                },
                 new Album
                 {
                     Id = 8,
@@ -176,8 +176,8 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 3,
-                    Imagen = ""
-               },
+                    Imagen = "https://a4.espncdn.com/combiner/i?img=%2Fi%2Fespn%2Fmisc_logos%2F500%2Fnba.png"
+                },
                 new Album
                 {
                     Id = 9,
@@ -189,7 +189,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 3,
-                    Imagen = ""
+                    Imagen = "https://pbs.twimg.com/profile_images/1537068349385068544/OSkcZWlP_400x400.jpg"
                 },
                 new Album
                 {
@@ -242,7 +242,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5,
-                    Imagen = ""
+                    Imagen = "https://cdn1.eldia.com/112021/1635837451953.jpg"
                 },
                 new Album
                 {
@@ -255,7 +255,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5,
-                    Imagen = ""
+                    Imagen = "https://ichef.bbci.co.uk/images/ic/1200x675/p0915n36.jpg"
                 },
                 new Album
                 {
@@ -268,7 +268,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5,
-                    Imagen = ""
+                    Imagen = "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/16E670238DC278CF1FC15F794914B0371708F078C210E01443353314452473E9/scale?width=1200&aspectRatio=1.78&format=jpeg"
                 },
                 new Album
                 {
@@ -281,7 +281,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5,
-                    Imagen = ""
+                    Imagen = "https://pics.filmaffinity.com/High_School_Musical_2_TV-318249736-mmed.jpg"
                 },
                 new Album
                 {
@@ -294,7 +294,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5,
-                    Imagen = ""
+                    Imagen = "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/050E5D6C2B62066D3397CD0855B4274A9728186CEE39451C68FAA17A1D8EBB98/scale?width=1200&aspectRatio=1.78&format=jpeg"
                 },
                 new Album
                 {
@@ -307,7 +307,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5,
-                    Imagen = ""
+                    Imagen = "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/2BDBC39CA1B941A0C4360565C67E8EDB97E2D0904DF11737583ED61E80C7CC07/scale?width=1200&aspectRatio=1.78&format=jpeg"
                 },
                 new Album
                 {
@@ -320,7 +320,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5,
-                    Imagen = ""
+                    Imagen = "https://mx.web.img3.acsta.net/c_310_420/pictures/20/10/21/20/18/4455162.jpg"
                 },
                 new Album
                 {
@@ -333,7 +333,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5,
-                    Imagen = ""
+                    Imagen = "https://as01.epimg.net/meristation/imagenes/2022/09/30/reportajes/1664534991_626157_1664615989_noticia_normal.jpg"
                 },
                 new Album
                 {
@@ -346,7 +346,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 5,
-                    Imagen = ""
+                    Imagen = "https://i.blogs.es/884d13/avatar-2/840_560.jpeg"
                 },
                  new Album
                 {
@@ -372,7 +372,7 @@ namespace G7Album.BaseDatos.Data
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10),
                     ColeccionAlbumId = 6,
-                    Imagen = "https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2022/09/dragon-ball-z-crunchyroll.jpg?fit=1280%2C720&quality=80&ssl=1"
+                    Imagen = "https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/36bdc5ea4443cd8e42f22ec7d3884cbb.jpeg"
                 },
                 new Album
                 {
