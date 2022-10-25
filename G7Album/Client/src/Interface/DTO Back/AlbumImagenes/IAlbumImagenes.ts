@@ -4,7 +4,7 @@ export interface IAlbumImagenesData extends IComunId {
     albumId: number;
     cantidadImpresa: number;
     codigoImagenOriginal: number;
-    imagen: String;
+    imagen: string;
     numeroImagen: number;
-    titulo: String;
+    titulo: string;
 }

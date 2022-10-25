@@ -11,4 +11,5 @@ export interface IAlbumData extends IComunId {
     hasta: Date;
     listadoImagenes: IAlbumImagenesData[];
     titulo: string;
+    imagen: string;
 }
