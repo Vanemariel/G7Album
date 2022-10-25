@@ -126,7 +126,7 @@ export const Album: React.FC = () => {
                                                 <div className={`albumItem__details`}>  
 
                                                     <h3>{album.titulo}</h3>
-                
+                                                    <img src={album.imagen} alt="" />
                                                     <button className="btnAlbumComprar" type='submit' onClick={() => buyAlbum(album.id)}>Comprar</button>
                                                 </div>
                                             </article>
