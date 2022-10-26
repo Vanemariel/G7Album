@@ -9,7 +9,7 @@ const AlbumService = {
 
     GetAllColeccionAlbumes: async (page: number): Promise<IResponseDTO<IPagination<IColeccionData[]>>> => {
         
-        const Response: IResponseDTO<IPagination<IColeccionData[]>> = await axiosMethod<IPagination<IColeccionData[]>>({
+        const Response = await axiosMethod<IPagination<IColeccionData[]>>({
             method: "GET",
             url: `/ColeccionAlbum/GetAllPage/${page}`
         });
