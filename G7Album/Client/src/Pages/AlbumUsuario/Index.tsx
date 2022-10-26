@@ -105,7 +105,7 @@ export const AlbumUsuario: React.FC = () => {
                                         <div className={`albumItem__details`}>
 
                                             <h3>{myAlbum.album.titulo}</h3>
-
+                                            <img src={myAlbum.album.imagen} alt="" />
                                         </div>
                                     </article>
                                 ))

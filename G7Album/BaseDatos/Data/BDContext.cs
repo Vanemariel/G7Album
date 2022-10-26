@@ -89,7 +89,7 @@ namespace G7Album.BaseDatos.Data
                 {
                     Id = 2,
                     CodigoAlbum = 2,
-                    Titulo = "Champions Lague",
+                    Titulo = "Champions League",
                     Descripcion = "figus",
                     CantidadImagen = 1000,
                     CantidadImpreso = 1000,
@@ -116,7 +116,7 @@ namespace G7Album.BaseDatos.Data
                 {
                     Id = 4,
                     CodigoAlbum = 4,
-                    Titulo = "Wimledom",
+                    Titulo = "Wimbledon",
                     Descripcion = "figus",
                     CantidadImagen = 1000,
                     CantidadImpreso = 1000,

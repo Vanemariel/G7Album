@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace G7Album.BaseDatos.Migrations
 {
     [DbContext(typeof(BDContext))]
-    [Migration("20221025233148_inio")]
-    partial class inio
+    [Migration("20221026233034_inicio")]
+    partial class inicio
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -82,8 +82,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 1,
                             ColeccionAlbumId = 1,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(896),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(905),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4268),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4278),
                             Imagen = "https://www.elcomercio.com/wp-content/uploads/2022/10/Liber-COnme-700x391.jpg",
                             Titulo = "Copa Libertadores"
                         },
@@ -95,8 +95,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 2,
                             ColeccionAlbumId = 1,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(912),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(913),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4284),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4284),
                             Imagen = "https://a.espncdn.com/photo/2021/0913/r908628_1296x729_16-9.jpg",
                             Titulo = "Champions Lague"
                         },
@@ -108,8 +108,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 3,
                             ColeccionAlbumId = 1,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(914),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(915),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4285),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4286),
                             Imagen = "https://auf.org.uy/imagenes/img_contenido/contenido/c/copa-america_5.jpg",
                             Titulo = "Copa America"
                         },
@@ -121,8 +121,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 4,
                             ColeccionAlbumId = 2,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(917),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(917),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4287),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4288),
                             Imagen = "https://image.shutterstock.com/image-photo/london-uk-april-2022-close-260nw-2165550065.jpg",
                             Titulo = "Wimledom"
                         },
@@ -134,8 +134,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 5,
                             ColeccionAlbumId = 2,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(919),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(920),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4289),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4290),
                             Imagen = "https://espnpressroom.com/mexico/files/2018/05/Roland-Garros.png",
                             Titulo = "Rollan Garros"
                         },
@@ -147,8 +147,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 6,
                             ColeccionAlbumId = 2,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(922),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(922),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4291),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4291),
                             Imagen = "https://brandemia.org/sites/default/files/inline/images/us_open_logo.jpg",
                             Titulo = "Us Open"
                         },
@@ -160,8 +160,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 7,
                             ColeccionAlbumId = 3,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(924),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(925),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4293),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4293),
                             Imagen = "https://www.unocontraunoweb.com/wp-content/uploads/2021/01/acb-logo-2019.jpg",
                             Titulo = "Liga Endesa"
                         },
@@ -173,8 +173,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 8,
                             ColeccionAlbumId = 3,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(926),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(927),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4295),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4295),
                             Imagen = "https://a4.espncdn.com/combiner/i?img=%2Fi%2Fespn%2Fmisc_logos%2F500%2Fnba.png",
                             Titulo = "NBA"
                         },
@@ -186,8 +186,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 9,
                             ColeccionAlbumId = 3,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(929),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(929),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4296),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4297),
                             Imagen = "https://pbs.twimg.com/profile_images/1537068349385068544/OSkcZWlP_400x400.jpg",
                             Titulo = "La Liga Argentina"
                         },
@@ -199,8 +199,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 10,
                             ColeccionAlbumId = 4,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(931),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(932),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4298),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4299),
                             Imagen = "https://searchvectorlogo.com/wp-content/uploads/2020/09/national-rugby-league-nrl-vector-logo.png",
                             Titulo = "National Rugby League"
                         },
@@ -212,8 +212,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 11,
                             ColeccionAlbumId = 4,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(934),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(934),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4300),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4300),
                             Imagen = "https://upload.wikimedia.org/wikipedia/en/a/a5/Super_League_logo_2017.jpg",
                             Titulo = "Super League"
                         },
@@ -225,8 +225,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 12,
                             ColeccionAlbumId = 4,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(936),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(937),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4302),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4302),
                             Imagen = "https://www.prensa-latina.cu/wp-content/uploads/2022/08/Rugby-Championship-2022.jpg",
                             Titulo = "The Rugby Championship"
                         },
@@ -238,8 +238,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 100,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(938),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(939),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4304),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4304),
                             Imagen = "https://cdn1.eldia.com/112021/1635837451953.jpg",
                             Titulo = "Monster Inc"
                         },
@@ -251,8 +251,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 101,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(941),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(941),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4306),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4307),
                             Imagen = "https://ichef.bbci.co.uk/images/ic/1200x675/p0915n36.jpg",
                             Titulo = "Monster University"
                         },
@@ -264,8 +264,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 102,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(943),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(944),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4308),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4308),
                             Imagen = "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/16E670238DC278CF1FC15F794914B0371708F078C210E01443353314452473E9/scale?width=1200&aspectRatio=1.78&format=jpeg",
                             Titulo = "High school Musical"
                         },
@@ -277,8 +277,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 104,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(945),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(946),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4310),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4310),
                             Imagen = "https://pics.filmaffinity.com/High_School_Musical_2_TV-318249736-mmed.jpg",
                             Titulo = "High school Musical 2"
                         },
@@ -290,8 +290,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 105,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(948),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(948),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4312),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4312),
                             Imagen = "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/050E5D6C2B62066D3397CD0855B4274A9728186CEE39451C68FAA17A1D8EBB98/scale?width=1200&aspectRatio=1.78&format=jpeg",
                             Titulo = "La era del hielo 1"
                         },
@@ -303,8 +303,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 106,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(950),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(950),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4313),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4314),
                             Imagen = "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/2BDBC39CA1B941A0C4360565C67E8EDB97E2D0904DF11737583ED61E80C7CC07/scale?width=1200&aspectRatio=1.78&format=jpeg",
                             Titulo = "La era del hielo 2"
                         },
@@ -316,8 +316,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 107,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(952),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(953),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4315),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4316),
                             Imagen = "https://mx.web.img3.acsta.net/c_310_420/pictures/20/10/21/20/18/4455162.jpg",
                             Titulo = "La era del hielo 3"
                         },
@@ -329,8 +329,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 107,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(954),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(955),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4317),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4317),
                             Imagen = "https://as01.epimg.net/meristation/imagenes/2022/09/30/reportajes/1664534991_626157_1664615989_noticia_normal.jpg",
                             Titulo = "Avatar"
                         },
@@ -342,8 +342,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 107,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(957),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(957),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4319),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4319),
                             Imagen = "https://i.blogs.es/884d13/avatar-2/840_560.jpeg",
                             Titulo = "Avatar 2"
                         },
@@ -355,8 +355,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 1,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(959),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(960),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4320),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4321),
                             Imagen = "https://img2.rtve.es/i/?w=1600&i=1657019155649.jpg",
                             Titulo = "Dragonball"
                         },
@@ -368,8 +368,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 2,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(961),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(962),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4322),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4323),
                             Imagen = "https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/36bdc5ea4443cd8e42f22ec7d3884cbb.jpeg",
                             Titulo = "Dragonball Z"
                         },
@@ -381,8 +381,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 3,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(964),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(964),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4324),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4325),
                             Imagen = "https://depor.com/resizer/6Gmj2BD2B09Yug9skT5G_37oBgg=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/B35WNLM7UJGIJNOWQFDO3UPY34.jpg",
                             Titulo = "Dragonball Super"
                         },
@@ -394,8 +394,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 4,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(966),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(967),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4326),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4326),
                             Imagen = "https://i.pinimg.com/originals/3f/0d/1a/3f0d1afe64a74343c0f173faec9df8e0.jpg",
                             Titulo = "Naruto"
                         },
@@ -407,8 +407,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 5,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(969),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(969),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4328),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4328),
                             Imagen = "https://es.web.img3.acsta.net/pictures/13/12/13/09/11/515425.jpg",
                             Titulo = "Naruto Shippuden"
                         },
@@ -420,8 +420,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 6,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(971),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(971),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4330),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4330),
                             Imagen = "https://img1.ak.crunchyroll.com/i/spire4/7dde3a40ce5d5615813a5ac12683631a1616450115_full.jpg",
                             Titulo = "Naruto Next Generation"
                         },
@@ -433,8 +433,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 7,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(973),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(974),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4331),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4332),
                             Imagen = "https://larepublica.pe/resizer/e0pacYSNg1Mt_pZBIbVHe65wXHw=/1200x660/top/arc-anglerfish-arc2-prod-gruporepublica.s3.amazonaws.com/public/ATQBEGGFCRDSHAONTOR7O2VCNM.jpg",
                             Titulo = "Saint Seiya the Lost Canvas"
                         },
@@ -446,8 +446,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 8,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(976),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(976),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4333),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4334),
                             Imagen = "https://i.ytimg.com/vi/p2POuLSrWms/maxresdefault.jpg",
                             Titulo = "Batalla de Poseidon"
                         },
@@ -459,8 +459,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 9,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 25, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(978),
-                            Hasta = new DateTime(2022, 11, 4, 20, 31, 48, 548, DateTimeKind.Local).AddTicks(979),
+                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4335),
+                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4335),
                             Imagen = "https://i.ytimg.com/vi/vsGd6A-CrbY/maxresdefault.jpg",
                             Titulo = "Batalla de Asgard"
                         });
@@ -521,7 +521,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 1,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 32,
-                            Imagen = " ",
+                            Imagen = "https://upload.wikimedia.org/wikipedia/commons/4/4e/Uni%C3%B3n_Espa%C3%B1ola_-_Curic%C3%B3_Unido%2C_2018-09-30_-_Daniel_Franco_-_02.jpg",
                             NumeroImagen = 201,
                             Titulo = "Franco Daniel"
                         },
@@ -531,7 +531,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 1,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 33,
-                            Imagen = "si",
+                            Imagen = "https://resizer.glanacion.com/resizer/dRtGyNR9KJ5Zr0BtIjvpdV8J5uU=/1200x800/smart/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/CCXOIDZHQRG6PP2JQ2LVCQHOFU.jpg",
                             NumeroImagen = 202,
                             Titulo = "Guido Herrera"
                         },
@@ -541,7 +541,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 1,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 34,
-                            Imagen = "si",
+                            Imagen = "https://toppng.com/uploads/preview/lucas-pratto-png-river-plate-plantel-2018-11563129429edz4folhq2.png",
                             NumeroImagen = 2023,
                             Titulo = "Pratto Lucas"
                         },
@@ -551,7 +551,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 1,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 35,
-                            Imagen = " ",
+                            Imagen = "https://futhead.cursecdn.com/static/img/21/players_alt/p67333374.png",
                             NumeroImagen = 204,
                             Titulo = "Bou Walter"
                         },
@@ -561,7 +561,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 1,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 36,
-                            Imagen = " ",
+                            Imagen = "https://www.clubtalleres.com.ar/wp-content/uploads/2021/01/VALOYES-4.png",
                             NumeroImagen = 205,
                             Titulo = "Valoyes Diego"
                         },
@@ -571,7 +571,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 2,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 37,
-                            Imagen = " ",
+                            Imagen = "https://futhead.cursecdn.com/static/img/21/players_alt/p67333374.png",
                             NumeroImagen = 20,
                             Titulo = "Bou Walter"
                         },
@@ -581,7 +581,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 2,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 38,
-                            Imagen = " ",
+                            Imagen = "https://toppng.com/uploads/preview/lucas-pratto-png-river-plate-plantel-2018-11563129429edz4folhq2.png",
                             NumeroImagen = 21,
                             Titulo = "Pratto Lucas"
                         },
@@ -591,7 +591,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 2,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 39,
-                            Imagen = " ",
+                            Imagen = "https://upload.wikimedia.org/wikipedia/commons/4/4e/Uni%C3%B3n_Espa%C3%B1ola_-_Curic%C3%B3_Unido%2C_2018-09-30_-_Daniel_Franco_-_02.jpg",
                             NumeroImagen = 22,
                             Titulo = "Franco Daniel"
                         },
@@ -601,7 +601,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 2,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 40,
-                            Imagen = " ",
+                            Imagen = "https://www.cariverplate.com.ar/imagenes/jugadores/2022-08/1638-01-armani-imagenprincipal.png",
                             NumeroImagen = 23,
                             Titulo = "ArmanI Franco"
                         },
@@ -611,7 +611,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 2,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 41,
-                            Imagen = " ",
+                            Imagen = "https://resizer.glanacion.com/resizer/dRtGyNR9KJ5Zr0BtIjvpdV8J5uU=/1200x800/smart/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/CCXOIDZHQRG6PP2JQ2LVCQHOFU.jpg",
                             NumeroImagen = 24,
                             Titulo = "Guido Herrera"
                         },
@@ -621,9 +621,9 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 2,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 42,
-                            Imagen = " ",
+                            Imagen = "https://media.tycsports.com/files/2020/11/19/154997/pulga-rodriguez.jpg",
                             NumeroImagen = 25,
-                            Titulo = "Salas"
+                            Titulo = "Luis Miguel Rodríguez"
                         },
                         new
                         {
@@ -631,7 +631,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 3,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 43,
-                            Imagen = " ",
+                            Imagen = "https://img2.freepng.es/20180526/vrr/kisspng-roberto-firmino-liverpool-f-c-football-player-ren-roberto-firmino-5b097993b70f13.2394382015273476037498.jpg",
                             NumeroImagen = 26,
                             Titulo = "Firmiño"
                         },
@@ -641,7 +641,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 3,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 44,
-                            Imagen = " ",
+                            Imagen = "https://s.hs-data.com/bilder/spieler/gross/445514.jpg?fallback=png",
                             NumeroImagen = 27,
                             Titulo = "Alvarez Julian"
                         },
@@ -651,9 +651,9 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 3,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 45,
-                            Imagen = " ",
+                            Imagen = "https://i.bundesliga.com/player/dfl-obj-002g8i-dfl-clu-000007-dfl-sea-0001k6.png",
                             NumeroImagen = 28,
-                            Titulo = "Halan"
+                            Titulo = "Erling Haaland"
                         },
                         new
                         {
@@ -661,7 +661,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 3,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 46,
-                            Imagen = " ",
+                            Imagen = "https://i.pinimg.com/736x/0c/f6/9d/0cf69df73b50d137e2815387e9513aee.jpg",
                             NumeroImagen = 29,
                             Titulo = "Cuti Romero"
                         },
@@ -671,7 +671,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 3,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 47,
-                            Imagen = " ",
+                            Imagen = "https://1vs1-7f65.kxcdn.com/img/players/original/big/png/damian-emiliano-martinez-romero_16482_71-ub-800.png",
                             NumeroImagen = 30,
                             Titulo = "Dibu Martinez"
                         },
@@ -861,7 +861,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 7,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 72,
-                            Imagen = " ",
+                            Imagen = "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/272.png",
                             NumeroImagen = 54,
                             Titulo = "Manuel Ginobilli"
                         },
@@ -871,7 +871,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 7,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 73,
-                            Imagen = " ",
+                            Imagen = "https://www.pngmart.com/files/16/Kevin-Durant-PNG-Clipart.png",
                             NumeroImagen = 55,
                             Titulo = "Kevin Durant"
                         },
@@ -881,7 +881,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 7,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 74,
-                            Imagen = " ",
+                            Imagen = "https://cdn.nba.com/headshots/nba/latest/1040x760/76979.png",
                             NumeroImagen = 56,
                             Titulo = "Elvin Hayes"
                         },
@@ -891,7 +891,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 7,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 75,
-                            Imagen = " ",
+                            Imagen = "https://i.pinimg.com/originals/6a/78/91/6a789135b8ed3755d3258a88d85851a6.png",
                             NumeroImagen = 57,
                             Titulo = "Bob Pettit"
                         },
@@ -901,7 +901,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 8,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 76,
-                            Imagen = " ",
+                            Imagen = "https://www.pngplay.com/wp-content/uploads/13/Giannis-Antetokounmpo-Transparent-PNG.png",
                             NumeroImagen = 58,
                             Titulo = "Giannis Antokoumpo"
                         },
@@ -911,7 +911,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 8,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 77,
-                            Imagen = " ",
+                            Imagen = "https://e7.pngegg.com/pngimages/95/141/png-clipart-russell-westbrook-oklahoma-city-thunder-nba-houston-rockets-kolmikduubel-nba-tshirt-jersey-thumbnail.png",
                             NumeroImagen = 59,
                             Titulo = "Oscar Robertson"
                         },
@@ -921,9 +921,9 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 8,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 78,
-                            Imagen = " ",
+                            Imagen = "https://i0.wp.com/basquettotal.com/wp-content/uploads/2022/02/RC_L2664-e1645034434512.jpg?resize=627%2C376&ssl=1",
                             NumeroImagen = 60,
-                            Titulo = "Fernando Martina"
+                            Titulo = "Fernando Martinez"
                         },
                         new
                         {
@@ -931,7 +931,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 8,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 79,
-                            Imagen = " ",
+                            Imagen = "https://www.laliganacional.com.ar/fotosjugadores/143078.png",
                             NumeroImagen = 61,
                             Titulo = "Martin Cabrera"
                         },
@@ -941,9 +941,9 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 8,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 80,
-                            Imagen = " ",
+                            Imagen = "https://i.pinimg.com/originals/6a/78/91/6a789135b8ed3755d3258a88d85851a6.png",
                             NumeroImagen = 62,
-                            Titulo = "Franco Barroso"
+                            Titulo = "Bob Pettit"
                         },
                         new
                         {
@@ -951,7 +951,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 9,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 81,
-                            Imagen = " ",
+                            Imagen = "https://i0.wp.com/pbs.twimg.com/media/Ee47M9zWoAETxa9.png?resize=450%2C450&ssl=1&crop=1",
                             NumeroImagen = 63,
                             Titulo = "Juan Cruz Oberto"
                         },
@@ -961,7 +961,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 9,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 82,
-                            Imagen = " ",
+                            Imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Milanesio_argentina_1992.jpg/200px-Milanesio_argentina_1992.jpg",
                             NumeroImagen = 64,
                             Titulo = "Marcelo Milanesio"
                         },
@@ -971,7 +971,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 10,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 83,
-                            Imagen = " ",
+                            Imagen = "https://i0.wp.com/pbs.twimg.com/media/Ee47M9zWoAETxa9.png?resize=450%2C450&ssl=1&crop=1",
                             NumeroImagen = 65,
                             Titulo = "Julian Montoya"
                         },
@@ -1181,7 +1181,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 13,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 104,
-                            Imagen = " ",
+                            Imagen = "https://i.pinimg.com/originals/c4/4a/d3/c44ad3182299b9c08337465bef2ea2bc.png",
                             NumeroImagen = 86,
                             Titulo = "Boo"
                         },
@@ -1191,7 +1191,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 13,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 105,
-                            Imagen = " ",
+                            Imagen = "https://i.pinimg.com/originals/45/87/71/4587717835c6e0bbb388844a395bd04e.png",
                             NumeroImagen = 87,
                             Titulo = "Mike Wazowski"
                         },
@@ -1201,7 +1201,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 13,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 106,
-                            Imagen = " ",
+                            Imagen = "https://e7.pngegg.com/pngimages/178/635/png-clipart-disney-monster-inc-fungus-fungus-at-the-movies-cartoons-thumbnail.png",
                             NumeroImagen = 88,
                             Titulo = "Fungus"
                         },
@@ -1211,7 +1211,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 13,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 107,
-                            Imagen = " ",
+                            Imagen = "https://static.wikia.nocookie.net/heroes-of-the-characters/images/e/e5/Roz_%28Monsters_Inc._-_Render%29.png/revision/latest?cb=20210825084538",
                             NumeroImagen = 89,
                             Titulo = "Roz"
                         },
@@ -1221,7 +1221,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 13,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 108,
-                            Imagen = " ",
+                            Imagen = "https://static.wikia.nocookie.net/monstersincmovies/images/6/67/Bile-white.jpg/revision/latest?cb=20130515201629",
                             NumeroImagen = 90,
                             Titulo = "Bile"
                         },
@@ -1231,7 +1231,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 14,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 109,
-                            Imagen = " ",
+                            Imagen = "https://i.pinimg.com/originals/c4/4a/d3/c44ad3182299b9c08337465bef2ea2bc.png",
                             NumeroImagen = 91,
                             Titulo = "Boo"
                         },
@@ -1241,7 +1241,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 14,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 110,
-                            Imagen = " ",
+                            Imagen = "https://i.pinimg.com/originals/45/87/71/4587717835c6e0bbb388844a395bd04e.png",
                             NumeroImagen = 92,
                             Titulo = "Mike Wazowski"
                         },
@@ -1251,7 +1251,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 14,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 111,
-                            Imagen = " ",
+                            Imagen = "https://e7.pngegg.com/pngimages/178/635/png-clipart-disney-monster-inc-fungus-fungus-at-the-movies-cartoons-thumbnail.png",
                             NumeroImagen = 93,
                             Titulo = "Fungus"
                         },
@@ -1261,7 +1261,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 14,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 112,
-                            Imagen = " ",
+                            Imagen = "https://static.wikia.nocookie.net/heroes-of-the-characters/images/e/e5/Roz_%28Monsters_Inc._-_Render%29.png/revision/latest?cb=20210825084538",
                             NumeroImagen = 94,
                             Titulo = "Roz"
                         },
@@ -1271,7 +1271,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 14,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 113,
-                            Imagen = " ",
+                            Imagen = "https://static.wikia.nocookie.net/monstersincmovies/images/6/67/Bile-white.jpg/revision/latest?cb=20130515201629",
                             NumeroImagen = 95,
                             Titulo = "Bile"
                         },
@@ -1281,7 +1281,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 14,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 114,
-                            Imagen = " ",
+                            Imagen = "https://fotografias.antena3.com/clipping/cmsimages01/2018/10/18/226A74E0-C67D-40BA-BD22-9EE8E9909F51/69.jpg?crop=1:1,smart&width=1200&height=1200&optimize=low&format=webply",
                             NumeroImagen = 96,
                             Titulo = "Troy Bolton"
                         },
@@ -1291,7 +1291,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 15,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 115,
-                            Imagen = " ",
+                            Imagen = "https://i.pinimg.com/originals/df/62/35/df623531f1ee71776396f506916d4095.png",
                             NumeroImagen = 97,
                             Titulo = "Gabriela Montes"
                         },
@@ -1301,7 +1301,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 15,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 116,
-                            Imagen = " ",
+                            Imagen = "https://i.pinimg.com/474x/77/05/bf/7705bf1970756bac22a304cf33abca34--ashley-tisdale-drama-queens.jpg",
                             NumeroImagen = 98,
                             Titulo = "Sharpay Evans"
                         },
@@ -1311,7 +1311,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 15,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 117,
-                            Imagen = " ",
+                            Imagen = "http://images.girlslife.com/posts/004/4184/prettyleadphoto.jpg",
                             NumeroImagen = 99,
                             Titulo = "Martha Cox"
                         },
@@ -1321,7 +1321,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 15,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 118,
-                            Imagen = " ",
+                            Imagen = "https://static.wikia.nocookie.net/my-high-school-musical/images/2/21/406630.jpg/revision/latest?cb=20180729024606",
                             NumeroImagen = 100,
                             Titulo = "Lucille Bolton"
                         },
@@ -1331,7 +1331,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 15,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 119,
-                            Imagen = " ",
+                            Imagen = "https://fotografias.antena3.com/clipping/cmsimages01/2018/10/18/226A74E0-C67D-40BA-BD22-9EE8E9909F51/69.jpg?crop=1:1,smart&width=1200&height=1200&optimize=low&format=webply",
                             NumeroImagen = 101,
                             Titulo = "Troy Bolton"
                         },
@@ -1341,7 +1341,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 15,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 120,
-                            Imagen = " ",
+                            Imagen = "https://i.pinimg.com/originals/df/62/35/df623531f1ee71776396f506916d4095.png",
                             NumeroImagen = 102,
                             Titulo = "Gabriela Montes"
                         },
@@ -1351,7 +1351,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 16,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 121,
-                            Imagen = " ",
+                            Imagen = "https://i.pinimg.com/474x/77/05/bf/7705bf1970756bac22a304cf33abca34--ashley-tisdale-drama-queens.jpg",
                             NumeroImagen = 103,
                             Titulo = "Sharpay Evans"
                         },
@@ -1361,7 +1361,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 15,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 122,
-                            Imagen = " ",
+                            Imagen = "http://images.girlslife.com/posts/004/4184/prettyleadphoto.jpg",
                             NumeroImagen = 104,
                             Titulo = "Martha Cox"
                         },
@@ -1371,7 +1371,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 16,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 123,
-                            Imagen = " ",
+                            Imagen = "https://static.wikia.nocookie.net/my-high-school-musical/images/2/21/406630.jpg/revision/latest?cb=20180729024606",
                             NumeroImagen = 105,
                             Titulo = "Lucile Bolton"
                         },
@@ -1381,7 +1381,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 16,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 124,
-                            Imagen = " ",
+                            Imagen = "https://fotografias.antena3.com/clipping/cmsimages01/2018/10/18/226A74E0-C67D-40BA-BD22-9EE8E9909F51/69.jpg?crop=1:1,smart&width=1200&height=1200&optimize=low&format=webply",
                             NumeroImagen = 106,
                             Titulo = "Troy Bolton"
                         },
@@ -1391,7 +1391,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 16,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 125,
-                            Imagen = " ",
+                            Imagen = "https://i.pinimg.com/originals/df/62/35/df623531f1ee71776396f506916d4095.png",
                             NumeroImagen = 107,
                             Titulo = "Gabriela Montes"
                         },
@@ -1401,7 +1401,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 16,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 126,
-                            Imagen = " ",
+                            Imagen = "https://i.pinimg.com/474x/77/05/bf/7705bf1970756bac22a304cf33abca34--ashley-tisdale-drama-queens.jpg",
                             NumeroImagen = 108,
                             Titulo = "Sharpay Evans"
                         },
@@ -1411,7 +1411,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 16,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 127,
-                            Imagen = " ",
+                            Imagen = "http://images.girlslife.com/posts/004/4184/prettyleadphoto.jpg",
                             NumeroImagen = 109,
                             Titulo = "Martha Cox"
                         },
@@ -1421,7 +1421,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 16,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 128,
-                            Imagen = " ",
+                            Imagen = "https://static.wikia.nocookie.net/my-high-school-musical/images/2/21/406630.jpg/revision/latest?cb=20180729024606",
                             NumeroImagen = 110,
                             Titulo = "Lucile Bolton"
                         },
@@ -1431,7 +1431,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 26,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 129,
-                            Imagen = " ",
+                            Imagen = "https://w7.pngwing.com/pngs/276/1019/png-transparent-sid-sloth-scrat-ice-age-the-sloth-buckle-free.png",
                             NumeroImagen = 111,
                             Titulo = "Sid"
                         },
@@ -1441,7 +1441,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 26,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 130,
-                            Imagen = " ",
+                            Imagen = "https://www.kindpng.com/picc/m/236-2361642_mammoth-manny-la-era-de-hielo-hd-png.png",
                             NumeroImagen = 112,
                             Titulo = "Many"
                         },
@@ -1451,7 +1451,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 26,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 131,
-                            Imagen = " ",
+                            Imagen = "https://static.wikia.nocookie.net/iceage/images/a/a7/Bodoque.jpg/revision/latest?cb=20120607153944&path-prefix=es",
                             NumeroImagen = 113,
                             Titulo = "Roshan"
                         },
@@ -1461,7 +1461,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 26,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 132,
-                            Imagen = " ",
+                            Imagen = "https://www.pngkey.com/png/detail/318-3182891_download-diego-la-era-de-hielo.png",
                             NumeroImagen = 114,
                             Titulo = "Diego"
                         },
@@ -1471,7 +1471,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 26,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 133,
-                            Imagen = " ",
+                            Imagen = "https://w7.pngwing.com/pngs/84/894/png-transparent-ice-age-scrat-scrat-sid-manfred-ellie-ice-age-ice-age-mammal-heroes-fauna-thumbnail.png",
                             NumeroImagen = 115,
                             Titulo = "Scrat"
                         },
@@ -1481,7 +1481,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 27,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 134,
-                            Imagen = " ",
+                            Imagen = "https://w7.pngwing.com/pngs/276/1019/png-transparent-sid-sloth-scrat-ice-age-the-sloth-buckle-free.png",
                             NumeroImagen = 116,
                             Titulo = "Sid"
                         },
@@ -1491,7 +1491,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 27,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 135,
-                            Imagen = " ",
+                            Imagen = "https://www.kindpng.com/picc/m/236-2361642_mammoth-manny-la-era-de-hielo-hd-png.png",
                             NumeroImagen = 117,
                             Titulo = "Many"
                         },
@@ -1501,7 +1501,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 27,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 136,
-                            Imagen = " ",
+                            Imagen = "https://static.wikia.nocookie.net/iceage/images/a/a7/Bodoque.jpg/revision/latest?cb=20120607153944&path-prefix=es",
                             NumeroImagen = 118,
                             Titulo = "Roshan"
                         },
@@ -1511,7 +1511,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 27,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 137,
-                            Imagen = " ",
+                            Imagen = "https://www.pngkey.com/png/detail/318-3182891_download-diego-la-era-de-hielo.png",
                             NumeroImagen = 119,
                             Titulo = "Diego"
                         },
@@ -1521,7 +1521,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 27,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 138,
-                            Imagen = " ",
+                            Imagen = "https://w7.pngwing.com/pngs/84/894/png-transparent-ice-age-scrat-scrat-sid-manfred-ellie-ice-age-ice-age-mammal-heroes-fauna-thumbnail.png",
                             NumeroImagen = 120,
                             Titulo = "Scrat"
                         },
@@ -1531,7 +1531,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 28,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 139,
-                            Imagen = " ",
+                            Imagen = "https://w7.pngwing.com/pngs/276/1019/png-transparent-sid-sloth-scrat-ice-age-the-sloth-buckle-free.png",
                             NumeroImagen = 121,
                             Titulo = "Sid"
                         },
@@ -1541,7 +1541,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 28,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 140,
-                            Imagen = " ",
+                            Imagen = "https://www.kindpng.com/picc/m/236-2361642_mammoth-manny-la-era-de-hielo-hd-png.png",
                             NumeroImagen = 122,
                             Titulo = "Many"
                         },
@@ -1551,7 +1551,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 28,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 141,
-                            Imagen = " ",
+                            Imagen = "https://static.wikia.nocookie.net/iceage/images/a/a7/Bodoque.jpg/revision/latest?cb=20120607153944&path-prefix=es",
                             NumeroImagen = 123,
                             Titulo = "Roshan"
                         },
@@ -1561,7 +1561,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 28,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 142,
-                            Imagen = " ",
+                            Imagen = "https://www.pngkey.com/png/detail/318-3182891_download-diego-la-era-de-hielo.png",
                             NumeroImagen = 124,
                             Titulo = "Diego"
                         },
@@ -1571,7 +1571,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 28,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 143,
-                            Imagen = " ",
+                            Imagen = "https://w7.pngwing.com/pngs/84/894/png-transparent-ice-age-scrat-scrat-sid-manfred-ellie-ice-age-ice-age-mammal-heroes-fauna-thumbnail.png",
                             NumeroImagen = 125,
                             Titulo = "Scrat"
                         },
@@ -1581,7 +1581,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 100,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 144,
-                            Imagen = " ",
+                            Imagen = "https://static.wikia.nocookie.net/james-camerons-avatar/images/1/17/Grace.png/revision/latest?cb=20210408152516&path-prefix=es",
                             NumeroImagen = 126,
                             Titulo = "Dra Grace"
                         },
@@ -1591,7 +1591,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 100,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 145,
-                            Imagen = " ",
+                            Imagen = "https://i.pinimg.com/736x/b2/fd/5a/b2fd5a5b1aa105021bba52b2b4ee2394.jpg",
                             NumeroImagen = 127,
                             Titulo = "Neyriti"
                         },
@@ -1601,7 +1601,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 100,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 146,
-                            Imagen = " ",
+                            Imagen = "https://www.writeups.org/wp-content/uploads/Jake-Sully-Avatar-movie-Sam-Worthington.jpg",
                             NumeroImagen = 128,
                             Titulo = "Jake Sully"
                         },
@@ -1611,7 +1611,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 100,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 147,
-                            Imagen = " ",
+                            Imagen = "https://static.wikia.nocookie.net/james-camerons-avatar/images/8/82/Tsu%27tey_te_Rongloa_Ateyo%27itan.png/revision/latest?cb=20210122023316&path-prefix=es",
                             NumeroImagen = 129,
                             Titulo = "Tsutey"
                         },
@@ -1621,7 +1621,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 100,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 148,
-                            Imagen = " ",
+                            Imagen = "https://static.wikia.nocookie.net/james-camerons-avatar/images/2/21/Quaritch.png/revision/latest?cb=20210527234304&path-prefix=es",
                             NumeroImagen = 130,
                             Titulo = "Coronel Milles"
                         },
@@ -1631,7 +1631,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 101,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 149,
-                            Imagen = " ",
+                            Imagen = "https://static.wikia.nocookie.net/james-camerons-avatar/images/1/17/Grace.png/revision/latest?cb=20210408152516&path-prefix=es",
                             NumeroImagen = 131,
                             Titulo = "Dra Grace"
                         },
@@ -1641,7 +1641,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 101,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 150,
-                            Imagen = " ",
+                            Imagen = "https://i.pinimg.com/736x/b2/fd/5a/b2fd5a5b1aa105021bba52b2b4ee2394.jpg",
                             NumeroImagen = 132,
                             Titulo = "Neyriti"
                         },
@@ -1651,7 +1651,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 101,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 151,
-                            Imagen = " ",
+                            Imagen = "https://www.writeups.org/wp-content/uploads/Jake-Sully-Avatar-movie-Sam-Worthington.jpg",
                             NumeroImagen = 133,
                             Titulo = "Jake Sully"
                         },
@@ -1661,7 +1661,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 101,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 152,
-                            Imagen = " ",
+                            Imagen = "https://static.wikia.nocookie.net/james-camerons-avatar/images/8/82/Tsu%27tey_te_Rongloa_Ateyo%27itan.png/revision/latest?cb=20210122023316&path-prefix=es",
                             NumeroImagen = 134,
                             Titulo = "Tsutey"
                         },
@@ -1671,7 +1671,7 @@ namespace G7Album.BaseDatos.Migrations
                             AlbumId = 101,
                             CantidadImpresa = 1000,
                             CodigoImagenOriginal = 153,
-                            Imagen = " ",
+                            Imagen = "https://static.wikia.nocookie.net/james-camerons-avatar/images/2/21/Quaritch.png/revision/latest?cb=20210527234304&path-prefix=es",
                             NumeroImagen = 135,
                             Titulo = "Coronel Milles"
                         },
