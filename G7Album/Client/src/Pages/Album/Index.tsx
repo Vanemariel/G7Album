@@ -40,12 +40,13 @@ export const Album: React.FC = () => {
                 carouselHolderId: `#album-rotator-holder${index}`,
             })
         })
+        
         setPaginate({
             currentPage: data.Result.currentPage -1,
             pagesTotal: data.Result.pages 
         })
         setAllColecciones(data.Result.listItems)
-        carouselTarjets(arrAlbum)
+        carouselTarjets(arrAlbum) 
     }
 
     const buyAlbum = async (idAlbum: number) => {
