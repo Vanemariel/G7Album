@@ -1,11 +1,13 @@
 
 .mainAuthentication {
     /* background-image: url(https://media.tycsports.com/files/2021/03/23/206640/roblox-mejores-juegos_862x485.jpg); */
-    background-image: url(https://placeimg.com/640/480/nature);
+    /* background-image: url(https://placeimg.com/640/480/nature);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-position: center;
+    background-position: center; */
+    background: radial-gradient(circle at top left, #161231, #161231);
+  
     width: 100vw;
     height: 100vh;
     display: flex;
