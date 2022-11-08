@@ -80,8 +80,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 1,
                             ColeccionAlbumId = 1,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4268),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4278),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8504),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8515),
                             Imagen = "https://www.elcomercio.com/wp-content/uploads/2022/10/Liber-COnme-700x391.jpg",
                             Titulo = "Copa Libertadores"
                         },
@@ -93,10 +93,10 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 2,
                             ColeccionAlbumId = 1,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4284),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4284),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8520),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8521),
                             Imagen = "https://a.espncdn.com/photo/2021/0913/r908628_1296x729_16-9.jpg",
-                            Titulo = "Champions Lague"
+                            Titulo = "Champions League"
                         },
                         new
                         {
@@ -106,8 +106,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 3,
                             ColeccionAlbumId = 1,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4285),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4286),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8522),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8523),
                             Imagen = "https://auf.org.uy/imagenes/img_contenido/contenido/c/copa-america_5.jpg",
                             Titulo = "Copa America"
                         },
@@ -119,10 +119,10 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 4,
                             ColeccionAlbumId = 2,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4287),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4288),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8524),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8525),
                             Imagen = "https://image.shutterstock.com/image-photo/london-uk-april-2022-close-260nw-2165550065.jpg",
-                            Titulo = "Wimledom"
+                            Titulo = "Wimbledon"
                         },
                         new
                         {
@@ -132,8 +132,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 5,
                             ColeccionAlbumId = 2,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4289),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4290),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8528),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8528),
                             Imagen = "https://espnpressroom.com/mexico/files/2018/05/Roland-Garros.png",
                             Titulo = "Rollan Garros"
                         },
@@ -145,8 +145,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 6,
                             ColeccionAlbumId = 2,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4291),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4291),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8529),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8530),
                             Imagen = "https://brandemia.org/sites/default/files/inline/images/us_open_logo.jpg",
                             Titulo = "Us Open"
                         },
@@ -158,8 +158,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 7,
                             ColeccionAlbumId = 3,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4293),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4293),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8531),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8532),
                             Imagen = "https://www.unocontraunoweb.com/wp-content/uploads/2021/01/acb-logo-2019.jpg",
                             Titulo = "Liga Endesa"
                         },
@@ -171,8 +171,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 8,
                             ColeccionAlbumId = 3,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4295),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4295),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8533),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8533),
                             Imagen = "https://a4.espncdn.com/combiner/i?img=%2Fi%2Fespn%2Fmisc_logos%2F500%2Fnba.png",
                             Titulo = "NBA"
                         },
@@ -184,8 +184,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 9,
                             ColeccionAlbumId = 3,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4296),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4297),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8534),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8535),
                             Imagen = "https://pbs.twimg.com/profile_images/1537068349385068544/OSkcZWlP_400x400.jpg",
                             Titulo = "La Liga Argentina"
                         },
@@ -197,8 +197,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 10,
                             ColeccionAlbumId = 4,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4298),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4299),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8536),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8537),
                             Imagen = "https://searchvectorlogo.com/wp-content/uploads/2020/09/national-rugby-league-nrl-vector-logo.png",
                             Titulo = "National Rugby League"
                         },
@@ -210,8 +210,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 11,
                             ColeccionAlbumId = 4,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4300),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4300),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8538),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8539),
                             Imagen = "https://upload.wikimedia.org/wikipedia/en/a/a5/Super_League_logo_2017.jpg",
                             Titulo = "Super League"
                         },
@@ -223,8 +223,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 12,
                             ColeccionAlbumId = 4,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4302),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4302),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8540),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8540),
                             Imagen = "https://www.prensa-latina.cu/wp-content/uploads/2022/08/Rugby-Championship-2022.jpg",
                             Titulo = "The Rugby Championship"
                         },
@@ -236,8 +236,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 100,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4304),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4304),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8541),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8542),
                             Imagen = "https://cdn1.eldia.com/112021/1635837451953.jpg",
                             Titulo = "Monster Inc"
                         },
@@ -249,8 +249,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 101,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4306),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4307),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8543),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8543),
                             Imagen = "https://ichef.bbci.co.uk/images/ic/1200x675/p0915n36.jpg",
                             Titulo = "Monster University"
                         },
@@ -262,8 +262,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 102,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4308),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4308),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8545),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8545),
                             Imagen = "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/16E670238DC278CF1FC15F794914B0371708F078C210E01443353314452473E9/scale?width=1200&aspectRatio=1.78&format=jpeg",
                             Titulo = "High school Musical"
                         },
@@ -275,8 +275,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 104,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4310),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4310),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8571),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8571),
                             Imagen = "https://pics.filmaffinity.com/High_School_Musical_2_TV-318249736-mmed.jpg",
                             Titulo = "High school Musical 2"
                         },
@@ -288,8 +288,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 105,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4312),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4312),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8573),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8574),
                             Imagen = "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/050E5D6C2B62066D3397CD0855B4274A9728186CEE39451C68FAA17A1D8EBB98/scale?width=1200&aspectRatio=1.78&format=jpeg",
                             Titulo = "La era del hielo 1"
                         },
@@ -301,8 +301,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 106,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4313),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4314),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8575),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8576),
                             Imagen = "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/2BDBC39CA1B941A0C4360565C67E8EDB97E2D0904DF11737583ED61E80C7CC07/scale?width=1200&aspectRatio=1.78&format=jpeg",
                             Titulo = "La era del hielo 2"
                         },
@@ -314,8 +314,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 107,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4315),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4316),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8577),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8577),
                             Imagen = "https://mx.web.img3.acsta.net/c_310_420/pictures/20/10/21/20/18/4455162.jpg",
                             Titulo = "La era del hielo 3"
                         },
@@ -327,8 +327,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 107,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4317),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4317),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8579),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8579),
                             Imagen = "https://as01.epimg.net/meristation/imagenes/2022/09/30/reportajes/1664534991_626157_1664615989_noticia_normal.jpg",
                             Titulo = "Avatar"
                         },
@@ -340,8 +340,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 107,
                             ColeccionAlbumId = 5,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4319),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4319),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8580),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8581),
                             Imagen = "https://i.blogs.es/884d13/avatar-2/840_560.jpeg",
                             Titulo = "Avatar 2"
                         },
@@ -353,8 +353,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 1,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4320),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4321),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8582),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8582),
                             Imagen = "https://img2.rtve.es/i/?w=1600&i=1657019155649.jpg",
                             Titulo = "Dragonball"
                         },
@@ -366,8 +366,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 2,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4322),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4323),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8584),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8584),
                             Imagen = "https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/36bdc5ea4443cd8e42f22ec7d3884cbb.jpeg",
                             Titulo = "Dragonball Z"
                         },
@@ -379,8 +379,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 3,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4324),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4325),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8585),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8586),
                             Imagen = "https://depor.com/resizer/6Gmj2BD2B09Yug9skT5G_37oBgg=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/B35WNLM7UJGIJNOWQFDO3UPY34.jpg",
                             Titulo = "Dragonball Super"
                         },
@@ -392,8 +392,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 4,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4326),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4326),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8587),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8588),
                             Imagen = "https://i.pinimg.com/originals/3f/0d/1a/3f0d1afe64a74343c0f173faec9df8e0.jpg",
                             Titulo = "Naruto"
                         },
@@ -405,8 +405,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 5,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4328),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4328),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8589),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8589),
                             Imagen = "https://es.web.img3.acsta.net/pictures/13/12/13/09/11/515425.jpg",
                             Titulo = "Naruto Shippuden"
                         },
@@ -418,8 +418,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 6,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4330),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4330),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8590),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8591),
                             Imagen = "https://img1.ak.crunchyroll.com/i/spire4/7dde3a40ce5d5615813a5ac12683631a1616450115_full.jpg",
                             Titulo = "Naruto Next Generation"
                         },
@@ -431,8 +431,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 7,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4331),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4332),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8592),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8593),
                             Imagen = "https://larepublica.pe/resizer/e0pacYSNg1Mt_pZBIbVHe65wXHw=/1200x660/top/arc-anglerfish-arc2-prod-gruporepublica.s3.amazonaws.com/public/ATQBEGGFCRDSHAONTOR7O2VCNM.jpg",
                             Titulo = "Saint Seiya the Lost Canvas"
                         },
@@ -444,8 +444,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 8,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4333),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4334),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8595),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8596),
                             Imagen = "https://i.ytimg.com/vi/p2POuLSrWms/maxresdefault.jpg",
                             Titulo = "Batalla de Poseidon"
                         },
@@ -457,8 +457,8 @@ namespace G7Album.BaseDatos.Migrations
                             CodigoAlbum = 9,
                             ColeccionAlbumId = 6,
                             Descripcion = "figus",
-                            Desde = new DateTime(2022, 10, 26, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4335),
-                            Hasta = new DateTime(2022, 11, 5, 20, 30, 34, 327, DateTimeKind.Local).AddTicks(4335),
+                            Desde = new DateTime(2022, 10, 28, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8597),
+                            Hasta = new DateTime(2022, 11, 7, 17, 57, 57, 492, DateTimeKind.Local).AddTicks(8597),
                             Imagen = "https://i.ytimg.com/vi/vsGd6A-CrbY/maxresdefault.jpg",
                             Titulo = "Batalla de Asgard"
                         });
