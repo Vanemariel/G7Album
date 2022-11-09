@@ -54,8 +54,7 @@ function App() {
               </RoutePrivate> 
           }/>
           
-          {/* 
-            <Route path="/ImagenFigurita" element={
+          {/* <Route path="/ImagenFigurita" element={
                 <RoutePrivate>
                       <ImagenFigurita />
                 </RoutePrivate>
@@ -66,13 +65,7 @@ function App() {
                 <AlbumUnitario/>
               </RoutePrivate> 
           }/> */}
-         
-          {/* <Route path="/Home" element={
-              <RoutePrivate>
-                  <Home />
-              </RoutePrivate>
-          } /> */}
-          
+           
         </Routes>
 
         <ModalLoader/>
