@@ -53,7 +53,7 @@ export const AlbumImagenes: React.FC = () => {
         getAllAlbumImagenes(selected + 1)
     }
 
-    const buyFigurita = async (idFigurita: number) => {
+    const buyFigurita = async (idFigurita: number, IdAlbum: number) => {
 
         try {
 
@@ -61,7 +61,8 @@ export const AlbumImagenes: React.FC = () => {
 
             const { Result, MessageError } = await AlbumImagenService.buyFigurita({
                 IdUsuario: storeGlobal.GetMyUserData().Id,
-                IdAlbumImagen: idFigurita
+                IdAlbumImagen: idFigurita,
+                IdAlbum: IdAlbum
             })
 
             if (MessageError != undefined) {
@@ -74,7 +75,7 @@ export const AlbumImagenes: React.FC = () => {
         } catch (error: any) {
 
             storeGlobal.SetShowLoader(false)
-            storeGlobal.SetMessageModalStatus(`Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`)
+            storeGlobal.SetMessageModalStatus(`Uups... ${error}. \n \n Intentelo nuevamente`)
 
         } finally {
             storeGlobal.SetShowModalStatus(true)
@@ -130,7 +131,7 @@ export const AlbumImagenes: React.FC = () => {
                                                 <div className={`albumItem__details`}>
                                                     <h3>{figuritas.titulo}</h3>
                                                     <button className="btnFiguritasComprar" type='submit'
-                                                        onClick={() => buyFigurita(figuritas.id)}>Comprar</button>
+                                                        onClick={() => buyFigurita(figuritas.id, figuritas.albumId)}>Comprar</button>
                                                 </div>
 
                                             </article>

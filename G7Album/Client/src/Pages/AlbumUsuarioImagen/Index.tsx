@@ -10,7 +10,7 @@ import { usePaginate } from '../../Hooks/usePaginate';
 import { Paginate } from '../../Components/Paginate/Paginate';
 import { IAlbumUsuarioImagenes } from '../../Interface/DTO Back/AlbumUsuarioImagenes/IAlbumUsuarioImagenes';
 import AlbumUsuarioImagenService from './Services/AlbumUsuarioImagen.service';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 
 
@@ -19,6 +19,7 @@ export const AlbumUsuarioImagen: React.FC = () => {
     /// HOOKS
 
     const navigate = useNavigate()
+    const params = useParams()
     const { paginate, setPaginate } = usePaginate()
     const storeGlobal = useGlobalContext();
     const [allMyFiguritas, setAllMyFiguritas] = useState<IAlbumUsuarioImagenes[]>([])
@@ -28,12 +29,14 @@ export const AlbumUsuarioImagen: React.FC = () => {
     /// METODOS
     const getAllMyFiguritas = async (page: number = 1) => {
 
+
         try {
 
             storeGlobal.SetShowLoader(true)
 
             const { Result, MessageError } = await AlbumUsuarioImagenService.GetAllMyFiguritas({
                 page,
+                idAlbum: params.id !== undefined ? parseInt(params.id) : 0,
                 idUsuario: storeGlobal.GetMyUserData().Id
             })
 
@@ -101,24 +104,34 @@ export const AlbumUsuarioImagen: React.FC = () => {
                 }
 
                 {
+
                     <div id={`album-rotator0`} className="albumRotatorContainer">
 
                         <section id={`album-rotator-holder0`} className="albumRotatorHolder">
                             {
                                 allMyFiguritas.map((myFigus: IAlbumUsuarioImagenes, indexEsport: number) => (
-                                    <article id={`album-item0`} style={{ cursor: 'pointer' }}
+                                    <article id={`album-item${indexEsport}`} style={{ cursor: 'pointer' }}
                                         className={`albumItem`} key={indexEsport}
                                     >
                                         <img className="image" src={myFigus.albumImagenes.imagen} alt="" />
-                                        
+
                                         <div className={`albumItem__details`}>
                                             <h3>{myFigus.albumImagenes.titulo}</h3>
+
                                         </div>
+
                                     </article>
                                 ))
                             }
                         </section>
+
+                        {
+                            allMyFiguritas.length > 0 && (
+                                <h5 className='titleFigus'>Figuritas: {allMyFiguritas.length} de {allMyFiguritas[0].albumImagenes.album.cantidadImagen}</h5>
+                            )
+                        }
                     </div>
+
                 }
 
                 {allMyFiguritas.length !== 0 && <div>

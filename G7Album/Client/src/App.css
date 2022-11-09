@@ -128,7 +128,6 @@ body{
   transform: scale(1.02);
 }
 
-
 .albumItem__details {
   background: transparent;
   position: absolute;
@@ -145,13 +144,22 @@ body{
   font-size: 2.5rem;
   font-weight: 600;
   z-index: 99;
-
+  cursor: auto;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
+
+.albumItem__details > button {
+  width: 80%;
+  align-self: center;
+  font-size: 16px;
+  background-color: #ddd;
+  outline: none;
+  border-radius: .75rem;
+}
+
 
 .title {
   font-weight: 900;

@@ -25,16 +25,22 @@ namespace G7Album.BaseDatos.Entidades
         public int UsuarioId { get; set; }
         
 
+        [Required(ErrorMessage = "Campo obligatorio.")]
+        public int AlbumId {get; set;}
 
-        //claves foraneas
-        // [ForeignKey("AlbumUsuarioId")]
-        // public AlbumUsuario AlbumUsuario { get; set; }
 
         [ForeignKey("AlbumImagenesId")]
         public AlbumImagenes AlbumImagenes { get; set; }
 
         [ForeignKey("UsuarioId")]
         public Usuario Usuario { get; set; }
+        
+        
+        //[ForeignKey("AlbumId")]
+        //public Album Album { get; set; }
+
+    
+        
 
         //[ForeignKey("AlbumImagenImpresaId")]
         //public AlbumImagenImpresa AlbumImagenImpresa { get; set; }

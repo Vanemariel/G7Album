@@ -36,7 +36,7 @@ function App() {
               </RoutePrivate>
           }/>
 
-          <Route path="/AlbumUsuarioImagen" element={
+          <Route path="/AlbumUsuarioImagen/:id" element={
               <RoutePrivate>
                  <AlbumUsuarioImagen />
               </RoutePrivate>

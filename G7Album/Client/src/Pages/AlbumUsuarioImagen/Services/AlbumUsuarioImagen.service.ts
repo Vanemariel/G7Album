@@ -5,14 +5,15 @@ import { axiosMethod } from "../../../Utils/axiosMethod";
 
 const AlbumUsuarioImagenService = {
 
-    GetAllMyFiguritas: async ({page, idUsuario} : any): Promise<IResponseDTO<IPagination<IAlbumUsuarioImagenes[]>>> => {
+    GetAllMyFiguritas: async ({page, idAlbum, idUsuario} : any): Promise<IResponseDTO<IPagination<IAlbumUsuarioImagenes[]>>> => {
+        console.log("🚀 ~ file: AlbumUsuarioImagen.service.ts ~ line 9 ~ GetAllMyFiguritas: ~ idAlbum", idAlbum)
         //en type scrip los: significa lo q retorna el metodo. se dice: me retorna una promesa(promise)
         //de tipo responsedto que recibe comoparametro una paginacion de albumusuario data
         const Response = await axiosMethod<IPagination<IAlbumUsuarioImagenes[]>>({
             //axiod es una funcion que le paso cm prametro un objeto con propiedades en este caso
             //method y url. funcion q especifica el tipo de dato q trae cm rta
             method: "GET",
-            url: `/AlbumUsuarioImagenes/GetAllPage/${page}/${idUsuario}`
+            url: `/AlbumUsuarioImagenes/GetAllPage/${page}/${idUsuario}/${idAlbum}`
         });
 
         return {

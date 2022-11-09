@@ -57,8 +57,8 @@ namespace G7Album.Server.Controllers
             };
             return Ok(response);
         }*/
-        [HttpGet("GetAllPage/{page:int}/{idUsuario:int}")]
-        public async Task<ActionResult<ResponseDto<Pagination<List<AlbumUsuarioImagenes>>>>> GetAll(int page, int idUsuario)
+        [HttpGet("GetAllPage/{page:int}/{idUsuario:int}/{idAlbum:int}")]
+        public async Task<ActionResult<ResponseDto<Pagination<List<AlbumUsuarioImagenes>>>>> GetAll(int page, int idUsuario, int idAlbum)
         {
             ResponseDto<Pagination<List<AlbumUsuarioImagenes>>> ResponseDto = new ResponseDto<Pagination<List<AlbumUsuarioImagenes>>>();
             Pagination<List<AlbumUsuarioImagenes>> Pagination = new Pagination<List<AlbumUsuarioImagenes>>();
@@ -68,11 +68,13 @@ namespace G7Album.Server.Controllers
 
                 List<AlbumUsuarioImagenes> FigusUsuario = await context.TablaUsuarioImagenes
                     .Where(x => x.UsuarioId == idUsuario)
+                    .Where(x => x.AlbumId == idAlbum)
                     .Skip((page - 1) * (int)pageResults)
                     .Take((int)pageResults)
-                    //.Include(x => x.AlbumImagenImpresa)
                     .Include(x => x.AlbumImagenes)
+                    .Include(x => x.AlbumImagenes.Album)
                     .ToListAsync();
+
 
                 var pageCount = Math.Ceiling(FigusUsuario.Count() / pageResults);
 
@@ -120,6 +122,8 @@ namespace G7Album.Server.Controllers
                 {
                     throw new Exception("debe enviar todos los datos requeridos");
                 }
+
+                
                 //? significa que posiblemente puede ser nulo
                 Usuario? Usuario = await this.context.TablaUsuarios//busco el usuario x id
                     .Where(Usuario => Usuario.Id == CompraFigus.IdUsuario)//valido
@@ -132,6 +136,15 @@ namespace G7Album.Server.Controllers
 
                     //LOGICA DE NEGOCIO
                 
+                AlbumUsuario? AlbumComprado = await this.context.TablaAlbumesUsuarios
+                    .Where(x => x.AlbumId == CompraFigus.IdAlbum)
+                    .FirstOrDefaultAsync();
+
+                if (AlbumComprado == null)
+                {
+                    throw new Exception($"para comprar esta figura, debe tener primero, su respectivo Album");
+                }
+
                 //valido si ya lo compre para no adquirir la misma figus
                 AlbumUsuarioImagenes? FiguritaComprada = await context.TablaUsuarioImagenes //imagen comprada es lo 
                 //q me devuelve la base de datos
@@ -147,7 +160,8 @@ namespace G7Album.Server.Controllers
                 
                 AlbumUsuarioImagenes AlbumCompra = new AlbumUsuarioImagenes {
                     AlbumImagenesId = CompraFigus.IdAlbumImagen,
-                    UsuarioId = CompraFigus.IdUsuario
+                    UsuarioId = CompraFigus.IdUsuario,
+                    AlbumId = CompraFigus.IdAlbum
                 };
 
                 context.TablaUsuarioImagenes.Add(AlbumCompra);

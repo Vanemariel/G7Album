@@ -72,6 +72,11 @@ export const AlbumUsuario: React.FC = () => {
         getAllMyAlbumes(selected + 1)
     }
 
+
+    const verFiguritas = async() => {
+
+    }
+
     useEffect(() => {
         getAllMyAlbumes()
     }, [])
@@ -106,6 +111,10 @@ export const AlbumUsuario: React.FC = () => {
 
                                         <div className={`albumItem__details`}>
                                             <h3>{myAlbum.album.titulo}</h3>
+
+                                            <button
+                                              onClick={() => navigate(`/AlbumUsuarioImagen/${myAlbum.albumId}`)}
+                                            > Ver figuritas</button>
                                         </div>
                                     </article>
                                 ))
