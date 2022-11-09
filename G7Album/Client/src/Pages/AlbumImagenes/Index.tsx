@@ -1,7 +1,7 @@
 //import { useEffect } from "react";
 //import { FormLogin } from "./Components/FormLogin/FormLogin";
 import './style.css'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import AlbumImagenesMock from './Mocks/AlbumImagenes.json'
 import { useEffect, useState } from 'react';
@@ -20,7 +20,7 @@ export const AlbumImagenes: React.FC = () => {
 
     /// HOOKS
     const [allAlbumImagenes, setAllAlbumImagenes] = useState<IAlbumData[]>([])
-    const {paginate, setPaginate} = usePaginate()
+    const { paginate, setPaginate } = usePaginate()
     const storeGlobal = useGlobalContext();
 
     /// METODOS
@@ -31,65 +31,64 @@ export const AlbumImagenes: React.FC = () => {
         const data = await AlbumImagenService.GetAllFiguritasAlbumes(page)
 
         let arrAlbumImg: ConfigCarrouselModels[] = []
-        
+
         data.Result?.listItems.map((coleccion: any, index: number) => {
             arrAlbumImg.push({
                 individualItem: `#album-item${index}`,
                 carouselWidth: 1000, // in p
-                carouselId: `#album-rotator${index}`,    
+                carouselId: `#album-rotator${index}`,
                 carouselHolderId: `#album-rotator-holder${index}`,
             })
         })
         setPaginate({
-            currentPage: data.Result.currentPage -1,
-            pagesTotal: data.Result.pages 
+            currentPage: data.Result.currentPage - 1,
+            pagesTotal: data.Result.pages
         })
         setAllAlbumImagenes(data.Result.listItems)
         carouselTarjets(arrAlbumImg)
     }
 
-    const changePage = ({selected}: any) => {
-        window.scrollTo(0,0);
-        getAllAlbumImagenes(selected+1)
+    const changePage = ({ selected }: any) => {
+        window.scrollTo(0, 0);
+        getAllAlbumImagenes(selected + 1)
     }
 
-    const buyFigurita = async ( idFigurita: number) => {
+    const buyFigurita = async (idFigurita: number) => {
 
         try {
-                      
+
             storeGlobal.SetShowLoader(true)
-                                        
-            const {Result, MessageError } = await AlbumImagenService.buyFigurita({
-               IdUsuario: storeGlobal.GetMyUserData().Id,
-               IdAlbumImagen: idFigurita
+
+            const { Result, MessageError } = await AlbumImagenService.buyFigurita({
+                IdUsuario: storeGlobal.GetMyUserData().Id,
+                IdAlbumImagen: idFigurita
             })
 
-            if (MessageError != undefined)
-            {
-              throw new Error(MessageError);
+            if (MessageError != undefined) {
+                throw new Error(MessageError);
             }
-                               
-            storeGlobal.SetShowLoader(false)                                         
+
+            storeGlobal.SetShowLoader(false)
             storeGlobal.SetMessageModalStatus(Result)
-                  
+
         } catch (error: any) {
-            
+
             storeGlobal.SetShowLoader(false)
             storeGlobal.SetMessageModalStatus(`Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`)
-            
+
         } finally {
             storeGlobal.SetShowModalStatus(true)
-                      
+
             setTimeout(() => {
-               storeGlobal.SetShowModalStatus(false)
+                storeGlobal.SetShowModalStatus(false)
             }, 5000);
-      
+
         }
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         getAllAlbumImagenes()
-    },[])
+    }, [])
 
     return (
 
@@ -111,7 +110,7 @@ export const AlbumImagenes: React.FC = () => {
                         </div>
                     </div>
 
-                    {allAlbumImagenes.length === 0 && <Loader/>}
+                    {allAlbumImagenes.length === 0 && <Loader />}
 
                     {
                         allAlbumImagenes.map((AlbumIMG: IAlbumData, indexAlbum: number) => (
@@ -123,26 +122,23 @@ export const AlbumImagenes: React.FC = () => {
                                 <section id={`album-rotator-holder${indexAlbum}`} className="albumRotatorHolder">
                                     {
                                         AlbumIMG.listadoImagenes.map((figuritas: IAlbumImagenesData, indexEsport: number) => (
-                                            <article id={`album-item${indexAlbum}`} style={{cursor: 'pointer'}}
+                                            <article id={`album-item${indexAlbum}`} style={{ cursor: 'pointer' }}
                                                 className={`albumItem`} key={indexEsport}
-                                            >   
-                                                <div className={`albumItem__details`}>  
+                                            >
+                                                <img src={figuritas.imagen} alt="" className="image" />
 
-                                                   <h3>{figuritas.titulo}</h3>
-
-                                                   <img src={figuritas.imagen} alt="" />
-
-                                                   <button className="btnFiguritasComprar" type='submit' 
-                                                   onClick={() => buyFigurita(figuritas.id)}>Comprar</button>
-
+                                                <div className={`albumItem__details`}>
+                                                    <h3>{figuritas.titulo}</h3>
+                                                    <button className="btnFiguritasComprar" type='submit'
+                                                        onClick={() => buyFigurita(figuritas.id)}>Comprar</button>
                                                 </div>
 
                                             </article>
                                         ))
-                                    }          
+                                    }
                                 </section>
                             </div>
-                            
+
                         ))
                     }
                     <div>
@@ -151,11 +147,12 @@ export const AlbumImagenes: React.FC = () => {
                             PageCount={paginate.pagesTotal}
                             LocatedPageNumber={paginate.currentPage}
                         />
-                    </div>           
+                    </div>
 
                 </div>
 
             </div></>
 
 
-)}
+    )
+}

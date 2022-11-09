@@ -109,9 +109,10 @@ export const AlbumUsuarioImagen: React.FC = () => {
                                     <article id={`album-item0`} style={{ cursor: 'pointer' }}
                                         className={`albumItem`} key={indexEsport}
                                     >
+                                        <img className="image" src={myFigus.albumImagenes.imagen} alt="" />
+                                        
                                         <div className={`albumItem__details`}>
                                             <h3>{myFigus.albumImagenes.titulo}</h3>
-                                            <img src={myFigus.albumImagenes.imagen} alt="" />
                                         </div>
                                     </article>
                                 ))

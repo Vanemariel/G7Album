@@ -12,85 +12,85 @@ import { useGlobalContext } from "../../Context/useGlobalContext";
 import { Paginate } from '../../Components/Paginate/Paginate';
 import { usePaginate } from '../../Hooks/usePaginate';
 import { Loader } from '../../Components/Loader/Loader';
+import { url } from 'inspector';
 
 export const Album: React.FC = () => {
 
 
-    
+
     /// HOOKS
     const storeGlobal = useGlobalContext();
     const [allColecciones, setAllColecciones] = useState<IColeccionData[]>([])
-    const {paginate, setPaginate} = usePaginate()
+    const { paginate, setPaginate } = usePaginate()
 
 
 
     /// METODOS
     const getAllColeccionAlbumes = async (page: number = 1) => {
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-        
+
         const data = await AlbumService.GetAllColeccionAlbumes(page)
 
         let arrAlbum: ConfigCarrouselModels[] = []
-        
+
         data.Result?.listItems.map((coleccion: any, index: number) => {
             arrAlbum.push({
                 individualItem: `#album-item${index}`,
                 carouselWidth: 1000, // in p
-                carouselId: `#album-rotator${index}`,    
+                carouselId: `#album-rotator${index}`,
                 carouselHolderId: `#album-rotator-holder${index}`,
             })
         })
-        
+
         setPaginate({
-            currentPage: data.Result.currentPage -1,
-            pagesTotal: data.Result.pages 
+            currentPage: data.Result.currentPage - 1,
+            pagesTotal: data.Result.pages
         })
         setAllColecciones(data.Result.listItems)
-        carouselTarjets(arrAlbum) 
+        carouselTarjets(arrAlbum)
     }
 
     const buyAlbum = async (idAlbum: number) => {
 
         try {
-                      
+
             storeGlobal.SetShowLoader(true)
-                                        
-            const {Result, MessageError } = await AlbumService.buyAlbum({
-               IdUsuario: storeGlobal.GetMyUserData().Id, 
-               IdAlbum: idAlbum
+
+            const { Result, MessageError } = await AlbumService.buyAlbum({
+                IdUsuario: storeGlobal.GetMyUserData().Id,
+                IdAlbum: idAlbum
             })
 
-            if (MessageError != undefined)
-            {
-              throw new Error(MessageError);
+            if (MessageError != undefined) {
+                throw new Error(MessageError);
             }
-                               
-            storeGlobal.SetShowLoader(false)                                         
+
+            storeGlobal.SetShowLoader(false)
             storeGlobal.SetMessageModalStatus(Result)
-                  
+
         } catch (error: any) {
-            
+
             storeGlobal.SetShowLoader(false)
             storeGlobal.SetMessageModalStatus(`Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`)
-            
+
         } finally {
             storeGlobal.SetShowModalStatus(true)
-                      
+
             setTimeout(() => {
-               storeGlobal.SetShowModalStatus(false)
+                storeGlobal.SetShowModalStatus(false)
             }, 5000);
-      
+
         }
     }
 
-    const changePage = ({selected}: any) => {
-        window.scrollTo(0,0);
-        getAllColeccionAlbumes(selected+1)
+    const changePage = ({ selected }: any) => {
+        window.scrollTo(0, 0);
+        getAllColeccionAlbumes(selected + 1)
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         getAllColeccionAlbumes()
-    },[])
+    }, [])
 
     return (
 
@@ -110,31 +110,32 @@ export const Album: React.FC = () => {
                     </div>
                     <br />
 
-                    {allColecciones.length === 0 && <Loader/>}
+                    {allColecciones.length === 0 && <Loader />}
 
                     {
                         allColecciones?.map((Coleccion: IColeccionData, indexAlbum: number) => (
 
                             <div id={`album-rotator${indexAlbum}`} key={indexAlbum} className="albumRotatorContainer">
-                            <h1 className='title'>{Coleccion.tituloColeccion}</h1>
-                        
+                                <h1 className='title'>{Coleccion.tituloColeccion}</h1>
+
                                 <section id={`album-rotator-holder${indexAlbum}`} className="albumRotatorHolder">
                                     {
-                                        Coleccion?.listadoAlbum.map((album: IAlbumData, indexEsport: number)=>(
-                                            <article id={`album-item${indexAlbum}`} style={{cursor: 'pointer'}}
+                                        Coleccion?.listadoAlbum.map((album: IAlbumData, indexEsport: number) => (
+                                            <article
+                                                id={`album-item${indexAlbum}`}
                                                 className={`albumItem`} key={indexEsport}
+                                                style={{ cursor: 'pointer' }}
                                             >
-                                                <div className={`albumItem__details`}>  
-
+                                                <img src={album.imagen} className="image" alt="" />
+                                                <div className={`albumItem__details`} >
                                                     <h3>{album.titulo}</h3>
-                                                    <img src={album.imagen} alt="" />
                                                     <button className="btnAlbumComprar" type='submit' onClick={() => buyAlbum(album.id)}>Comprar</button>
                                                 </div>
                                             </article>
                                         ))
                                     }
                                 </section>
-                            </div> 
+                            </div>
                         ))
                     }
                     <div>
