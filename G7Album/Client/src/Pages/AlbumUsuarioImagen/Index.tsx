@@ -92,7 +92,7 @@ export const AlbumUsuarioImagen: React.FC = () => {
         <div className="containerPageAlbum">
             <div id="m">
 
-                <h1>Mis Figuritas </h1>
+                <h1>Mis Figuritas de {params.nombreAlbum}</h1>
 
 
                 {allMyFiguritas.length === 0 &&

@@ -113,7 +113,7 @@ export const AlbumUsuario: React.FC = () => {
                                             <h3>{myAlbum.album.titulo}</h3>
 
                                             <button
-                                              onClick={() => navigate(`/AlbumUsuarioImagen/${myAlbum.albumId}`)}
+                                              onClick={() => navigate(`/AlbumUsuarioImagen/${myAlbum.album.titulo}/${myAlbum.albumId}`)}
                                             > Ver figuritas</button>
                                         </div>
                                     </article>
