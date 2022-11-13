@@ -138,6 +138,7 @@ namespace G7Album.Server.Controllers
                 
                 AlbumUsuario? AlbumComprado = await this.context.TablaAlbumesUsuarios
                     .Where(x => x.AlbumId == CompraFigus.IdAlbum)
+                    .Where(Usuario => Usuario.Id == CompraFigus.IdUsuario)
                     .FirstOrDefaultAsync();
 
                 if (AlbumComprado == null)
