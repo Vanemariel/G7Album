@@ -3,17 +3,33 @@ import { IAlbumData } from "../../Interface/DTO Back/Album/IAlbumData";
 import { useGlobalContext } from "../../Context/useGlobalContext";
 import { Loader } from "../../Components/Loader/Loader";
 import AdminAlbumService from "./AdminAlbum.Service";
-import "./style.css"
+import "./style.css";
 import { ConfigCarrouselModels } from "../../Models/ConfigCarrousel.models";
 
 export const AdminAlbum: React.FC = () => {
+  //HOOKS
+  const storeGlobal = useGlobalContext();
   const [allAlbunes, setAllAlbumes] = useState<IAlbumData[]>([]);
 
+  //METODOS
   const getAll = async () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
 
     const data = await AdminAlbumService.GetAllAdminAlbumes();
     setAllAlbumes(data.Result.listItems);
+  };
+
+  const Put = async (idAlbum: number, titulo: string) => {
+    try {
+      const { Result, MessageError } =
+        await AdminAlbumService.updateAdminAlbumes(idAlbum,titulo);
+
+      if (MessageError !== undefined) {
+        throw new Error(MessageError);
+      }
+    } catch (error: any) {
+      return `Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`;
+    }
   };
 
   useEffect(() => {
@@ -36,8 +52,10 @@ export const AdminAlbum: React.FC = () => {
             {allAlbunes?.map((Albumes: IAlbumData, indexAlbum: number) => (
               <tr>
                 <th>{Albumes.titulo}</th>
-                <th><button>MODIFICAR</button><button>ELIMINAR</button></th>
-
+                <th>
+                  <button className="buttonAdmin">Modificar</button>
+                  <button className="buttonAdmin">Eliminar</button>
+                </th>
               </tr>
             ))}
           </table>

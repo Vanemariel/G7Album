@@ -6,13 +6,16 @@
 }
 #titulo{
     color: purple;
-    padding: 100px;
+    /* padding: 50px; */
     text-align: center;
 }
+
 .texto{
     color: black;
-    margin-top: 50px;
+    margin-bottom: 100px;
     font-weight: bold;
+    text-align: center;
+    font-size: 30px;
 }
 
 .margen{
@@ -21,9 +24,21 @@
 }
 
 .table{
-    color:black
-
+    color:black;
+    /* margin: 16px; */
+    width: 80%;
+    margin: auto;
 }
 .table th{
+    padding-left: 10px;
+    padding-top: 10px;
     width: 10em;
+    font-size: 20px;
+}
+
+.buttonAdmin{
+
+    border-radius: 1rem;
+    margin: 10px;
+    background-color:  #bbb !important
 }
