@@ -1,0 +1,28 @@
+#titulo{
+    color: purple;
+    height:  300px;
+    background-color:burlywood;
+    background-size: cover;
+    padding: 100px;
+    text-align: center;
+}
+.margen{
+    margin: 15px 20px 25px 30px;
+    margin-top: 100px;
+}
+
+p.texto{
+    color: black;
+    margin-top: 50px;
+}
+div p{
+    color:black;
+    
+}
+div table{
+    color:black
+
+}
+table th{
+    width: 10em;
+}
