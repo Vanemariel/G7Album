@@ -1,8 +1,12 @@
-#titulo{
-    color: purple;
-    height:  300px;
+.lalala {
+    height:  100%;
     background-color:burlywood;
     background-size: cover;
+
+}
+
+#titulo{
+    color: purple;
     padding: 100px;
     text-align: center;
 }
