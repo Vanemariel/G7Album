@@ -22,11 +22,26 @@ export const AdminAlbum: React.FC = () => {
   const Put = async (idAlbum: number, titulo: string) => {
     try {
       const { Result, MessageError } =
-        await AdminAlbumService.updateAdminAlbumes(idAlbum,titulo);
+        await AdminAlbumService.updateAdminAlbumes(idAlbum, titulo);
 
       if (MessageError !== undefined) {
         throw new Error(MessageError);
       }
+    } catch (error: any) {
+      return `Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`;
+    }
+  };
+
+  const Delete = async (idAlbum: number) => {
+    try {
+      const { Result, MessageError } =
+        await AdminAlbumService.DeleteAdminAlbumes(idAlbum);
+
+      if (MessageError !== undefined) {
+        throw new Error(MessageError);
+      }
+      alert("Se elimino el album");
+      getAll();
     } catch (error: any) {
       return `Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`;
     }
@@ -54,7 +69,12 @@ export const AdminAlbum: React.FC = () => {
                 <th>{Albumes.titulo}</th>
                 <th>
                   <button className="buttonAdmin">Modificar</button>
-                  <button className="buttonAdmin">Eliminar</button>
+                  <button
+                    className="buttonAdmin"
+                    onClick={() => Delete(Albumes.id)}
+                  >
+                    Eliminar
+                  </button>
                 </th>
               </tr>
             ))}
