@@ -104,12 +104,13 @@ namespace G7Album.Server.Controllers
 
 
         [HttpPut("{id:int}")]
-        public ActionResult Put (int id, [FromBody] Album alb)
+        // public ActionResult Put (int id, [FromBody] Album alb)
+        public ActionResult Put (int id, [FromBody] string titulo)
         {
-            if (id != alb.Id)
-            {
-                return BadRequest("Datos incorrectos");
-            }
+            // if (id != alb.Id)
+            // {
+            //     return BadRequest("Datos incorrectos");
+            // }
 
             var album = context.TablaAlbumes.Where(x => x.Id == id).FirstOrDefault();
 
@@ -118,13 +119,13 @@ namespace G7Album.Server.Controllers
                 return NotFound("No existe el Album a modificar");
             }
 
-            album.CantidadImagen = alb.CantidadImagen;
-            album.CantidadImpreso = alb.CantidadImpreso;
-            album.CodigoAlbum = alb.CodigoAlbum;
-            album.Descripcion = alb.Descripcion;
-            album.Desde = alb.Desde;
-            album.Hasta = alb.Hasta;
-            album.Titulo = alb.Titulo;
+            // album.CantidadImagen = alb.CantidadImagen;
+            // album.CantidadImpreso = alb.CantidadImpreso;
+            // album.CodigoAlbum = alb.CodigoAlbum;
+            // album.Descripcion = alb.Descripcion;
+            // album.Desde = alb.Desde;
+            // album.Hasta = alb.Hasta;
+            album.Titulo = titulo;
 
             try
             {
