@@ -1,32 +1,29 @@
 .lalala {
-    height:  100%;
+    height:  100vh;
     background-color:burlywood;
     background-size: cover;
 
 }
-
 #titulo{
     color: purple;
     padding: 100px;
     text-align: center;
 }
+.texto{
+    color: black;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
 .margen{
     margin: 15px 20px 25px 30px;
     margin-top: 100px;
 }
 
-p.texto{
-    color: black;
-    margin-top: 50px;
-}
-div p{
-    color:black;
-    
-}
-div table{
+.table{
     color:black
 
 }
-table th{
+.table th{
     width: 10em;
 }

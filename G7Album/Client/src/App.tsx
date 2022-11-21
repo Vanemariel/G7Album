@@ -1,59 +1,71 @@
-import {  Route, Routes } from 'react-router-dom';
-import './App.css';
-import { ModalLoader } from './Components/ModalLoader/ModalLoader';
-import { ModalStatus } from './Components/ModalStatus/ModalStatus';
-import { RoutePrivate } from './Components/RoutePrivate/RoutePrivate';
-import { GlobalProvider } from './Context/GlobalProvider';
-import { AuthProvider } from './Pages/Authentication/Context/AuthProvider';
-import { Authentication } from './Pages/Authentication/Index';
-import { AlbumImagenes } from './Pages/AlbumImagenes/Index';
-import { Album } from './Pages/Album/Index';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import { ModalLoader } from "./Components/ModalLoader/ModalLoader";
+import { ModalStatus } from "./Components/ModalStatus/ModalStatus";
+import { RoutePrivate } from "./Components/RoutePrivate/RoutePrivate";
+import { GlobalProvider } from "./Context/GlobalProvider";
+import { AuthProvider } from "./Pages/Authentication/Context/AuthProvider";
+import { Authentication } from "./Pages/Authentication/Index";
+import { AlbumImagenes } from "./Pages/AlbumImagenes/Index";
+import { Album } from "./Pages/Album/Index";
 
-import { AlbumUsuario } from './Pages/AlbumUsuario/Index';
-import { Navigate } from './Components/Navigate/Navigate';
-import { AlbumUsuarioImagen } from './Pages/AlbumUsuarioImagen/Index';
-
+import { AlbumUsuario } from "./Pages/AlbumUsuario/Index";
+import { Navigate } from "./Components/Navigate/Navigate";
+import { AlbumUsuarioImagen } from "./Pages/AlbumUsuarioImagen/Index";
+import { AdminAlbum } from "./Pages/AdminAlbum/Index";
 
 function App() {
-
   return (
     <>
       <GlobalProvider>
-  
-        <Navigate/>
+        <Navigate />
 
         <Routes>
-          <Route path="/" element={
-            <AuthProvider>
-              <Authentication />
-            </AuthProvider>
-          }/>
-      
+          <Route
+            path="/"
+            element={
+              <AuthProvider>
+                <Authentication />
+              </AuthProvider>
+            }
+          />
 
-          <Route path="/AlbumUsuario" element={
+          <Route
+            path="/AlbumUsuario"
+            element={
               <RoutePrivate>
-                 <AlbumUsuario />
+                <AlbumUsuario />
               </RoutePrivate>
-          }/>
+            }
+          />
 
-          <Route path="/AlbumUsuarioImagen/:nombreAlbum/:id" element={
+          <Route
+            path="/AlbumUsuarioImagen/:nombreAlbum/:id"
+            element={
               <RoutePrivate>
-                 <AlbumUsuarioImagen />
+                <AlbumUsuarioImagen />
               </RoutePrivate>
-          }/>
+            }
+          />
 
-          <Route path="/AlbumImagenes" element={
+          <Route
+            path="/AlbumImagenes"
+            element={
               <RoutePrivate>
-                    <AlbumImagenes />
-             </RoutePrivate>
-          } />
+                <AlbumImagenes />
+              </RoutePrivate>
+            }
+          />
 
-          <Route path="/Album" element={
-            <RoutePrivate>
-                <Album/>
-              </RoutePrivate> 
-          }/>
-          
+          <Route
+            path="/Album"
+            element={
+              <RoutePrivate>
+                <Album />
+              </RoutePrivate>
+            }
+          />
+
           {/* <Route path="/ImagenFigurita" element={
                 <RoutePrivate>
                       <ImagenFigurita />
@@ -65,15 +77,21 @@ function App() {
                 <AlbumUnitario/>
               </RoutePrivate> 
           }/> */}
-           
+
+          <Route
+            path="/AdminAlbum"
+            element={
+              <RoutePrivate>
+                <AdminAlbum />
+              </RoutePrivate>
+            }
+          />
         </Routes>
 
-        <ModalLoader/>
+        <ModalLoader />
 
         <ModalStatus />
-
       </GlobalProvider>
-
     </>
   );
 }
@@ -81,10 +99,9 @@ const AppWrapper = () => {
   return (
     // Englobamos Redux al proyecto
     // <Provider store={store}>
-      <App />
+    <App />
     /* </Provider> */
   );
 };
-
 
 export default AppWrapper;

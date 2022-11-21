@@ -1,12 +1,14 @@
+import { IAlbumData } from "../../Interface/DTO Back/Album/IAlbumData";
 import { IColeccionData } from "../../Interface/DTO Back/ColeccionAlbum/IColeccionAlbumData";
+import { IPagination } from "../../Interface/DTO Back/IPagination";
 import { IResponseDTO } from "../../Interface/DTO Back/IResponseDTO";
 import { axiosMethod } from "../../Utils/axiosMethod";
 
 
 const AdminAlbumService = {
-    GetAllAdminAlbumes: async (): Promise<IResponseDTO<IColeccionData[]>> => {
+    GetAllAdminAlbumes: async (): Promise<IResponseDTO<IPagination<IAlbumData[]>>> => {
         
-        const Response = await axiosMethod<IColeccionData[]>({
+        const Response = await axiosMethod<IPagination<IAlbumData[]>>({
             method: "GET",
             url: `/Album/GetAllPage/1`
         });
@@ -16,9 +18,9 @@ const AdminAlbumService = {
             MessageError: Response.MessageError
         };  
     },
-    UpDateAdminAlbumes: async (id:number): Promise<IResponseDTO<IColeccionData[]>> => {
+    updateAdminAlbumes: async (id:number): Promise<IResponseDTO<IAlbumData[]>> => {
         
-        const Response = await axiosMethod<IColeccionData[]>({
+        const Response = await axiosMethod<IAlbumData[]>({
             method: "PUT",
             url: `Album/${id}/`
         });
@@ -28,9 +30,9 @@ const AdminAlbumService = {
             MessageError: Response.MessageError
         };
     },
-    DeleteAdminAlbumes: async (id:number): Promise<IResponseDTO<IColeccionData[]>> => {
+    DeleteAdminAlbumes: async (id:number): Promise<IResponseDTO<IAlbumData[]>> => {
         
-        const Response = await axiosMethod<IColeccionData[]>({
+        const Response = await axiosMethod<IAlbumData[]>({
             method: "DELETE",
             url: `Album/${id}/`
         });

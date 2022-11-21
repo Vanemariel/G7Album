@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Futbol",
+        "subCategorys": [
+            {
+                "title": "Copa Libertadores"
+            },
+            {
+                "title": "Champions League"
+            },
+            {
+                "title": "Copa America"
+            }
+        ]
+    }
+]

@@ -33,6 +33,7 @@ export const Navigate: React.FC = () => {
               {/* <Nav.Link href="AlbumUsuario">Mis albumes</Nav.Link> */}
               <Nav.Link href="/Album">Albumes</Nav.Link>
               <Nav.Link href="/AlbumImagenes">Figuritas</Nav.Link>
+              <Nav.Link href="/AdminAlbum">Admin</Nav.Link>
 
               <NavDropdown title="Mi cuenta" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/AlbumUsuario">Mis albumes</NavDropdown.Item>
