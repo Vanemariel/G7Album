@@ -13,6 +13,8 @@ import { AlbumUsuario } from "./Pages/AlbumUsuario/Index";
 import { Navigate } from "./Components/Navigate/Navigate";
 import { AlbumUsuarioImagen } from "./Pages/AlbumUsuarioImagen/Index";
 import { AdminAlbum } from "./Pages/AdminAlbum/Index";
+import { AdminCollection } from "./Pages/AdminCollection/Index";
+
 
 function App() {
   return (
@@ -80,6 +82,14 @@ function App() {
 
           <Route
             path="/AdminAlbum"
+            element={
+              <RoutePrivate>
+                <AdminAlbum />
+              </RoutePrivate>
+            }
+          />
+          <Route
+            path="/AdminCollection"
             element={
               <RoutePrivate>
                 <AdminAlbum />

@@ -67,5 +67,53 @@ namespace G7Album.Server.Controllers
                 return BadRequest(ResponseDto);
             }
         }
+        
+        [HttpPut("{id:int}")]
+        public ActionResult Put (int id, [FromBody] string TituloColeccion)
+        {
+            var albumcoleccion = context.TablaColeccionAlbumes.Where(x => x.Id == id).FirstOrDefault();
+
+            if (albumcoleccion == null)
+            {
+                return NotFound("No existe el Album a modificar");
+            }
+
+            albumcoleccion.TituloColeccion = TituloColeccion;
+
+            try
+            {
+                context.TablaColeccionAlbumes.Update(albumcoleccion);
+                context.SaveChanges();
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest("Los datos no han sido actualizados");
+            }
+        }
+
+        [HttpDelete("{id:int}")]
+        public ActionResult Delete(int id)
+        {
+            var albumcoleccion = context.TablaColeccionAlbumes.Where(x => x.Id == id).FirstOrDefault();
+
+            if (albumcoleccion == null)
+            {
+                return NotFound($"El Album {id} no fue encontrado");
+            }
+
+            try
+            {
+                context.TablaColeccionAlbumes.Remove(albumcoleccion);
+                context.SaveChanges();
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest($"Los datos no se pudieron eliminarse por :{e.Message}");
+            }
+        }
+    }
+}
     }
 }
