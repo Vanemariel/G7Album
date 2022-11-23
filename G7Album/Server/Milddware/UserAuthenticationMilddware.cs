@@ -26,20 +26,20 @@ namespace G7Album.Server.Middlware
                 "DELETE"
             };
 
-           /* List<string> paths = new()
-            {
-                "/api/Activities",
-                "/api/Categories",
-                "/api/News",
-                "/api/Organizations",
-                "/api/Roles",
-                "/api/Slides",
-                "/api/Testimonials"
-            };
+            /* List<string> paths = new()
+             {
+                 "/api/Activities",
+                 "/api/Categories",
+                 "/api/News",
+                 "/api/Organizations",
+                 "/api/Roles",
+                 "/api/Slides",
+                 "/api/Testimonials"
+             };
 
-            foreach (string p in paths)
-                if (path.StartsWith(p))
-                    containsPath = true;*/
+             foreach (string p in paths)
+                 if (path.StartsWith(p))
+                     containsPath = true;*/
 
             if (methods.Contains(method) && containsPath)
             {
@@ -57,4 +57,5 @@ namespace G7Album.Server.Middlware
                 await _next.Invoke(context);
             }
         }
+    }
 }

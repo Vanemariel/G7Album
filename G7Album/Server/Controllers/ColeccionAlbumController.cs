@@ -115,5 +115,4 @@ namespace G7Album.Server.Controllers
         }
     }
 }
-    }
-}
+    
