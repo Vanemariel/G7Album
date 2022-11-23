@@ -118,6 +118,8 @@ namespace G7Album.Server.Controllers
         }
 
         [HttpPost]
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
+
         //verbo es el http post, pero a la base de datos ingresa como un insert
         public async Task<ActionResult<AlbumImagenes>> Insert(AlbumImagenes albumImg)
         {
@@ -135,6 +137,9 @@ namespace G7Album.Server.Controllers
         }
 
         [HttpPut]
+
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
+
         //metodo que sirve para modificar resultados 
         public async Task<ActionResult> Modified(int id, [FromBody] AlbumImagenes img)
         {
@@ -165,6 +170,8 @@ namespace G7Album.Server.Controllers
         }
 
         [HttpDelete]
+
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
         public async Task<ActionResult> Delete(int id)
         {
             if (id <= 0)

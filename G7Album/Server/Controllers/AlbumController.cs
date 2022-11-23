@@ -56,6 +56,8 @@ namespace G7Album.Server.Controllers
         }*/
 
         [HttpGet("GetAllPage/{page:int}")]
+
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
         public async Task<ActionResult<ResponseDto<Pagination<List<Album>>>>> GetAll(int page)
         {
             ResponseDto<Pagination<List<Album>>> ResponseDto = new ResponseDto<Pagination<List<Album>>>();
@@ -104,7 +106,8 @@ namespace G7Album.Server.Controllers
 
 
         [HttpPut("{id:int}")]
-        // public ActionResult Put (int id, [FromBody] Album alb)
+
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
         public ActionResult Put (int id, [FromBody] string titulo)
         {
             // if (id != alb.Id)
@@ -141,6 +144,8 @@ namespace G7Album.Server.Controllers
 
 
         [HttpDelete("{id:int}")]
+
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
         public ActionResult Delete(int id)
         {
             var album = context.TablaAlbumes.Where(x => x.Id == id).FirstOrDefault();
