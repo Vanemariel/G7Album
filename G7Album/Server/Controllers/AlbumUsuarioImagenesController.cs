@@ -58,6 +58,8 @@ namespace G7Album.Server.Controllers
             return Ok(response);
         }*/
         [HttpGet("GetAllPage/{page:int}/{idUsuario:int}/{idAlbum:int}")]
+
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Estándar")]
         public async Task<ActionResult<ResponseDto<Pagination<List<AlbumUsuarioImagenes>>>>> GetAll(int page, int idUsuario, int idAlbum)
         {
             ResponseDto<Pagination<List<AlbumUsuarioImagenes>>> ResponseDto = new ResponseDto<Pagination<List<AlbumUsuarioImagenes>>>();

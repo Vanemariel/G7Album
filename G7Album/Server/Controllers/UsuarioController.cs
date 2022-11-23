@@ -24,6 +24,7 @@ namespace G7Album.Server.Controllers
 
 
         [HttpGet("GetAll")]
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
         public async Task<ActionResult<ResponseDto<List<User>>>> GetAll()
         {
             ResponseDto<List<User>> ResponseDto = new ResponseDto<List<User>>();

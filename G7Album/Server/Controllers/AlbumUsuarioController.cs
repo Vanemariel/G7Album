@@ -13,6 +13,8 @@ namespace G7Album.Server.Controllers
         }
 
         [HttpGet("GetAllPage/{page:int}/{idUsuario:int}")]
+
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Estándar")]
         //metodo que me muestra la lista completa  
         public async Task<ActionResult<ResponseDto<List<AlbumUsuario>>>> GetAll(int page, int idUsuario)
         {
