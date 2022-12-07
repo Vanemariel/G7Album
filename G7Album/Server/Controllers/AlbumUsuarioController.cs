@@ -144,19 +144,18 @@ namespace G7Album.Server.Controllers
 
         [HttpPut]
         //metodo que sirve para modificar resultados 
-        public async Task<ActionResult> Modified(int id, [FromBody] AlbumUsuario persona)
+        public async Task<ActionResult> UodateAlbumUsuario(int id, [FromBody] AlbumUsuario persona)
         {
-            AlbumUsuario Albumpersona = await context.TablaAlbumesUsuarios.Where(x => x.Id == id).FirstOrDefaultAsync();
-            //si mi id es null no existe 
-            if (Albumpersona == null)
-            {
-                return NotFound("no existe el AlbumUsuario a modificar.");
-            }
-            //si es correcto puedo modificar todo lo q sigue
-            // Albumpersona.CodigoAlbumUsuario = persona.CodigoAlbumUsuario;
 
             try
             {
+                AlbumUsuario Albumpersona = await context.TablaAlbumesUsuarios.Where(x => x.Id == id).FirstOrDefaultAsync();
+                //si mi id es null no existe 
+                if (Albumpersona == null)
+                {
+                    return NotFound("no existe el AlbumUsuario a modificar.");
+                }
+
                 context.TablaAlbumesUsuarios.Update(Albumpersona);
                 await context.SaveChangesAsync();
                 return Ok("Los datos han sido cambiados");

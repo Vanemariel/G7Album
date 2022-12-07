@@ -121,7 +121,7 @@ namespace G7Album.Server.Controllers
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
 
         //verbo es el http post, pero a la base de datos ingresa como un insert
-        public async Task<ActionResult<AlbumImagenes>> Insert(AlbumImagenes albumImg)
+        public async Task<ActionResult<AlbumImagenes>> AgregarAlbum(AlbumImagenes albumImg)
         {
             try
             {
@@ -141,24 +141,28 @@ namespace G7Album.Server.Controllers
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
 
         //metodo que sirve para modificar resultados 
-        public async Task<ActionResult> Modified(int id, [FromBody] AlbumImagenes img)
+        public async Task<ActionResult> UpdataAlbum(int id, [FromBody] AlbumImagenes img)
         {
-            AlbumImagenes AlbumImgs = await context.TablaImagenes.Where(x => x.Id == id).FirstOrDefaultAsync();
-            //si mi id es null no existe 
-            if (AlbumImgs == null)
-            {
-                return NotFound("no existe el AlbumUsuario a modificar.");
-            }
-            //si es correcto puedo modificar todo lo q sigue
-            AlbumImgs.NumeroImagen = img.NumeroImagen;
-            AlbumImgs.CodigoImagenOriginal = img.CodigoImagenOriginal;
-            AlbumImgs.CantidadImpresa = img.CantidadImpresa;
-            AlbumImgs.Imagen = img.Imagen;
-            //AlbumImgs.Descripcion = img.Descripcion;
-            AlbumImgs.Titulo = img.Titulo;
+           
 
             try
+
             {
+                AlbumImagenes AlbumImgs = await context.TablaImagenes.Where(x => x.Id == id).FirstOrDefaultAsync();
+                //si mi id es null no existe 
+                if (AlbumImgs == null)
+                {
+                    throw new Exception("no existe el AlbumUsuario a modificar.");
+                }
+                //si es correcto puedo modificar todo lo q sigue
+                AlbumImgs.NumeroImagen = img.NumeroImagen;
+                AlbumImgs.CodigoImagenOriginal = img.CodigoImagenOriginal;
+                AlbumImgs.CantidadImpresa = img.CantidadImpresa;
+                AlbumImgs.Imagen = img.Imagen;
+                //AlbumImgs.Descripcion = img.Descripcion;
+                AlbumImgs.Titulo = img.Titulo;
+
+
                 context.TablaImagenes.Update(AlbumImgs);
                 await context.SaveChangesAsync();
                 return Ok("Los datos han sido cambiados");
@@ -174,25 +178,29 @@ namespace G7Album.Server.Controllers
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
         public async Task<ActionResult> Delete(int id)
         {
-            if (id <= 0)
-            {
-                return BadRequest("No es correcto");
-            }
-            AlbumImagenes albunUsuario = await context.TablaImagenes.Where(x => x.Id == id).FirstOrDefaultAsync();
-            if (albunUsuario == null)//parametro de q no puede ser nulo el dato
-            {
-                return NotFound($"No existe el AlbumUsuario con id igual a {id}.");//retorna error
-            }
+            
             try
             {
+                if (id <= 0)
+                {
+                    return BadRequest("No es correcto");
+                }
+                AlbumImagenes albunUsuario = await context.TablaImagenes.Where(x => x.Id == id).FirstOrDefaultAsync();
+                if (albunUsuario == null)//parametro de q no puede ser nulo el dato
+                {
+                    throw new Exception($"No existe el AlbumUsuario con id igual a {id}.");
+                    //retorna error
+                }
+
+
                 context.TablaImagenes.Remove(albunUsuario);
                 await context.SaveChangesAsync();//busca el dato guardado
 
-                return Ok($"El AlbumUsuario {albunUsuario} ha sido borrado.");//retorna q se borro
+                throw new Exception($"El AlbumUsuario {albunUsuario} ha sido borrado.");
             }
             catch (Exception) //se captura la excepcion del try
             {
-                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+                return BadRequest(e.Message);
             }       
         }
         //public async Task<int> CountElements() => await context.TablaImagenes(); 

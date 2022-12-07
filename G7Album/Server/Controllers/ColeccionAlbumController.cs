@@ -71,17 +71,17 @@ namespace G7Album.Server.Controllers
         [HttpPut("{id:int}")]
         public ActionResult Put (int id, [FromBody] string TituloColeccion)
         {
-            var albumcoleccion = context.TablaColeccionAlbumes.Where(x => x.Id == id).FirstOrDefault();
-
-            if (albumcoleccion == null)
-            {
-                return NotFound("No existe el Album a modificar");
-            }
-
-            albumcoleccion.TituloColeccion = TituloColeccion;
-
             try
             {
+                var albumcoleccion = context.TablaColeccionAlbumes.Where(x => x.Id == id).FirstOrDefault();
+
+                if (albumcoleccion == null)
+                {
+                    return NotFound("No existe el Album a modificar");
+                }
+
+                albumcoleccion.TituloColeccion = TituloColeccion;
+
                 context.TablaColeccionAlbumes.Update(albumcoleccion);
                 context.SaveChanges();
                 return Ok();
@@ -95,15 +95,17 @@ namespace G7Album.Server.Controllers
         [HttpDelete("{id:int}")]
         public ActionResult Delete(int id)
         {
-            var albumcoleccion = context.TablaColeccionAlbumes.Where(x => x.Id == id).FirstOrDefault();
-
-            if (albumcoleccion == null)
-            {
-                return NotFound($"El Album {id} no fue encontrado");
-            }
+           
 
             try
             {
+                var albumcoleccion = context.TablaColeccionAlbumes.Where(x => x.Id == id).FirstOrDefault();
+
+                if (albumcoleccion == null)
+                {
+                    return NotFound($"El Album {id} no fue encontrado");
+                }
+
                 context.TablaColeccionAlbumes.Remove(albumcoleccion);
                 context.SaveChanges();
                 return Ok();
