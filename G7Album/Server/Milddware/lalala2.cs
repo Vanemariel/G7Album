@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 namespace G7Album.Server.Middlware
 {
 
-    public class Lalala  : IAsyncActionFilter
+    public class Lalala : IAsyncActionFilter
     {
 
         private readonly ILogger<Lalala> _logger;
@@ -18,18 +18,18 @@ namespace G7Album.Server.Middlware
 
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
-
+            bool bandera = true;
             // context.HttpContext.Response
             // context.HttpContext.Request.
-            context.Result = new ContentResult()
+
+            if (bandera)
             {
-                Content = "Resource unavailable - header should not be set",
-                StatusCode = 400
-
-            };
-
-
-            await next();
+                await next();
+            }
+            else
+            {
+                context.Result = new BadRequestObjectResult("Invalid!");
+            }
         }
     }
 
