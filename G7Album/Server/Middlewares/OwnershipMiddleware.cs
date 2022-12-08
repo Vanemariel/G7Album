@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 
-namespace G7Album.Server.Milddware
+namespace G7Album.Server.Middlewares
 {
     public class OwnershipMiddleware
     {

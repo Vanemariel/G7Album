@@ -3,6 +3,7 @@ import { useGlobalContext } from "../../Context/useGlobalContext";
 import ModalStatusCSS from "./ModalStatus.module.css";
 
 
+
 export const ModalStatus: React.FC = () => {
 
     /// VARIABLES

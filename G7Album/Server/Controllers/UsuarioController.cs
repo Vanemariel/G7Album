@@ -1,7 +1,7 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
-using G7Album.Server.Middlware;
+using G7Album.Server.Middlewares;
 using Microsoft.IdentityModel.Tokens;
 
 
@@ -21,11 +21,10 @@ namespace G7Album.Server.Controllers
             this._configuration = configuration;
         }
 
-
-        /* [Lalala] // con ActionFilterAttribute */
-        [ServiceFilter(typeof(Lalala))]
+        [ServiceFilter(typeof(Lalala))] // falta buscar para pasar parametros
+        // [TypeFilter(typeof(Lalala))]
+        
         [HttpGet("GetAll")]
-        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
         public async Task<ActionResult<ResponseDto<List<User>>>> GetAll()
         {
             ResponseDto<List<User>> ResponseDto = new ResponseDto<List<User>>();

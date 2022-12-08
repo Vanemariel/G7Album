@@ -12,6 +12,9 @@ export interface IGlobalContext {
    IsShowLoader: () => boolean,
    SetShowLoader: (value: boolean) => void,
 
+   IsShowModalContainer: () => boolean,
+   SetShowModalContainer: (value: boolean) => void,
+
    IsShowModalStatus: () => boolean,
    SetShowModalStatus: (value: boolean) => void, 
     

@@ -92,7 +92,7 @@ function App() {
             path="/AdminCollection"
             element={
               <RoutePrivate>
-                <AdminAlbum />
+                <AdminCollection />
               </RoutePrivate>
             }
           />

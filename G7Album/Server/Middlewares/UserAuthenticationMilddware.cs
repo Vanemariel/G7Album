@@ -1,8 +1,7 @@
 ﻿using System.Security.Claims;
 
-namespace G7Album.Server.Middlware
+namespace G7Album.Server.Middlewares
 {
-    // public class UserAuthenticationMiddleware: TypeFilterAttribute
     public class UserAuthenticationMiddleware
     {
         private readonly RequestDelegate _next;

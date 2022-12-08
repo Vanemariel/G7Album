@@ -5,12 +5,12 @@ import { IResponseDTO } from "../../Interface/DTO Back/IResponseDTO";
 import { axiosMethod } from "../../Utils/axiosMethod";
 
 const AdminCollectionService = {
-  GetAllAdminCollection: async (): Promise<
+  GetAllAdminCollection: async (page: number): Promise<
     IResponseDTO<IPagination<IColeccionData[]>>
   > => {
     const Response = await axiosMethod<IPagination<IColeccionData[]>>({
       method: "GET",
-      url: `/ColeccionAlbum/GetAllPage/1`,
+      url: `/ColeccionAlbum/GetAllPage/${page}`,
     });
 
     return {

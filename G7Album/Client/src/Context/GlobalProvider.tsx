@@ -21,7 +21,7 @@ export const GlobalProvider: React.FC<Props> = (props) => {
     });
   };
 
-  const IsShowLoader = () : boolean => GlobalState.ShowLoader;
+  const IsShowLoader = (): boolean => GlobalState.ShowLoader;
   const SetShowLoader = (value: boolean): void => {
     dispatch({
       type: "SetShowLoader",
@@ -29,34 +29,45 @@ export const GlobalProvider: React.FC<Props> = (props) => {
     });
   };
 
-    const IsShowModalStatus = (): boolean => GlobalState.ModalStatus.ShowModal;
+  const IsShowModalStatus = (): boolean => GlobalState.ModalStatus.ShowModal;
   const SetShowModalStatus = (value: boolean): void => {
     dispatch({
       type: "SetShowModalStatus",
-      payload: {newState: value}
+      payload: { newState: value }
     });
   };
 
-    const GetMessageModalStatus = (): string => GlobalState.ModalStatus.Message;
+  const IsShowModalContainer = (): boolean => GlobalState.ShowModalContainer;
+  const SetShowModalContainer = (value: boolean): void => {
+    dispatch({
+      type: "SetShowModalContainer",
+      payload: { newState: value }
+    });
+  };
+
+
+  const GetMessageModalStatus = (): string => GlobalState.ModalStatus.Message;
   const SetMessageModalStatus = (value: string): void => {
     dispatch({
       type: "SetMessageModalStatus",
-      payload: {newState: value}
+      payload: { newState: value }
     });
   };
 
 
   return (
     <GlobalContext.Provider value={{
-        GetMyUserData,
-        SetMyUserData,
-        IsShowLoader,
-        SetShowLoader,
-        IsShowModalStatus,
-        SetShowModalStatus,
-        GetMessageModalStatus,
-        SetMessageModalStatus
-      }}
+      GetMyUserData,
+      SetMyUserData,
+      IsShowLoader,
+      SetShowLoader,
+      IsShowModalStatus,
+      SetShowModalStatus,
+      IsShowModalContainer,
+      SetShowModalContainer,
+      GetMessageModalStatus,
+      SetMessageModalStatus
+    }}
     >
       {props.children}
     </GlobalContext.Provider>
