@@ -2,6 +2,7 @@
 
 namespace G7Album.Server.Middlware
 {
+    // public class UserAuthenticationMiddleware: TypeFilterAttribute
     public class UserAuthenticationMiddleware
     {
         private readonly RequestDelegate _next;

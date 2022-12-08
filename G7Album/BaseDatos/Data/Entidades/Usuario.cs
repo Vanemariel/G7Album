@@ -1,4 +1,5 @@
 ﻿using G7Album.BaseDatos.Data.Comun;
+using G7Album.BaseDatos.Data.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -25,12 +26,13 @@ namespace G7Album.BaseDatos.Entidades
         [Required(ErrorMessage = "Este campo es obligatorio")]
         [MaxLength(100, ErrorMessage = "El Codigo del album no puede superar {1} caracteres")]
         public string NombreCompleto { get; set; }
-
-        [ForeignKey("Roles")]
-        public int RoleID { get; set; }
-        public Rule Roles { get; set; }
-
+               
+        
         [InverseProperty("Usuario")]
-        public List<AlbumUsuario> ListaAlbumUsuario {get; set;}
+        public List<Roles>? Roles { get; set; }
+        
+        [InverseProperty("Usuario")]
+        public List<AlbumUsuario>? ListaAlbumUsuario {get; set;}
+
     }
 }

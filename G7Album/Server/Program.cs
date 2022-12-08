@@ -11,6 +11,7 @@ global using G7Album.Shared.Models;
 
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
+using G7Album.Server.Middlware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+
+
 
 
 #region Permitimos el uso de los Cors
@@ -61,6 +64,9 @@ builder.Services.AddControllers().AddJsonOptions(options =>
     options.JsonSerializerOptions.WriteIndented = true;
 });
 
+builder.Services.AddScoped<Lalala>(); // Incorporamos el filter 
+// builder.Services.
+
 #endregion
 
 
@@ -80,8 +86,9 @@ app.UseCors(options =>
 #region Conexion al Swagger
 
 app.UseSwagger();
-app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json",
-    "Album v1"));
+app.UseSwaggerUI(c => {
+    c.SwaggerEndpoint("/swagger/v1/swagger.json","Album v1");
+});
 
 #endregion
 

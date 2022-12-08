@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace G7Album.BaseDatos.Migrations
 {
-    public partial class inciio : Migration
+    public partial class inicio : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -61,6 +61,27 @@ namespace G7Album.BaseDatos.Migrations
                         name: "FK_TablaAlbumes_TablaColeccionAlbumes_ColeccionAlbumId",
                         column: x => x.ColeccionAlbumId,
                         principalTable: "TablaColeccionAlbumes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TablaRoles",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    UsuarioId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TablaRoles", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_TablaRoles_TablaUsuarios_UsuarioId",
+                        column: x => x.UsuarioId,
+                        principalTable: "TablaUsuarios",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -191,36 +212,36 @@ namespace G7Album.BaseDatos.Migrations
                 columns: new[] { "Id", "CantidadImagen", "CantidadImpreso", "CodigoAlbum", "ColeccionAlbumId", "Descripcion", "Desde", "Hasta", "Imagen", "Titulo" },
                 values: new object[,]
                 {
-                    { 1, 12, 1000, 1, 1, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3698), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3709), "https://www.elcomercio.com/wp-content/uploads/2022/10/Liber-COnme-700x391.jpg", "Copa Libertadores" },
-                    { 2, 12, 1000, 2, 1, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3717), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3717), "https://a.espncdn.com/photo/2021/0913/r908628_1296x729_16-9.jpg", "Champions League" },
-                    { 3, 12, 1000, 3, 1, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3719), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3719), "https://auf.org.uy/imagenes/img_contenido/contenido/c/copa-america_5.jpg", "Copa America" },
-                    { 4, 9, 1000, 4, 2, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3721), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3721), "https://image.shutterstock.com/image-photo/london-uk-april-2022-close-260nw-2165550065.jpg", "Wimbledon" },
-                    { 5, 9, 1000, 5, 2, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3723), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3723), "https://espnpressroom.com/mexico/files/2018/05/Roland-Garros.png", "Rollan Garros" },
-                    { 6, 9, 1000, 6, 2, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3725), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3725), "https://brandemia.org/sites/default/files/inline/images/us_open_logo.jpg", "Us Open" },
-                    { 7, 8, 1000, 7, 3, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3727), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3727), "https://www.unocontraunoweb.com/wp-content/uploads/2021/01/acb-logo-2019.jpg", "Liga Endesa" },
-                    { 8, 8, 1000, 8, 3, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3763), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3763), "https://a4.espncdn.com/combiner/i?img=%2Fi%2Fespn%2Fmisc_logos%2F500%2Fnba.png", "NBA" },
-                    { 9, 8, 1000, 9, 3, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3765), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3766), "https://pbs.twimg.com/profile_images/1537068349385068544/OSkcZWlP_400x400.jpg", "La Liga Argentina" },
-                    { 10, 7, 1000, 10, 4, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3767), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3768), "https://searchvectorlogo.com/wp-content/uploads/2020/09/national-rugby-league-nrl-vector-logo.png", "National Rugby League" },
-                    { 11, 7, 1000, 11, 4, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3769), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3770), "https://upload.wikimedia.org/wikipedia/en/a/a5/Super_League_logo_2017.jpg", "Super League" },
-                    { 12, 7, 1000, 12, 4, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3772), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3772), "https://www.prensa-latina.cu/wp-content/uploads/2022/08/Rugby-Championship-2022.jpg", "The Rugby Championship" },
-                    { 13, 17, 1000, 100, 5, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3774), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3774), "https://cdn1.eldia.com/112021/1635837451953.jpg", "Monster Inc" },
-                    { 14, 17, 1000, 101, 5, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3776), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3776), "https://ichef.bbci.co.uk/images/ic/1200x675/p0915n36.jpg", "Monster University" },
-                    { 15, 17, 1000, 102, 5, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3778), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3778), "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/16E670238DC278CF1FC15F794914B0371708F078C210E01443353314452473E9/scale?width=1200&aspectRatio=1.78&format=jpeg", "High school Musical" },
-                    { 16, 17, 1000, 104, 5, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3780), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3780), "https://pics.filmaffinity.com/High_School_Musical_2_TV-318249736-mmed.jpg", "High school Musical 2" },
-                    { 26, 17, 1000, 105, 5, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3782), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3782), "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/050E5D6C2B62066D3397CD0855B4274A9728186CEE39451C68FAA17A1D8EBB98/scale?width=1200&aspectRatio=1.78&format=jpeg", "La era del hielo 1" },
-                    { 27, 17, 1000, 106, 5, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3784), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3784), "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/2BDBC39CA1B941A0C4360565C67E8EDB97E2D0904DF11737583ED61E80C7CC07/scale?width=1200&aspectRatio=1.78&format=jpeg", "La era del hielo 2" },
-                    { 28, 17, 1000, 107, 5, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3785), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3786), "https://mx.web.img3.acsta.net/c_310_420/pictures/20/10/21/20/18/4455162.jpg", "La era del hielo 3" },
-                    { 63, 15, 1000, 1, 6, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3791), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3792), "https://img2.rtve.es/i/?w=1600&i=1657019155649.jpg", "Dragonball" },
-                    { 64, 15, 1000, 2, 6, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3793), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3794), "https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/36bdc5ea4443cd8e42f22ec7d3884cbb.jpeg", "Dragonball Z" },
-                    { 65, 15, 1000, 3, 6, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3795), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3796), "https://depor.com/resizer/6Gmj2BD2B09Yug9skT5G_37oBgg=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/B35WNLM7UJGIJNOWQFDO3UPY34.jpg", "Dragonball Super" },
-                    { 70, 15, 1000, 5, 6, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3799), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3800), "https://es.web.img3.acsta.net/pictures/13/12/13/09/11/515425.jpg", "Naruto Shippuden" },
-                    { 71, 15, 1000, 6, 6, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3801), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3802), "https://img1.ak.crunchyroll.com/i/spire4/7dde3a40ce5d5615813a5ac12683631a1616450115_full.jpg", "Naruto Next Generation" },
-                    { 80, 15, 1000, 7, 6, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3803), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3803), "https://larepublica.pe/resizer/e0pacYSNg1Mt_pZBIbVHe65wXHw=/1200x660/top/arc-anglerfish-arc2-prod-gruporepublica.s3.amazonaws.com/public/ATQBEGGFCRDSHAONTOR7O2VCNM.jpg", "Saint Seiya the Lost Canvas" },
-                    { 81, 15, 1000, 8, 6, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3805), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3805), "https://i.ytimg.com/vi/p2POuLSrWms/maxresdefault.jpg", "Batalla de Poseidon" },
-                    { 82, 15, 1000, 9, 6, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3807), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3807), "https://i.ytimg.com/vi/vsGd6A-CrbY/maxresdefault.jpg", "Batalla de Asgard" },
-                    { 96, 15, 1000, 4, 6, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3797), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3798), "https://i.pinimg.com/originals/3f/0d/1a/3f0d1afe64a74343c0f173faec9df8e0.jpg", "Naruto" },
-                    { 100, 17, 1000, 107, 5, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3787), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3788), "https://as01.epimg.net/meristation/imagenes/2022/09/30/reportajes/1664534991_626157_1664615989_noticia_normal.jpg", "Avatar" },
-                    { 101, 17, 1000, 107, 5, "figus", new DateTime(2022, 11, 13, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3789), new DateTime(2022, 11, 23, 17, 13, 27, 124, DateTimeKind.Local).AddTicks(3790), "https://i.blogs.es/884d13/avatar-2/840_560.jpeg", "Avatar 2" }
+                    { 1, 12, 1000, 1, 1, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2824), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2849), "https://www.elcomercio.com/wp-content/uploads/2022/10/Liber-COnme-700x391.jpg", "Copa Libertadores" },
+                    { 2, 12, 1000, 2, 1, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2864), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2865), "https://a.espncdn.com/photo/2021/0913/r908628_1296x729_16-9.jpg", "Champions League" },
+                    { 3, 12, 1000, 3, 1, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2869), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2869), "https://auf.org.uy/imagenes/img_contenido/contenido/c/copa-america_5.jpg", "Copa America" },
+                    { 4, 9, 1000, 4, 2, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2872), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2872), "https://image.shutterstock.com/image-photo/london-uk-april-2022-close-260nw-2165550065.jpg", "Wimbledon" },
+                    { 5, 9, 1000, 5, 2, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2875), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2875), "https://espnpressroom.com/mexico/files/2018/05/Roland-Garros.png", "Rollan Garros" },
+                    { 6, 9, 1000, 6, 2, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2878), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2879), "https://brandemia.org/sites/default/files/inline/images/us_open_logo.jpg", "Us Open" },
+                    { 7, 8, 1000, 7, 3, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2881), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2882), "https://www.unocontraunoweb.com/wp-content/uploads/2021/01/acb-logo-2019.jpg", "Liga Endesa" },
+                    { 8, 8, 1000, 8, 3, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2884), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2885), "https://a4.espncdn.com/combiner/i?img=%2Fi%2Fespn%2Fmisc_logos%2F500%2Fnba.png", "NBA" },
+                    { 9, 8, 1000, 9, 3, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2887), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2888), "https://pbs.twimg.com/profile_images/1537068349385068544/OSkcZWlP_400x400.jpg", "La Liga Argentina" },
+                    { 10, 7, 1000, 10, 4, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2890), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2891), "https://searchvectorlogo.com/wp-content/uploads/2020/09/national-rugby-league-nrl-vector-logo.png", "National Rugby League" },
+                    { 11, 7, 1000, 11, 4, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2893), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2894), "https://upload.wikimedia.org/wikipedia/en/a/a5/Super_League_logo_2017.jpg", "Super League" },
+                    { 12, 7, 1000, 12, 4, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2896), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2897), "https://www.prensa-latina.cu/wp-content/uploads/2022/08/Rugby-Championship-2022.jpg", "The Rugby Championship" },
+                    { 13, 17, 1000, 100, 5, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2899), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2900), "https://cdn1.eldia.com/112021/1635837451953.jpg", "Monster Inc" },
+                    { 14, 17, 1000, 101, 5, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2902), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2903), "https://ichef.bbci.co.uk/images/ic/1200x675/p0915n36.jpg", "Monster University" },
+                    { 15, 17, 1000, 102, 5, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2905), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2906), "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/16E670238DC278CF1FC15F794914B0371708F078C210E01443353314452473E9/scale?width=1200&aspectRatio=1.78&format=jpeg", "High school Musical" },
+                    { 16, 17, 1000, 104, 5, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2908), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2909), "https://pics.filmaffinity.com/High_School_Musical_2_TV-318249736-mmed.jpg", "High school Musical 2" },
+                    { 26, 17, 1000, 105, 5, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2911), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2912), "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/050E5D6C2B62066D3397CD0855B4274A9728186CEE39451C68FAA17A1D8EBB98/scale?width=1200&aspectRatio=1.78&format=jpeg", "La era del hielo 1" },
+                    { 27, 17, 1000, 106, 5, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2914), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2915), "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/2BDBC39CA1B941A0C4360565C67E8EDB97E2D0904DF11737583ED61E80C7CC07/scale?width=1200&aspectRatio=1.78&format=jpeg", "La era del hielo 2" },
+                    { 28, 17, 1000, 107, 5, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2917), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2918), "https://mx.web.img3.acsta.net/c_310_420/pictures/20/10/21/20/18/4455162.jpg", "La era del hielo 3" },
+                    { 63, 15, 1000, 1, 6, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2926), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2927), "https://img2.rtve.es/i/?w=1600&i=1657019155649.jpg", "Dragonball" },
+                    { 64, 15, 1000, 2, 6, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2929), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2930), "https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/36bdc5ea4443cd8e42f22ec7d3884cbb.jpeg", "Dragonball Z" },
+                    { 65, 15, 1000, 3, 6, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2932), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2933), "https://depor.com/resizer/6Gmj2BD2B09Yug9skT5G_37oBgg=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/B35WNLM7UJGIJNOWQFDO3UPY34.jpg", "Dragonball Super" },
+                    { 70, 15, 1000, 5, 6, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2939), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2939), "https://es.web.img3.acsta.net/pictures/13/12/13/09/11/515425.jpg", "Naruto Shippuden" },
+                    { 71, 15, 1000, 6, 6, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2942), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2942), "https://img1.ak.crunchyroll.com/i/spire4/7dde3a40ce5d5615813a5ac12683631a1616450115_full.jpg", "Naruto Next Generation" },
+                    { 80, 15, 1000, 7, 6, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2945), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2946), "https://larepublica.pe/resizer/e0pacYSNg1Mt_pZBIbVHe65wXHw=/1200x660/top/arc-anglerfish-arc2-prod-gruporepublica.s3.amazonaws.com/public/ATQBEGGFCRDSHAONTOR7O2VCNM.jpg", "Saint Seiya the Lost Canvas" },
+                    { 81, 15, 1000, 8, 6, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2948), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2949), "https://i.ytimg.com/vi/p2POuLSrWms/maxresdefault.jpg", "Batalla de Poseidon" },
+                    { 82, 15, 1000, 9, 6, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2951), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2952), "https://i.ytimg.com/vi/vsGd6A-CrbY/maxresdefault.jpg", "Batalla de Asgard" },
+                    { 96, 15, 1000, 4, 6, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2936), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2936), "https://i.pinimg.com/originals/3f/0d/1a/3f0d1afe64a74343c0f173faec9df8e0.jpg", "Naruto" },
+                    { 100, 17, 1000, 107, 5, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2920), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2921), "https://as01.epimg.net/meristation/imagenes/2022/09/30/reportajes/1664534991_626157_1664615989_noticia_normal.jpg", "Avatar" },
+                    { 101, 17, 1000, 107, 5, "figus", new DateTime(2022, 12, 8, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2923), new DateTime(2022, 12, 18, 10, 29, 28, 15, DateTimeKind.Local).AddTicks(2924), "https://i.blogs.es/884d13/avatar-2/840_560.jpeg", "Avatar 2" }
                 });
 
             migrationBuilder.InsertData(
@@ -457,7 +478,7 @@ namespace G7Album.BaseDatos.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "Entity_Id",
+                name: "Entity_Id1",
                 table: "TablaAlbumes",
                 column: "Id",
                 unique: true);
@@ -468,7 +489,7 @@ namespace G7Album.BaseDatos.Migrations
                 column: "ColeccionAlbumId");
 
             migrationBuilder.CreateIndex(
-                name: "Entity_Id3",
+                name: "Entity_Id4",
                 table: "TablaAlbumesUsuarios",
                 column: "Id",
                 unique: true);
@@ -484,13 +505,13 @@ namespace G7Album.BaseDatos.Migrations
                 column: "UsuarioId");
 
             migrationBuilder.CreateIndex(
-                name: "Entity_Id5",
+                name: "Entity_Id6",
                 table: "TablaColeccionAlbumes",
                 column: "Id",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "Entity_Id2",
+                name: "Entity_Id3",
                 table: "TablaImagenes",
                 column: "Id",
                 unique: true);
@@ -501,7 +522,7 @@ namespace G7Album.BaseDatos.Migrations
                 column: "AlbumId");
 
             migrationBuilder.CreateIndex(
-                name: "Entity_Id1",
+                name: "Entity_Id2",
                 table: "TablaImagenesImpresas",
                 column: "Id",
                 unique: true);
@@ -512,7 +533,18 @@ namespace G7Album.BaseDatos.Migrations
                 column: "AlbumImagenId");
 
             migrationBuilder.CreateIndex(
-                name: "Entity_Id4",
+                name: "Entity_Id",
+                table: "TablaRoles",
+                column: "Id",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TablaRoles_UsuarioId",
+                table: "TablaRoles",
+                column: "UsuarioId");
+
+            migrationBuilder.CreateIndex(
+                name: "Entity_Id5",
                 table: "TablaUsuarioImagenes",
                 column: "Id",
                 unique: true);
@@ -528,7 +560,7 @@ namespace G7Album.BaseDatos.Migrations
                 column: "UsuarioId");
 
             migrationBuilder.CreateIndex(
-                name: "Entity_Id6",
+                name: "Entity_Id7",
                 table: "TablaUsuarios",
                 column: "Id",
                 unique: true);
@@ -541,6 +573,9 @@ namespace G7Album.BaseDatos.Migrations
 
             migrationBuilder.DropTable(
                 name: "TablaImagenesImpresas");
+
+            migrationBuilder.DropTable(
+                name: "TablaRoles");
 
             migrationBuilder.DropTable(
                 name: "TablaUsuarioImagenes");

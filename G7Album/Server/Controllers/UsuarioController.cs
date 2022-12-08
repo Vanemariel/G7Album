@@ -1,10 +1,9 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
+using G7Album.Server.Middlware;
 using Microsoft.IdentityModel.Tokens;
 
-using G7Album.Shared.DTO_Back;
-using G7Album.Shared.DTO_Front;
 
 namespace G7Album.Server.Controllers
 {
@@ -23,6 +22,8 @@ namespace G7Album.Server.Controllers
         }
 
 
+        /* [Lalala] // con ActionFilterAttribute */
+        [ServiceFilter(typeof(Lalala))]
         [HttpGet("GetAll")]
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
         public async Task<ActionResult<ResponseDto<List<User>>>> GetAll()
@@ -33,10 +34,12 @@ namespace G7Album.Server.Controllers
             {
                 List<Usuario> Usuarios = await this._context.TablaUsuarios.ToListAsync();
 
-                List<User> ListUserMapper = new List<User> {};
+                List<User> ListUserMapper = new List<User> { };
 
-                Usuarios.ForEach(Usuario => {
-                    ListUserMapper.Add( new User {
+                Usuarios.ForEach(Usuario =>
+                {
+                    ListUserMapper.Add(new User
+                    {
                         Email = Usuario.Email,
                         Id = Usuario.Id,
                         NombreCompleto = Usuario.NombreCompleto
@@ -45,7 +48,7 @@ namespace G7Album.Server.Controllers
 
                 ResponseDto.Result = ListUserMapper;
 
-                return Ok(ResponseDto); 
+                return Ok(ResponseDto);
             }
             catch (Exception ex)
             {
@@ -65,13 +68,14 @@ namespace G7Album.Server.Controllers
                 Usuario? Usuario = await this._context.TablaUsuarios
                     .Where(Usuario => Usuario.Id == id)
                     .FirstOrDefaultAsync();
- 
+
                 if (Usuario == null)
                 {
                     throw new Exception($"no existe el Usuario con id igual a {id}.");
                 }
 
-                User UserMapper = new User {
+                User UserMapper = new User
+                {
                     Email = Usuario.Email,
                     Id = Usuario.Id,
                     NombreCompleto = Usuario.NombreCompleto
@@ -93,7 +97,7 @@ namespace G7Album.Server.Controllers
         public async Task<ActionResult<ResponseDto<string>>> Register(DataRegisterForm newUsuario)
         {
             ResponseDto<string> ResponseDto = new ResponseDto<string>();
-             
+
             try
             {
 
@@ -173,8 +177,8 @@ namespace G7Album.Server.Controllers
                 {
                     throw new Exception("Email ingresado es incorrecto");
                 }
-                
-                if (!this.VerifyPasswordHash(UsuarioData.Password, UserBD.Password ,UserBD.PasswordSalt))
+
+                if (!this.VerifyPasswordHash(UsuarioData.Password, UserBD.Password, UserBD.PasswordSalt))
                 {
                     throw new Exception("Contraseña incorrecta");
                 }
@@ -189,15 +193,15 @@ namespace G7Album.Server.Controllers
                         NombreCompleto = UserBD.NombreCompleto
                     },
                 };
-              
+
                 return Ok(ResponseDto);
 
             }
             catch (Exception ex)
-            { 
-                ResponseDto.MessageError = ex.Message; 
+            {
+                ResponseDto.MessageError = ex.Message;
                 return BadRequest(ResponseDto);
-            }      
+            }
         }
 
 
@@ -217,8 +221,8 @@ namespace G7Album.Server.Controllers
                 }
 
                 FindUsuario.NombreCompleto = NewUsuario.NombreCompleto;
-                FindUsuario.Email = NewUsuario.Email ;
-                FindUsuario.Password = NewUsuario.Password ;
+                FindUsuario.Email = NewUsuario.Email;
+                FindUsuario.Password = NewUsuario.Password;
 
                 this._context.TablaUsuarios.Update(FindUsuario);
 
@@ -276,8 +280,8 @@ namespace G7Album.Server.Controllers
 
         private (byte[], byte[]) CreatePasswordHash(string password)
         {
-            byte[] passwordHash; 
-            byte[] passwordSalt; 
+            byte[] passwordHash;
+            byte[] passwordSalt;
 
             using (var hmac = new HMACSHA512()) //Algoritmo de firma 
             {
@@ -288,22 +292,22 @@ namespace G7Album.Server.Controllers
             return (passwordHash, passwordSalt);
         }
 
-        private string CreateToken(Usuario user) 
+        private string CreateToken(Usuario user)
         {
             //Permisos para describir la informacion del usuario
-            List<Claim> claims = new List<Claim> 
+            List<Claim> claims = new List<Claim>
             {
                new Claim(ClaimTypes.Email, user.Email) //Permiso de seguridad
             };
-            
+
             //Clave simetrica
             var key = new SymmetricSecurityKey(
                 System.Text.Encoding.UTF8.GetBytes(
                  this._configuration.GetSection("AppSettings:Token").Value // Obtenemos dato de appSettings para crear Token
                 )
-            ); 
+            );
 
-                                   
+
             //Definimos la configuracion del token 
             var Credencial = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);//Credenciales de firma 
 
@@ -312,10 +316,10 @@ namespace G7Album.Server.Controllers
                claims: claims,
                expires: DateTime.Now.AddHours(2),
                signingCredentials: Credencial
-            ); 
+            );
 
             //Defino la cadena de token que quiero que retorne 
-            var jwt = new JwtSecurityTokenHandler().WriteToken(token); 
+            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
 
             return jwt;
         }

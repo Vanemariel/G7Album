@@ -198,7 +198,7 @@ namespace G7Album.Server.Controllers
 
                 throw new Exception($"El AlbumUsuario {albunUsuario} ha sido borrado.");
             }
-            catch (Exception) //se captura la excepcion del try
+            catch (Exception e) //se captura la excepcion del try
             {
                 return BadRequest(e.Message);
             }       

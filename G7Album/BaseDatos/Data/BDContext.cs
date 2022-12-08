@@ -1,4 +1,5 @@
-﻿using G7Album.BaseDatos.Entidades;
+﻿using G7Album.BaseDatos.Data.Entidades;
+using G7Album.BaseDatos.Entidades;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -2240,5 +2241,6 @@ namespace G7Album.BaseDatos.Data
         public DbSet<AlbumUsuarioImagenes> TablaUsuarioImagenes { get; set;}
         public DbSet<AlbumUsuario> TablaAlbumesUsuarios { get; set;}
         public DbSet<Usuario> TablaUsuarios { get; set;}
+        public DbSet<Roles> TablaRoles { get; set;} 
     }
 }
