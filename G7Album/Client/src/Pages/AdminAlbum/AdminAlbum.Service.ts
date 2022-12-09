@@ -26,7 +26,7 @@ const AdminAlbumService = {
     const Response = await axiosMethod<string>({
       method: "PUT",
       url: `/Album/${IdAlbum}/`,
-      dataSend: albumData,
+      dataSend: albumData ,
     });
 
     return {

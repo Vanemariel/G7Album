@@ -8,30 +8,31 @@ interface IDataParams {
 }
 
 export const axiosMethod = async<TypeResult>(Params: IDataParams): Promise<IResponseDTO<TypeResult>> => {
-  
-    const { method, url, dataSend } = Params;
-    const URL_API = process.env.REACT_APP_URL_API;
+  console.log("🚀 ~ file:PARAMS", Params)
 
-    let ResponseDTO = {} as IResponseDTO<TypeResult>
+  const { method, url, dataSend } = Params;
+  const URL_API = process.env.REACT_APP_URL_API;
 
-    try {
+  let ResponseDTO = {} as IResponseDTO<TypeResult>
 
-        let Response = await axios(`${URL_API}${url}`, {
-            method: method,
-            data: dataSend ?? {},
-        });
-        
-        console.log("🚀 ~ file: axiosMethod.ts ~ line 23 ~ axiosMethod ~ Response", Response)
+  try {
 
-        ResponseDTO.Result = await Response.data.result;
+    let Response = await axios(`${URL_API}${url}`, {
+      method: method,
+      data: dataSend ?? {},
+    });
 
-    } catch (Error: any) {
+    console.log("🚀 ~ file: axiosMethod.ts ~ line 23 ~ axiosMethod ~ Response", Response)
 
-        ResponseDTO.MessageError = Error.response.data?.messageError ||
-            `Ha ocurrido un error al enviar la solicitud. Intentelo nuevamente!. Status: ${Error.response.status}`;
-    }
+    ResponseDTO.Result = await Response.data.result;
 
-    return ResponseDTO;
+  } catch (Error: any) {
+
+    ResponseDTO.MessageError = Error.response.data?.messageError ||
+      `Ha ocurrido un error al enviar la solicitud. Intentelo nuevamente!. Status: ${Error.response.status}`;
+  }
+
+  return ResponseDTO;
 };
 
 /* 

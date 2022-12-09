@@ -1,17 +1,16 @@
 .lalala {
-    height: 100vh;
-    background-color: burlywood;
+    height:  100vh;
+    background-color:burlywood;
     background-size: cover;
 
 }
-
-#titulo {
+#titulo{
     color: purple;
     /* padding: 50px; */
     text-align: center;
 }
 
-.texto {
+.texto{
     color: black;
     margin-bottom: 100px;
     font-weight: bold;
@@ -19,76 +18,62 @@
     font-size: 30px;
 }
 
-.margen {
+.margen{
     margin: 15px 20px 25px 30px;
     margin-top: 100px;
 }
 
-.table {
-    color: black;
+.table{
+    color:black;
     /* margin: 16px; */
     width: 80%;
     margin: auto;
 }
-
-.table th {
+.table th{
     padding-left: 10px;
     padding-top: 10px;
     width: 10em;
     font-size: 20px;
 }
 
-.buttonAdmin {
+.buttonAdmin{
 
     border-radius: 1rem;
     margin: 10px;
-    background-color: #bbb !important
+    background-color:  #bbb !important
 }
 
 
 
-.containerModalAlbum {
+.containerModalColeccion {
     width: 400px !important;
     height: 300px;
-    background: rgba(187, 187, 187, 0.538)
+    background: #fff
 }
 
-.containerModalAlbum h1 {
+.containerModalColeccion h1 {
     color: #000;
 }
 
-.containerModalAlbum input {
+.containerModalColeccion input {
     width: 350px !important;
 }
 
-.containerModalAlbum button {
+.containerModalColeccion button {
     width: 100px;
     height: 30px;
     border-radius: 1rem;
     background: #aaa;
 }
 
-.containerModalAlbum__closeBtn {
+.containerModalColeccion__closeBtn {
     position: relative;
     top: 0rem;
     right: -10rem;
     cursor: pointer;
 }
 
-.containerModalAlbum  label {
-    width: 100%;
-    text-align: start;
-    color: #000;
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-}
-.containerModalAlbum select {
-    width: 100px;
-    border-radius: 1rem;
-}
-
-.containerModalAlbum__closeBtn > i {
+.containerModalColeccion__closeBtn > i {
     height: 1.5rem;
     width: 1.5rem;
     background-color: #dc143c;

@@ -108,7 +108,7 @@ namespace G7Album.Server.Controllers
         [HttpPut("{id:int}")]
 
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
-        public async Task<ActionResult<ResponseDto<string>>> Put(int id, DataAlbumUpdate albumData)
+        public async Task<ActionResult<ResponseDto<string>>> Put(int id, [FromBody] DataAlbumUpdate albumData)
         {
 
             ResponseDto<string> ResponseDto = new ResponseDto<string>();

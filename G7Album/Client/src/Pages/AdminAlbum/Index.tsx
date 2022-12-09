@@ -110,6 +110,7 @@ export const AdminAlbum: React.FC = () => {
   return (
     <>
       <div>
+
         <div className={`${AdminAlbumCSS.lalala}`} >
           <h1 className={`${AdminAlbumCSS.titulo}`}>Administracion de G7 Album </h1>
           <p className={`${AdminAlbumCSS.texto}`}>Bienvenidos al area administrativa</p>
@@ -132,7 +133,7 @@ export const AdminAlbum: React.FC = () => {
             </tr>
 
             {allAlbunes?.map((Albumes: IAlbumData, indexAlbum: number) => (
-              <tr>
+              <tr key={indexAlbum}>
                 <th>{Albumes.titulo}</th>
                 <th>
                   <button className={`${AdminAlbumCSS.buttonAdmin}`} onClick={() => {
@@ -160,9 +161,11 @@ export const AdminAlbum: React.FC = () => {
               LocatedPageNumber={paginate.currentPage}
             />
           </div>
+          {allAlbunes.length === 0 && <Loader />}
+
+
         </div>
 
-        {allAlbunes.length === 0 && <Loader />}
 
         <ModalContainer personCss={`${AdminAlbumCSS.containerModalAlbum}`}>
 
@@ -172,7 +175,7 @@ export const AdminAlbum: React.FC = () => {
             <i className="fas fa-times"></i>
           </p>
 
-          <h1>{statusAction.action === 'add' ? 'Creacion' : 'Actualizacion'} de Album</h1>
+          <h1>{statusAction.action === 'add' ? 'Crear' : 'Actualizar'} Album</h1>
 
           <form onSubmit={statusAction.action === 'add' ? Add : Put} >
 
