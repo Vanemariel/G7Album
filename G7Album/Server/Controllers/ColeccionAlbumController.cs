@@ -15,26 +15,35 @@ namespace G7Album.Server.Controllers
             this.context = context;
         }
 
-        //[HttpGet("GetAll")]
-        //metodo que me muestra la lista completa  
-        //public async Task<ActionResult<ResponseDto<List<ColeccionAlbum>>>> GetAll()
-        //{
-        //     ResponseDto<List<ColeccionAlbum>> ResponseDto = new ResponseDto<List<ColeccionAlbum>>();
+        [HttpGet("GetAllColecction")]
+        // metodo que me muestra la lista completa  
+        public async Task<ActionResult<ResponseDto<List<ColeccionData>>>> GetAll()
+        {
+            ResponseDto<List<ColeccionData>> ResponseDto = new ResponseDto<List<ColeccionData>>();
+            List<ColeccionData> ListColeccion = new List<ColeccionData>();
+            try
+            {
+                List<ColeccionAlbum> ListaColeccionAlbumes = await context.TablaColeccionAlbumes.Include(x => x.ListadoAlbum).ToListAsync();
 
-        //    try
-        //    {
-        //        List<ColeccionAlbum> ListaColeccionAlbumes = await context.TablaColeccionAlbumes.Include(x => x.ListadoAlbum).ToListAsync();
+                foreach (ColeccionAlbum coleccion in ListaColeccionAlbumes)
+                {
+                    ListColeccion.Add(new ColeccionData
+                    {
+                        Id = coleccion.Id,
+                        NombreCompleto = coleccion.TituloColeccion
+                    });
+                }
 
-        //        ResponseDto.Result = ListaColeccionAlbumes;
+                ResponseDto.Result = ListColeccion;
 
-        //        return Ok(ResponseDto); 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ResponseDto.MessageError = $"Ha ocurrido un error, {ex.Message}";
-        //        return BadRequest(ResponseDto);
-        //    }
-        //}
+                return Ok(ResponseDto);
+            }
+            catch (Exception ex)
+            {
+                ResponseDto.MessageError = $"Ha ocurrido un error, {ex.Message}";
+                return BadRequest(ResponseDto);
+            }
+        }
 
         [HttpGet("GetAllPage/{page:int}")]
         public async Task<ActionResult<ResponseDto<Pagination<List<ColeccionAlbum>>>>> GetAll(int page)
@@ -67,9 +76,9 @@ namespace G7Album.Server.Controllers
                 return BadRequest(ResponseDto);
             }
         }
-        
+
         [HttpPut("{id:int}")]
-        public ActionResult Put (int id, [FromBody] string TituloColeccion)
+        public ActionResult Put(int id, [FromBody] string TituloColeccion)
         {
             try
             {
@@ -95,7 +104,7 @@ namespace G7Album.Server.Controllers
         [HttpDelete("{id:int}")]
         public ActionResult Delete(int id)
         {
-           
+
 
             try
             {
@@ -117,4 +126,3 @@ namespace G7Album.Server.Controllers
         }
     }
 }
-    

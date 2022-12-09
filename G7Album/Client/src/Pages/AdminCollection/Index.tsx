@@ -73,10 +73,18 @@ export const AdminCollection: React.FC = () => {
           <h1 id="titulo">Administracion de G7 Album </h1>
           <p className="texto">Bienvenidos al area administrativa</p>
 
+
+
+
           <table className="table" border={1}>
             <tr>
               <th>Titulo de Coleccion de Album</th>
               <th>Selcciona la opcion deseada</th>
+              <th>          
+                <button className="buttonAdmin">
+                  Agregar Coleccion
+                </button>
+              </th>
             </tr>
 
             {allAlbunesColecion?.map((ColeccionAlbumes: IColeccionData, indexColeccion: number) => (
@@ -90,10 +98,18 @@ export const AdminCollection: React.FC = () => {
                   >
                     Eliminar
                   </button>
+                  <button
+                    className="buttonAdmin"
+                    onClick={() => Delete(ColeccionAlbumes.id)}
+                  >
+                    Eliminar
+                  </button>
                 </th>
               </tr>
             ))}
           </table>
+
+
 
           <div>
             <Paginate

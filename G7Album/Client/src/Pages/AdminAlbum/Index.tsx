@@ -3,16 +3,29 @@ import { IAlbumData } from "../../Interface/DTO Back/Album/IAlbumData";
 import { useGlobalContext } from "../../Context/useGlobalContext";
 import { Loader } from "../../Components/Loader/Loader";
 import AdminAlbumService from "./AdminAlbum.Service";
-import "./style.css";
-import { ConfigCarrouselModels } from "../../Models/ConfigCarrousel.models";
+import AdminAlbumCSS from "./style.module.css";
 import { usePaginate } from "../../Hooks/usePaginate";
 import { Paginate } from "../../Components/Paginate/Paginate";
+import { ModalContainer } from "../../Components/ModalContainer";
+import { useFormCustom } from "../../Hooks/useFormCustom";
+import { IDataAlbumForm } from "../../Interface/DTO Front/Album/IDataAlbumForm";
+import { Input } from "../../Components/Input/Input";
+import { InputsMockAlbum } from "./Mocks/InputsAlbum";
+import { IInputs } from "../../Components/Input/Inputs.interface";
+import { IListColeccion } from "../../Interface/DTO Back/ColeccionAlbum/IListColeccion";
 
 export const AdminAlbum: React.FC = () => {
   //HOOKS
   const [allAlbunes, setAllAlbumes] = useState<IAlbumData[]>([]);
+  const [allListColeccion, setAllListColeccion] = useState<IListColeccion[]>([]);
   const { paginate, setPaginate } = usePaginate()
-
+  const storeGlobal = useGlobalContext();
+  const [statusAction, setStatusction] = useState({
+    action: "", idAlbum: 0
+  })
+  const { formulario, handleChange, resetForm } = useFormCustom<IDataAlbumForm>({
+    ImgAlbum: "", Titulo: "", IdColeccion: ""
+  });
 
   //METODOS
   const getAll = async (page: number = 1) => {
@@ -29,10 +42,37 @@ export const AdminAlbum: React.FC = () => {
     setAllAlbumes(data.Result.listItems);
   };
 
-  const Put = async (idAlbum: number, titulo: string) => {
+  const getAllColecction = async () => {
+    const data = await AdminAlbumService.GetAllColecction();
+
+    setAllListColeccion(data.Result);
+  }
+
+
+  const Add = async (event: any) => {
+
+    event.preventDefault();
+
+    console.log("Crear", formulario)
+    // try {
+    //   const { Result, MessageError } =
+    //     await AdminAlbumService.updateAdminAlbumes(idAlbum, titulo);
+
+    //   if (MessageError !== undefined) {
+    //     throw new Error(MessageError);
+    //   }
+    // } catch (error: any) {
+    //   return `Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`;
+    // }
+  };
+
+  const Put = async (event: any) => {
+
+    event.preventDefault();
+
+    console.log("Update", formulario)
     try {
-      const { Result, MessageError } =
-        await AdminAlbumService.updateAdminAlbumes(idAlbum, titulo);
+      const { Result, MessageError } = await AdminAlbumService.updateAdminAlbumes(statusAction.idAlbum, formulario);
 
       if (MessageError !== undefined) {
         throw new Error(MessageError);
@@ -64,28 +104,46 @@ export const AdminAlbum: React.FC = () => {
 
   useEffect(() => {
     getAll();
+    getAllColecction();
   }, []);
 
   return (
     <>
       <div>
-        <div className="lalala">
-          <h1 id="titulo">Administracion de G7 Album </h1>
-          <p className="texto">Bienvenidos al area administrativa</p>
+        <div className={`${AdminAlbumCSS.lalala}`} >
+          <h1 className={`${AdminAlbumCSS.titulo}`}>Administracion de G7 Album </h1>
+          <p className={`${AdminAlbumCSS.texto}`}>Bienvenidos al area administrativa</p>
 
-          <table className="table" border={1}>
+          <table className={`${AdminAlbumCSS.table}`} border={1}>
             <tr>
               <th>Nombre Album</th>
               <th>Selcciona la opcion deseada</th>
+              <th>
+                <button className={`${AdminAlbumCSS.buttonAdmin}`} onClick={() => {
+                  setStatusction({
+                    action: "add",
+                    idAlbum: 0
+                  })
+                  storeGlobal.SetShowModalContainer(true)
+                }}>
+                  Agregar Album
+                </button>
+              </th>
             </tr>
 
             {allAlbunes?.map((Albumes: IAlbumData, indexAlbum: number) => (
               <tr>
                 <th>{Albumes.titulo}</th>
                 <th>
-                  <button className="buttonAdmin">Modificar</button>
+                  <button className={`${AdminAlbumCSS.buttonAdmin}`} onClick={() => {
+                    setStatusction({
+                      action: "update",
+                      idAlbum: Albumes.id
+                    })
+                    storeGlobal.SetShowModalContainer(true)
+                  }}>Modificar</button>
                   <button
-                    className="buttonAdmin"
+                    className={`${AdminAlbumCSS.buttonAdmin}`}
                     onClick={() => Delete(Albumes.id)}
                   >
                     Eliminar
@@ -106,6 +164,48 @@ export const AdminAlbum: React.FC = () => {
 
         {allAlbunes.length === 0 && <Loader />}
 
+        <ModalContainer personCss={`${AdminAlbumCSS.containerModalAlbum}`}>
+
+          <p onClick={() => {
+            storeGlobal.SetShowModalContainer(false)
+          }} className={AdminAlbumCSS.containerModalAlbum__closeBtn}>
+            <i className="fas fa-times"></i>
+          </p>
+
+          <h1>{statusAction.action === 'add' ? 'Creacion' : 'Actualizacion'} de Album</h1>
+
+          <form onSubmit={statusAction.action === 'add' ? Add : Put} >
+
+            {
+              statusAction.action === 'add' && (
+
+                <label>
+                  Eliga coleccion de Album:
+                  <select onChange={handleChange} name="IdColeccion" value={formulario.IdColeccion}>
+                    <option value={0}> </option>
+                    {allListColeccion.map((coleccion, index) => (
+                      <option value={coleccion.id} key={index}>{coleccion.nombreCompleto}</option>
+                    ))}
+                  </select>
+                </label>
+              )
+            }
+
+            {InputsMockAlbum.map((inputProps: IInputs, index: number) => (
+              <Input
+                key={index}
+                inputProps={inputProps}
+                value={formulario[inputProps.name]}
+                handleChange={handleChange}
+                errorMessage={inputProps.errorMessage}
+                pattern={inputProps.expReg}
+              />
+            ))}
+
+            <button type="submit">Crear</button>
+          </form>
+
+        </ModalContainer>
 
       </div>
     </>

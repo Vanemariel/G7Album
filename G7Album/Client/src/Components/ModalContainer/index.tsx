@@ -4,12 +4,12 @@ import ModalContainerCSS from "./index.module.css";
 
 interface Props {
     children: string | any;
-    validation: any;
+    personCss: any;
 }
 
 export const ModalContainer: React.FC<Props> = (props) => {
 
-    const { children, validation } = props;
+    const { children, personCss } = props;
 
     /// VARIABLES
     const OpenModalCss = `${ModalContainerCSS.containerModal} ${ModalContainerCSS["containerModal--openModal"]}`;
@@ -31,9 +31,9 @@ export const ModalContainer: React.FC<Props> = (props) => {
 
 
     return (
-        <article className={`${storeGlobal.IsShowModalContainer() ? OpenModalCss : CloseModalCss}`}>
+        <article className={`${storeGlobal.IsShowModalContainer() ? OpenModalCss : CloseModalCss} `}>
             <div>
-                <article className={ModalContainerCSS.contentModal}>
+                <article className={` ${ModalContainerCSS.contentModal} ${personCss}  `}>
                     {children}
                 </article>
             </div>

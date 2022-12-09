@@ -90,7 +90,7 @@ namespace G7Album.Server.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult<Album>> Post (Album album)
+        public async Task<ActionResult<Album>> Post(Album album)
         {
             try
             {
@@ -108,37 +108,33 @@ namespace G7Album.Server.Controllers
         [HttpPut("{id:int}")]
 
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
-        public ActionResult Put (int id, [FromBody] string titulo)
+        public async Task<ActionResult<ResponseDto<string>>> Put(int id, DataAlbumUpdate albumData)
         {
-            // if (id != alb.Id)
-            // {
-            //     return BadRequest("Datos incorrectos");
-            // }
 
-            var album = context.TablaAlbumes.Where(x => x.Id == id).FirstOrDefault();
-
-            if (album == null)
-            {
-                return NotFound("No existe el Album a modificar");
-            }
-
-            // album.CantidadImagen = alb.CantidadImagen;
-            // album.CantidadImpreso = alb.CantidadImpreso;
-            // album.CodigoAlbum = alb.CodigoAlbum;
-            // album.Descripcion = alb.Descripcion;
-            // album.Desde = alb.Desde;
-            // album.Hasta = alb.Hasta;
-            album.Titulo = titulo;
-
+            ResponseDto<string> ResponseDto = new ResponseDto<string>();
             try
             {
+                Album? album = context.TablaAlbumes.Where(x => x.Id == id).FirstOrDefault();
+
+                if (album == null)
+                {
+                    throw new Exception("No existe el Album a modificar");
+                }
+
+                album.Imagen = albumData.ImgAlbum;
+                album.Titulo = albumData.Titulo;
+
                 context.TablaAlbumes.Update(album);
-                context.SaveChanges();
-                return Ok();
+                await context.SaveChangesAsync();
+
+                ResponseDto.Result = "Se ha actualizado correctamente";
+
+                return Ok(ResponseDto);
             }
             catch (Exception e)
             {
-                return BadRequest("Los datos no han sido actualizados");
+                ResponseDto.MessageError = e.Message;
+                return BadRequest(ResponseDto);
             }
         }
 
