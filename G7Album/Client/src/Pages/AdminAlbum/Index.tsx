@@ -24,7 +24,8 @@ export const AdminAlbum: React.FC = () => {
     action: "", idAlbum: 0
   })
   const { formulario, handleChange, resetForm } = useFormCustom<IDataAlbumForm>({
-    ImgAlbum: "", Titulo: "", IdColeccion: ""
+    ImgAlbum: "", Titulo: "", IdColeccion: "",
+    CantidadImagen: "", CantidadImpreso: "", CodigoAlbum: "", Descripcion: ""
   });
 
   //METODOS
@@ -51,19 +52,26 @@ export const AdminAlbum: React.FC = () => {
 
   const Add = async (event: any) => {
 
-    event.preventDefault();
+    try {
+      event.preventDefault();
+      storeGlobal.SetShowLoader(true)
 
-    console.log("Crear", formulario)
-    // try {
-    //   const { Result, MessageError } =
-    //     await AdminAlbumService.updateAdminAlbumes(idAlbum, titulo);
 
-    //   if (MessageError !== undefined) {
-    //     throw new Error(MessageError);
-    //   }
-    // } catch (error: any) {
-    //   return `Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`;
-    // }
+      console.log("Crear", formulario)
+      const { Result, MessageError } = await AdminAlbumService.AddAdminAlbumes(formulario);
+
+      if (MessageError !== undefined) {
+        throw new Error(MessageError);
+      }
+
+      storeGlobal.SetShowLoader(false);
+      storeGlobal.SetMessageModalStatus(Result);
+      storeGlobal.SetShowModalStatus(true);
+      
+    } catch (error: any) {
+      return `Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`;
+    }
+
   };
 
   const Put = async (event: any) => {

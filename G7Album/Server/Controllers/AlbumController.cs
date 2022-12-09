@@ -90,17 +90,34 @@ namespace G7Album.Server.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult<Album>> Post(Album album)
+        public async Task<ActionResult<ResponseDto<string>>> Post(DataAlbum albumForm)
         {
+            ResponseDto<string> ResponseDto = new ResponseDto<string>();
             try
             {
+                Album album = new Album
+                {
+                    Titulo = albumForm.Titulo,
+                    Imagen = albumForm.ImgAlbum,
+                    Descripcion = albumForm.Descripcion,
+                    CodigoAlbum = int.Parse(albumForm.CodigoAlbum),
+                    ColeccionAlbumId = int.Parse(albumForm.IdColeccion),
+                    CantidadImagen = int.Parse(albumForm.CantidadImagen),
+                    CantidadImpreso = int.Parse(albumForm.CantidadImpreso),
+                    Desde = DateTime.Now,
+                    Hasta = DateTime.Now.AddDays(10)
+                };
+
                 context.TablaAlbumes.Add(album);
                 await context.SaveChangesAsync();
-                return album;
+
+                ResponseDto.Result = "Se ha creado correctamente";
+                return Ok(ResponseDto);
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                ResponseDto.MessageError = $"Ha ocurrido un error al crear un album: {e.Message}";
+                return BadRequest(ResponseDto);
             }
         }
 
@@ -108,7 +125,7 @@ namespace G7Album.Server.Controllers
         [HttpPut("{id:int}")]
 
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
-        public async Task<ActionResult<ResponseDto<string>>> Put(int id, [FromBody] DataAlbumUpdate albumData)
+        public async Task<ActionResult<ResponseDto<string>>> Put(int id, [FromBody] DataAlbum albumData)
         {
 
             ResponseDto<string> ResponseDto = new ResponseDto<string>();
@@ -123,6 +140,10 @@ namespace G7Album.Server.Controllers
 
                 album.Imagen = albumData.ImgAlbum;
                 album.Titulo = albumData.Titulo;
+                album.CantidadImagen = int.Parse(albumData.CantidadImagen);
+                album.CantidadImpreso = int.Parse(albumData.CantidadImpreso);
+                album.Descripcion = albumData.Descripcion;
+                album.CodigoAlbum = int.Parse(albumData.CodigoAlbum);
 
                 context.TablaAlbumes.Update(album);
                 await context.SaveChangesAsync();

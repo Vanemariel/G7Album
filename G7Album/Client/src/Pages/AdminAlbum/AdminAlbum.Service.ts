@@ -59,6 +59,20 @@ const AdminAlbumService = {
       MessageError: Response.MessageError,
     };
   },
+
+  
+  AddAdminAlbumes: async (form: IDataAlbumForm): Promise<IResponseDTO<string>> => {
+    const Response = await axiosMethod<string>({
+      method: "POST",
+      url: `/Album/`,
+      dataSend: form
+    });
+
+    return {
+      Result: Response.Result,
+      MessageError: Response.MessageError,
+    };
+  },
 };
 
 export default AdminAlbumService;
