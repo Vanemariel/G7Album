@@ -58,6 +58,7 @@ namespace G7Album.Server.Controllers
         [HttpGet("GetAllPage/{page:int}")]
 
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
+        // public async Task<ActionResult<ResponseDto<Pagination<List<Album>>>>> GetAll(int page, string filterText = "")
         public async Task<ActionResult<ResponseDto<Pagination<List<Album>>>>> GetAll(int page)
         {
             ResponseDto<Pagination<List<Album>>> ResponseDto = new ResponseDto<Pagination<List<Album>>>();
@@ -67,11 +68,23 @@ namespace G7Album.Server.Controllers
                 var pageResults = 3f;
                 var pageCount = Math.Ceiling(context.TablaAlbumes.Count() / pageResults);
 
-                List<Album> album = await context.TablaAlbumes
+                List<Album> album = new List<Album>();
+
+                // if (filterText == "")
+                // {
+                album = await context.TablaAlbumes
                     .Skip((page - 1) * (int)pageResults)
                     .Take((int)pageResults)
                     .Include(x => x.ListadoImagenes)
                     .ToListAsync();
+                // }else {
+                //     album = await context.TablaAlbumes
+                //         .Skip((page - 1) * (int)pageResults)
+                //         .Take((int)pageResults)
+                //         .Include(x => x.ListadoImagenes)
+                //         .Where(x => x.Titulo.Contains(filterText))
+                //         .ToListAsync();
+                // }
 
                 Pagination.ListItems = album;
                 Pagination.CurrentPage = page;
@@ -141,7 +154,7 @@ namespace G7Album.Server.Controllers
                 album.Imagen = albumData.ImgAlbum;
                 album.Titulo = albumData.Titulo;
                 album.CantidadImagen = albumData.CantidadImagen;
-                album.CantidadImpreso  = albumData.CantidadImpreso;
+                album.CantidadImpreso = albumData.CantidadImpreso;
                 album.Descripcion = albumData.Descripcion;
                 album.CodigoAlbum = albumData.CodigoAlbum;
 

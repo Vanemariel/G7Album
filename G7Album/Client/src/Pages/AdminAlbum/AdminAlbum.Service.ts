@@ -12,7 +12,7 @@ const AdminAlbumService = {
   > => {
     const Response = await axiosMethod<IPagination<IAlbumData[]>>({
       method: "GET",
-      url: `/Album/GetAllPage/${page}`,
+      url: `/Album/GetAllPage/${page}/`,
     });
 
     return {
