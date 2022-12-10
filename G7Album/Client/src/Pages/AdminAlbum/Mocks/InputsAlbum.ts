@@ -26,8 +26,8 @@ export const InputsMockAlbum: IInputs[] = [
         placeholder: "Url imagen: ",
         type: "text",
         name: "ImgAlbum",
-        expReg: /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]{2,40}$/i,
-        errorMessage: "Solo puede contener letras. Minimo 2 caracteres",
+        expReg: /^.{1,255}$/ ,
+        errorMessage: "Minimo 1 caracter, maximo 255",
     },
     {
         placeholder: "Cantidad de imagenes",

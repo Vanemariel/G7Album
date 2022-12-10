@@ -2,6 +2,7 @@
 import { IColeccionData } from "../../Interface/DTO Back/ColeccionAlbum/IColeccionAlbumData";
 import { IPagination } from "../../Interface/DTO Back/IPagination";
 import { IResponseDTO } from "../../Interface/DTO Back/IResponseDTO";
+import { IDataColeccionForm } from "../../Interface/DTO Front/Coleccion/IDataColeccionForm";
 import { axiosMethod } from "../../Utils/axiosMethod";
 
 const AdminCollectionService = {
@@ -18,14 +19,12 @@ const AdminCollectionService = {
       MessageError: Response.MessageError,
     };
   },
-  updateAdminCollection: async (
-    TituloColeccion: string,
-    id: number
-  ): Promise<IResponseDTO<IColeccionData[]>> => {
-    const Response = await axiosMethod<IColeccionData[]>({
+  updateAdminCollection: async ( id: number, Titulo: string
+  ): Promise<IResponseDTO<string>> => {
+    const Response = await axiosMethod<string>({
       method: "PUT",
-      url: `ColeccionAlbum/${id}/`,
-      dataSend: { TituloColeccion },
+      url: `/ColeccionAlbum/${id}/`,
+      dataSend: { Titulo },
     });
 
     return {
@@ -33,12 +32,24 @@ const AdminCollectionService = {
       MessageError: Response.MessageError,
     };
   },
-  DeleteAdminCollection: async (
-    id: number
-  ): Promise<IResponseDTO<IColeccionData[]>> => {
-    const Response = await axiosMethod<IColeccionData[]>({
+  DeleteAdminCollection: async (id: number): Promise<IResponseDTO<string>> => {
+    const Response = await axiosMethod<string>({
       method: "DELETE",
-      url: `ColeccionAlbum/${id}/`,
+      url: `/ColeccionAlbum/${id}/`,
+    });
+
+    return {
+      Result: Response.Result,
+      MessageError: Response.MessageError,
+    };
+  },
+
+
+  AddAdminColeccion: async (form: IDataColeccionForm): Promise<IResponseDTO<string>> => {
+    const Response = await axiosMethod<string>({
+      method: "POST",
+      url: `/ColeccionAlbum/`,
+      dataSend: form
     });
 
     return {
@@ -48,4 +59,4 @@ const AdminCollectionService = {
   },
 };
 
-export default AdminCollectionService  ;
+export default AdminCollectionService;

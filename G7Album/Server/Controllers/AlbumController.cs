@@ -100,10 +100,10 @@ namespace G7Album.Server.Controllers
                     Titulo = albumForm.Titulo,
                     Imagen = albumForm.ImgAlbum,
                     Descripcion = albumForm.Descripcion,
-                    CodigoAlbum = int.Parse(albumForm.CodigoAlbum),
-                    ColeccionAlbumId = int.Parse(albumForm.IdColeccion),
-                    CantidadImagen = int.Parse(albumForm.CantidadImagen),
-                    CantidadImpreso = int.Parse(albumForm.CantidadImpreso),
+                    CodigoAlbum = albumForm.CodigoAlbum,
+                    ColeccionAlbumId = albumForm.IdColeccion,
+                    CantidadImagen = albumForm.CantidadImagen,
+                    CantidadImpreso = albumForm.CantidadImpreso,
                     Desde = DateTime.Now,
                     Hasta = DateTime.Now.AddDays(10)
                 };
@@ -140,10 +140,10 @@ namespace G7Album.Server.Controllers
 
                 album.Imagen = albumData.ImgAlbum;
                 album.Titulo = albumData.Titulo;
-                album.CantidadImagen = int.Parse(albumData.CantidadImagen);
-                album.CantidadImpreso = int.Parse(albumData.CantidadImpreso);
+                album.CantidadImagen = albumData.CantidadImagen;
+                album.CantidadImpreso  = albumData.CantidadImpreso;
                 album.Descripcion = albumData.Descripcion;
-                album.CodigoAlbum = int.Parse(albumData.CodigoAlbum);
+                album.CodigoAlbum = albumData.CodigoAlbum;
 
                 context.TablaAlbumes.Update(album);
                 await context.SaveChangesAsync();
@@ -163,24 +163,27 @@ namespace G7Album.Server.Controllers
         [HttpDelete("{id:int}")]
 
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
-        public ActionResult Delete(int id)
+        public async Task<ActionResult<ResponseDto<string>>> Delete(int id)
         {
-            var album = context.TablaAlbumes.Where(x => x.Id == id).FirstOrDefault();
-
-            if (album == null)
-            {
-                return NotFound($"El Album {id} no fue encontrado");
-            }
-
+            ResponseDto<string> ResponseDto = new ResponseDto<string>();
             try
             {
+                var album = context.TablaAlbumes.Where(x => x.Id == id).FirstOrDefault();
+
+                if (album == null)
+                {
+                    throw new Exception($"El Album {id} no fue encontrado");
+                }
                 context.TablaAlbumes.Remove(album);
                 context.SaveChanges();
-                return Ok();
+                ResponseDto.Result = "Se ha borrado correctamente";
+
+                return Ok(ResponseDto);
             }
             catch (Exception e)
             {
-                return BadRequest($"Los datos no se pudieron eliminarse por :{e.Message}");
+                ResponseDto.MessageError = $"Error al eliminar un Album: {e.Message}";
+                return BadRequest(ResponseDto);
             }
         }
     }

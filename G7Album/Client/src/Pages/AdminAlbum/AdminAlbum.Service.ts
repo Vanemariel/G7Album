@@ -34,12 +34,11 @@ const AdminAlbumService = {
       MessageError: Response.MessageError,
     };
   },
-  DeleteAdminAlbumes: async (
-    id: number
-  ): Promise<IResponseDTO<IAlbumData[]>> => {
-    const Response = await axiosMethod<IAlbumData[]>({
+
+  DeleteAdminAlbumes: async (id: number): Promise<IResponseDTO<string>> => {
+    const Response = await axiosMethod<string>({
       method: "DELETE",
-      url: `Album/${id}/`,
+      url: `/Album/${id}/`,
     });
 
     return {
@@ -59,7 +58,6 @@ const AdminAlbumService = {
       MessageError: Response.MessageError,
     };
   },
-
   
   AddAdminAlbumes: async (form: IDataAlbumForm): Promise<IResponseDTO<string>> => {
     const Response = await axiosMethod<string>({
@@ -72,7 +70,7 @@ const AdminAlbumService = {
       Result: Response.Result,
       MessageError: Response.MessageError,
     };
-  },
+  }
 };
 
 export default AdminAlbumService;

@@ -130,6 +130,7 @@ namespace G7Album.Server.Controllers
                 Usuario? Usuario = await this.context.TablaUsuarios//busco el usuario x id
                     .Where(Usuario => Usuario.Id == CompraFigus.IdUsuario)//valido
                     .FirstOrDefaultAsync();
+
                 //valido si el usuario existe 
                 if (Usuario == null )
                 {
@@ -137,11 +138,10 @@ namespace G7Album.Server.Controllers
                 }
 
                     //LOGICA DE NEGOCIO
-                
                 AlbumUsuario? AlbumComprado = await this.context.TablaAlbumesUsuarios
-                    .Where(x => x.AlbumId == CompraFigus.IdAlbum)
-                    .Where(Usuario => Usuario.Id == CompraFigus.IdUsuario)
-                    .FirstOrDefaultAsync();
+                   .Where(Usuario => Usuario.Id == CompraFigus.IdUsuario)
+                   .Where(AlbumComprado => AlbumComprado.AlbumId == CompraFigus.IdAlbum)
+                   .FirstOrDefaultAsync();
 
                 if (AlbumComprado == null)
                 {

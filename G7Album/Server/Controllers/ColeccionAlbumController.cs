@@ -78,33 +78,66 @@ namespace G7Album.Server.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public ActionResult Put(int id, [FromBody] string TituloColeccion)
+        public async Task<ActionResult<ResponseDto<string>>> Put(int id, [FromBody] DataColeccion Coleccion)
         {
+            ResponseDto<string> ResponseDto = new ResponseDto<string>();
             try
             {
                 var albumcoleccion = context.TablaColeccionAlbumes.Where(x => x.Id == id).FirstOrDefault();
 
                 if (albumcoleccion == null)
                 {
-                    return NotFound("No existe el Album a modificar");
+                    throw new Exception("No existe el Album a modificar");
                 }
 
-                albumcoleccion.TituloColeccion = TituloColeccion;
+                albumcoleccion.TituloColeccion = Coleccion.Titulo;
 
                 context.TablaColeccionAlbumes.Update(albumcoleccion);
                 context.SaveChanges();
-                return Ok();
+
+                ResponseDto.Result = "Se ha actualizado correctamente";
+
+                return Ok(ResponseDto);
             }
             catch (Exception e)
             {
-                return BadRequest("Los datos no han sido actualizados");
+                ResponseDto.MessageError = $"Error al actualizar: {e.Message}";
+                return BadRequest(ResponseDto);
             }
         }
 
+
+        [HttpPost]
+        public async Task<ActionResult<ResponseDto<string>>> Post(DataColeccion coleccionForm)
+        {
+            ResponseDto<string> ResponseDto = new ResponseDto<string>();
+            try
+            {
+                ColeccionAlbum coleccion = new ColeccionAlbum
+                {
+                    TituloColeccion = coleccionForm.Titulo
+                };
+
+                context.TablaColeccionAlbumes.Add(coleccion);
+                await context.SaveChangesAsync();
+
+                ResponseDto.Result = "Se ha creado correctamente";
+                return Ok(ResponseDto);
+            }
+            catch (Exception e)
+            {
+                ResponseDto.MessageError = $"Ha ocurrido un error al crear una Coleccion: {e.Message}";
+                return BadRequest(ResponseDto);
+            }
+        }
+
+
+
         [HttpDelete("{id:int}")]
-        public ActionResult Delete(int id)
+        public async Task<ActionResult<ResponseDto<string>>> Delete(int id)
         {
 
+            ResponseDto<string> ResponseDto = new ResponseDto<string>();
 
             try
             {
@@ -112,16 +145,19 @@ namespace G7Album.Server.Controllers
 
                 if (albumcoleccion == null)
                 {
-                    return NotFound($"El Album {id} no fue encontrado");
+                    throw new Exception($"La coleccion {id} no fue encontrado");
                 }
 
                 context.TablaColeccionAlbumes.Remove(albumcoleccion);
                 context.SaveChanges();
-                return Ok();
+                ResponseDto.Result = "Se ha borrado correctamente";
+
+                return Ok(ResponseDto);
             }
             catch (Exception e)
             {
-                return BadRequest($"Los datos no se pudieron eliminarse por :{e.Message}");
+                ResponseDto.MessageError = $"Error al eliminar un Album: {e.Message}";
+                return BadRequest(ResponseDto);
             }
         }
     }

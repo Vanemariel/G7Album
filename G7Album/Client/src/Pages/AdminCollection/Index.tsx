@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useGlobalContext } from "../../Context/useGlobalContext";
 import { Loader } from "../../Components/Loader/Loader";
-import AdminAlbumService from "./AdminCollection.Service";
+import AdminCollectionService from "./AdminCollection.Service";
 import AdminColeccionCSS from "./style.module.css";
 import { IColeccionData } from "../../Interface/DTO Back/ColeccionAlbum/IColeccionAlbumData";
 import { Paginate } from "../../Components/Paginate/Paginate";
@@ -21,9 +21,9 @@ export const AdminCollection: React.FC = () => {
 
 
   const [statusAction, setStatusction] = useState({
-    action: "", idAlbum: 0
+    action: "", idColeccion: 0
   })
-  const { formulario, handleChange, resetForm } = useFormCustom<IDataColeccionForm>({
+  const { formulario, handleChange, resetForm, setFormulario } = useFormCustom<IDataColeccionForm>({
     Titulo: ""
   });
 
@@ -33,7 +33,7 @@ export const AdminCollection: React.FC = () => {
   const getAll = async (page: number = 1) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
 
-    const data = await AdminAlbumService.GetAllAdminCollection(page);
+    const data = await AdminCollectionService.GetAllAdminCollection(page);
 
     setPaginate({
       currentPage: data.Result.currentPage - 1,
@@ -43,36 +43,117 @@ export const AdminCollection: React.FC = () => {
     setAllAlbumes(data.Result.listItems);
   };
 
-  const Put = async (event: any) => {
+  const openAddColeccion = () => {
+    setFormulario({ Titulo: "" })
+    setStatusction({
+      action: "add",
+      idColeccion: 0
+    })
+    storeGlobal.SetShowModalContainer(true)
+  }
 
-    event?.preventDefault()
 
-    console.log("LALA", formulario)
+  const Add = async (event: any) => {
 
-    // try {
-    //   const { Result, MessageError } =
-    //     await AdminCollectionService.updateAdminCollection(id, TituloColeccion);
-
-    //   if (MessageError !== undefined) {
-    //     throw new Error(MessageError);
-    //   }
-    // } catch (error: any) {
-    //   return `Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`;
-    // }
-  };
-
-  const Delete = async (id: number) => {
     try {
-      const { Result, MessageError } =
-        await AdminAlbumService.DeleteAdminCollection(id);
+      event.preventDefault();
+      storeGlobal.SetShowLoader(true)
+
+      const { Result, MessageError } = await AdminCollectionService.AddAdminColeccion(formulario);
 
       if (MessageError !== undefined) {
         throw new Error(MessageError);
       }
-      alert("Se elimino esta coleccion");
-      getAll();
+
+      storeGlobal.SetShowLoader(false);
+      storeGlobal.SetMessageModalStatus(Result);
+      storeGlobal.SetShowModalStatus(true);
+
+      await getAll();
     } catch (error: any) {
-      return `Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`;
+
+      storeGlobal.SetShowLoader(false)
+      storeGlobal.SetMessageModalStatus(`Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`)
+      storeGlobal.SetShowModalStatus(true)
+
+    } finally {
+      resetForm()
+      setTimeout(() => {
+        storeGlobal.SetShowModalStatus(false)
+      }, 5000);
+      storeGlobal.SetShowModalContainer(false)
+    }
+  };
+
+
+  const openUpdateColeccion = (ColeccionAlbumes: IColeccionData) => {
+    setFormulario({ Titulo: ColeccionAlbumes.tituloColeccion })
+    setStatusction({
+      action: "update",
+      idColeccion: ColeccionAlbumes.id
+    })
+    storeGlobal.SetShowModalContainer(true)
+  }
+
+  const Put = async (event: any) => {
+
+    try {
+      event.preventDefault();
+      storeGlobal.SetShowLoader(true)
+
+      const { Result, MessageError } = await AdminCollectionService.updateAdminCollection(
+        statusAction.idColeccion, formulario.Titulo
+      );
+
+      if (MessageError !== undefined) {
+        throw new Error(MessageError);
+      }
+
+      storeGlobal.SetShowLoader(false);
+      storeGlobal.SetMessageModalStatus(Result);
+      storeGlobal.SetShowModalStatus(true);
+
+      await getAll();
+    } catch (error: any) {
+
+      storeGlobal.SetShowLoader(false)
+      storeGlobal.SetMessageModalStatus(`Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`)
+      storeGlobal.SetShowModalStatus(true)
+
+    } finally {
+      resetForm()
+      setTimeout(() => {
+        storeGlobal.SetShowModalStatus(false)
+      }, 5000);
+      storeGlobal.SetShowModalContainer(false)
+    }
+  };
+
+  const Delete = async (id: number) => {
+    try {
+      storeGlobal.SetShowLoader(true)
+
+      const { Result, MessageError } = await AdminCollectionService.DeleteAdminCollection(id);
+
+      if (MessageError !== undefined) {
+        throw new Error(MessageError);
+      }
+
+      storeGlobal.SetShowLoader(false);
+      storeGlobal.SetMessageModalStatus(Result);
+      storeGlobal.SetShowModalStatus(true);
+
+      await getAll();
+    } catch (error: any) {
+
+      storeGlobal.SetShowLoader(false)
+      storeGlobal.SetMessageModalStatus(`Uups... ha occurrido un ${error}. \n \n Intentelo nuevamente`)
+      storeGlobal.SetShowModalStatus(true)
+
+    } finally {
+      setTimeout(() => {
+        storeGlobal.SetShowModalStatus(false)
+      }, 5000);
     }
   };
 
@@ -98,13 +179,7 @@ export const AdminCollection: React.FC = () => {
               <th>Titulo de Coleccion de Album</th>
               <th>Selcciona la opcion deseada</th>
               <th>
-                <button className={`${AdminColeccionCSS.buttonAdmin}`} onClick={() => {
-                  setStatusction({
-                    action: "add",
-                    idAlbum: 0
-                  })
-                  storeGlobal.SetShowModalContainer(true)
-                }}>
+                <button className={`${AdminColeccionCSS.buttonAdmin}`} onClick={openAddColeccion}>
                   Agregar Coleccion
                 </button>
               </th>
@@ -114,13 +189,7 @@ export const AdminCollection: React.FC = () => {
               <tr>
                 <th>{ColeccionAlbumes.tituloColeccion}</th>
                 <th>
-                  <button className={`${AdminColeccionCSS.buttonAdmin}`} onClick={() => {
-                    setStatusction({
-                      action: "update",
-                      idAlbum: ColeccionAlbumes.id
-                    })
-                    storeGlobal.SetShowModalContainer(true)
-                  }}>Modificar</button>
+                  <button className={`${AdminColeccionCSS.buttonAdmin}`} onClick={() => openUpdateColeccion(ColeccionAlbumes)}>Modificar</button>
                   <button
                     className={`${AdminColeccionCSS.buttonAdmin}`}
                     onClick={() => Delete(ColeccionAlbumes.id)}
@@ -156,7 +225,7 @@ export const AdminCollection: React.FC = () => {
 
           <h1>{statusAction.action === 'add' ? 'Crear' : 'Actualizar'}</h1>
 
-          <form onSubmit={statusAction.action === 'add' ? Put : Put} >
+          <form onSubmit={statusAction.action === 'add' ? Add : Put} >
 
             {InputsMockColeccion.map((inputProps: IInputs, index: number) => (
               <Input
@@ -169,7 +238,7 @@ export const AdminCollection: React.FC = () => {
               />
             ))}
 
-            <button type="submit">Crear</button>
+            <button type="submit">{statusAction.action === 'add' ? 'Crear' : 'Actualizar'}</button>
           </form>
 
         </ModalContainer>

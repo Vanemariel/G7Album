@@ -97,6 +97,7 @@ namespace G7Album.Server.Controllers
                     .Where(Usuario => Usuario.Id == DataAlbumSend.IdUsuario)
                     .FirstOrDefaultAsync();
 
+
                 if (Usuario == null )
                 {
                     throw new Exception($"no existe el Usuario con id igual a {DataAlbumSend.IdUsuario}.");
@@ -116,6 +117,7 @@ namespace G7Album.Server.Controllers
                     .Where(AlbumComprado => AlbumComprado.AlbumId == DataAlbumSend.IdAlbum)
                     .Where(AlbumComprado => AlbumComprado.UsuarioId == DataAlbumSend.IdUsuario)
                     .FirstOrDefaultAsync();
+
 
                 if (AlbumComprado != null)
                 {
