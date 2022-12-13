@@ -1,3 +1,4 @@
+import { IListAlbum } from "../../Interface/DTO Back/Album/IListAlbum";
 import { IAlbumImagenesData } from "../../Interface/DTO Back/AlbumImagenes/IAlbumImagenes";
 import { IListColeccion } from "../../Interface/DTO Back/ColeccionAlbum/IListColeccion";
 import { IPagination } from "../../Interface/DTO Back/IPagination";
@@ -20,12 +21,26 @@ const AdminFiguritaService = {
     };
   },
 
-  /*updateAdminAlbumes: async (IdAlbum: number, albumData: IDataAlbumForm): Promise<IResponseDTO<string>> => {
-    console.log("🚀 ~ file: AdminAlbum.Service.ts:24 ~ updateAdminAlbumes: ~ albumData", albumData)
+  getAllAlbumes: async (): Promise<IResponseDTO<IListAlbum[]>> => {
+    const Response = await axiosMethod<IListAlbum[]>({
+      method: "GET",
+      url: `/Album/GetAllAlbum/`,
+    });
+
+    return {
+      Result: Response.Result,
+      MessageError: Response.MessageError,
+    };
+  },
+
+
+
+
+  updateAdminAlbumes: async (IdFigurita: number, figuritaData: IDataAlbumForm): Promise<IResponseDTO<string>> => {
     const Response = await axiosMethod<string>({
       method: "PUT",
-      url: `/Album/${IdAlbum}/`,
-      dataSend: albumData ,
+      url: `/AlbumImagenes/${IdFigurita}/`,
+      dataSend: figuritaData ,
     });
 
     return {
@@ -37,7 +52,7 @@ const AdminFiguritaService = {
   DeleteAdminAlbumes: async (id: number): Promise<IResponseDTO<string>> => {
     const Response = await axiosMethod<string>({
       method: "DELETE",
-      url: `/Album/${id}/`,
+      url: `/AlbumImagenes/${id}/`,
     });
 
     return {
@@ -46,22 +61,13 @@ const AdminFiguritaService = {
     };
   },
 
-  GetAllColecction: async (): Promise<IResponseDTO<IListColeccion[]>> => {
-    const Response = await axiosMethod<IListColeccion[]>({
-      method: "GET",
-      url: `/ColeccionAlbum/GetAllColecction/`,
-    });
 
-    return {
-      Result: Response.Result,
-      MessageError: Response.MessageError,
-    };
-  },
   
-  AddAdminAlbumes: async (form: IDataAlbumForm): Promise<IResponseDTO<string>> => {
+  AddAdminAlbumes: async (form: IDataAlbumForm): Promise<IResponseDTO<string>> => { // incompleto
+    console.log("🚀 ~ file: AdminFigurita.Services.ts:68 ~ AddAdminAlbumes: ~ form", form)
     const Response = await axiosMethod<string>({
       method: "POST",
-      url: `/Album/`,
+      url: `/AlbumImagenes/`,
       dataSend: form
     });
 
@@ -69,7 +75,7 @@ const AdminFiguritaService = {
       Result: Response.Result,
       MessageError: Response.MessageError,
     };
-  }*/
+  }
 };
 
 export default AdminFiguritaService;

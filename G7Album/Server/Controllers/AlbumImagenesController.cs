@@ -152,35 +152,31 @@ namespace G7Album.Server.Controllers
         }
 
         [HttpPost]
-        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
-
-        //verbo es el http post, pero a la base de datos ingresa como un insert
-        public async Task<ActionResult<AlbumImagenes>> AgregarAlbum(AlbumImagenes albumImg)
+        public async Task<ActionResult<ResponseDto<string>>> AgregarAlbum(AlbumImagenes albumImg)
         {
+            ResponseDto<string> ResponseDto = new ResponseDto<string>();
             try
             {
                 context.TablaImagenes.Add(albumImg);
                 await context.SaveChangesAsync();
-                return albumImg;
+
+                ResponseDto.Result = "Se ha creado correctamente";
+                return Ok(ResponseDto);
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                ResponseDto.MessageError = $"Ha ocurrido un error al crear una figurita: {e.Message}";
+                return BadRequest(ResponseDto);
             }
-
         }
 
-        [HttpPut]
 
-        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
 
-        //metodo que sirve para modificar resultados 
-        public async Task<ActionResult> UpdataAlbum(int id, [FromBody] AlbumImagenes img)
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult<ResponseDto<string>>> UpdataAlbum(int id, [FromBody] AlbumImagenes img)
         {
-
-
+            ResponseDto<string> ResponseDto = new ResponseDto<string>();
             try
-
             {
                 AlbumImagenes AlbumImgs = await context.TablaImagenes.Where(x => x.Id == id).FirstOrDefaultAsync();
                 //si mi id es null no existe 
@@ -199,47 +195,47 @@ namespace G7Album.Server.Controllers
 
                 context.TablaImagenes.Update(AlbumImgs);
                 await context.SaveChangesAsync();
-                return Ok("Los datos han sido cambiados");
+
+                ResponseDto.Result = "Se ha actualizado correctamente";
+
+                return Ok(ResponseDto);
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                ResponseDto.MessageError = e.Message;
+                return BadRequest(ResponseDto);
             }
         }
 
-        [HttpDelete]
 
-        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
-        public async Task<ActionResult> Delete(int id)
-        {
-
-            try
-            {
-                if (id <= 0)
-                {
-                    return BadRequest("No es correcto");
-                }
-                AlbumImagenes albunUsuario = await context.TablaImagenes.Where(x => x.Id == id).FirstOrDefaultAsync();
-                if (albunUsuario == null)//parametro de q no puede ser nulo el dato
-                {
-                    throw new Exception($"No existe el AlbumUsuario con id igual a {id}.");
-                    //retorna error
-                }
-
-
-                context.TablaImagenes.Remove(albunUsuario);
-                await context.SaveChangesAsync();//busca el dato guardado
-
-                throw new Exception($"El AlbumUsuario {albunUsuario} ha sido borrado.");
-            }
-            catch (Exception e) //se captura la excepcion del try
-            {
-                return BadRequest(e.Message);
-            }
-        }
         //public async Task<int> CountElements() => await context.TablaImagenes(); 
         //public async Task<int> CountElements() => await context.Set<AlbumImagenes>().CountAsync();
         //count async devuelve de manera asincrona el n de elementos de una tabla,
         //osea la cantidad de registro.
+
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult<ResponseDto<string>>> Delete(int id)
+        {
+            ResponseDto<string> ResponseDto = new ResponseDto<string>();
+            try
+            {
+                var album = context.TablaImagenes.Where(x => x.Id == id).FirstOrDefault();
+
+                if (album == null)
+                {
+                    throw new Exception($"La figurita {id} no fue encontrado");
+                }
+                context.TablaImagenes.Remove(album);
+                context.SaveChanges();
+                ResponseDto.Result = "Se ha borrado correctamente";
+
+                return Ok(ResponseDto);
+            }
+            catch (Exception e)
+            {
+                ResponseDto.MessageError = $"Error al eliminar la figurita: {e.Message}";
+                return BadRequest(ResponseDto);
+            }
+        }
     }
 }

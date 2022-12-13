@@ -13,19 +13,21 @@ import { IAlbumImagenesData } from "../../Interface/DTO Back/AlbumImagenes/IAlbu
 import { IDataFiguritaForm } from "../../Interface/DTO Front/AlbumImagen/IDataFiguritaForm";
 import AdminFiguritaService from "./AdminFigurita.Services";
 import { IAlbumData } from "../../Interface/DTO Back/Album/IAlbumData";
+import { IListAlbum } from "../../Interface/DTO Back/Album/IListAlbum";
+import { InputsMockFiguritas } from "./Mocks/InputsFiguritas";
 
 export const AdminFiguritas: React.FC = () => {
   //HOOKS
   const [allFigurita, setAllFigurita] = useState<IAlbumImagenesData[]>([]);
-  const [allListAlbumes, setAllListAlbum] = useState<IAlbumData[]>([]);
+  const [allListAlbumes, setAllListAlbum] = useState<IListAlbum[]>([]);
   const { paginate, setPaginate } = usePaginate()
   const storeGlobal = useGlobalContext();
-  const [statusAction, setStatusction] = useState({
-    action: "", idFigurita: 0
+  const [statusAction, setStatusAction] = useState({
+    action: "", idAlbumFigurita: 0
   })
   const { formulario, handleChange, resetForm, setFormulario } = useFormCustom<IDataFiguritaForm>({
     NumeroImagen: "", CodigoImagenOriginal: "", CantidadImpresa: "",
-    Imagen: "", Titulo: "", AlbumId: ""
+    Imagen: "", Titulo: "", AlbumId: 0
   });
 
   //METODOS
@@ -43,33 +45,38 @@ export const AdminFiguritas: React.FC = () => {
     setAllFigurita(data.Result.listItems);
   };
 
-  const getAllColecction = async () => {
-    const data = await AdminFiguritaService.GetAllAdminFiguritas(1);
+  const getAllAlbumes = async () => {
+    const data = await AdminFiguritaService.getAllAlbumes();
 
-    setAllFigurita(data.Result);
+    setAllListAlbum(data.Result);
   }
 
   const openAddFigurita = () => {
     setFormulario({
-        NumeroImagen: "", CodigoImagenOriginal: "", CantidadImpresa: "",
-        Imagen: "", Titulo: "", AlbumId: ""
+      NumeroImagen: "", CodigoImagenOriginal: "", CantidadImpresa: "",
+      Imagen: "", Titulo: "", AlbumId: 0
     })
-    setStatusction({
+    setStatusAction({
       action: "add",
-      idFigurita: 0
+      idAlbumFigurita: 0
     })
     storeGlobal.SetShowModalContainer(true)
   }
 
   const Add = async (event: any) => {
 
-    /*try {
+    try {
       event.preventDefault();
       storeGlobal.SetShowLoader(true)
 
+      const data = {
+        ...formulario,
+        idAlbumFigurita: statusAction.idAlbumFigurita
+      }
+
 
       console.log("Crear", formulario)
-      const { Result, MessageError } = await AdminFiguritaService.AddAdminFigurita(formulario);
+      const { Result, MessageError } = await AdminFiguritaService.AddAdminAlbumes(data);
 
       if (MessageError !== undefined) {
         throw new Error(MessageError);
@@ -91,37 +98,36 @@ export const AdminFiguritas: React.FC = () => {
       setTimeout(() => {
         storeGlobal.SetShowModalStatus(false)
       }, 5000);
-    }*/
-
+    }
   };
 
 
   const openEditFigurita = (Figurita: IAlbumImagenesData) => {
     setFormulario({
-        numeroImagen: Figurita.numeroImagen,
-        codigoImagenOriginal: Figurita.codigoImagenOriginal,
-        cantidadImpresa: Figurita.cantidadImpresa,
-        imagen: Figurita.imagen,
-        titulo: Figurita.titulo,
-        albumId: Figurita.albumId,
-     
+      NumeroImagen: Figurita.numeroImagen,
+      CodigoImagenOriginal: Figurita.codigoImagenOriginal,
+      CantidadImpresa: Figurita.cantidadImpresa,
+      Imagen: Figurita.imagen,
+      Titulo: Figurita.titulo,
+      AlbumId: Figurita.albumId
     })
-    setStatusction({
+    setStatusAction({
       action: "update",
-      idFigurita: Figurita.id
+      idAlbumFigurita: Figurita.id,
     })
     storeGlobal.SetShowModalContainer(true)
   }
 
   const Put = async (event: any) => {
 
-    /*try {
+    try {
       event.preventDefault();
       storeGlobal.SetShowLoader(true)
 
-
-      console.log("Crear", formulario)
-      const { Result, MessageError } = await AdminFiguritaService.updateAdminFigurita(statusAction.idFigurita, formulario);
+      const { Result, MessageError } = await AdminFiguritaService.updateAdminAlbumes(
+        statusAction.idAlbumFigurita, 
+        formulario
+      );
 
       if (MessageError !== undefined) {
         throw new Error(MessageError);
@@ -144,15 +150,15 @@ export const AdminFiguritas: React.FC = () => {
         storeGlobal.SetShowModalStatus(false)
       }, 5000);
       storeGlobal.SetShowModalContainer(false)
-    }*/
+    }
+
   };
 
-  const Delete = async (idFigurita: number) => {
-    /*try {
-
+  const Delete = async (idAlbumFigurita: number) => {
+    try {
       storeGlobal.SetShowLoader(true)
 
-      const { Result, MessageError } = await AdminFiguritaService.DeleteAdminFigurita(idFigurita);
+      const { Result, MessageError } = await AdminFiguritaService.DeleteAdminAlbumes(idAlbumFigurita);
 
       if (MessageError !== undefined) {
         throw new Error(MessageError);
@@ -173,7 +179,7 @@ export const AdminFiguritas: React.FC = () => {
       setTimeout(() => {
         storeGlobal.SetShowModalStatus(false)
       }, 5000);
-    }*/
+    }
   };
 
   const changePage = ({ selected }: any) => {
@@ -183,7 +189,7 @@ export const AdminFiguritas: React.FC = () => {
 
   useEffect(() => {
     getAll();
-    getAllColecction();
+    getAllAlbumes();
   }, []);
 
   return (
@@ -200,19 +206,19 @@ export const AdminFiguritas: React.FC = () => {
               <th>Selcciona la opcion deseada</th>
               <th>
                 <button className={`${AdminFiguritaCSS.buttonAdmin}`} onClick={openAddFigurita}>
-                  Agregar Album
+                  Agregar Figuritas
                 </button>
               </th>
             </tr>
 
-            {allFigurita?.map((Albumes: IAlbumImagenesData, indexAlbum: number) => (
+            {allFigurita?.map((Figurita: IAlbumImagenesData, indexAlbum: number) => (
               <tr key={indexAlbum}>
-                <th>{Albumes.titulo}</th>
+                <th>{Figurita.titulo}</th>
                 <th>
-                  <button className={`${AdminFiguritaCSS.buttonAdmin}`} onClick={() => openEditFigurita(Albumes)}>Modificar</button>
+                  <button className={`${AdminFiguritaCSS.buttonAdmin}`} onClick={() => openEditFigurita(Figurita)}>Modificar</button>
                   <button
                     className={`${AdminFiguritaCSS.buttonAdmin}`}
-                    onClick={() => Delete(Albumes.id)}
+                    onClick={() => Delete(Figurita.id)}
                   >
                     Eliminar
                   </button>
@@ -234,15 +240,15 @@ export const AdminFiguritas: React.FC = () => {
         </div>
 
 
-        <ModalContainer personCss={`${AdminFiguritaCSS.containerModalAlbum}`}>
+        <ModalContainer personCss={`${AdminFiguritaCSS.containerModalFiguritas}`}>
 
           <p onClick={() => {
             storeGlobal.SetShowModalContainer(false)
-          }} className={AdminFiguritaCSS.containerModalAlbum__closeBtn}>
+          }} className={AdminFiguritaCSS.containerModalFiguritas__closeBtn}>
             <i className="fas fa-times"></i>
           </p>
 
-          <h1>{statusAction.action === 'add' ? 'Crear' : 'Actualizar'} Album</h1>
+          <h1>{statusAction.action === 'add' ? 'Crear' : 'Actualizar'} Figurita</h1>
 
           <form onSubmit={statusAction.action === 'add' ? Add : Put} >
 
@@ -250,10 +256,10 @@ export const AdminFiguritas: React.FC = () => {
               statusAction.action === 'add' && (
 
                 <label>
-                  Eliga coleccion de Album:
-                  <select onChange={handleChange} name="IdColeccion" value={formulario.IdColeccion}>
+                  Eliga el Album al que pertenece:
+                  <select onChange={handleChange} name="AlbumId" value={formulario.AlbumId}>
                     <option value={0}> </option>
-                    {allListFigurita.map((coleccion, index) => (
+                    {allListAlbumes.map((coleccion, index) => (
                       <option value={coleccion.id} key={index}>{coleccion.nombreCompleto}</option>
                     ))}
                   </select>
@@ -261,7 +267,7 @@ export const AdminFiguritas: React.FC = () => {
               )
             }
 
-            {InputsMockAlbum.map((inputProps: IInputs, index: number) => (
+            {InputsMockFiguritas.map((inputProps: IInputs, index: number) => (
               <Input
                 key={index}
                 inputProps={inputProps}

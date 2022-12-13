@@ -3,9 +3,8 @@ export interface IDataFiguritaForm {
     CodigoImagenOriginal: string;
     CantidadImpresa: string;
     Imagen: string;
-    Titulo: string;
-    AlbumId: string;
-    
+    Titulo: string;    
+    AlbumId: number;
 }
 
 

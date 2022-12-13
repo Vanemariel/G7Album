@@ -14,6 +14,7 @@ import { Navigate } from "./Components/Navigate/Navigate";
 import { AlbumUsuarioImagen } from "./Pages/AlbumUsuarioImagen/Index";
 import { AdminAlbum } from "./Pages/AdminAlbum/Index";
 import { AdminCollection } from "./Pages/AdminCollection/Index";
+import { AdminFiguritas } from "./Pages/AdminFiguritas/Index";
 
 
 function App() {
@@ -100,7 +101,7 @@ function App() {
             path="/AdminFigurita"
             element={
               <RoutePrivate>
-                <AdminCollection />
+                <AdminFiguritas />
               </RoutePrivate>
             }
           />

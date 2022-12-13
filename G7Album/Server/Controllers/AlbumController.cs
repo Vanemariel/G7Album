@@ -55,6 +55,39 @@ namespace G7Album.Server.Controllers
             return album;
         }*/
 
+        [HttpGet("GetAllAlbum")]
+        // metodo que me muestra la lista completa  
+        public async Task<ActionResult<ResponseDto<List<AlbumData>>>> GetAll()
+        {
+            ResponseDto<List<AlbumData>> ResponseDto = new ResponseDto<List<AlbumData>>();
+            List<AlbumData> ListaAlbumes = new List<AlbumData>();
+            try
+            {
+
+                List<Album> Albumes = await context.TablaAlbumes
+                    .Include(x => x.ListadoImagenes)
+                    .ToListAsync();
+
+                foreach (Album album in Albumes)
+                {
+                    ListaAlbumes.Add(new AlbumData
+                    {
+                        Id = album.Id,
+                        NombreCompleto = album.Titulo
+                    });
+                }
+
+                ResponseDto.Result = ListaAlbumes;
+
+                return Ok(ResponseDto);
+            }
+            catch (Exception ex)
+            {
+                ResponseDto.MessageError = $"Ha ocurrido un error, {ex.Message}";
+                return BadRequest(ResponseDto);
+            }
+        }
+
         [HttpGet("GetAllPage/{page:int}")]
         public async Task<ActionResult<ResponseDto<Pagination<List<Album>>>>> GetAll(int page)
         {
@@ -65,9 +98,7 @@ namespace G7Album.Server.Controllers
                 var pageResults = 3f;
                 var pageCount = Math.Ceiling(context.TablaAlbumes.Count() / pageResults);
 
-                List<Album> album = new List<Album>();
-
-                album = await context.TablaAlbumes
+                List<Album> album = await context.TablaAlbumes
                     .Skip((page - 1) * (int)pageResults)
                     .Take((int)pageResults)
                     .Include(x => x.ListadoImagenes)
@@ -98,13 +129,13 @@ namespace G7Album.Server.Controllers
             {
                 var pageResults = 3f;
                 var pageCount = Math.Ceiling(
-                    context.TablaAlbumes.Where(x => x.Titulo.Contains(query)).Count() 
-                    / 
+                    context.TablaAlbumes.Where(x => x.Titulo.Contains(query)).Count()
+                    /
                     pageResults
                 );
 
                 List<Album> album = new List<Album>();
-                
+
                 album = await context.TablaAlbumes
                     .Where(x => x.Titulo.Contains(query))
                     .Skip((page - 1) * (int)pageResults)
@@ -199,8 +230,6 @@ namespace G7Album.Server.Controllers
 
 
         [HttpDelete("{id:int}")]
-
-        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
         public async Task<ActionResult<ResponseDto<string>>> Delete(int id)
         {
             ResponseDto<string> ResponseDto = new ResponseDto<string>();
