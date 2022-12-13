@@ -96,6 +96,14 @@ function App() {
               </RoutePrivate>
             }
           />
+           <Route
+            path="/AdminFigurita"
+            element={
+              <RoutePrivate>
+                <AdminCollection />
+              </RoutePrivate>
+            }
+          />
         </Routes>
 
         <ModalLoader />
