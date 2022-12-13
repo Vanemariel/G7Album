@@ -77,6 +77,47 @@ namespace G7Album.Server.Controllers
             }
         }
 
+
+        [HttpGet("GetAllPage/{page:int}/{query}")]
+        public async Task<ActionResult<ResponseDto<Pagination<List<ColeccionAlbum>>>>> GetAll(int page,  string? query)
+        {
+            ResponseDto<Pagination<List<ColeccionAlbum>>> ResponseDto = new ResponseDto<Pagination<List<ColeccionAlbum>>>();
+            Pagination<List<ColeccionAlbum>> Pagination = new Pagination<List<ColeccionAlbum>>();
+
+            try
+            {
+                var pageResults = 3f;
+                var pageCount = Math.Ceiling(
+                    context.TablaColeccionAlbumes.Where(x => x.TituloColeccion.Contains(query)).Count() 
+                    / 
+                    pageResults
+                );
+
+                List<ColeccionAlbum> albumColeccion = await context.TablaColeccionAlbumes
+                    .Where(x => x.TituloColeccion.Contains(query))
+                    .Skip((page - 1) * (int)pageResults)
+                    .Take((int)pageResults)
+                    .Include(x => x.ListadoAlbum)
+                    .ToListAsync();
+
+                Pagination.ListItems = albumColeccion;
+                Pagination.CurrentPage = page;
+                Pagination.Pages = (int)pageCount;
+
+                ResponseDto.Result = Pagination;
+
+                return Ok(ResponseDto);
+            }
+            catch (Exception ex)
+            {
+                ResponseDto.MessageError = $"Ha ocurrido un error, {ex.Message}";
+                return BadRequest(ResponseDto);
+            }
+        }
+
+
+
+
         [HttpPut("{id:int}")]
         public async Task<ActionResult<ResponseDto<string>>> Put(int id, [FromBody] DataColeccion Coleccion)
         {

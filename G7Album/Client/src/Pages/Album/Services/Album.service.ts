@@ -7,11 +7,16 @@ import { axiosMethod } from "../../../Utils/axiosMethod";
 
 const AlbumService = {
 
-    GetAllColeccionAlbumes: async (page: number): Promise<IResponseDTO<IPagination<IColeccionData[]>>> => {
+    GetAllColeccionAlbumes: async (page: number, query?: string): Promise<IResponseDTO<IPagination<IColeccionData[]>>> => {
         
+        let url;
+        query === '' || query === undefined
+          ? url = `/ColeccionAlbum/GetAllPage/${page}/`
+          : url = `/ColeccionAlbum/GetAllPage/${page}/${query}`
+
         const Response = await axiosMethod<IPagination<IColeccionData[]>>({
             method: "GET",
-            url: `/ColeccionAlbum/GetAllPage/${page}`
+            url: url
         });
 
         return {

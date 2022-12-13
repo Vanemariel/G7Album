@@ -33,7 +33,10 @@ export const AdminAlbum: React.FC = () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
 
     const data = await AdminAlbumService.GetAllAdminAlbumes(page);
-    console.log("🚀 ~ file: Index.tsx:18 ~ getAll ~ data", data)
+
+    if (data.MessageError !== null) {
+      return
+    }
 
     setPaginate({
       currentPage: data.Result.currentPage - 1,

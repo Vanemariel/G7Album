@@ -7,18 +7,23 @@ import { axiosMethod } from "../../../Utils/axiosMethod";
 
 const AlbumImagenService = {
 
-    GetAllFiguritasAlbumes: async (page: number): Promise<IResponseDTO<IPagination<IAlbumData[]>>> => {
-        
+    GetAllFiguritasAlbumes: async (page: number, query?: string): Promise<IResponseDTO<IPagination<IAlbumData[]>>> => {
+
+        let url;
+        query === '' || query === undefined
+            ? url = `/Album/GetAllPage/${page}/`
+            : url = `/Album/GetAllPage/${page}/${query}`
+
         const Response = await axiosMethod<IPagination<IAlbumData[]>>({
             method: "GET",
-            url: `/Album/GetAllPage/${page}`
+            url: url
         });
 
         return {
             Result: Response.Result,
             MessageError: Response.MessageError
         };
-        
+
     },
     buyFigurita: async (dataAlbum: IAlbumImagenDataBuy) => {
         const Response = await axiosMethod<string>({

@@ -95,6 +95,40 @@ namespace G7Album.Server.Controllers
         }
 
 
+        // [HttpGet("GetAllPage/{page:int}/{query}")]
+        // public async Task<ActionResult<ResponseDto<Pagination<List<AlbumImagenes>>>>> GetAll(int page, string? query)
+        // {
+        //     ResponseDto<Pagination<List<AlbumImagenes>>> ResponseDto = new ResponseDto<Pagination<List<AlbumImagenes>>>();
+        //     Pagination<List<AlbumImagenes>> Pagination = new Pagination<List<AlbumImagenes>>();
+
+        //     try
+        //     {
+        //         var pageResults = 3f;
+        //         var pageCount = Math.Ceiling(context.TablaImagenes.Count() / pageResults);
+
+        //         List<AlbumImagenes> albumImagenes = await context.TablaImagenes
+        //             .Skip((page - 1) * (int)pageResults)
+        //             .Take((int)pageResults)
+        //              .Where(x => x.Titulo.Contains(query))
+        //             .Include(x => x.Album)
+        //             .ToListAsync();
+
+        //         Pagination.ListItems = albumImagenes;
+        //         Pagination.CurrentPage = page;
+        //         Pagination.Pages = (int)pageCount;
+
+        //         ResponseDto.Result = Pagination;
+
+
+        //         return Ok(ResponseDto);
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         ResponseDto.MessageError = $"Ha ocurrido un error, {ex.Message}";
+        //         return BadRequest(ResponseDto);
+        //     }
+        // }
+
 
 
         /*[HttpGet("GetAll")]
@@ -143,7 +177,7 @@ namespace G7Album.Server.Controllers
         //metodo que sirve para modificar resultados 
         public async Task<ActionResult> UpdataAlbum(int id, [FromBody] AlbumImagenes img)
         {
-           
+
 
             try
 
@@ -178,7 +212,7 @@ namespace G7Album.Server.Controllers
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
         public async Task<ActionResult> Delete(int id)
         {
-            
+
             try
             {
                 if (id <= 0)
@@ -201,11 +235,11 @@ namespace G7Album.Server.Controllers
             catch (Exception e) //se captura la excepcion del try
             {
                 return BadRequest(e.Message);
-            }       
+            }
         }
         //public async Task<int> CountElements() => await context.TablaImagenes(); 
-         //public async Task<int> CountElements() => await context.Set<AlbumImagenes>().CountAsync();
+        //public async Task<int> CountElements() => await context.Set<AlbumImagenes>().CountAsync();
         //count async devuelve de manera asincrona el n de elementos de una tabla,
-       //osea la cantidad de registro.
+        //osea la cantidad de registro.
     }
 }

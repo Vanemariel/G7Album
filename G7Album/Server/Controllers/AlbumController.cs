@@ -56,9 +56,6 @@ namespace G7Album.Server.Controllers
         }*/
 
         [HttpGet("GetAllPage/{page:int}")]
-
-        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
-        // public async Task<ActionResult<ResponseDto<Pagination<List<Album>>>>> GetAll(int page, string filterText = "")
         public async Task<ActionResult<ResponseDto<Pagination<List<Album>>>>> GetAll(int page)
         {
             ResponseDto<Pagination<List<Album>>> ResponseDto = new ResponseDto<Pagination<List<Album>>>();
@@ -70,21 +67,12 @@ namespace G7Album.Server.Controllers
 
                 List<Album> album = new List<Album>();
 
-                // if (filterText == "")
-                // {
                 album = await context.TablaAlbumes
                     .Skip((page - 1) * (int)pageResults)
                     .Take((int)pageResults)
                     .Include(x => x.ListadoImagenes)
                     .ToListAsync();
-                // }else {
-                //     album = await context.TablaAlbumes
-                //         .Skip((page - 1) * (int)pageResults)
-                //         .Take((int)pageResults)
-                //         .Include(x => x.ListadoImagenes)
-                //         .Where(x => x.Titulo.Contains(filterText))
-                //         .ToListAsync();
-                // }
+
 
                 Pagination.ListItems = album;
                 Pagination.CurrentPage = page;
@@ -101,6 +89,43 @@ namespace G7Album.Server.Controllers
             }
         }
 
+        [HttpGet("GetAllPage/{page:int}/{query}")]
+        public async Task<ActionResult<ResponseDto<Pagination<List<Album>>>>> GetAll(int page, string? query)
+        {
+            ResponseDto<Pagination<List<Album>>> ResponseDto = new ResponseDto<Pagination<List<Album>>>();
+            Pagination<List<Album>> Pagination = new Pagination<List<Album>>();
+            try
+            {
+                var pageResults = 3f;
+                var pageCount = Math.Ceiling(
+                    context.TablaAlbumes.Where(x => x.Titulo.Contains(query)).Count() 
+                    / 
+                    pageResults
+                );
+
+                List<Album> album = new List<Album>();
+                
+                album = await context.TablaAlbumes
+                    .Where(x => x.Titulo.Contains(query))
+                    .Skip((page - 1) * (int)pageResults)
+                    .Take((int)pageResults)
+                    .Include(x => x.ListadoImagenes)
+                    .ToListAsync();
+
+                Pagination.ListItems = album;
+                Pagination.CurrentPage = page;
+                Pagination.Pages = (int)pageCount;
+
+                ResponseDto.Result = Pagination;
+
+                return Ok(ResponseDto);
+            }
+            catch (Exception ex)
+            {
+                ResponseDto.MessageError = $"Ha ocurrido un error, {ex.Message}";
+                return BadRequest(ResponseDto);
+            }
+        }
 
         [HttpPost]
         public async Task<ActionResult<ResponseDto<string>>> Post(DataAlbum albumForm)

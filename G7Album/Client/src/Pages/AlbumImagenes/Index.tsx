@@ -22,13 +22,15 @@ export const AlbumImagenes: React.FC = () => {
     const [allAlbumImagenes, setAllAlbumImagenes] = useState<IAlbumData[]>([])
     const { paginate, setPaginate } = usePaginate()
     const storeGlobal = useGlobalContext();
+    const [query, setQuery] = useState('');
+
 
     /// METODOS
 
 
-    const getAllAlbumImagenes = async (page: number = 1) => {
+    const getAllAlbumImagenes = async (page: number = 1, query?: string) => {
 
-        const data = await AlbumImagenService.GetAllFiguritasAlbumes(page)
+        const data = await AlbumImagenService.GetAllFiguritasAlbumes(page, query)
 
         let arrAlbumImg: ConfigCarrouselModels[] = []
 
@@ -50,7 +52,7 @@ export const AlbumImagenes: React.FC = () => {
 
     const changePage = ({ selected }: any) => {
         window.scrollTo(0, 0);
-        getAllAlbumImagenes(selected + 1)
+        getAllAlbumImagenes(selected + 1, query)
     }
 
     const buyFigurita = async (idFigurita: number, IdAlbum: number) => {
@@ -100,11 +102,16 @@ export const AlbumImagenes: React.FC = () => {
                 <div id="m">
 
 
-                    <div className="container">
+                <div className="container">
                         <div className="input-group mb-3">
-                            <input type="text" className="form-control" placeholder="Escribe album o torneo deseado" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                            <input
+                                type="text" className="form-control"
+                                placeholder="Escribe album o torneo deseado"
+                                onChange={(e) => setQuery(e.target.value)}
+                            />
                             <div className="input-group-append">
-                                <button type="button" className="btn btn-primary">
+                                <button type="button" className="btn btn-primary" 
+                                    onClick={()=> getAllAlbumImagenes(1, query)}>
                                     <i className="fas fa-search"></i>
                                 </button>
                             </div>

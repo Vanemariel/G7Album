@@ -7,12 +7,18 @@ import { IDataAlbumForm } from "../../Interface/DTO Front/Album/IDataAlbumForm";
 import { axiosMethod } from "../../Utils/axiosMethod";
 
 const AdminAlbumService = {
-  GetAllAdminAlbumes: async (page: number): Promise<
+  GetAllAdminAlbumes: async (page: number, query?: string): Promise<
     IResponseDTO<IPagination<IAlbumData[]>>
   > => {
+
+    let url;
+    query === '' || query === undefined
+      ? url = `/Album/GetAllPage/${page}/`
+      : url = `/Album/GetAllPage/${page}/${query}`
+
     const Response = await axiosMethod<IPagination<IAlbumData[]>>({
       method: "GET",
-      url: `/Album/GetAllPage/${page}/`,
+      url: url,
     });
 
     return {
@@ -26,13 +32,14 @@ const AdminAlbumService = {
     const Response = await axiosMethod<string>({
       method: "PUT",
       url: `/Album/${IdAlbum}/`,
-      dataSend: albumData ,
+      dataSend: albumData,
     });
 
     return {
       Result: Response.Result,
       MessageError: Response.MessageError,
     };
+
   },
 
   DeleteAdminAlbumes: async (id: number): Promise<IResponseDTO<string>> => {
@@ -58,7 +65,7 @@ const AdminAlbumService = {
       MessageError: Response.MessageError,
     };
   },
-  
+
   AddAdminAlbumes: async (form: IDataAlbumForm): Promise<IResponseDTO<string>> => {
     const Response = await axiosMethod<string>({
       method: "POST",

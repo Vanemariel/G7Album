@@ -22,14 +22,14 @@ export const Album: React.FC = () => {
     const storeGlobal = useGlobalContext();
     const [allColecciones, setAllColecciones] = useState<IColeccionData[]>([])
     const { paginate, setPaginate } = usePaginate()
-
+    const [query, setQuery] = useState('');
 
 
     /// METODOS
-    const getAllColeccionAlbumes = async (page: number = 1) => {
+    const getAllColeccionAlbumes = async (page: number = 1, query?: string) => {
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
 
-        const data = await AlbumService.GetAllColeccionAlbumes(page)
+        const data = await AlbumService.GetAllColeccionAlbumes(page, query)
 
         let arrAlbum: ConfigCarrouselModels[] = []
 
@@ -85,8 +85,10 @@ export const Album: React.FC = () => {
 
     const changePage = ({ selected }: any) => {
         window.scrollTo(0, 0);
-        getAllColeccionAlbumes(selected + 1)
+        getAllColeccionAlbumes(selected + 1, query)
     }
+
+ 
 
     useEffect(() => {
         getAllColeccionAlbumes()
@@ -100,14 +102,20 @@ export const Album: React.FC = () => {
                 <div id="m">
                     <div className="container">
                         <div className="input-group mb-3">
-                            <input type="text" className="form-control" placeholder="Escribe album o torneo deseado" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                            <input
+                                type="text" className="form-control"
+                                placeholder="Escribe album o torneo deseado"
+                                onChange={(e) => setQuery(e.target.value)}
+                            />
                             <div className="input-group-append">
-                                <button type="button" className="btn btn-primary">
+                                <button type="button" className="btn btn-primary" 
+                                    onClick={()=> getAllColeccionAlbumes(1, query)}>
                                     <i className="fas fa-search"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
+
                     <br />
 
                     {allColecciones.length === 0 && <Loader />}
