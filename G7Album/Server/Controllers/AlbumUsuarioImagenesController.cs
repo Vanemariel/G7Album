@@ -139,8 +139,8 @@ namespace G7Album.Server.Controllers
 
                     //LOGICA DE NEGOCIO
                 AlbumUsuario? AlbumComprado = await this.context.TablaAlbumesUsuarios
-                   .Where(Usuario => Usuario.Id == CompraFigus.IdUsuario)
-                   .Where(AlbumComprado => AlbumComprado.AlbumId == CompraFigus.IdAlbum)
+                   .Where(x => x.UsuarioId == CompraFigus.IdUsuario)
+                   .Where(x => x.AlbumId == CompraFigus.IdAlbum)
                    .FirstOrDefaultAsync();
 
                 if (AlbumComprado == null)

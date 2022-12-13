@@ -151,7 +151,6 @@ export const AdminFiguritas: React.FC = () => {
       }, 5000);
       storeGlobal.SetShowModalContainer(false)
     }
-
   };
 
   const Delete = async (idAlbumFigurita: number) => {

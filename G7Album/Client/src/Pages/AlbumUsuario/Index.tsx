@@ -73,9 +73,6 @@ export const AlbumUsuario: React.FC = () => {
     }
 
 
-    const verFiguritas = async() => {
-
-    }
 
     useEffect(() => {
         getAllMyAlbumes()

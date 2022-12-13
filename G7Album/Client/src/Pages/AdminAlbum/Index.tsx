@@ -34,10 +34,6 @@ export const AdminAlbum: React.FC = () => {
 
     const data = await AdminAlbumService.GetAllAdminAlbumes(page);
 
-    if (data.MessageError !== null) {
-      return
-    }
-
     setPaginate({
       currentPage: data.Result.currentPage - 1,
       pagesTotal: data.Result.pages
